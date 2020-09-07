@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Eclipse Embedded CDT Features | Eclipse Embedded CDT</title>
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202008050934">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/customstyles.css?202008050934">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/boxshadowproperties.css?202008050934">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/theme-blue.css?202008050934">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/toc.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="https://eclipse-embed-cdt.github.io/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks" style="">
+        <div style="display: inline-block; float: left; margin-top: 8px; margin-left: auto; margin-right: 10px;"><img src="/images/company_logo.png" alt="logo" width="32px" height="32px"/></div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="/">&nbsp;<span class="projectTitle"> Eclipse Embedded CDT</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li class="active"><a href="/news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://projects.eclipse.org/projects/iot.embed-cdt/" target="_blank" rel="noopener">Eclipse Project</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://marketplace.eclipse.org/content/eclipse-embedded-cdt/" target="_blank" rel="noopener">Eclipse Marketplace</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">GitHub<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://github.com/eclipse-embed-cdt/" target="_blank" rel="noopener">Eclipse Embedded CDT</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpack/" target="_blank" rel="noopener">xPack Core Tools</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpack-dev-tools/" target="_blank" rel="noopener">3rd Party xPack Tools</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpacks/" target="_blank" rel="noopener">3rd Party xPacks</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forums<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://gitter.im/xpack/" target="_blank" rel="noopener">The Project Chat Room</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Eclipse Embedded CDT Features">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3 sticky" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Getting Started" href="#">Getting Started</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="Features" href="/plugins/features/">Features</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Prerequisites" href="/plugins/prerequisites/">Prerequisites</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install a New Eclipse" href="/plugins/install/">Install a New Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Update an Existing Eclipse" href="/plugins/update/">Update an Existing Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install Optional Features" href="/plugins/install-new-software/">Install Optional Features</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Alternate Install Methods" href="/plugins/install-alternate/">Alternate Install Methods</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Workspace Preferences" href="/eclipse/workspace/preferences/">Workspace Preferences</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="CMSIS Packs" href="/plugins/packs-manager/">CMSIS Packs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SEGGER J-Link" href="/debug/jlink/install/">SEGGER J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Troubleshoot" href="/plugins/troubleshoot/">Troubleshoot</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="About" href="/about/">About</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Debug" href="#">Debug</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/debug/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install" href="/debug/install/">Install</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="J-Link" href="/debug/jlink/">J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD" href="/debug/openocd/">OpenOCD</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="QEMU Arm" href="/debug/qemu/">QEMU Arm</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Assign CMSIS Device" href="/eclipse/project/assign-device/">Assign CMSIS Device</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Peripheral Registers" href="/debug/peripheral-registers/">Peripheral Registers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Blinky Arm Tutorial" href="/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="How It Works" href="#">How It Works</a>
+      <ul>
+          
+          
+          
+          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The CDT Indexer" href="/eclipse/cdt/indexer/">The CDT Indexer</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The Hardware Debug Plug-ins" href="/eclipse/cdt/hardware-debug/">The Hardware Debug Plug-ins</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Templates" href="#">Templates</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/templates/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="STM32Fxx Templates" href="/templates/stm32f/">STM32Fxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="KLxx Templates" href="/templates/klxx/">KLxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Generic Cortex-M Template" href="/templates/cortexm/">Generic Cortex-M Template</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="News" href="#">News</a>
+      <ul>
+          
+          
+          
+          <li><a title="Latest News" href="/news/">Latest News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Archive" href="/news/archive/">Archive</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags" href="/tags/">Tags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Articles" href="/articles/">Articles</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Support" href="#">Support</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/support/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="The Project Forums" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Contributor Info" href="#">Contributor Info</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/develop/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Links" href="/develop/links/">Links</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Maintainer Info" href="#">Maintainer Info</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/maintain/">Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="License" href="#">License</a>
+      <ul>
+          
+          
+          
+          <li><a class="extern" title="Eclipse Public License 2.0" href="https://www.eclipse.org/legal/epl-2.0/" target="_blank" rel="noopener">Eclipse Public License 2.0</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Home" href="#">Home</a>
+      <ul>
+          
+          
+          
+          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="The xPack Project" href="https://xpack.github.io" target="_blank" rel="noopener">The xPack Project</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="GNU MCU Eclipse (deprecated)" href="https://gnu-mcu-eclipse.github.io" target="_blank" rel="noopener">GNU MCU Eclipse (deprecated)</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Eclipse Embedded CDT Features</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+   <h2 id="main-features">Main features</h2>
+
+<p>The main features of the Eclipse Embedded CDT family of plug-ins are:</p>
+
+<ul>
+  <li>create/build/manage embedded Arm/AArch64/RISC-V applications, using the managed project features of Eclipse CDT, i.e. without having to manually create and maintain makefiles</li>
+  <li>provide ready to run templates for some Arm Cortex-M processors</li>
+  <li>provide debugging support via JTAG/SWD</li>
+  <li>provide a special view to examine and modify peripheral registers during debug sessions</li>
+</ul>
+
+<p>Other features of the cross build plug-in are:</p>
+
+<ul>
+  <li>supports a wide range of 32 and 64-bit toolchains</li>
+  <li>provides extra build steps to generate the binary files required to write the controller flash memory</li>
+  <li>supports the automatic discovery of system paths and macro definitions for accurate indexing and auto-completion</li>
+  <li>provides common options for all toolchains</li>
+  <li>provides fully configurable toolchain definitions</li>
+  <li>provides advanced toolchain path management</li>
+  <li>improved project portability</li>
+  <li>… and many more</li>
+</ul>
+
+<h2 id="supported-toolchains">Supported toolchains</h2>
+
+<p>The build plug-in supports most existing toolchains currently available for both 32 and 64-bit Arm and RISC-V processors.</p>
+
+<h3 id="arm-toolchains">Arm toolchains</h3>
+
+<ul>
+  <li><a href="https://xpack.github.io/arm-none-eabi-gcc/"><strong>xPack GNU Arm Embedded GCC</strong></a> (arm-none-eabi-*)</li>
+  <li><a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm"><strong>GNU Arm Embedded Toolchain</strong></a> (arm-none-eabi-*)</li>
+  <li><strong><a href="http://launchpad.net/gcc-linaro">Linaro</a> </strong>ARMv7 <strong>bare-metal EABI</strong> (arm-none-eabi-*)</li>
+  <li><strong><a href="http://launchpad.net/gcc-linaro">Linaro</a> </strong>ARMv7 <strong>big-endian bare-metal EABI</strong> (armeb-none-eabi-*)</li>
+  <li><strong><a href="http://launchpad.net/gcc-linaro">Linaro</a> </strong>ARMv7 <strong>Linux GNU EABI HF</strong> (arm-linux-gnueabihf-*)</li>
+  <li><strong><a href="http://launchpad.net/gcc-linaro">Linaro</a> </strong>ARMv7 <strong>big-endian Linux GNU EABI HF</strong> (armeb-linux-gnueabihf-*)</li>
+  <li><strong><a href="http://www.mentor.com/embedded-software/sourcery-tools/sourcery-codebench/editions/lite-edition/">Mentor Sourcery CodeBench Lite</a></strong> for <strong>ARM EABI</strong> (arm-none-eabi-*)</li>
+  <li><strong><a href="http://www.mentor.com/embedded-software/sourcery-tools/sourcery-codebench/editions/lite-edition/">Mentor Sourcery CodeBench Lite</a></strong> for <strong>ARM GNU/Linux</strong> (arm-none-linux-gnueabi-*)</li>
+  <li>devkit <strong>ARM EABI</strong> (arm-eabi-*) (obsolete, no longer maintained)</li>
+  <li>Yagarto, Summon, etc. <strong>ARM EABI</strong> (arm-none-eabi-*) (obsolete, no longer maintained)</li>
+</ul>
+
+<h3 id="aarch64-toolchains">AArch64 toolchains</h3>
+
+<ul>
+  <li><strong><a href="http://launchpad.net/linaro-toolchain-binaries">Linaro</a> AArch64 bare-metal ELF</strong> (aarch64-none-elf-*)</li>
+  <li><strong><a href="http://launchpad.net/linaro-toolchain-binaries">Linaro</a> AArch64 big-endian bare-metal ELF</strong> (aarch64_be-none-elf-*)</li>
+  <li><strong><a href="http://launchpad.net/linaro-toolchain-binaries">Linaro</a> AArch64 Linux GNU</strong> (aarch64-linux-gnu-*)</li>
+  <li><strong><a href="http://launchpad.net/linaro-toolchain-binaries">Linaro</a> AArch64 big-endian Linux GNU</strong> (aarch64_be-linux-gnu-*)</li>
+</ul>
+
+<p><img src="/assets/images/2015/wizard-toolchains.png" alt="The list of supported toolchains" /></p>
+
+<h2 id="extra-build-steps">Extra build steps</h2>
+
+<p>In addition to building the ELF file, the build plug-in can also create a binary file (<strong>ihex</strong>, <strong>srec</strong>, <strong>binary</strong>) to be programmed in the processor flash memory.</p>
+
+<p>Since resources are usually limited, the plug-in can also display the program size, and create a listing.</p>
+
+<p><img src="/assets/images/2015/console-build-secondary.png" alt="An example of how secondary targets are generated" /></p>
+
+<h2 id="discovery-options--indexing">Discovery Options &amp; Indexing</h2>
+
+<p>Frankly, this is mainly a CDT feature, but in order for it to work, the build plug-in must provide the CDT with various toolchain details, like compiler command (for example arm-none-eabi-gcc), compiler options and the right path to the toolchain binary.</p>
+
+<p>To understand <strong>Discovery Options</strong>, you need to understand what <strong>Indexing</strong> is. In order to allow Eclipse user to navigate to definitions, to declarations, to allow smart completion, refactoring and all these nice features, the CDT needs to have <strong>exactly</strong> the same knowledge of the source files as the compiler. For this, it also needs to know the system headers used at compile time and the default preprocessor definitions issued by the compiler. GCC provides a magic combination of command options to do this (<code class="highlighter-rouge">-E -P -v -dD ${plugin_state_location}/specs.c</code>), so the CDT needs to issue the proper compiler commands (one for each language, C &amp; C++). The build plug-in provides these details, for each toolchain.</p>
+
+<p>This feature also provides a quick check if you configured properly your environment: after creating a new project, you should see the special folder <strong>Includes</strong> in the root of your project, containing the paths of the system include files used by your compiler. If you don’t see this, you probably misconfigured the toolchain path.</p>
+
+<p><img src="/assets/images/2015/project-explorer-includes.png" alt="Example of automatically detected include paths" /></p>
+
+<h2 id="simplified-multiple-tools-configurations">Simplified multiple tools configurations</h2>
+
+<p>In addition to being tedious, setting options for each tool (C compiler, C++ compiler, linker) might also be a source of subtle errors when incompatible options are used for different tools.</p>
+
+<p>To minimise the risk of such errors, and to make the plug-in easier to use, unlike in most other CDT compiler settings plug-ins, special configuration entries were defined at toolchain level instead of specific tools. Options enabled at this level are used for all tools, without exception.</p>
+
+<p><img src="/assets/images/2015/properties-c-settings-tool-optimization.png" alt="Example of common options used for all tools" /></p>
+
+<h2 id="fully-configurable-toolchains">Fully configurable toolchains</h2>
+
+<p>Toolchain definitions include most of the configurable details, not only the prefix and the path, allowing the use of almost any GNU compatible toolchain.</p>
+
+<p><img src="/assets/images/2015/properties-c-settings-toolchains.png" alt="All toolchain details can be configured" /></p>
+
+<h2 id="advanced-toolchain-path-management">Advanced toolchain path management</h2>
+
+<p>The traditional way of accessing the toolchain components was to add the toolchain path to the system PATH and later do nothing special inside Eclipse. Unfortunately this model does not scale; serious development often requires multiple toolchains (either different versions of the same toolchain, or even toolchains from different sources) on the same machine, and polluting the system PATH is a source of major headaches.</p>
+
+<p>The Eclipse Embedded CDT cross build plug-in provides advanced toolchain path management; for more details, please read the separate <a href="/toolchain/path/" title="Toolchain path management">Toolchain path management</a> page.</p>
+
+<h2 id="improved-project-portability">Improved project portability</h2>
+
+<p>Even more, for improved project portability, the toolchain path is stored in the workspace, in preference to the path stored in the project.</p>
+
+<p>Project portability is essential for team collaboration, when multiple developers use different platform to develop a single project. Without project portability, after a Windows machine would commit the project to a central repository, macOS or GNU/Linux users would have to manually adjust the path in their projects after each update, and the other way around; for more details, please read the separate <a href="/eclipse/project/portability/" title="Project portability">Project portability</a> page.</p>
+
+<h2 id="functional-ready-to-run-templates">Functional ready to run templates</h2>
+
+<p>For beginners, who need initial help to put all details together for their first project, a complete sample, with startup code, linker scripts, semi-hosting enabled and all necessary options already set, can be a major time saver.</p>
+
+<p>The <strong>Hello World ARM Cortex-M3 C Project</strong> template was destined exactly for such cases; please see the <a href="/tutorials/blinky-arm/">Tutorial: Create a Blinky Arm test project</a> for more details.</p>
+
+<p><img src="/assets/images/2015/NewCM3ProjectResult.png" alt="The Cortex-M3 template project" /></p>
+
+<p>Even more, specific templates are available for the STM families of processors <strong>STM32F[01234]x</strong>, and for some Freescale <strong>KLxx</strong> processors. They create the classical application that blinks a LED, and, specific for the Debug configuration, prints a string on the tracing (SWV or semi-hosting) output.</p>
+
+<h2 id="debugging-support">Debugging support</h2>
+
+<p>During the lifetime of a project, creating/editing source files and building binaries are certainly important activities, but in many cases the most time is spent during debugging sessions, and a reliable debugging environment is an absolute must.</p>
+
+<p>There are many debugging techniques and tools, but we recommend two solutions:</p>
+
+<ul>
+  <li>the <a href="http://www.segger.com/jlink_base.html">SEGGER J-Link</a> probe with its integrated GDB server, via <a href="/debug/jlink/" title="The J-Link hardware debugging Eclipse plug-in">the J-Link plug-in</a></li>
+  <li>
+    <p>the <a href="http://openocd.org">OpenOCD</a> GDB server for many other JTAG probes.</p>
+
+    <p><img src="/assets/images/2015/launch-jlink-debugger-tab.png" alt="The J-Link Debugger tab" /></p>
+  </li>
+</ul>
+
+<p>We also recommend the use of specific Arm debugging support, like tracing via the SWO output, with a second choice for semihosting output (both are supported by the J-Link plug-in).</p>
+
+<h2 id="the-packages-manager-perspective">The packages manager perspective</h2>
+
+<p>The Eclipse Embedded CDT plug-ins were the first open source tools to benefit from the new CMSIS Packs technology promoted by Arm.</p>
+
+<p>Packages are a convenient way to distribute software components, hardware descriptions and documentation, in a structured way.</p>
+
+<p>There are many packages available, mostly maintained by Keil, and in order to conveniently manage them a dedicated perspective was created, with filtering and outline capabilities.</p>
+
+<p><img src="/assets/images/2015/perspective-packs.png" alt="The Packs perspective" /></p>
+
+<p>Among other things, the packages metadata include a complete list of devices, grouped by vendor, family, sub-family, and a list of development boards. These extra data allow to easily associate additional properties (like device name) to projects, and later use these definition to automate other configurations, like debugging sessions.</p>
+
+<p><img src="/assets/images/2015/properties-c-settings-device-tab.png" alt="Assigning a device and board to the project" /></p>
+
+<h2 id="peripherals-registers-view-in-debug">Peripherals registers view in debug</h2>
+
+<p>One of the great features of CMSIS Packs is the availability of hardware descriptions for all Cortex-M devices, with details down to the register field level.</p>
+
+<p>These descriptions can be used to assist the debugger in examining and modifying memory mapped peripheral registers.</p>
+
+<p><img src="/assets/images/2015/debug-view-peripheral-registers.png" alt="The peripheral registers view" /></p>
+
+<h2 id="device-and-board-documentation-files">Device and board documentation files</h2>
+
+<p>The CMSIS packs also provide lots of documentation files, like device data sheets, user manuals, references manuals, and also board related files, including schematics and other manuals.</p>
+
+<p>The list of documentation files is shown in a separate view, located on the right of the <strong>Outline</strong> view. In case the <strong>Documents</strong> view is not visible, a <strong>Reset</strong> is needed for the <strong>C/C++</strong> perspective (right click the perspective button and select Reset).</p>
+
+<p>To open the individual documents, double click their names and specific viewers will open, generally outside Eclipse.</p>
+
+<p><img src="/assets/images/2015/view-documents.png" alt="The documentation view" /></p>
+
+
+
+        
+
+
+    <div class="tags">
+        
+    </div>
+
+    
+
+    <hr/>
+    If you have comments on the content of the page that you consider useful
+    for other readers, please enter them here.
+    For question and general support, please use the
+    <a href="https://www.tapatalk.com/groups/xpack/">Project Forums</a>.
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = '';  // Your page's canonical URL variable
+            this.page.identifier = '/plugins/features/'; // Your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://embed-cdt.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2020 Liviu Ionescu. All rights reserved. <br />
+<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Sep 7, 2020 <br />
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-16767008-16','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

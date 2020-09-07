@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Install Java 11, xpm, toolchains and debugging tools.">
+<meta name="keywords" content=" npmxpackinstalljavajdkxpm">
+<title>How to install the Eclipse prerequisites | Eclipse Embedded CDT</title>
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202008050934">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/customstyles.css?202008050934">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/boxshadowproperties.css?202008050934">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/theme-blue.css?202008050934">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/toc.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="https://eclipse-embed-cdt.github.io/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks" style="">
+        <div style="display: inline-block; float: left; margin-top: 8px; margin-left: auto; margin-right: 10px;"><img src="/images/company_logo.png" alt="logo" width="32px" height="32px"/></div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="/">&nbsp;<span class="projectTitle"> Eclipse Embedded CDT</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li class="active"><a href="/news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://projects.eclipse.org/projects/iot.embed-cdt/" target="_blank" rel="noopener">Eclipse Project</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://marketplace.eclipse.org/content/eclipse-embedded-cdt/" target="_blank" rel="noopener">Eclipse Marketplace</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">GitHub<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://github.com/eclipse-embed-cdt/" target="_blank" rel="noopener">Eclipse Embedded CDT</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpack/" target="_blank" rel="noopener">xPack Core Tools</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpack-dev-tools/" target="_blank" rel="noopener">3rd Party xPack Tools</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpacks/" target="_blank" rel="noopener">3rd Party xPacks</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forums<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://gitter.im/xpack/" target="_blank" rel="noopener">The Project Chat Room</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="How to install the Eclipse prerequisites">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3 sticky" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Getting Started" href="#">Getting Started</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Features" href="/plugins/features/">Features</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="Prerequisites" href="/plugins/prerequisites/">Prerequisites</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install a New Eclipse" href="/plugins/install/">Install a New Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Update an Existing Eclipse" href="/plugins/update/">Update an Existing Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install Optional Features" href="/plugins/install-new-software/">Install Optional Features</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Alternate Install Methods" href="/plugins/install-alternate/">Alternate Install Methods</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Workspace Preferences" href="/eclipse/workspace/preferences/">Workspace Preferences</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="CMSIS Packs" href="/plugins/packs-manager/">CMSIS Packs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SEGGER J-Link" href="/debug/jlink/install/">SEGGER J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Troubleshoot" href="/plugins/troubleshoot/">Troubleshoot</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="About" href="/about/">About</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Debug" href="#">Debug</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/debug/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install" href="/debug/install/">Install</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="J-Link" href="/debug/jlink/">J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD" href="/debug/openocd/">OpenOCD</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="QEMU Arm" href="/debug/qemu/">QEMU Arm</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Assign CMSIS Device" href="/eclipse/project/assign-device/">Assign CMSIS Device</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Peripheral Registers" href="/debug/peripheral-registers/">Peripheral Registers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Blinky Arm Tutorial" href="/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="How It Works" href="#">How It Works</a>
+      <ul>
+          
+          
+          
+          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The CDT Indexer" href="/eclipse/cdt/indexer/">The CDT Indexer</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The Hardware Debug Plug-ins" href="/eclipse/cdt/hardware-debug/">The Hardware Debug Plug-ins</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Templates" href="#">Templates</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/templates/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="STM32Fxx Templates" href="/templates/stm32f/">STM32Fxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="KLxx Templates" href="/templates/klxx/">KLxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Generic Cortex-M Template" href="/templates/cortexm/">Generic Cortex-M Template</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="News" href="#">News</a>
+      <ul>
+          
+          
+          
+          <li><a title="Latest News" href="/news/">Latest News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Archive" href="/news/archive/">Archive</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags" href="/tags/">Tags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Articles" href="/articles/">Articles</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Support" href="#">Support</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/support/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="The Project Forums" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Contributor Info" href="#">Contributor Info</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/develop/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Links" href="/develop/links/">Links</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Maintainer Info" href="#">Maintainer Info</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/maintain/">Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="License" href="#">License</a>
+      <ul>
+          
+          
+          
+          <li><a class="extern" title="Eclipse Public License 2.0" href="https://www.eclipse.org/legal/epl-2.0/" target="_blank" rel="noopener">Eclipse Public License 2.0</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Home" href="#">Home</a>
+      <ul>
+          
+          
+          
+          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="The xPack Project" href="https://xpack.github.io" target="_blank" rel="noopener">The xPack Project</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="GNU MCU Eclipse (deprecated)" href="https://gnu-mcu-eclipse.github.io" target="_blank" rel="noopener">GNU MCU Eclipse (deprecated)</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">How to install the Eclipse prerequisites</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Install Java 11, xpm, toolchains and debugging tools.
+</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+   <h2 id="overview">Overview</h2>
+
+<h3 id="java">Java</h3>
+
+<p>The main prerequisite to run the Eclipse Embedded CDT is Java.
+Generally Java is not available by default on most platforms, and requires
+a separate installation.</p>
+
+<h3 id="other-tools">Other tools</h3>
+
+<p>Here is a list of other tools/packages that need to be installed <strong>before</strong>
+starting Eclipse.</p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If you already started Eclipse, close it,
+install these tools, and reopen Eclipse.</div>
+
+<ul>
+  <li><strong>node/npmxpm</strong> - although not mandatory, but highly recommended, the
+second prerequisite is <strong>xpm</strong> (the xPack Package Manager), which is
+a <strong>Node.js</strong> portable application;</li>
+  <li><strong>Windows Build Tools</strong> - to build projects, on Windows it is necessary
+to install <code class="highlighter-rouge">make</code>, available from the xPack Windows Build Tools;</li>
+  <li><strong>Arm toolchain</strong> - to build Arm projects, an Arm toolchain like
+the xPack GNU Arm Embedded GCC is required;</li>
+  <li><strong>RISC-V toolchain</strong> - similarly, for RISC-V projects, a RISC-V toolchain
+like the xPack GNU RISC-V Embedded GCC is required;</li>
+  <li><strong>SEGGER J-Link</strong> - to debug projects, a JTAG probe is necessary together
+with the software to access it, for example the SEGGER J-Link software;</li>
+  <li><strong>OpenOCD</strong> - for some boards, xPack OpenOCD might also be useful;</li>
+  <li><strong>QEMU Arm</strong> - to run debug sessions without actual hardware, the
+xPack QEMU Arm emulator is necessary (the blinky tutorial mandates it).</li>
+</ul>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Many of the additional tools can be
+installed as xPacks, which makes <strong>xpm</strong> a very convenient tool.</div>
+
+<h2 id="install-java">Install Java</h2>
+
+<p>The following section covers the common Windows/macOS/Linux platforms;
+for a wider range of platforms, see the <strong>Alternate solutions</strong> below.</p>
+
+<ul id="profileTabs_1" class="nav nav-tabs">
+    <li class="active"><a href="#windows_1" data-toggle="tab">Windows</a></li>
+    <li><a href="#macos_1" data-toggle="tab">macOS</a></li>
+    <li><a href="#linux_1" data-toggle="tab">GNU/Linux</a></li>
+</ul>
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane active" id="windows_1">
+		
+<p>Current Windows distributions do not include Java.</p>
+
+<p>The recommended package is the latest version from the official
+<a href="https://openjdk.java.net">Oracle <strong>OpenJDK</strong> page</a>.</p>
+
+<p>Follow the <strong>Download</strong> link in the Oracle page, which currently points to
+<a href="https://jdk.java.net/14">jdk.java.net/14</a>.</p>
+
+<p>In the <strong>Builds</strong> section, download the <strong>Windows/x64</strong> .zip file.</p>
+
+<p>Create a new folder</p>
+
+<pre><code class="language-plain">mkdir %APPDATA%\Oracle
+</code></pre>
+
+<p>And extract the archive content into <code class="highlighter-rouge">...\AppData\Roaming\Oracle\jdk-14.0.1</code>.</p>
+
+<p>To set the path, in a cmd.exe terminal, issue the following:</p>
+
+<pre><code class="language-plain">set Path=%APPDATA%\Oracle\jdk-14.0.1\bin;%Path%
+setx Path "%APPDATA%\Oracle\jdk-14.0.1\bin;%Path%"
+</code></pre>
+
+<p>Check version:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>It is possible to install multiple versions on the same system, and chose
+which one to use by controlling the Path.</p>
+
+
+	</div>
+	<div role="tabpanel" class="tab-pane" id="macos_1">
+		
+<p>The current macOS releases no longer pack Java.</p>
+
+<p>The recommended package is the latest version from the official
+<a href="https://openjdk.java.net">Oracle <strong>OpenJDK</strong> page</a>.</p>
+
+<p>Follow the <strong>Download</strong> link in the Oracle page, which currently points to
+<a href="https://jdk.java.net/14">jdk.java.net/14</a>.</p>
+
+<p>In the <strong>Builds</strong> section, download the <strong>macOS/x64</strong> .tar.gz file.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/Downloads
+xattr <span class="nt">-d</span> com.apple.quarantine openjdk-14.<span class="k">*</span>_osx-x64_bin.tar.gz
+<span class="nb">tar </span>xf openjdk-14.<span class="k">*</span>_osx-x64_bin.tar.gz
+<span class="nb">sudo </span>mv jdk-14.<span class="k">*</span>.jdk/ /Library/Java/JavaVirtualMachines/
+</code></pre></div></div>
+
+<p>Check version:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>On recent macOS systems, this might fail or trigger a security message.
+To overcome this, go to System Preferences → Security &amp; Privacy → Allow.</p>
+
+<p>On macOS 10.15 the system automatically identifies the latest version
+installed in <code class="highlighter-rouge">/Library/Java/JavaVirtualMachines/</code> and somehow
+links <code class="highlighter-rouge">/usr/bin/java</code> to it.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">% which java
+/usr/bin/java
+% ls -l /usr/bin/java
+</span><span class="gp">lrwxr-xr-x  1 root  wheel  74 Jan  2  2020 /usr/bin/java -&gt;</span> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java
+</code></pre></div></div>
+
+<p>How exactly it gets from here to the actual location is a bit of Apple magic.</p>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Installing the latest Java may
+not be possble on older systems, for example Java 14 fails to
+start on macOS 10.10.</div>
+
+<p>Since it is possible to install multiple version on the same system,
+if you want to override this mechanism and use a different version, try
+to configure the user path via <code class="highlighter-rouge">launchctl</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>launchctl config user path /Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+<span class="nb">sudo </span>reboot
+</code></pre></div></div>
+
+<p>As shown before, for this configuration to become effective, it is
+necessary to reboot.</p>
+
+<p>To check if the new path was configured properly:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>launchctl getenv PATH
+</code></pre></div></div>
+
+<p>Please note that the above command configures only the path for the GUI
+applications. For shell usage, it is necessary to also set the PATH
+environment variable in the shell startup files (like <code class="highlighter-rouge">.zprofile</code>):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/bin/:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
+</code></pre></div></div>
+
+
+	</div>
+	<div role="tabpanel" class="tab-pane" id="linux_1">
+		
+<p>On most modern Linux distributions, OpenJDK is available as a package.</p>
+
+<p>To check if it is already installed, ask the version:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java -version
+</code></pre></div></div>
+
+<p>If it is not installed, or it is not at least Java 11,
+install it via the package manager.</p>
+
+<p>For example on Ubuntu:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt install <span class="nt">--yes</span> openjdk-14-jdk
+</code></pre></div></div>
+
+<p>Or on CentOS:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nt">-y</span> install java-14-openjdk
+</code></pre></div></div>
+
+<p>Check your system for the available package names and versions.</p>
+
+<p>However, if you cannot find at least JDK 11, install the Oracle OpenJDK.</p>
+
+<p>The recommended package is the latest version from the official
+<a href="https://openjdk.java.net">Oracle <strong>OpenJDK</strong> page</a>.</p>
+
+<p>Follow the <strong>Download</strong> link in the Oracle page, which currently points to
+<a href="https://jdk.java.net/14">jdk.java.net/14</a>.</p>
+
+<p>In the <strong>Builds</strong> section, download the <strong>Linux/x64</strong> .tar.gz file.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/Downloads
+<span class="nb">tar </span>xf openjdk-14.0.1_linux-x64_bin.tar.gz
+mkdir <span class="nt">-p</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt
+<span class="nb">sudo </span>mv jdk-14.0.1/ <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt/
+</code></pre></div></div>
+
+<p>Then add the location to the user PATH:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt/jdk-14.0.1/bin/:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
+</code></pre></div></div>
+
+<p>Check version:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>If your Windows Manager allows to start Eclipse with clicks in the file
+manager without using a shell, you might need to set the GUI path in a way
+specific to the window manager.</p>
+
+<p>On some distributions (like Ubuntu) this can be achieved via <code class="highlighter-rouge">~/.xsessionrc</code>,
+sourced from one of the files in <code class="highlighter-rouge">/etc/X11/Xsession.d/</code>.</p>
+
+<p>It is possible to install multiple versions on the same system, and chose
+which one to use by controlling the PATH.</p>
+
+
+	</div>
+</div>
+
+<h2 id="alternate-java-distributions">Alternate Java distributions</h2>
+
+<p>For those who prefer alternate solutions, the second recommendation
+goes to <a href="https://adoptopenjdk.net/">AdoptOpenJDK</a>
+which provides prebuilt OpenJDK binaries for an even wider
+range of platforms.</p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Since recent Eclipses are all 64-bit, be sure
+you install a 64-bit Java.</div>
+
+<h2 id="install-nodenpmxpm">Install node/npm/xpm</h2>
+
+<p>The next step is to install the xPack tools.</p>
+
+<p>For full details, please follow the steps in the separate install pages:</p>
+
+<ul>
+  <li><a href="https://xpack.github.io/install/">node/npm</a></li>
+  <li><a href="https://xpack.github.io/xpm/install/">xpm</a></li>
+</ul>
+
+<p>For convenience for those who already know what this means, here is a brief.</p>
+
+<p>For macOS and GNU/Linux, use <strong>nvm</strong> (for Windows use the .msi, as explained in
+the <a href="https://xpack.github.io/install/">node</a> install page):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-o-</span> https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+<span class="nb">exit</span>
+</code></pre></div></div>
+
+<p>In a new terminal, to benefit from the environment variables
+added by the script:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm install <span class="nt">--lts</span> node
+nvm use node
+node <span class="nt">--version</span>
+nvm install-latest-npm
+npm <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>Install <strong>xpm</strong>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install <span class="nt">--global</span> xpm@latest
+</code></pre></div></div>
+
+<p>On Windows, install <strong>make</strong> and the rest of the build tools:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm install <span class="nt">--global</span> @xpack-dev-tools/windows-build-tools@latest
+</code></pre></div></div>
+
+<p>Install the toolchain and the other tools; don’t skip qemu, since it is used
+by the blinky tutorial; openocd may also be useful to run debug sessions;
+the riscv toolchain is necessary only for RISC-V projects.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm install <span class="nt">--global</span> @xpack-dev-tools/arm-none-eabi-gcc@latest
+xpm install <span class="nt">--global</span> @xpack-dev-tools/qemu-arm@latest
+xpm install <span class="nt">--global</span> @xpack-dev-tools/openocd@latest
+xpm install <span class="nt">--global</span> @xpack-dev-tools/riscv-none-embed-gcc@latest
+</code></pre></div></div>
+
+<p>All xPacks are installed in a central folder in the user home; check
+the xpm output for the actual location.</p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Since xPacks are installed in <em>.dot</em> folders,
+be sure to configure the file manager to show hidden files.</div>
+
+<h2 id="miscellaneous">Miscellaneous</h2>
+
+<h3 id="windows-build-tools">Windows Build Tools</h3>
+
+<p>Briefly mentioned before as a supplementary step after installing xpm,
+running builds on Windows requires tools that Microsoft does not include
+in the base distribution and need to be installed separately.</p>
+
+<p>For convenience, these tools were packed as the
+<a href="https://xpack.github.io/windows-build-tools/">xPack Windows Build Tools</a>
+and can be easily installed via <strong>xpm</strong>.</p>
+
+<h3 id="discontinued-32-bit-support">Discontinued 32-bit support</h3>
+
+<p>All recent Eclipses are 64-bit and require 64-bit platforms; using older
+32-bit systems is still possible with older Eclipse versions, but is
+discouraged.</p>
+
+<h3 id="eclipse-neon-and-later">Eclipse Neon and later</h3>
+
+<p>The Embedded CDT plug-ins are based on the API defined in CDT 9.2.1, which
+was published with <a href="https://www.eclipse.org/neon/">Eclipse 4.6 Neon</a>, released
+in 2016.</p>
+
+<p>If, for any reason, you need to use an older Eclipse (like, for example,
+for running on a 32-bit system), be sure it includes at least CDT 9.2.1.</p>
+
+
+        
+
+
+    <div class="tags">
+        
+    </div>
+
+    
+
+    <hr/>
+    If you have comments on the content of the page that you consider useful
+    for other readers, please enter them here.
+    For question and general support, please use the
+    <a href="https://www.tapatalk.com/groups/xpack/">Project Forums</a>.
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = '';  // Your page's canonical URL variable
+            this.page.identifier = '/plugins/prerequisites/'; // Your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://embed-cdt.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2020 Liviu Ionescu. All rights reserved. <br />
+<span>Page last updated:</span> Aug 29, 2020<br/> Site last generated: Sep 7, 2020 <br />
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-16767008-16','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

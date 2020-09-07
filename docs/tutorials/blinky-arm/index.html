@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Tutorial: Create a Blinky Arm test project | Eclipse Embedded CDT</title>
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202008050934">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/customstyles.css?202008050934">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/boxshadowproperties.css?202008050934">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/theme-blue.css?202008050934">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/toc.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="https://eclipse-embed-cdt.github.io/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks" style="">
+        <div style="display: inline-block; float: left; margin-top: 8px; margin-left: auto; margin-right: 10px;"><img src="/images/company_logo.png" alt="logo" width="32px" height="32px"/></div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="/">&nbsp;<span class="projectTitle"> Eclipse Embedded CDT</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li class="active"><a href="/news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://projects.eclipse.org/projects/iot.embed-cdt/" target="_blank" rel="noopener">Eclipse Project</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://marketplace.eclipse.org/content/eclipse-embedded-cdt/" target="_blank" rel="noopener">Eclipse Marketplace</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">GitHub<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://github.com/eclipse-embed-cdt/" target="_blank" rel="noopener">Eclipse Embedded CDT</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpack/" target="_blank" rel="noopener">xPack Core Tools</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpack-dev-tools/" target="_blank" rel="noopener">3rd Party xPack Tools</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpacks/" target="_blank" rel="noopener">3rd Party xPacks</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forums<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://gitter.im/xpack/" target="_blank" rel="noopener">The Project Chat Room</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Tutorial: Create a Blinky Arm test project">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3 sticky" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Getting Started" href="#">Getting Started</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Features" href="/plugins/features/">Features</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Prerequisites" href="/plugins/prerequisites/">Prerequisites</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install a New Eclipse" href="/plugins/install/">Install a New Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Update an Existing Eclipse" href="/plugins/update/">Update an Existing Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install Optional Features" href="/plugins/install-new-software/">Install Optional Features</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Alternate Install Methods" href="/plugins/install-alternate/">Alternate Install Methods</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Workspace Preferences" href="/eclipse/workspace/preferences/">Workspace Preferences</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="CMSIS Packs" href="/plugins/packs-manager/">CMSIS Packs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SEGGER J-Link" href="/debug/jlink/install/">SEGGER J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Troubleshoot" href="/plugins/troubleshoot/">Troubleshoot</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="About" href="/about/">About</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Debug" href="#">Debug</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/debug/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install" href="/debug/install/">Install</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="J-Link" href="/debug/jlink/">J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD" href="/debug/openocd/">OpenOCD</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="QEMU Arm" href="/debug/qemu/">QEMU Arm</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Assign CMSIS Device" href="/eclipse/project/assign-device/">Assign CMSIS Device</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Peripheral Registers" href="/debug/peripheral-registers/">Peripheral Registers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li class="active"><a title="Blinky Arm Tutorial" href="/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="How It Works" href="#">How It Works</a>
+      <ul>
+          
+          
+          
+          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The CDT Indexer" href="/eclipse/cdt/indexer/">The CDT Indexer</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The Hardware Debug Plug-ins" href="/eclipse/cdt/hardware-debug/">The Hardware Debug Plug-ins</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Templates" href="#">Templates</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/templates/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="STM32Fxx Templates" href="/templates/stm32f/">STM32Fxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="KLxx Templates" href="/templates/klxx/">KLxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Generic Cortex-M Template" href="/templates/cortexm/">Generic Cortex-M Template</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="News" href="#">News</a>
+      <ul>
+          
+          
+          
+          <li><a title="Latest News" href="/news/">Latest News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Archive" href="/news/archive/">Archive</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags" href="/tags/">Tags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Articles" href="/articles/">Articles</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Support" href="#">Support</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/support/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="The Project Forums" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Contributor Info" href="#">Contributor Info</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/develop/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Links" href="/develop/links/">Links</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Maintainer Info" href="#">Maintainer Info</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/maintain/">Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="License" href="#">License</a>
+      <ul>
+          
+          
+          
+          <li><a class="extern" title="Eclipse Public License 2.0" href="https://www.eclipse.org/legal/epl-2.0/" target="_blank" rel="noopener">Eclipse Public License 2.0</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Home" href="#">Home</a>
+      <ul>
+          
+          
+          
+          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="The xPack Project" href="https://xpack.github.io" target="_blank" rel="noopener">The xPack Project</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="GNU MCU Eclipse (deprecated)" href="https://gnu-mcu-eclipse.github.io" target="_blank" rel="noopener">GNU MCU Eclipse (deprecated)</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Tutorial: Create a Blinky Arm test project</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+   <p>If you are new to Arm development, it is recommended to follow this short
+tutorial and learn how to build a simple test executable program that will
+blink a LED. You do not need any physical hardware for this, the test uses
+an emulated STM32F4DISCOVERY board.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> This tutorial was created with
+<strong>GNU Arm GCC</strong> toolchains in mind,
+like the <strong>xPack GNU Arm Embedded GCC</strong>, or <strong>GNU Arm Embedded Toolchain</strong>.
+Only when using this toolchain the build is guaranteed to succeed. Using
+other toolchains might be possible, but small changes might be necessary
+in the source code and in the linker options.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Follow this steps <em>by the letter</em>, without any
+alterations, especially if you are new to Eclipse. This will save you a
+lot of time. If you mess things up, remove the workspace and start all
+over again.</div>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before creating a new project, please be sure you checked all prerequisites
+described in the
+<a href="/plugins/prerequisites/">Prerequisites</a>
+page, including the need to install the
+<a href="https://xpack.github.io/windows-build-tools/install/">build tools</a>
+if you use Windows as your development platform.</p>
+
+<p>It is also recommended to
+<a href="/eclipse/workspace/preferences/">set the workspace preferences</a>
+and to install the desired
+<a href="/plugins/packs-manager/">CMSIS packs</a>.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The multi-LED template is currently available
+only for ST32F4DISCOVERY, since it has 4 LEDs, and only
+in C++, since it allows to easily instantiate multiple BlinkLed objects.</div>
+
+<h2 id="create-a-new-c-project">Create a new C++ project</h2>
+
+<p>To create a new project, go to <em>Eclipse</em> menu, <strong>File</strong> → <strong>New</strong> (or
+the button in the upper left corner), and select the <strong>C++ Project</strong>:</p>
+
+<p><img src="/assets/images/2020/new_c_cpp_project.png" alt="Create a new C++ project" /></p>
+
+<p>In the <em>New C/C++ Project</em> window, select <strong>C/C++ Managed Build</strong> and
+click the <strong>Next &gt;</strong> button.</p>
+
+<p><img src="/assets/images/2020/new_c_cpp_managed_build_project.png" alt="Create a new C++ project" /></p>
+
+<p>In the <strong>C++ Project</strong> window:</p>
+
+<ul>
+  <li>in the <em>Project name:</em> field enter the name of the new project, for example <strong>blinky</strong></li>
+  <li>in the <em>Project type:</em> section expand the <strong>Executable</strong> type and select <strong>STM32F4xx C/C++ Project</strong></li>
+  <li>in the <em>Toolchains:</em> section select <strong>ARM Cross GCC</strong></li>
+  <li>click the <strong>Next &gt;</strong> button</li>
+</ul>
+
+<p><img src="/assets/images/2020/new_c_cpp_blinky_project.png" alt="New C++ blinky project" /></p>
+
+<p>In the <strong>Target processor settings</strong> window be sure to:</p>
+
+<ul>
+  <li>select the <strong>STM32F407xx</strong> chip family</li>
+  <li>set the <em>Flash size (kB)</em> field to 1024 kB</li>
+  <li>set the <em>Clock (Hz):</em> field to 8000000</li>
+  <li>for a more complete example, change the <em>Use system calls:</em> fields to
+<strong>Semihosting (POSIX system calls via host)</strong></li>
+  <li>click the <strong>Next &gt;</strong> button.</li>
+</ul>
+
+<p><img src="/assets/images/2015/08/BlinkyProcessorSettings1.png" alt="Blinky processor settings" /></p>
+
+<p>In the <strong>Folders</strong> page leave the suggested folders unchanged and click the
+<strong>Next &gt;</strong> button.</p>
+
+<p><img src="/assets/images/2015/08/BlinkyFolderSettings.png" alt="Blinky project folder settings" /></p>
+
+<p>In the <strong>Select Configurations</strong> page leave the suggested Debug/Release
+configurations checked and click the <strong>Next &gt;</strong> button.</p>
+
+<p><img src="/assets/images/2015/08/BlinkyConfigurations.png" alt="Blinky project configurations" /></p>
+
+<p>In the <strong>Cross GNU ARM Toolchain</strong> window:</p>
+
+<ul>
+  <li>select the <em>Toolchain name:</em> <strong>xPack GNU Arm Embedded GCC</strong> (mandatory)</li>
+  <li>if the xPack was installed via xpm, the path is already filled in; otherwise
+browse for the <code class="highlighter-rouge">bin</code> folder within the toolchain folder; don’t be afraid
+to use the absolute path, it is not stored in the project</li>
+  <li>click the <strong>Finish</strong> button</li>
+</ul>
+
+<p><img src="/assets/images/2015/08/BlinkyToolchain.png" alt="Blinky toolchain and path selection" /></p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When selecting the path, be sure you select
+the top <code class="highlighter-rouge">/bin</code> folder
+where the programs with long, prefixed names are stored, and not the inner
+<code class="highlighter-rouge">/bin</code> folder where the short name programs may be available.</div>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> DO NOT SKIP this step, it is mandatory
+to have a correct toolchain path defined in order for the build to complete
+correctly.</div>
+
+<p><img src="/assets/images/2013/10/HelloToolchainPath.png" alt="Toolchain path" /></p>
+
+<p>The result of the wizard is a simple project, with a <strong>main()</strong> function printing a greeting on the standard output.</p>
+
+<p><img src="/assets/images/2015/08/BlinkyProject.png" alt="The new C++ project" /></p>
+
+<h2 id="build-the-project">Build the project</h2>
+
+<p>To start the build:</p>
+
+<ul>
+  <li>select the new project in the <em>Project Explorer</em> section</li>
+  <li>click the <strong>hammer</strong> icon</li>
+</ul>
+
+<p><img src="/assets/images/2013/10/HammerBuild1.png" alt="Hammer Build" /></p>
+
+<p>The build process should leave in the <em>Console</em> window a listing like this:</p>
+
+<p><img src="/assets/images/2015/08/BlinkyProjectBuildConsole.png" alt="The build console" /></p>
+
+<p>The files created by the build process are left in a folder named by the name of the configuration, for example <em>Debug</em> or <em>Release</em>.</p>
+
+<p><img src="/assets/images/2015/08/BlinkyBuildResult1.png" alt="Blinky Build Result" /></p>
+
+<p>As seen above, the <em>Debug</em> folder is populated with:</p>
+
+<ul>
+  <li>all make files required for the build (<strong>makefile</strong> and various <strong>*.mk</strong> files, generated by CDT),</li>
+  <li>the object files and dependency files generated during the build (<strong>main.o</strong> and <strong>main.d</strong>)  and</li>
+  <li>the final executable file, with all debug symbols, useful for a debug session (<strong>blinky.elf</strong>)</li>
+  <li>the binary executable file, ready to be programmed in flash (<strong>blinky.hex</strong>)</li>
+  <li>a program map, with all symbols and their associated addresses (<strong>blinky.map</strong>)</li>
+</ul>
+
+<h2 id="assign-a-board-and-a-device-to-the-project">Assign a board and a device to the project</h2>
+
+<p>Although optional, it is highly recommended to assign a board and a device
+to the project, using the packs definitions. If you did not do it before,
+install the <strong>STM32F4xx_DFP</strong> package, as explained in the
+<a href="/plugins/packs-manager/">Packs Manager</a> page.</p>
+
+<p><img src="/assets/images/2020/packs_filter_stm32f4.png" alt="BlinkyInstallPack" /></p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Be sure you really install the <strong>STM32F4xx_DFP</strong>
+package. Simply updating the list of packages is not enough, you need to
+navigate the <strong>Keil</strong> group, select the STM32F4xx_DFP package and install it,
+otherwise the boad will not show in the next step.</div>
+
+<p>To assign the board and device:</p>
+
+<ul>
+  <li>select the project</li>
+  <li>either with right click or via <em>Project</em> menu, enter <em>Properties</em></li>
+  <li>expand the <em>C/C++ Build</em> entry</li>
+  <li>select the <em>Settings</em> entry</li>
+  <li>select the <em>Devices</em> tab</li>
+  <li>in the Boards section, expand <strong>STMicroelectronics</strong></li>
+  <li>expand <strong>STM32F4-Discovery</strong></li>
+  <li>select <strong>STM32F407VG</strong></li>
+  <li>click <strong>OK</strong></li>
+</ul>
+
+<p><img src="/assets/images/2015/08/BlinkyAssignDevice.png" alt="BlinkyAssignDevice" /></p>
+
+<h2 id="debug-the-test-using-qemu-arm">Debug the test using QEMU Arm</h2>
+
+<p>The most convenient way to run a debug session with this test is to use the
+<a href="/debug/qemu/">QEMU Debugging plug-in</a>; you don’t need
+any physical hardware.</p>
+
+<p>As for any debugging plug-in,</p>
+
+<ul>
+  <li>select the <strong>blinky.elf</strong> file</li>
+  <li>either with right click <em>Debug As…</em> or in the <em>Debug</em> menu,
+select <strong>Debug Configurations</strong></li>
+  <li>doble click the <em>GDB QEMU Debugging</em></li>
+  <li>select the <em>Debugger</em> tab</li>
+  <li>check if the <em>Board name:</em> and <em>Device name:</em> are correctly filled-in;
+without assigning the board and device to the project, these fields must
+be filled in manually;</li>
+  <li>enable <strong>Extra verbose</strong></li>
+</ul>
+
+<p><img src="/assets/images/2015/08/BlinkyQEMUDebuggerTab.png" alt="The QEMU Debugger tab" /></p>
+
+<p>When done, click the <strong>Debug</strong> button.</p>
+
+<p>If you did not disable the graphic windows, an animated image of the board
+is shown, with the 4 LEDs blinking.</p>
+
+<p><img src="/assets/images/2015/08/STM32F4-Discovery-LEDs.png" alt="The STM32F4-Discovery 4 LEDs" /></p>
+
+<p>The Eclipse debugger is active, with a breakpoint in <code class="highlighter-rouge">main()</code>. From here you
+can either step over several instructions, or click Resume
+(the green right pointing triangle) and watch the program run.</p>
+
+<p><img src="/assets/images/2020/blinky_debug_halt.png" alt="blinky debug" /></p>
+
+<p>The QEMU process will display some information in its console:</p>
+
+<p><img src="/assets/images/2015/08/QEMUconsole.png" alt="QEMU console with semihosting output" /></p>
+
+<h2 id="terminate">Terminate</h2>
+
+<p>The test will run for about 20 seconds, and terminate by itself.</p>
+
+<p>To cancel it earlier, click the Terminate button (the top red square).</p>
+
+<h2 id="semihosting">Semihosting</h2>
+
+<p>Contrary to usual POSIX environments, like GNU/Linux, embedded systems
+usually do not provide standard input/output devices. In the code generated
+by the template, the output of the printf() calls, including trace_printf(),
+is redirected to a special debugging channel implemented by most debuggers,
+using the semihosting protocol.</p>
+
+<h2 id="next-step">Next step</h2>
+
+<p>Once you checked the development environment to be functional, proceed with
+creating real projects using the <a href="/templates/stm32f">STM32Fx</a>
+templates, Freescale <a href="/templates/klxx/">KLxx</a> templates,
+or, if your target processor is not yet supported, using the Generic
+<a href="/templates/cortexm/">Cortex-M</a> template.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>The usual sources for build failures are:</p>
+
+<ul>
+  <li>a wrong or missing toolchain path; go to the project
+<em>Properties</em> → <em>C/C++ Build</em> → <em>Settings</em> → the <em>Toolchains</em> tab
+and define the correct path;</li>
+</ul>
+
+<p><img src="/assets/images/2015/08/GlobalToolsPath.png" alt="Global Tools Path" /></p>
+
+<p>Set the toolchain path for all projects and workspaces.</p>
+
+<ul>
+  <li>missing build tools (make &amp; rm) on Windows; install the
+<a href="https://xpack.github.io/windows-build-tools/">build tools</a>;</li>
+  <li>a wrong or missing QEMU path; go to the project
+<strong>(Window →) Preferences</strong> → <strong>MCU</strong> → <strong>Global QEMU Path</strong>
+(or <strong>Workspace QEMU Path</strong>) and define the correct path;</li>
+</ul>
+
+<p><img src="/assets/images/2018/qemu-preferences.png" alt="The QEMU path" /></p>
+
+<h2 id="support">Support</h2>
+
+<p>If you encountered any problems when installing the plug-ins, pleas refer to
+the <a href="/support/">Support</a> page and <strong>do not</strong> send private
+emails.</p>
+
+
+        
+
+
+    <div class="tags">
+        
+    </div>
+
+    
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2020 Liviu Ionescu. All rights reserved. <br />
+<span>Page last updated:</span> Aug 29, 2020<br/> Site last generated: Sep 7, 2020 <br />
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-16767008-16','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

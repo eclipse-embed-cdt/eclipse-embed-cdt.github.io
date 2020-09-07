@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>The J-Link debugging Eclipse plug-in | Eclipse Embedded CDT</title>
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202008050934">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/customstyles.css?202008050934">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/boxshadowproperties.css?202008050934">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/theme-blue.css?202008050934">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/toc.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="https://eclipse-embed-cdt.github.io/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks" style="">
+        <div style="display: inline-block; float: left; margin-top: 8px; margin-left: auto; margin-right: 10px;"><img src="/images/company_logo.png" alt="logo" width="32px" height="32px"/></div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="/">&nbsp;<span class="projectTitle"> Eclipse Embedded CDT</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li class="active"><a href="/news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://projects.eclipse.org/projects/iot.embed-cdt/" target="_blank" rel="noopener">Eclipse Project</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://marketplace.eclipse.org/content/eclipse-embedded-cdt/" target="_blank" rel="noopener">Eclipse Marketplace</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">GitHub<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://github.com/eclipse-embed-cdt/" target="_blank" rel="noopener">Eclipse Embedded CDT</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpack/" target="_blank" rel="noopener">xPack Core Tools</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpack-dev-tools/" target="_blank" rel="noopener">3rd Party xPack Tools</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpacks/" target="_blank" rel="noopener">3rd Party xPacks</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forums<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://gitter.im/xpack/" target="_blank" rel="noopener">The Project Chat Room</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="The J-Link debugging Eclipse plug-in">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3 sticky" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Getting Started" href="#">Getting Started</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Features" href="/plugins/features/">Features</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Prerequisites" href="/plugins/prerequisites/">Prerequisites</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install a New Eclipse" href="/plugins/install/">Install a New Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Update an Existing Eclipse" href="/plugins/update/">Update an Existing Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install Optional Features" href="/plugins/install-new-software/">Install Optional Features</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Alternate Install Methods" href="/plugins/install-alternate/">Alternate Install Methods</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Workspace Preferences" href="/eclipse/workspace/preferences/">Workspace Preferences</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="CMSIS Packs" href="/plugins/packs-manager/">CMSIS Packs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SEGGER J-Link" href="/debug/jlink/install/">SEGGER J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Troubleshoot" href="/plugins/troubleshoot/">Troubleshoot</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="About" href="/about/">About</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Debug" href="#">Debug</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/debug/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install" href="/debug/install/">Install</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="J-Link" href="/debug/jlink/">J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD" href="/debug/openocd/">OpenOCD</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="QEMU Arm" href="/debug/qemu/">QEMU Arm</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Assign CMSIS Device" href="/eclipse/project/assign-device/">Assign CMSIS Device</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Peripheral Registers" href="/debug/peripheral-registers/">Peripheral Registers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Blinky Arm Tutorial" href="/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="How It Works" href="#">How It Works</a>
+      <ul>
+          
+          
+          
+          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The CDT Indexer" href="/eclipse/cdt/indexer/">The CDT Indexer</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The Hardware Debug Plug-ins" href="/eclipse/cdt/hardware-debug/">The Hardware Debug Plug-ins</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Templates" href="#">Templates</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/templates/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="STM32Fxx Templates" href="/templates/stm32f/">STM32Fxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="KLxx Templates" href="/templates/klxx/">KLxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Generic Cortex-M Template" href="/templates/cortexm/">Generic Cortex-M Template</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="News" href="#">News</a>
+      <ul>
+          
+          
+          
+          <li><a title="Latest News" href="/news/">Latest News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Archive" href="/news/archive/">Archive</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags" href="/tags/">Tags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Articles" href="/articles/">Articles</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Support" href="#">Support</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/support/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="The Project Forums" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Contributor Info" href="#">Contributor Info</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/develop/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Links" href="/develop/links/">Links</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Maintainer Info" href="#">Maintainer Info</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/maintain/">Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="License" href="#">License</a>
+      <ul>
+          
+          
+          
+          <li><a class="extern" title="Eclipse Public License 2.0" href="https://www.eclipse.org/legal/epl-2.0/" target="_blank" rel="noopener">Eclipse Public License 2.0</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Home" href="#">Home</a>
+      <ul>
+          
+          
+          
+          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="The xPack Project" href="https://xpack.github.io" target="_blank" rel="noopener">The xPack Project</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="GNU MCU Eclipse (deprecated)" href="https://gnu-mcu-eclipse.github.io" target="_blank" rel="noopener">GNU MCU Eclipse (deprecated)</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">The J-Link debugging Eclipse plug-in</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+   <h2 id="quicklinks">Quicklinks</h2>
+
+<p>If you know what you are doing, you can directly skip to:</p>
+
+<ul>
+  <li><a href="/debug/jlink/install/">J-Link install</a></li>
+  <li><a href="/debug/jlink/#how-to-use-the-j-link-plug-in">J-Link plug-in usage</a></li>
+</ul>
+
+<h2 id="why-a-new-plug-in">Why a new plug-in?</h2>
+
+<p>Until now, debugging with the J-Link probe in Eclipse was done via the
+GDB Hardware Debugging plug-in. For experimental projects it was more
+or less ok, but for serious development it was quite tedious. The
+missing features, that were added to this plug-in, are:</p>
+
+<ul>
+  <li>transparent integration of the GDB server, automatically started/stopped
+for each debug session</li>
+  <li>advanced graphical user interface to configure most GDB client and GDB
+server SEGGER specific options</li>
+  <li>transparent integration of the semihosting and Serial Wire Viewer
+(SWV) window as a standard Eclipse console</li>
+  <li>a functional restart button, to reset the target and restart the
+debugging session, without having to rewrite the executable image</li>
+  <li>direct use of project toolchain definition (prefix, suffix, path)
+to simplify configuration of the GDB client</li>
+  <li>macro based J-Link folder path definition, for simplified management
+of the GDB server location when upgrades to new SEGGER versions are released</li>
+  <li>support for SWO registers configuration to match a given system clock
+frequency</li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before being able to use the J-Link probe with Eclipse Embedded CDT, you must separately install:</p>
+
+<ul>
+  <li>the J-Link debugging plug-in</li>
+  <li>the GDB debugger (client) application, as part of a GNU toolchain</li>
+  <li>the SEGGER J-Link GDB server and drivers.</li>
+</ul>
+
+<p>If you did not do it yet, please follow the instructions in the
+<a href="/debug/jlink/install/">J-Link install</a> page and
+return when completed.</p>
+
+<p>The presence of a GDB as part of a GNU toolchain is mandatory, and it
+is recommended that the version of the GDB client matches the toolchain.
+Generally only debugging .elf applications is possible, and these
+applications must be compiled to include GNU compatible debugging
+information (like dwarf).</p>
+
+<h3 id="non-gnu-toolchains">Non-GNU toolchains</h3>
+
+<p>Debugging applications generated by <strong>non-GNU toolchains</strong> (like
+the obsolete Arm CC), although not completely excluded, is <strong>not supported</strong>.</p>
+
+<h2 id="how-to-use-the-j-link-plug-in">How to use the J-Link plug-in</h2>
+
+<h3 id="define-the-j-link-folder-location">Define the J-Link folder location</h3>
+
+<p>Before starting work with the J-Link tools, it is required to define the
+path to the J-Link folder.</p>
+
+<ul>
+  <li>
+    <p>in the <em>Eclipse</em> menu, go to <strong>(Window →) Preferences</strong> → <strong>MCU</strong> →
+<strong>Global SEGGER J-Link Path</strong> (or <strong>Workspace SEGGER J-Link Path</strong>)</p>
+
+    <p><img src="/assets/images/2018/jlink-preferences.png" alt="J-Link preferences page" /></p>
+  </li>
+  <li>click the <strong>Restore Defaults</strong> button</li>
+  <li>the plug-in will suggest the default values computed when Eclipse started;
+if a new version of SEGGER was installed while Eclipse was active, restart
+Eclipse and click again the Restore Defaults button</li>
+  <li>check the <strong>Executable</strong> field; it must define the name of the command
+line J-Link GDB server executable; in most cases it should be set correctly;
+if not, edit it to match the correct name;</li>
+  <li><strong>macOS notice:</strong> somewhere around version 6.30, SEGGER changed the name of
+the executable to <code class="highlighter-rouge">JLinkGDBServerCLExe</code>, the plug-in was updated to this new
+name, but older installs will continue to default to <code class="highlighter-rouge">JLinkGDBServer</code>; if
+needed, update it to the new name;</li>
+  <li>check the <strong>Folder</strong> field; it must point to the actual folder where the
+J-Link tools were installed on your platform, for example
+<code class="highlighter-rouge">/Applications/SEGGER/JLink</code> is a link to the latest version installed
+on macOS</li>
+  <li>click the <strong>OK</strong> button</li>
+  <li><strong>Windows warning:</strong> please note that on Windows there are two GDB
+server executables, one with a UI and one to be used as a command line
+(<code class="highlighter-rouge">JLinkGDBServerCL.exe</code>); you obviously need to configure the executable
+field to point to <code class="highlighter-rouge">JLinkGDBServerCL.exe</code>.</li>
+</ul>
+
+<p>By default, the GDB server is defined as
+<code class="highlighter-rouge">${jlink_path}/${jlink_gdbserver}</code>; these two macros are automatically
+set by the above preference page; for portability reasons, it is
+recommended to keep this definition in all your debug configurations,
+and also to have a single place to update the path when a new version
+of the J-Link tools is released.</p>
+
+<h3 id="associate-a-device-to-the-project">Associate a device to the project</h3>
+
+<p>Although not absolutely mandatory, it is recommended to associate a
+device to the project, so that creating the debugger launch
+configuration will automatically fill-in the device name.</p>
+
+<p><img src="/assets/images/2013/10/Devices.png" alt="Assigning a device to the project" /></p>
+
+<p>Follow the steps in the separate page
+<a href="/eclipse/project/assign-device/">Associate a device to the project</a>
+and return to this page to continue.</p>
+
+<h3 id="create-the-debugger-launch-configuration">Create the debugger launch configuration</h3>
+
+<p>Being a standard debugger, this plug-in also uses the Eclipse standard
+method of creating debugger configurations for each application. After
+you successfully build your application, you can create a new debug
+configuration following these steps:</p>
+
+<ul>
+  <li>select the project</li>
+  <li>build it and ensure the executable file is available</li>
+  <li>expand either the Debug or the Release folder and select the
+executable you want to debug</li>
+  <li>
+    <p>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong>
+or select the down arrow at the right of the bug icon.</p>
+
+    <p><img src="/assets/images/2013/12/DebugConfigurations.png" alt="Debug Configurations" /></p>
+  </li>
+  <li>
+    <p>double click the <strong>GDB SEGGER J-Link Debugging</strong> group, or select it
+and click the top leftmost <strong>New</strong> button.</p>
+
+    <p><img src="/assets/images/2013/12/JLinkDebugConfiguration.png" alt="J-Link Debug Configurations" /></p>
+  </li>
+  <li>a multi-tab page will be displayed;</li>
+  <li>
+    <p>if you started this procedure with the project selected and the project
+was previously built, the first tab, named <strong>Main</strong>, should be already
+filled in with the project name (for example blink1) and the application
+file name and location (for example <code class="highlighter-rouge">Debug/blink1.elf</code>).</p>
+
+    <p><img src="/assets/images/2013/12/DebugMainTab.png" alt="The Main tab" /></p>
+  </li>
+  <li>
+    <p>click the second tab, named <strong>Debugger</strong>, which contains the configuration
+options required to start the GDB server and the GDB client.</p>
+
+    <p><img src="/assets/images/2013/12/JLinkDebuggerTab.png" alt="J-Link Debugger Tab" /></p>
+  </li>
+  <li>the only field that usually requires attention is the <strong>Device name</strong>,
+which must identify the processor family; if you assigned the device to
+the project, this field is automatically filled-in; usually this name is
+the family name; if you do not know it for your processor, follow the
+link at the right and copy/paste the string from the
+<a href="http://www.segger.com/supported-devices.html">SEGGER web page</a>;</li>
+  <li>for portability reasons, the GDB server and GDB client executables
+are defined using variables; it is highly recommended to keep these
+definitions;</li>
+  <li>the <code class="highlighter-rouge">${cross_prefix}</code> and the <code class="highlighter-rouge">${cross_suffix}</code> variables are defined
+automatically using the toolchain definitions; unless you are debugging
+a project-less ELF, leave them as is;</li>
+  <li>the values of the <code class="highlighter-rouge">${jlink_path}</code> and <code class="highlighter-rouge">${jlink_gdbserver}</code> can be
+manually edited in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>MCU</strong> → <strong>Global SEGGER J-Link Path</strong> configuration
+page (if you do not find this page, upgrade the plug-ins);</li>
+  <li>the <strong>Connect to running target</strong> option allow to start a debug session
+without performing any reset or program download, so that the target will
+continue to run unaffected, until explicitly halted by the debugger
+(Note: this option requires the latest plug-in and SEGGER versions);</li>
+  <li>
+    <p>click the third tab, named <strong>Startup</strong>, which contains specific J-Link
+options used to configure the debug session.</p>
+
+    <p><img src="/assets/images/2013/12/JLingStartupTab.png" alt="The J-Link Startup tab" /></p>
+  </li>
+  <li>if you built the project with retargetting support for ITM/SWO, enter
+the CPU frequency and the desired SWO sampling frequency; for this to
+work with J-Link, the SWO sampling frequency must be a submultiple of
+6MHz (6000000, 3000000, 2000000, 1500000, 1000000, etc) and the CPU
+frequency must be a multiple of the SWO sampling frequency (these
+apparently very complicated requirements end up as a pre-scaler
+value in an Arm register);</li>
+  <li>for most applications running from flash, leave the
+<strong>Pre-run reset and halt</strong> enabled, this will issue a new reset
+after programming the flash and just before starting execution.
+Due to some complicated technical details, when the debugger tries
+to reset some cores, execution cannot be halted immediately, and
+part of the initialisation routine is executed. Then the flash is
+written with the new application, it is not correct to directly
+start execution, since part of a foreign initialisation sequence,
+that is not part of the current application, was executed; to be
+sure the application starts correctly, it is necessary to issue a
+new reset. Please note that this does <strong>not</strong> apply <strong>for</strong>
+applications <strong>running from RAM</strong>, since the reset may damage the
+RAM content;</li>
+  <li>although not mandatory, it is recommended to change the location where the launcher file is stored; for this,
+    <ul>
+      <li>select the <strong>Common</strong> tab,</li>
+      <li>set the <em>Save as:</em> field to <strong>Shared file</strong></li>
+      <li>accept the current project name.</li>
+      <li>click the <strong>Apply</strong> button</li>
+    </ul>
+
+    <p><img src="/assets/images/2013/12/SharedDebug.png" alt="Shared debug configuration" /></p>
+  </li>
+  <li>click the <strong>Close</strong> button</li>
+</ul>
+
+<p>With the above settings, the debug configuration will be saved in
+the project, not in the workspace storage.</p>
+
+<p><img src="/assets/images/2013/12/ProjectSharedDebug.png" alt="Debug configuration stored in the project" /></p>
+
+<h2 id="start-a-debug-session">Start a debug session</h2>
+
+<p>Before starting a debug session, be sure that:</p>
+
+<ul>
+  <li>the J-Link debugger is connected to a high speed USB port, preferably
+directly to the computer, not via hubs which share the bandwidth with
+ther traffic intensive devices, like disks, wi-fi, video cameras, etc.</li>
+  <li>the wide JTAG flat cable is connected both to the J-Link and the
+target device</li>
+  <li>the target device is powered on</li>
+</ul>
+
+<p>With all the above steps completed properly, you can start the debug session:</p>
+
+<ul>
+  <li>in the <em>Eclipse</em> menu, go to <strong>Run</strong> → <strong>Debug Configurations…</strong></li>
+  <li>if necessary, expand the <strong>GDB SEGGER J-Link Debugging</strong> group</li>
+  <li>select the newly defined configuration</li>
+  <li>click the <strong>Debug</strong> button</li>
+</ul>
+
+<p>Alternatively, on subsequent runs, you can use the bug specific icon.
+By default this will start the previously used debug launch configuration;
+to start a different configuration, use the down arrow button:</p>
+
+<p><img src="/assets/images/2013/12/StartDebugArrow.png" alt="Down arrow debug" /></p>
+
+<p>This will open a new window where you can select the desired debug
+configuration:</p>
+
+<p><img src="/assets/images/2013/12/DebugSelection.png" alt="Select the debug configuration" /></p>
+
+<p>If everything is ok, after a few seconds required to start the server,
+to allow it to connect to the target, start the gdb client, download
+the application and start the debugging session, you should see
+something like this:</p>
+
+<p><img src="/assets/images/2013/12/DebugSessionClient.png" alt="The new debug session, with three consoles" /></p>
+
+<p>The new debug session, with three consoles.</p>
+
+<p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>,
+the execution stopped right at the beginning of the <code class="highlighter-rouge">main()</code> function,
+which in this case is a tracing <code class="highlighter-rouge">printf()</code>.</p>
+
+<h2 id="debug-operations">Debug operations</h2>
+
+<p>Once the debug session started and execution stopped in the first
+breakpoint (by default set at the beginning of the <code class="highlighter-rouge">main()</code> function),
+you can perform any debug operation you need.</p>
+
+<p>The most common operations are:</p>
+
+<ul>
+  <li>single step over one source instruction (click the <strong>Step Over</strong> button)</li>
+  <li>single step into the next function called (click the <strong>Step Into</strong> button)</li>
+  <li>single step out of the current function (click the <strong>Step Return</strong> button)</li>
+  <li>set breakpoints (click the grey side area at the left of the source lines)</li>
+  <li>run (click the <strong>Resume</strong> button)</li>
+  <li>halt a running program (click the <strong>Suspend</strong> button)</li>
+  <li>inspect processor registers (use the <strong>Registers</strong> view)</li>
+  <li>inspect memory (use the <strong>Memory</strong> view)</li>
+</ul>
+
+<p>For more details please read the
+<a href="http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.cdt.doc.user%2Ftasks%2Fcdt_t_debug_prog.htm">Running and debugging projects</a>
+section in the Eclipse documentation.</p>
+
+<h2 id="view-consoles">View consoles</h2>
+
+<p>Each debug process has a dedicated console, to display its standard
+output and standard error, or to get input for the standard input.</p>
+
+<p>To see the console of any process, select the process in the top
+left window. For example the server console might look like this:</p>
+
+<p><img src="/assets/images/2013/12/DebugSessionServer.png" alt="The GDB server console" /></p>
+
+<p>Similarly for the tracing console:</p>
+
+<p><img src="/assets/images/2013/12/DebugSessionSWO.png" alt="The tracing console" /></p>
+
+<h2 id="show-console-when-standard-outerror-change">Show console when standard out/error change</h2>
+
+<p>This is the default Eclipse behaviour when multiple consoles are active,
+to automatically switch to the latest updated. In our case, especially
+when the Semihosting/SWV console is also active, the focus will jump
+between windows, making things impossible to follow.</p>
+
+<p>This mode can be identified by the status of the buttons on the right
+side of the Debugging view.</p>
+
+<p><img src="/assets/images/2013/12/ShowConsole.png" alt="Show console when standard out/err changes" /></p>
+
+<p>To make the display stable on the desired console, disable both buttons.
+To switch between consoles, select them either in the top left Debug
+view, or using the right button, as shown above.</p>
+
+<h2 id="the-restart-button">The Restart button</h2>
+
+<p>Apparently not a big deal, but quite useful for repeated debug sessions,
+*the Restart button** can be used at any time during a debug session,
+and the result is that a reset is dispatched to the target board via
+the JTAG/SWD interface and the debug session is restarted.</p>
+
+<p><img src="/assets/images/2013/12/RestartButton.png" alt="The restart button" /></p>
+
+<p>Note: Due to some bugs in Eclipse, the implementation of his simple
+button has encountered several problems. Depending on the version you
+are using, the first time you click this button you might get a message
+box informing that the button was not enabled. Ignore this message,
+close the message box and click the button again, this time it’ll
+be effective.</p>
+
+<h2 id="using-a-remote-gdb-server">Using a remote GDB server</h2>
+
+<p>If, for any reason, you need to run the GDB server on a remote machine
+(for example the development board is connected via J-Link to a machine
+in your office, but you are in another location), you can still use the
+plug-in to run debugging session. For this to work, just disable
+<strong>Start the GDB server locally</strong> in the <strong>Debugger</strong> tab and instead
+of <em>localhost</em> for the <strong>Host name or IP address</strong>, enter the name or
+address where the GDB server can be accessed.</p>
+
+<p>Then you must manually start the JLinkGDBServer process on the
+remote machine and only then you can start the debugging session.</p>
+
+<h2 id="connect-to-running-target">Connect to running target</h2>
+
+<p>This is an advanced feature, allowing debugging of a target that
+was started outside the debugger.</p>
+
+<p>To make this possible, enable the <strong>Connect to running target</strong>
+option in the <strong>Debugger</strong> tab:</p>
+
+<p><img src="/assets/images/2015/03/ConnectToRunning.png" alt="Connect to running target" /></p>
+
+<p>With this option, the J-Link plug-in will no longer reset the
+target and will no longer download the code into the target’s
+memory, leaving the target virtually unaffected, even after
+the debug session is started.</p>
+
+<p>To start interacting with the target, it must be halted, using
+the debugger’s <strong>Halt</strong> command. After examining the target’s
+memory, setting breakpoints, etc, execution can be resumed, and
+the debug session terminated, leaving the target running.</p>
+
+<h2 id="using-multiple-j-link-probes-at-once">Using multiple J-Link probes at once</h2>
+
+<p>For advanced applications it is sometimes required to start
+multiple debug sessions, with multiple J-Link probes, on the
+same computer. SEGGER J-Link is perfectly capable of doing
+this, both over USB or TCP/IP.</p>
+
+<p>For this, multiple instances of Eclipse are required, and each
+one must be configured with different TCP/IP ports for the
+GDB/SWO/Telnet services, and also each must be configured with
+the serial number of the specific J-Link probe, printed on the
+back of the probe. For TCP/IP connected J-Link, instead of the
+serial number, use the IP address.</p>
+
+<h2 id="no-gdb-initialisation-files-loaded">No GDB initialisation files loaded</h2>
+
+<p>For having a total control of the debugging session, the debugging
+plug-ins start the GDB client process with the <code class="highlighter-rouge">--nx</code> option, which
+prevents the execution of the commands found in any initialization
+file; none of the standard files (<code class="highlighter-rouge">system.gdbinit</code>, <code class="highlighter-rouge">~/.gdbinit</code>,
+<code class="highlighter-rouge">./.gdbinit</code>) are loaded.</p>
+
+<p>To add more commands to the GDB initialisation sequence, use the
+<em>Commands:</em> field in the <em>GDB Client Setup</em> section:</p>
+
+<p><img src="/assets/images/2015/launch-jlink-debugger-client.png" alt="Launch J-Link debugger client" /></p>
+
+<p>All commands listed here are passed to the GDB client. By convention,
+commands prefixed with <code class="highlighter-rouge">mon</code> will be further passed from the GDB client
+to the GDB server, in this case the J-Link GDB server.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="missing-or-wrong-jlink_path">Missing or wrong jlink_path</h3>
+
+<p>The first failure to start a debug session is missing to enter the
+J-Link path. Without it, the launching sequence will complain
+<em>Cannot run program “/JLinkGDBServer”</em>.</p>
+
+<p><img src="/assets/images/2013/12/JLinkCannotRun.png" alt="Cannot run the JLinkGDBServer" /></p>
+
+<p>Define the <strong>jlink_path</strong> as instructed above and the session should
+start properly.</p>
+
+<h3 id="wrong-device-selection">Wrong device selection</h3>
+
+<p>If the devices that you selected in the plug-in does not match the
+device physically connected, the GDB server session fails and the
+entire debug session is cancelled. You can identify this case by
+studying the GDB server log.</p>
+
+<p><img src="/assets/images/2013/12/WrongDevice.png" alt="Wrong device" /></p>
+
+<p>Select the device properly and the session should start properly.</p>
+
+<h3 id="j-link-hangups">J-Link hangups</h3>
+
+<p>Although SEGGER took special measures to avoid J-Link firmware hangups,
+in case you suspect such a situation (the JLinkGDBServer refuses to
+connect to the USB device, or to the target), it might help to power
+cycle the J-Link, by disconnecting and reconnecting the USB cable.</p>
+
+<h3 id="cannot-start-applications-running-from-ram">Cannot start applications running from RAM</h3>
+
+<p>Please be sure you disable the <strong>Pre-run reset and halt</strong> option in
+the <strong>Startup</strong> tab, this usually does not preserve the RAM content.</p>
+
+<h3 id="error-while-launching-command-gdb-version">Error while launching command: gdb –version</h3>
+
+<p>If you kept the GDB client executable defined as
+<code class="highlighter-rouge">${cross_prefix}gdb${cross_suffix}</code>, the above error means that the
+macros could not be substituted with the correct prefix/suffix. There
+can be several reasons for this. One might be that you did not associate
+the debug launcher to a project. Check the <strong>Main</strong> tab and be sure
+the field <strong>Project:</strong> refer to the correct project. Next time when you
+create the debug configuration, be sure you follow the above suggestions
+(select .elf, <strong>Debug Configurations</strong>, double click on
+<strong>GDB SEGGER J-Link Debugging</strong>. Another reason is presented below.</p>
+
+<h3 id="using-a-different-build-plug-in-or-not-supported-compiler">Using a different build plug-in or not supported compiler</h3>
+
+<p>Another reason for not being able to start the debug session is that
+your project was not build with the Eclipse Embedded CDT managed build
+plug-in. If you are using another build plug-in, or an exotic/obsolete
+toolchain, you need to replace <code class="highlighter-rouge">${cross_prefix}gdb${cross_suffix}</code> with
+the actual name of the gdb client available in your toolchain, since the
+<code class="highlighter-rouge">${cross_*}</code> macros are available only in projects managed by the
+Eclipse Embedded CDT build plug-in.</p>
+
+<h2 id="more-info">More info</h2>
+
+<p>Although the plug-in takes care of most of the configuration options,
+and provides reasonable defaults for the usual cases, it is recommended
+to read the SEGGER manuals, available from the Doc folder in the
+installation location or directly from the
+<a href="http://www.segger.com/jlink-software.html">SEGGER J-Link page</a>.</p>
+
+
+        
+
+
+    <div class="tags">
+        
+    </div>
+
+    
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2020 Liviu Ionescu. All rights reserved. <br />
+<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Sep 7, 2020 <br />
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-16767008-16','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

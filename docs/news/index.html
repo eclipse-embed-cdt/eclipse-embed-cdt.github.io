@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" news, blog, updates, release notes, announcements">
+<title>News | Eclipse Embedded CDT</title>
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202008050934">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/customstyles.css?202008050934">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/boxshadowproperties.css?202008050934">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/theme-blue.css?202008050934">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/toc.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="https://eclipse-embed-cdt.github.io/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks" style="">
+        <div style="display: inline-block; float: left; margin-top: 8px; margin-left: auto; margin-right: 10px;"><img src="/images/company_logo.png" alt="logo" width="32px" height="32px"/></div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="/">&nbsp;<span class="projectTitle"> Eclipse Embedded CDT</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li class="active"><a href="/news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://projects.eclipse.org/projects/iot.embed-cdt/" target="_blank" rel="noopener">Eclipse Project</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://marketplace.eclipse.org/content/eclipse-embedded-cdt/" target="_blank" rel="noopener">Eclipse Marketplace</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">GitHub<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://github.com/eclipse-embed-cdt/" target="_blank" rel="noopener">Eclipse Embedded CDT</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpack/" target="_blank" rel="noopener">xPack Core Tools</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpack-dev-tools/" target="_blank" rel="noopener">3rd Party xPack Tools</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpacks/" target="_blank" rel="noopener">3rd Party xPacks</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forums<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://gitter.im/xpack/" target="_blank" rel="noopener">The Project Chat Room</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="News">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3 sticky" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Getting Started" href="#">Getting Started</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Features" href="/plugins/features/">Features</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Prerequisites" href="/plugins/prerequisites/">Prerequisites</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install a New Eclipse" href="/plugins/install/">Install a New Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Update an Existing Eclipse" href="/plugins/update/">Update an Existing Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install Optional Features" href="/plugins/install-new-software/">Install Optional Features</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Alternate Install Methods" href="/plugins/install-alternate/">Alternate Install Methods</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Workspace Preferences" href="/eclipse/workspace/preferences/">Workspace Preferences</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="CMSIS Packs" href="/plugins/packs-manager/">CMSIS Packs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SEGGER J-Link" href="/debug/jlink/install/">SEGGER J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Troubleshoot" href="/plugins/troubleshoot/">Troubleshoot</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="About" href="/about/">About</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Debug" href="#">Debug</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/debug/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install" href="/debug/install/">Install</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="J-Link" href="/debug/jlink/">J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD" href="/debug/openocd/">OpenOCD</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="QEMU Arm" href="/debug/qemu/">QEMU Arm</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Assign CMSIS Device" href="/eclipse/project/assign-device/">Assign CMSIS Device</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Peripheral Registers" href="/debug/peripheral-registers/">Peripheral Registers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Blinky Arm Tutorial" href="/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="How It Works" href="#">How It Works</a>
+      <ul>
+          
+          
+          
+          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The CDT Indexer" href="/eclipse/cdt/indexer/">The CDT Indexer</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The Hardware Debug Plug-ins" href="/eclipse/cdt/hardware-debug/">The Hardware Debug Plug-ins</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Templates" href="#">Templates</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/templates/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="STM32Fxx Templates" href="/templates/stm32f/">STM32Fxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="KLxx Templates" href="/templates/klxx/">KLxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Generic Cortex-M Template" href="/templates/cortexm/">Generic Cortex-M Template</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="News" href="#">News</a>
+      <ul>
+          
+          
+          
+          <li class="active"><a title="Latest News" href="/news/">Latest News</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Archive" href="/news/archive/">Archive</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Tags" href="/tags/">Tags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Articles" href="/articles/">Articles</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Support" href="#">Support</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/support/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="The Project Forums" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Contributor Info" href="#">Contributor Info</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/develop/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Links" href="/develop/links/">Links</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Maintainer Info" href="#">Maintainer Info</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/maintain/">Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="License" href="#">License</a>
+      <ul>
+          
+          
+          
+          <li><a class="extern" title="Eclipse Public License 2.0" href="https://www.eclipse.org/legal/epl-2.0/" target="_blank" rel="noopener">Eclipse Public License 2.0</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Home" href="#">Home</a>
+      <ul>
+          
+          
+          
+          <li><a title="Eclipse Embedded CDT" href="/">Eclipse Embedded CDT</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="The xPack Project" href="https://xpack.github.io" target="_blank" rel="noopener">The xPack Project</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="GNU MCU Eclipse (deprecated)" href="https://gnu-mcu-eclipse.github.io" target="_blank" rel="noopener">GNU MCU Eclipse (deprecated)</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">News</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+
+
+   <div class="home">
+    <div class="post-list">
+    
+        <h2><a class="post-link" href="/blog/2020/08/05/new-web-look/">The Eclipse Embedded CDT project web has a new look!</a></h2>
+        <span class="post-meta">Aug 5, 2020 /
+        
+            <a href="/tags/jekyll/">jekyll</a>, 
+        
+            <a href="/tags/update/">update</a>
+        
+        </span>
+        <p> After several re-branding iterations, the Eclipse Embedded CDT project, available from GitHub, has a new web site. GitHub Pages The site continues to use GitHub Pages, which is the GitHub solution for providing documentation sites to hosted projects Jekyll &amp; markdown GitHub Pages use Jekyll... </p>
+    
+        <h2><a class="post-link" href="/blog/2020/07/28/plugins-v5.1.1-202007271621-released/">Eclipse Embedded CDT plug-ins v5.1.1-202007271621 released</a></h2>
+        <span class="post-meta">Jul 28, 2020 /
+        
+            <a href="/tags/gnu/">gnu</a>, 
+        
+            <a href="/tags/arm/">arm</a>, 
+        
+            <a href="/tags/mcu/">mcu</a>, 
+        
+            <a href="/tags/eclipse/">eclipse</a>, 
+        
+            <a href="/tags/risc-v/">risc-v</a>
+        
+        </span>
+        <p> Version 5.1.1
+is the first release after the project migration to the Eclipse Foundation.
+
+All future releases
+will be available from the new Eclipse Foundation
+web; there will be no more releases published here.
+ </p>
+    
+        <h2><a class="post-link" href="/blog/2020/01/27/plugins-v4.7.2-202001271244-released/">GNU MCU Eclipse plug-ins v4.7.2-202001271244 released</a></h2>
+        <span class="post-meta">Jan 27, 2020 /
+        
+            <a href="/tags/gnu/">gnu</a>, 
+        
+            <a href="/tags/arm/">arm</a>, 
+        
+            <a href="/tags/mcu/">mcu</a>, 
+        
+            <a href="/tags/eclipse/">eclipse</a>, 
+        
+            <a href="/tags/risc-v/">risc-v</a>
+        
+        </span>
+        <p> Version 4.7.2-202001271244 is a maintenance release to fix the issue related to the change introduced by the update to https for the CMSIS Pack index. Binary files » Changes  97dd134b, 4a6e7df8 - [#373] in early January 2020, Arm/Keil relocated the server storing the CMSIS Packs index to... </p>
+    
+        <h2><a class="post-link" href="/blog/2019/11/06/plugins-v4.7.1-201911052135-released/">GNU MCU Eclipse plug-ins v4.7.1-201911052135 released</a></h2>
+        <span class="post-meta">Nov 6, 2019 /
+        
+            <a href="/tags/gnu/">gnu</a>, 
+        
+            <a href="/tags/arm/">arm</a>, 
+        
+            <a href="/tags/mcu/">mcu</a>, 
+        
+            <a href="/tags/eclipse/">eclipse</a>, 
+        
+            <a href="/tags/risc-v/">risc-v</a>
+        
+        </span>
+        <p> Version 4.7.1-201911052135 is a maintenance release; the main change is an enhancement in the logic to update the list of CMSIS Packs. Binary files » Changes  c2bc99ce - [#364] Given the design of the CMSIS Packs, updating the list of known packs requires inspecting all packages, which... </p>
+    
+        <h2><a class="post-link" href="/blog/2019/09/25/new-forums/">The GNU MCU Eclipse project has new forums</a></h2>
+        <span class="post-meta">Sep 25, 2019 /
+        
+            <a href="/tags/forum/">forum</a>, 
+        
+            <a href="/tags/support/">support</a>, 
+        
+            <a href="/tags/tapatalk/">tapatalk</a>
+        
+        </span>
+        <p> The GNU MCU Eclipse forum was relocated from the Element14 site to a dedicated section in the xPack forum.  Access The new URL is: https://www.tapatalk.com/groups/xpack/ The forum type is open, and anyone can contribute. Access is free, based on... </p>
+    
+        <h2><a class="post-link" href="/blog/2019/09/23/plugins-v4.6.1-201909231407-released/">GNU MCU Eclipse plug-ins v4.6.1-201909231407 released</a></h2>
+        <span class="post-meta">Sep 23, 2019 /
+        
+            <a href="/tags/gnu/">gnu</a>, 
+        
+            <a href="/tags/arm/">arm</a>, 
+        
+            <a href="/tags/mcu/">mcu</a>, 
+        
+            <a href="/tags/eclipse/">eclipse</a>, 
+        
+            <a href="/tags/risc-v/">risc-v</a>
+        
+        </span>
+        <p> Version 4.6.1-201909231407 is a new release; the main changes are the addition of support for the new xPack Dev Tools and performance fixes for the CMSIS Packs manager. Binary files » The @xpack-dev-tools scope  c424f652 - [Issue:#351] in the initial implementation, the binary tools... </p>
+    
+        <h2><a class="post-link" href="/blog/2019/01/01/plugins-v4.5.1-201901011632-released/">GNU MCU Eclipse plug-ins v4.5.1-201901011632 released</a></h2>
+        <span class="post-meta">Jan 1, 2019 /
+        
+            <a href="/tags/gnu/">gnu</a>, 
+        
+            <a href="/tags/arm/">arm</a>, 
+        
+            <a href="/tags/mcu/">mcu</a>, 
+        
+            <a href="/tags/eclipse/">eclipse</a>, 
+        
+            <a href="/tags/risc-v/">risc-v</a>
+        
+        </span>
+        <p> Version 4.5.1-201901011632 is a new release; it provides several bug fixes and enhancements. The main change is the removal of some RISC-V options from the Setting page. Binary files » New features  13ffd0d3 - [Issue:#322] The -std=c++17 option was added to the list of accepted... </p>
+    
+        <h2><a class="post-link" href="/blog/2018/08/30/plugins-v4.4.2-201809300659-released/">GNU MCU Eclipse plug-ins v4.4.2-201809300659 released</a></h2>
+        <span class="post-meta">Aug 30, 2018 /
+        
+            <a href="/tags/gnu/">gnu</a>, 
+        
+            <a href="/tags/arm/">arm</a>, 
+        
+            <a href="/tags/mcu/">mcu</a>, 
+        
+            <a href="/tags/eclipse/">eclipse</a>
+        
+        </span>
+        <p> Version 4.4.2-201809300659 is a maintenance release; it provides several bug fixes and enhancements. Binary files » New features  none  Addressed bugs  3a7f1675 - [Issue:#312] when de-selecting “Allocate console for GDB server” in the J-Link debugger options, the debug stops functioning properly; the problem... </p>
+    
+        <h2><a class="post-link" href="/blog/2018/07/21/plugins-v4.4.1-201807211108-released/">GNU MCU Eclipse plug-ins v4.4.1-201807211108 released</a></h2>
+        <span class="post-meta">Jul 21, 2018 /
+        
+            <a href="/tags/gnu/">gnu</a>, 
+        
+            <a href="/tags/arm/">arm</a>, 
+        
+            <a href="/tags/mcu/">mcu</a>, 
+        
+            <a href="/tags/eclipse/">eclipse</a>, 
+        
+            <a href="/tags/jumper/">jumper</a>
+        
+        </span>
+        <p> Version 4.4.1-201807211108 is a new release; the main addition is support for Jumper Virtual Lab; it also provides several bug fixes and enhancements. Binary files » New features  6a8d2319 - [Issue:#296] A new debug plug-in was added, supporting the Jumper Virtual Lab 8b756983 - [Issue:<a... </p>
+    
+        <h2><a class="post-link" href="/blog/2018/04/19/plugins-v4.3.3-201804191501-released/">GNU MCU Eclipse plug-ins v4.3.3-201804191501 released</a></h2>
+        <span class="post-meta">Apr 19, 2018 /
+        
+            <a href="/tags/gnu/">gnu</a>, 
+        
+            <a href="/tags/arm/">arm</a>, 
+        
+            <a href="/tags/eclipse/">eclipse</a>, 
+        
+            <a href="/tags/risc-v/">risc-v</a>, 
+        
+            <a href="/tags/mcu/">mcu</a>
+        
+        </span>
+        <p> Version 4.3.3-201804191501 is a maintenance release; the main changes are bug fixes and enhancements. Binary files » New features  [Issue:#289] The initial approach to identify the toolchain was to store the full name in .cproject, and from it to compute the numeric ID; this does... </p>
+    
+        <h2>More</h2>
+        <p>More posts are available from the <a href="/news/archive/">News Archive</a>. It is also possible to browse the
+        news by <a href="/tags/">Tags</a>.</p>
+        <h2>Notifications</h2>
+        <p>To stay up-to-date with new releases, the recommended way is to follow <a href="https://twitter.com/EmbedCDT/">@EmbedCDT</a> on Twitter.</p>
+        <p>Alternatively you can subscribe to this site RSS feed <a href="https://xpack.github.io/feed.xml">https://xpack.github.io/feed.xml</a>.</p>
+        <p><a href="https://xpack.github.io/feed.xml" class="btn btn-primary navbar-btn cursorNorm" role="button">RSS Subscribe</a></p>
+    </div>
+</div>
+
+
+        
+
+
+    <div class="tags">
+        
+    </div>
+
+    
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2020 Liviu Ionescu. All rights reserved. <br />
+<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Sep 7, 2020 <br />
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-16767008-16','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>
