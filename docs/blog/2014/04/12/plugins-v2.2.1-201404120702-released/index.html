@@ -9,8 +9,28 @@
 <title>GNU ARM Eclipse plug-ins v2.2.1-201404120702 released | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
 
+
+<link type="application/atom+xml" rel="alternate" href="https://eclipse-embed-cdt.github.io/feed.xml"/>
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>GNU ARM Eclipse plug-ins v2.2.1-201404120702 released</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="GNU ARM Eclipse plug-ins v2.2.1-201404120702 released" />
+<meta name="author" content="Liviu Ionescu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Version 2.2.1 is a major release. The main changes are: the complete overhaul of the template plug-ins, the addition of a generic Cortex-M template, the addition of the STM32F2xx template and a better integration of the Freescale PEx template with the Processor Expert 10.4 version." />
+<meta property="og:description" content="Version 2.2.1 is a major release. The main changes are: the complete overhaul of the template plug-ins, the addition of a generic Cortex-M template, the addition of the STM32F2xx template and a better integration of the Freescale PEx template with the Processor Expert 10.4 version." />
+<link rel="canonical" href="https://eclipse-embed-cdt.github.io/blog/2014/04/12/plugins-v2.2.1-201404120702-released/" />
+<meta property="og:url" content="https://eclipse-embed-cdt.github.io/blog/2014/04/12/plugins-v2.2.1-201404120702-released/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-04-12T12:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"Version 2.2.1 is a major release. The main changes are: the complete overhaul of the template plug-ins, the addition of a generic Cortex-M template, the addition of the STM32F2xx template and a better integration of the Freescale PEx template with the Processor Expert 10.4 version.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/blog/2014/04/12/plugins-v2.2.1-201404120702-released/","headline":"GNU ARM Eclipse plug-ins v2.2.1-201404120702 released","datePublished":"2014-04-12T12:00:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/blog/2014/04/12/plugins-v2.2.1-201404120702-released/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202008050934">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -59,7 +79,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://eclipse-embed-cdt.github.io/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -712,10 +732,10 @@
   <li>the STM32F4 template was updated to use the <strong>new HAL library</strong>, instead of the StdPeriph library</li>
   <li>starting with Processor Expert 10.4, the Freescale PEx template can now properly launch the new project wizard, so integration with Processor Expert is fully functional</li>
   <li>all templates now optionally use the <strong>newlib nano</strong> library</li>
-  <li>all templates now optionally use the new GCC 4.8 <code class="highlighter-rouge">-Og</code> option for debug configurations</li>
-  <li>a new trace facility, using separate functions like <code class="highlighter-rouge">trace_printf()</code>, was added to the code generated for the templates; the trace output channel can be changed with a preprocessor define</li>
+  <li>all templates now optionally use the new GCC 4.8 <code class="language-plaintext highlighter-rouge">-Og</code> option for debug configurations</li>
+  <li>a new trace facility, using separate functions like <code class="language-plaintext highlighter-rouge">trace_printf()</code>, was added to the code generated for the templates; the trace output channel can be changed with a preprocessor define</li>
   <li>[feature-requests:#39] selecting semihosting/retargetting/standalone is no longer a one time decision, but can be changed at build time using preprocessor definitions</li>
-  <li>new selection values were added for the <code class="highlighter-rouge">-mcu=</code> option
+  <li>new selection values were added for the <code class="language-plaintext highlighter-rouge">-mcu=</code> option
     <ul>
       <li>arm610</li>
       <li>cortex-r5</li>
@@ -729,47 +749,47 @@
       <li>armv7e-m</li>
     </ul>
   </li>
-  <li>[feature-requests:#37] a new option Save temporary files (<code class="highlighter-rouge">–save-temps</code>) was added to the Miscellaneous category of the compiling tools</li>
+  <li>[feature-requests:#37] a new option Save temporary files (<code class="language-plaintext highlighter-rouge">–save-temps</code>) was added to the Miscellaneous category of the compiling tools</li>
   <li>[feature-requests:#41] in the Tool Settings tab, the common Warnings category, new options were added:
     <ul>
-      <li><code class="highlighter-rouge">-Wunused</code></li>
-      <li><code class="highlighter-rouge">-Wpadded</code></li>
+      <li><code class="language-plaintext highlighter-rouge">-Wunused</code></li>
+      <li><code class="language-plaintext highlighter-rouge">-Wpadded</code></li>
     </ul>
   </li>
   <li>in the Tool Settings tab, the Warnings category of the C tool, new options were added:
     <ul>
-      <li><code class="highlighter-rouge">-Wmissing-prototypes</code></li>
-      <li><code class="highlighter-rouge">-Wstrict-prototypes</code></li>
-      <li><code class="highlighter-rouge">-Wbad-function-cast</code></li>
+      <li><code class="language-plaintext highlighter-rouge">-Wmissing-prototypes</code></li>
+      <li><code class="language-plaintext highlighter-rouge">-Wstrict-prototypes</code></li>
+      <li><code class="language-plaintext highlighter-rouge">-Wbad-function-cast</code></li>
     </ul>
   </li>
   <li>in the Tool Settings tab, the Warnings category of the C++ tool, new options were added:
     <ul>
-      <li><code class="highlighter-rouge">-Wctor-dtor-privacy</code></li>
-      <li><code class="highlighter-rouge">-Wnoexcept</code></li>
-      <li><code class="highlighter-rouge">-Wnon-virtual-dtor</code></li>
-      <li><code class="highlighter-rouge">-Wstrict-null-sentinel</code></li>
-      <li><code class="highlighter-rouge">-Wsign-promo</code></li>
+      <li><code class="language-plaintext highlighter-rouge">-Wctor-dtor-privacy</code></li>
+      <li><code class="language-plaintext highlighter-rouge">-Wnoexcept</code></li>
+      <li><code class="language-plaintext highlighter-rouge">-Wnon-virtual-dtor</code></li>
+      <li><code class="language-plaintext highlighter-rouge">-Wstrict-null-sentinel</code></li>
+      <li><code class="language-plaintext highlighter-rouge">-Wsign-promo</code></li>
     </ul>
   </li>
   <li>in the Tool Settings tab, the common Optimization category, new options were added:
     <ul>
-      <li><code class="highlighter-rouge">-ffreestanding</code></li>
+      <li><code class="language-plaintext highlighter-rouge">-ffreestanding</code></li>
     </ul>
   </li>
   <li>in the Tool Settings tab, the Optimization category of the C++ tool, new options were added:
     <ul>
-      <li><code class="highlighter-rouge">-fabi-version=</code></li>
-      <li><code class="highlighter-rouge">-fno-threadsafe-statics</code></li>
+      <li><code class="language-plaintext highlighter-rouge">-fabi-version=</code></li>
+      <li><code class="language-plaintext highlighter-rouge">-fno-threadsafe-statics</code></li>
     </ul>
   </li>
-  <li>the templates can now optionally generate freestanding programs, using the <code class="highlighter-rouge">-ffreestanding</code> option.</li>
+  <li>the templates can now optionally generate freestanding programs, using the <code class="language-plaintext highlighter-rouge">-ffreestanding</code> option.</li>
 </ul>
 
 <p>Major CDT bugs fixed:</p>
 
 <ul>
-  <li>[support-requests:#44] due to a long standing CDT bug affecting the creation of make files, the dependencies were not properly checked; the culprit was the <code class="highlighter-rouge">-MF"$(@:%.o=%.d)"</code>, instead of <code class="highlighter-rouge">-MT"$@"</code>, which generated wrong targets in the make files; until a proper patch will be applied to CDT, the workaround in the plug-in was to locally perform the replacement.</li>
+  <li>[support-requests:#44] due to a long standing CDT bug affecting the creation of make files, the dependencies were not properly checked; the culprit was the <code class="language-plaintext highlighter-rouge">-MF"$(@:%.o=%.d)"</code>, instead of <code class="language-plaintext highlighter-rouge">-MT"$@"</code>, which generated wrong targets in the make files; until a proper patch will be applied to CDT, the workaround in the plug-in was to locally perform the replacement.</li>
 </ul>
 
 <p>Bugs fixed:</p>
@@ -779,11 +799,11 @@
   <li>after project rename there were many exceptions due to name change; fixed</li>
   <li>[bugs:#96] changing the toolchain of another build configuration then the active one was not possible in the Toolchains tab; fixed</li>
   <li>[bugs:#103, bugs:#97] J-Link &amp; OpenOCD: changing some of the fields in the interface did not enable the Apply button; fixed</li>
-  <li>[bugs:#94] in the Tool Settings tab, the optimisation option ‘Do not use _cxa_atexit() (<code class="highlighter-rouge">-fno-use-cxa-atexit</code>)’ was moved from the common category to the C++ compiler tool, since it applies only to C++</li>
+  <li>[bugs:#94] in the Tool Settings tab, the optimisation option ‘Do not use _cxa_atexit() (<code class="language-plaintext highlighter-rouge">-fno-use-cxa-atexit</code>)’ was moved from the common category to the C++ compiler tool, since it applies only to C++</li>
   <li>in the Tool Settings tab, the warning option <em>‘Warn if wrong cast (-Wbad-function-cast)’</em> was moved from the common category to the C compiler tool, since it applies only to C</li>
   <li>J-Link: in certain conditions, the remote address &amp; port were not properly set, and the debugging session did not start; fixed</li>
   <li>J-Link: in certain erroneous conditions, the J-Link plug-in triggered an exception, leaving the process handling the semihosting and SWO console in a wrong state; fixed</li>
-  <li>the inlines used in the Trace.h header were marked with <code class="highlighter-rouge">((always_inline))</code>, to ensure no code is generated on all optimisation levels</li>
+  <li>the inlines used in the Trace.h header were marked with <code class="language-plaintext highlighter-rouge">((always_inline))</code>, to ensure no code is generated on all optimisation levels</li>
   <li>[bugs:#99] J-Link &amp; OpenOCD: macro substitution added to most fields available in the interface</li>
   <li>[bugs:#100] J-Link: to avoid confusion related to multiple JTAG/SWD speeds in the interface, the labelling was changed to ‘Initial speed’ and ‘JTAG/SWD Speed’</li>
   <li>[bugs:#95] timer setting in templates was not accurate; fixed</li>
@@ -799,7 +819,7 @@
   <li>templates common code is now directly copied from the sources of the <strong>µOS++</strong>, to keep them consistent between processor families and with future code</li>
   <li>J-Link &amp; OpenOCD: a notice was added near the second reset field, to warn on not using it when debugging from RAM</li>
   <li>J-Link &amp; OpenOCD: when launching external processes (like JLinkGDB Server, GDB client, OpenOCD), the current folder is set to the project folder, to easily refer to local configuration files</li>
-  <li>the language standard defaults for new projects were changed to ISO C11 (<code class="highlighter-rouge">-std=gnu11</code>) and C++11 (<code class="highlighter-rouge">-std=gnu++11</code>)</li>
+  <li>the language standard defaults for new projects were changed to ISO C11 (<code class="language-plaintext highlighter-rouge">-std=gnu11</code>) and C++11 (<code class="language-plaintext highlighter-rouge">-std=gnu++11</code>)</li>
   <li>J-Link: as suggested by SEGGER, the default speed used for the initial server connection was increased to 1000 kHz</li>
   <li>guard checks were added on debug in the startup code, to check if the proper BSS and DATA initialisations were performed</li>
   <li>[feature-requests:#40] on Cortex-M3/M4 the trace semihosting output code can check if not running under debugger and skip the semihosting call, so it is possible to execute the applications built for Debug without the debugger connected (unfortunately for Cortex-M0/M0+ the debug registers are not available to the application, so this test cannot be done)</li>
@@ -852,7 +872,7 @@
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Aug 28, 2020<br/> Site last generated: Sep 8, 2020 <br />
+<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 9, 2020 <br />
                 </div>
             </div>
 </footer>

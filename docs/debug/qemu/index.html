@@ -9,8 +9,28 @@
 <title>The QEMU debugging Eclipse plug-in | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
 
+
+<link type="application/atom+xml" rel="alternate" href="https://eclipse-embed-cdt.github.io/feed.xml"/>
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>The QEMU debugging Eclipse plug-in</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="The QEMU debugging Eclipse plug-in" />
+<meta name="author" content="Liviu Ionescu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
+<meta property="og:description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
+<link rel="canonical" href="https://eclipse-embed-cdt.github.io/debug/qemu/" />
+<meta property="og:url" content="https://eclipse-embed-cdt.github.io/debug/qemu/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-09-11T19:15:00+00:00" />
+<script type="application/ld+json">
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/debug/qemu/","headline":"The QEMU debugging Eclipse plug-in","datePublished":"2015-09-11T19:15:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/debug/qemu/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202008050934">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -59,7 +79,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://eclipse-embed-cdt.github.io/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -743,12 +763,12 @@ executable; in most cases it should be already set correctly; if not,
 edit it to match the correct name;</li>
   <li>check the <em>Folder:</em> field; it must point to the actual folder where
 the xPack QEMU Arm was installed on your system, for example
-<code class="highlighter-rouge">/Users/ilg/opt/xPacks/qemu-arm/&lt;version&gt;/bin</code> on macOS</li>
+<code class="language-plaintext highlighter-rouge">/Users/ilg/opt/xPacks/qemu-arm/&lt;version&gt;/bin</code> on macOS</li>
   <li>click the <strong>OK</strong> button</li>
 </ul>
 
 <p>By default, the GDB server is defined as
-<code class="highlighter-rouge">${qemu_path}/${qemu_executable}</code>; these two macros are
+<code class="language-plaintext highlighter-rouge">${qemu_path}/${qemu_executable}</code>; these two macros are
 automatically set by the above preference page; for portability
 reasons, it is recommended to keep this definition in all your
 debug configurations, and also to have a single place to update
@@ -795,7 +815,7 @@ click the top leftmost <strong>New</strong> button.</p>
     <p>if you started this procedure with the project selected and
 the project was previously built, the first tab, named <strong>Main</strong>,
 should be already filled in with the project name (for example hello)
-and the application file name and location (for example <code class="highlighter-rouge">Debug/hello.elf</code>).</p>
+and the application file name and location (for example <code class="language-plaintext highlighter-rouge">Debug/hello.elf</code>).</p>
 
     <p><img src="/assets/images/2015/04/HelloMainTab.png" alt="The Main tab" /></p>
   </li>
@@ -857,7 +877,7 @@ in the project, not in the workspace storage.</p>
   <li>select the <strong>Debugger</strong> tab</li>
   <li>in the <em>Board name:</em> field, enter <strong>STM32-H103</strong> (a popular Olimex STM32F103 board)</li>
   <li>
-    <p>in the Command line: field, after hello, add <code class="highlighter-rouge">3 2 1</code>, as an example</p>
+    <p>in the Command line: field, after hello, add <code class="language-plaintext highlighter-rouge">3 2 1</code>, as an example</p>
 
     <p><img src="/assets/images/2015/04/HelloDebuggerTabH103.png" alt="The Debugger tab with the board name filled-in" /></p>
   </li>
@@ -874,11 +894,11 @@ in the project, not in the workspace storage.</p>
 
 <p><img src="/assets/images/2015/04/BreakpointInMain.png" alt="Breakpoint in main()" /></p>
 
-<p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <code class="highlighter-rouge">main()</code> function.</p>
+<p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>, the execution stopped right at the beginning of the <code class="language-plaintext highlighter-rouge">main()</code> function.</p>
 
 <h2 id="debug-operations">Debug operations</h2>
 
-<p>Once the debug session started and execution stopped in the first breakpoint (by default set at the beginning of the <code class="highlighter-rouge">main()</code> function), you can perform any debug operation you need.</p>
+<p>Once the debug session started and execution stopped in the first breakpoint (by default set at the beginning of the <code class="language-plaintext highlighter-rouge">main()</code> function), you can perform any debug operation you need.</p>
 
 <p>The most common operations are:</p>
 
@@ -908,7 +928,7 @@ top left window. For example the QEMU console will initially look like this:</
 
 <p>select again the main thread in the debugged application (in the
 upper left window) and click several times the Step Over button,
-until you reach the <code class="highlighter-rouge">timer_start()</code> function.</p>
+until you reach the <code class="language-plaintext highlighter-rouge">timer_start()</code> function.</p>
 
 <p><img src="/assets/images/2015/04/HelloSingleSteps.png" alt="Hello single steps" /></p>
 
@@ -927,16 +947,16 @@ number of iterations in the main loop; edit it to 7 and rerun the application.</
 <h2 id="no-gdb-initialisation-files-loaded">No GDB initialisation files loaded</h2>
 
 <p>For having a total control of the debugging session, the debugging
-plug-ins start the GDB client process with the <code class="highlighter-rouge">--nx</code> option, which
+plug-ins start the GDB client process with the <code class="language-plaintext highlighter-rouge">--nx</code> option, which
 prevents the execution of the commands found in any initialization
-file; none of the standard files (<code class="highlighter-rouge">system.gdbinit</code>, <code class="highlighter-rouge">~/.gdbinit</code>,
-<code class="highlighter-rouge">./.gdbinit</code>) are loaded.</p>
+file; none of the standard files (<code class="language-plaintext highlighter-rouge">system.gdbinit</code>, <code class="language-plaintext highlighter-rouge">~/.gdbinit</code>,
+<code class="language-plaintext highlighter-rouge">./.gdbinit</code>) are loaded.</p>
 
 <p>To add more commands to the GDB initialisation sequence, use the
 <em>Commands:</em> field in the <em>GDB Client Setup</em> section.</p>
 
 <p>All commands listed here are passed to the GDB client. By convention,
-commands prefixed with <code class="highlighter-rouge">mon</code> will be further passed from the GDB client
+commands prefixed with <code class="language-plaintext highlighter-rouge">mon</code> will be further passed from the GDB client
 to the GDB server, in this case the QEMU server.</p>
 
 
@@ -958,7 +978,7 @@ to the GDB server, in this case the QEMU server.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 8, 2020<br/> Site last generated: Sep 8, 2020 <br />
+<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 9, 2020 <br />
                 </div>
             </div>
 </footer>

@@ -9,8 +9,28 @@
 <title>The J-Link debugging Eclipse plug-in | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
 
+
+<link type="application/atom+xml" rel="alternate" href="https://eclipse-embed-cdt.github.io/feed.xml"/>
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>The J-Link debugging Eclipse plug-in</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="The J-Link debugging Eclipse plug-in" />
+<meta name="author" content="Liviu Ionescu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
+<meta property="og:description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
+<link rel="canonical" href="https://eclipse-embed-cdt.github.io/debug/jlink/" />
+<meta property="og:url" content="https://eclipse-embed-cdt.github.io/debug/jlink/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-09-11T18:15:00+00:00" />
+<script type="application/ld+json">
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/debug/jlink/","headline":"The J-Link debugging Eclipse plug-in","datePublished":"2015-09-11T18:15:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/debug/jlink/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202008050934">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -59,7 +79,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://eclipse-embed-cdt.github.io/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -762,22 +782,22 @@ Eclipse and click again the Restore Defaults button</li>
 line J-Link GDB server executable; in most cases it should be set correctly;
 if not, edit it to match the correct name;</li>
   <li><strong>macOS notice:</strong> somewhere around version 6.30, SEGGER changed the name of
-the executable to <code class="highlighter-rouge">JLinkGDBServerCLExe</code>, the plug-in was updated to this new
-name, but older installs will continue to default to <code class="highlighter-rouge">JLinkGDBServer</code>; if
+the executable to <code class="language-plaintext highlighter-rouge">JLinkGDBServerCLExe</code>, the plug-in was updated to this new
+name, but older installs will continue to default to <code class="language-plaintext highlighter-rouge">JLinkGDBServer</code>; if
 needed, update it to the new name;</li>
   <li>check the <strong>Folder</strong> field; it must point to the actual folder where the
 J-Link tools were installed on your platform, for example
-<code class="highlighter-rouge">/Applications/SEGGER/JLink</code> is a link to the latest version installed
+<code class="language-plaintext highlighter-rouge">/Applications/SEGGER/JLink</code> is a link to the latest version installed
 on macOS</li>
   <li>click the <strong>OK</strong> button</li>
   <li><strong>Windows warning:</strong> please note that on Windows there are two GDB
 server executables, one with a UI and one to be used as a command line
-(<code class="highlighter-rouge">JLinkGDBServerCL.exe</code>); you obviously need to configure the executable
-field to point to <code class="highlighter-rouge">JLinkGDBServerCL.exe</code>.</li>
+(<code class="language-plaintext highlighter-rouge">JLinkGDBServerCL.exe</code>); you obviously need to configure the executable
+field to point to <code class="language-plaintext highlighter-rouge">JLinkGDBServerCL.exe</code>.</li>
 </ul>
 
 <p>By default, the GDB server is defined as
-<code class="highlighter-rouge">${jlink_path}/${jlink_gdbserver}</code>; these two macros are automatically
+<code class="language-plaintext highlighter-rouge">${jlink_path}/${jlink_gdbserver}</code>; these two macros are automatically
 set by the above preference page; for portability reasons, it is
 recommended to keep this definition in all your debug configurations,
 and also to have a single place to update the path when a new version
@@ -824,7 +844,7 @@ and click the top leftmost <strong>New</strong> button.</p>
     <p>if you started this procedure with the project selected and the project
 was previously built, the first tab, named <strong>Main</strong>, should be already
 filled in with the project name (for example blink1) and the application
-file name and location (for example <code class="highlighter-rouge">Debug/blink1.elf</code>).</p>
+file name and location (for example <code class="language-plaintext highlighter-rouge">Debug/blink1.elf</code>).</p>
 
     <p><img src="/assets/images/2013/12/DebugMainTab.png" alt="The Main tab" /></p>
   </li>
@@ -843,10 +863,10 @@ link at the right and copy/paste the string from the
   <li>for portability reasons, the GDB server and GDB client executables
 are defined using variables; it is highly recommended to keep these
 definitions;</li>
-  <li>the <code class="highlighter-rouge">${cross_prefix}</code> and the <code class="highlighter-rouge">${cross_suffix}</code> variables are defined
+  <li>the <code class="language-plaintext highlighter-rouge">${cross_prefix}</code> and the <code class="language-plaintext highlighter-rouge">${cross_suffix}</code> variables are defined
 automatically using the toolchain definitions; unless you are debugging
 a project-less ELF, leave them as is;</li>
-  <li>the values of the <code class="highlighter-rouge">${jlink_path}</code> and <code class="highlighter-rouge">${jlink_gdbserver}</code> can be
+  <li>the values of the <code class="language-plaintext highlighter-rouge">${jlink_path}</code> and <code class="language-plaintext highlighter-rouge">${jlink_gdbserver}</code> can be
 manually edited in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>MCU</strong> → <strong>Global SEGGER J-Link Path</strong> configuration
 page (if you do not find this page, upgrade the plug-ins);</li>
   <li>the <strong>Connect to running target</strong> option allow to start a debug session
@@ -940,13 +960,13 @@ something like this:</p>
 <p>The new debug session, with three consoles.</p>
 
 <p>Since the first breakpoint was set in the <strong>Debugger</strong> tab to <strong>main</strong>,
-the execution stopped right at the beginning of the <code class="highlighter-rouge">main()</code> function,
-which in this case is a tracing <code class="highlighter-rouge">printf()</code>.</p>
+the execution stopped right at the beginning of the <code class="language-plaintext highlighter-rouge">main()</code> function,
+which in this case is a tracing <code class="language-plaintext highlighter-rouge">printf()</code>.</p>
 
 <h2 id="debug-operations">Debug operations</h2>
 
 <p>Once the debug session started and execution stopped in the first
-breakpoint (by default set at the beginning of the <code class="highlighter-rouge">main()</code> function),
+breakpoint (by default set at the beginning of the <code class="language-plaintext highlighter-rouge">main()</code> function),
 you can perform any debug operation you need.</p>
 
 <p>The most common operations are:</p>
@@ -1062,10 +1082,10 @@ serial number, use the IP address.</p>
 <h2 id="no-gdb-initialisation-files-loaded">No GDB initialisation files loaded</h2>
 
 <p>For having a total control of the debugging session, the debugging
-plug-ins start the GDB client process with the <code class="highlighter-rouge">--nx</code> option, which
+plug-ins start the GDB client process with the <code class="language-plaintext highlighter-rouge">--nx</code> option, which
 prevents the execution of the commands found in any initialization
-file; none of the standard files (<code class="highlighter-rouge">system.gdbinit</code>, <code class="highlighter-rouge">~/.gdbinit</code>,
-<code class="highlighter-rouge">./.gdbinit</code>) are loaded.</p>
+file; none of the standard files (<code class="language-plaintext highlighter-rouge">system.gdbinit</code>, <code class="language-plaintext highlighter-rouge">~/.gdbinit</code>,
+<code class="language-plaintext highlighter-rouge">./.gdbinit</code>) are loaded.</p>
 
 <p>To add more commands to the GDB initialisation sequence, use the
 <em>Commands:</em> field in the <em>GDB Client Setup</em> section:</p>
@@ -1073,7 +1093,7 @@ file; none of the standard files (<code class="highlighter-rouge">system.gdbinit
 <p><img src="/assets/images/2015/launch-jlink-debugger-client.png" alt="Launch J-Link debugger client" /></p>
 
 <p>All commands listed here are passed to the GDB client. By convention,
-commands prefixed with <code class="highlighter-rouge">mon</code> will be further passed from the GDB client
+commands prefixed with <code class="language-plaintext highlighter-rouge">mon</code> will be further passed from the GDB client
 to the GDB server, in this case the J-Link GDB server.</p>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
@@ -1115,7 +1135,7 @@ the <strong>Startup</strong> tab, this usually does not preserve the RAM content
 <h3 id="error-while-launching-command-gdb-version">Error while launching command: gdb –version</h3>
 
 <p>If you kept the GDB client executable defined as
-<code class="highlighter-rouge">${cross_prefix}gdb${cross_suffix}</code>, the above error means that the
+<code class="language-plaintext highlighter-rouge">${cross_prefix}gdb${cross_suffix}</code>, the above error means that the
 macros could not be substituted with the correct prefix/suffix. There
 can be several reasons for this. One might be that you did not associate
 the debug launcher to a project. Check the <strong>Main</strong> tab and be sure
@@ -1129,9 +1149,9 @@ create the debug configuration, be sure you follow the above suggestions
 <p>Another reason for not being able to start the debug session is that
 your project was not build with the Eclipse Embedded CDT managed build
 plug-in. If you are using another build plug-in, or an exotic/obsolete
-toolchain, you need to replace <code class="highlighter-rouge">${cross_prefix}gdb${cross_suffix}</code> with
+toolchain, you need to replace <code class="language-plaintext highlighter-rouge">${cross_prefix}gdb${cross_suffix}</code> with
 the actual name of the gdb client available in your toolchain, since the
-<code class="highlighter-rouge">${cross_*}</code> macros are available only in projects managed by the
+<code class="language-plaintext highlighter-rouge">${cross_*}</code> macros are available only in projects managed by the
 Eclipse Embedded CDT build plug-in.</p>
 
 <h2 id="more-info">More info</h2>
@@ -1161,7 +1181,7 @@ installation location or directly from the
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 8, 2020<br/> Site last generated: Sep 8, 2020 <br />
+<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 9, 2020 <br />
                 </div>
             </div>
 </footer>

@@ -9,8 +9,28 @@
 <title>How to install the Eclipse prerequisites | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
 
+
+<link type="application/atom+xml" rel="alternate" href="https://eclipse-embed-cdt.github.io/feed.xml"/>
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>How to install the Eclipse prerequisites</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="How to install the Eclipse prerequisites" />
+<meta name="author" content="Liviu Ionescu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
+<meta property="og:description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
+<link rel="canonical" href="https://eclipse-embed-cdt.github.io/plugins/prerequisites/" />
+<meta property="og:url" content="https://eclipse-embed-cdt.github.io/plugins/prerequisites/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-10-09T11:14:00+00:00" />
+<script type="application/ld+json">
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/","headline":"How to install the Eclipse prerequisites","datePublished":"2017-10-09T11:14:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202008050934">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -59,7 +79,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://eclipse-embed-cdt.github.io/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -706,7 +726,7 @@ install these tools, and reopen Eclipse.</div>
 second prerequisite is <strong>xpm</strong> (the xPack Package Manager), which is
 a <strong>Node.js</strong> portable application;</li>
   <li><strong>Windows Build Tools</strong> - to build projects, on Windows it is necessary
-to install <code class="highlighter-rouge">make</code>, available from the xPack Windows Build Tools;</li>
+to install <code class="language-plaintext highlighter-rouge">make</code>, available from the xPack Windows Build Tools;</li>
   <li><strong>Arm toolchain</strong> - to build Arm projects, an Arm toolchain like
 the xPack GNU Arm Embedded GCC is required;</li>
   <li><strong>RISC-V toolchain</strong> - similarly, for RISC-V projects, a RISC-V toolchain
@@ -749,7 +769,7 @@ for a wider range of platforms, see the <strong>Alternate solutions</strong> bel
 <pre><code class="language-plain">mkdir %APPDATA%\Oracle
 </code></pre>
 
-<p>And extract the archive content into <code class="highlighter-rouge">...\AppData\Roaming\Oracle\jdk-14.0.1</code>.</p>
+<p>And extract the archive content into <code class="language-plaintext highlighter-rouge">...\AppData\Roaming\Oracle\jdk-14.0.1</code>.</p>
 
 <p>To set the path, in a cmd.exe terminal, issue the following:</p>
 
@@ -782,7 +802,7 @@ which one to use by controlling the Path.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/Downloads
 xattr <span class="nt">-d</span> com.apple.quarantine openjdk-14.<span class="k">*</span>_osx-x64_bin.tar.gz
 <span class="nb">tar </span>xf openjdk-14.<span class="k">*</span>_osx-x64_bin.tar.gz
-<span class="nb">sudo </span>mv jdk-14.<span class="k">*</span>.jdk/ /Library/Java/JavaVirtualMachines/
+<span class="nb">sudo mv </span>jdk-14.<span class="k">*</span>.jdk/ /Library/Java/JavaVirtualMachines/
 </code></pre></div></div>
 
 <p>Check version:</p>
@@ -794,13 +814,13 @@ xattr <span class="nt">-d</span> com.apple.quarantine openjdk-14.<span class="k"
 To overcome this, go to System Preferences → Security &amp; Privacy → Allow.</p>
 
 <p>On macOS 10.15 the system automatically identifies the latest version
-installed in <code class="highlighter-rouge">/Library/Java/JavaVirtualMachines/</code> and somehow
-links <code class="highlighter-rouge">/usr/bin/java</code> to it.</p>
+installed in <code class="language-plaintext highlighter-rouge">/Library/Java/JavaVirtualMachines/</code> and somehow
+links <code class="language-plaintext highlighter-rouge">/usr/bin/java</code> to it.</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">% which java
 /usr/bin/java
 % ls -l /usr/bin/java
-</span><span class="gp">lrwxr-xr-x  1 root  wheel  74 Jan  2  2020 /usr/bin/java -&gt;</span> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java
+</span><span class="gp">lrwxr-xr-x  1 root  wheel  74 Jan  2  2020 /usr/bin/java -&gt;</span><span class="w"> </span>/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java
 </code></pre></div></div>
 
 <p>How exactly it gets from here to the actual location is a bit of Apple magic.</p>
@@ -811,7 +831,7 @@ start on macOS 10.10.</div>
 
 <p>Since it is possible to install multiple version on the same system,
 if you want to override this mechanism and use a different version, try
-to configure the user path via <code class="highlighter-rouge">launchctl</code>:</p>
+to configure the user path via <code class="language-plaintext highlighter-rouge">launchctl</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>launchctl config user path /Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 <span class="nb">sudo </span>reboot
@@ -822,12 +842,12 @@ necessary to reboot.</p>
 
 <p>To check if the new path was configured properly:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>launchctl getenv PATH
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>launchctl getenv PATH
 </code></pre></div></div>
 
 <p>Please note that the above command configures only the path for the GUI
 applications. For shell usage, it is necessary to also set the PATH
-environment variable in the shell startup files (like <code class="highlighter-rouge">.zprofile</code>):</p>
+environment variable in the shell startup files (like <code class="language-plaintext highlighter-rouge">.zprofile</code>):</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/bin/:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
 </code></pre></div></div>
@@ -840,7 +860,7 @@ environment variable in the shell startup files (like <code class="highlighter-r
 
 <p>To check if it is already installed, ask the version:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java -version
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java -version
 </code></pre></div></div>
 
 <p>If it is not installed, or it is not at least Java 11,
@@ -848,12 +868,12 @@ install it via the package manager.</p>
 
 <p>For example on Ubuntu:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt install <span class="nt">--yes</span> openjdk-14-jdk
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">--yes</span> openjdk-14-jdk
 </code></pre></div></div>
 
 <p>Or on CentOS:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nt">-y</span> install java-14-openjdk
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nt">-y</span> <span class="nb">install </span>java-14-openjdk
 </code></pre></div></div>
 
 <p>Check your system for the available package names and versions.</p>
@@ -870,8 +890,8 @@ install it via the package manager.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/Downloads
 <span class="nb">tar </span>xf openjdk-14.0.1_linux-x64_bin.tar.gz
-mkdir <span class="nt">-p</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt
-<span class="nb">sudo </span>mv jdk-14.0.1/ <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt/
+<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt
+<span class="nb">sudo mv </span>jdk-14.0.1/ <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt/
 </code></pre></div></div>
 
 <p>Then add the location to the user PATH:</p>
@@ -888,8 +908,8 @@ mkdir <span class="nt">-p</span> <span class="k">${</span><span class="nv">HOME<
 manager without using a shell, you might need to set the GUI path in a way
 specific to the window manager.</p>
 
-<p>On some distributions (like Ubuntu) this can be achieved via <code class="highlighter-rouge">~/.xsessionrc</code>,
-sourced from one of the files in <code class="highlighter-rouge">/etc/X11/Xsession.d/</code>.</p>
+<p>On some distributions (like Ubuntu) this can be achieved via <code class="language-plaintext highlighter-rouge">~/.xsessionrc</code>,
+sourced from one of the files in <code class="language-plaintext highlighter-rouge">/etc/X11/Xsession.d/</code>.</p>
 
 <p>It is possible to install multiple versions on the same system, and chose
 which one to use by controlling the PATH.</p>
@@ -931,7 +951,7 @@ the <a href="https://xpack.github.io/install/">node</a> install page):</p>
 <p>In a new terminal, to benefit from the environment variables
 added by the script:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm install <span class="nt">--lts</span> node
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm <span class="nb">install</span> <span class="nt">--lts</span> node
 nvm use node
 node <span class="nt">--version</span>
 nvm install-latest-npm
@@ -940,22 +960,22 @@ npm <span class="nt">--version</span>
 
 <p>Install <strong>xpm</strong>:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install <span class="nt">--global</span> xpm@latest
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--global</span> xpm@latest
 </code></pre></div></div>
 
 <p>On Windows, install <strong>make</strong> and the rest of the build tools:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm install <span class="nt">--global</span> @xpack-dev-tools/windows-build-tools@latest
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/windows-build-tools@latest
 </code></pre></div></div>
 
 <p>Install the toolchain and the other tools; don’t skip qemu, since it is used
 by the blinky tutorial; openocd may also be useful to run debug sessions;
 the riscv toolchain is necessary only for RISC-V projects.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm install <span class="nt">--global</span> @xpack-dev-tools/arm-none-eabi-gcc@latest
-xpm install <span class="nt">--global</span> @xpack-dev-tools/qemu-arm@latest
-xpm install <span class="nt">--global</span> @xpack-dev-tools/openocd@latest
-xpm install <span class="nt">--global</span> @xpack-dev-tools/riscv-none-embed-gcc@latest
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/arm-none-eabi-gcc@latest
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/qemu-arm@latest
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/openocd@latest
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/riscv-none-embed-gcc@latest
 </code></pre></div></div>
 
 <p>All xPacks are installed in a central folder in the user home; check
@@ -1034,7 +1054,7 @@ for running on a 32-bit system), be sure it includes at least CDT 9.2.1.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 8, 2020<br/> Site last generated: Sep 8, 2020 <br />
+<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 9, 2020 <br />
                 </div>
             </div>
 </footer>

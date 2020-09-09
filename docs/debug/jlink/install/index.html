@@ -9,8 +9,28 @@
 <title>How to install the SEGGER J-Link | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
 
+
+<link type="application/atom+xml" rel="alternate" href="https://eclipse-embed-cdt.github.io/feed.xml"/>
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>How to install the SEGGER J-Link</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="How to install the SEGGER J-Link" />
+<meta name="author" content="Liviu Ionescu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
+<meta property="og:description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
+<link rel="canonical" href="https://eclipse-embed-cdt.github.io/debug/jlink/install/" />
+<meta property="og:url" content="https://eclipse-embed-cdt.github.io/debug/jlink/install/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-09-11T17:50:00+00:00" />
+<script type="application/ld+json">
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/debug/jlink/install/","headline":"How to install the SEGGER J-Link","datePublished":"2015-09-11T17:50:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/debug/jlink/install/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202008050934">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -59,7 +79,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://eclipse-embed-cdt.github.io/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -741,13 +761,13 @@ available either in the installed folder, or from the
 	<div role="tabpanel" class="tab-pane active" id="windows_1">
 		
 <p>The Windows download is an executable installer, named like
-<code class="highlighter-rouge">JLink_WindowsV684.exe</code>.</p>
+<code class="language-plaintext highlighter-rouge">JLink_WindowsV684.exe</code>.</p>
 
 <ul>
   <li>double click it to start the installation process</li>
   <li>enter the administrative password</li>
   <li>accept the license</li>
-  <li>accept the destination folder (<code class="highlighter-rouge">C:\Program Files (x86)\SEGGER\JLink</code>)</li>
+  <li>accept the destination folder (<code class="language-plaintext highlighter-rouge">C:\Program Files (x86)\SEGGER\JLink</code>)</li>
   <li>accept the default USB driver</li>
 </ul>
 
@@ -757,30 +777,30 @@ in the system folders, all overwritten with each new install.</p>
 <p><img src="/assets/images/2020/segger-win.png" alt="SEGGER Windows distribution" /></p>
 
 <p>Please note that on Windows, SEGGER provides both graphical interface
-and <strong>command line versions</strong> (having the names suffixed with <code class="highlighter-rouge">CL</code>) for
+and <strong>command line versions</strong> (having the names suffixed with <code class="language-plaintext highlighter-rouge">CL</code>) for
 most of their tools. For the J-Link plug-in it is recommended to use
 only the command line version of the  J-Link GDB server
-(<code class="highlighter-rouge">JLinkGDBServerCL.exe</code>).</p>
+(<code class="language-plaintext highlighter-rouge">JLinkGDBServerCL.exe</code>).</p>
 
 
 	</div>
 	<div role="tabpanel" class="tab-pane" id="macos_1">
 		
 <p>The macOS download is an macOS package installer, named like
-<code class="highlighter-rouge">JLink_MacOSX_V684.pkg</code>.</p>
+<code class="language-plaintext highlighter-rouge">JLink_MacOSX_V684.pkg</code>.</p>
 
 <ul>
   <li>double click it to start the installation process</li>
   <li>accept the license</li>
   <li>enter the administrative password, required to write in the global
-<code class="highlighter-rouge">/Applications</code> folder</li>
+<code class="language-plaintext highlighter-rouge">/Applications</code> folder</li>
 </ul>
 
-<p>The result of the install is a folder like <code class="highlighter-rouge">/Applications/SEGGER/JLink_V684/</code>
+<p>The result of the install is a folder like <code class="language-plaintext highlighter-rouge">/Applications/SEGGER/JLink_V684/</code>
 (a different folder for each version) where all executables and libraries are
 stored; please note that, as for many macOS applications, no other driver
 files are installed in the system folders, but some symbolic links to the latest
-installed version are created in the <code class="highlighter-rouge">/usr/local/bin</code> folder.</p>
+installed version are created in the <code class="language-plaintext highlighter-rouge">/usr/local/bin</code> folder.</p>
 
 <p>Be sure to update the path in Eclipse preferences page to point to the
 latest SEGGER J-Link software.</p>
@@ -805,11 +825,11 @@ versions. Preferably download the .tgz and install it in your home folder.</p>
 <p>For example, on Ubuntu,
 to install the 64-bit .tgz file, use the following commands:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> mkdir <span class="nt">-p</span> ~/opt/SEGGER
-<span class="gp">$</span> <span class="nb">cd</span> ~/opt/SEGGER
-<span class="gp">$</span> <span class="nb">tar </span>xf ~/Downloads/JLink_Linux_V684_x86_64.tgz
-<span class="gp">$</span> chmod a-w ~/opt/SEGGER/JLink_Linux_V684_x86_64
-<span class="gp">$</span> <span class="nb">ls</span> <span class="nt">-l</span> ~/opt/SEGGER/JLink_Linux_V684_x86_64
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">mkdir</span> <span class="nt">-p</span> ~/opt/SEGGER
+<span class="gp">$</span><span class="w"> </span><span class="nb">cd</span> ~/opt/SEGGER
+<span class="gp">$</span><span class="w"> </span><span class="nb">tar </span>xf ~/Downloads/JLink_Linux_V684_x86_64.tgz
+<span class="gp">$</span><span class="w"> </span><span class="nb">chmod </span>a-w ~/opt/SEGGER/JLink_Linux_V684_x86_64
+<span class="gp">$</span><span class="w"> </span><span class="nb">ls</span> <span class="nt">-l</span> ~/opt/SEGGER/JLink_Linux_V684_x86_64
 </code></pre></div></div>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> In case you have a 64-bit machine, it is
@@ -821,25 +841,25 @@ depending on distribution.</div>
 <h3 id="raspberry-pi-os">Raspberry Pi OS</h3>
 
 <p>On a Raspberry Pi OS 64-bit, use the 64-bit .tgz file, and unpack
-it in <code class="highlighter-rouge">${HOME}/opt/SEGGER</code>:</p>
+it in <code class="language-plaintext highlighter-rouge">${HOME}/opt/SEGGER</code>:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> mkdir <span class="nt">-p</span> ~/opt/SEGGER
-<span class="gp">$</span> <span class="nb">cd</span> ~/opt/SEGGER
-<span class="gp">$</span> <span class="nb">tar </span>xf ~/Downloads/JLink_Linux_V684_arm64.tgz
-<span class="gp">$</span> chmod a-w ~/opt/SEGGER/JLink_Linux_V684_arm64
-<span class="gp">$</span> <span class="nb">ls</span> <span class="nt">-l</span> ~/opt/SEGGER/JLink_Linux_V684_arm64
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">mkdir</span> <span class="nt">-p</span> ~/opt/SEGGER
+<span class="gp">$</span><span class="w"> </span><span class="nb">cd</span> ~/opt/SEGGER
+<span class="gp">$</span><span class="w"> </span><span class="nb">tar </span>xf ~/Downloads/JLink_Linux_V684_arm64.tgz
+<span class="gp">$</span><span class="w"> </span><span class="nb">chmod </span>a-w ~/opt/SEGGER/JLink_Linux_V684_arm64
+<span class="gp">$</span><span class="w"> </span><span class="nb">ls</span> <span class="nt">-l</span> ~/opt/SEGGER/JLink_Linux_V684_arm64
 </code></pre></div></div>
 
 <h3 id="udev">UDEV</h3>
 
 <p>After manually unpacking the .tgz, you need to copy the rules file:</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">sudo </span>cp ~/opt/SEGGER/JLink_Linux_V684_<span class="k">*</span>/99-jlink.rules /etc/udev/rules.d/99-jlink.rule
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">sudo cp</span> ~/opt/SEGGER/JLink_Linux_V684_<span class="k">*</span>/99-jlink.rules /etc/udev/rules.d/99-jlink.rule
 </code></pre></div></div>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Although perfectly possible to install
 the J-Link Software in any folder, it is highly recommended to use the
-<code class="highlighter-rouge">~/opt/SEGGER</code> path, since by default the Eclipse Embedded CDT plug-ins
+<code class="language-plaintext highlighter-rouge">~/opt/SEGGER</code> path, since by default the Eclipse Embedded CDT plug-ins
 search for the executables in this location. Be sure you respect the case,
 it is all upper-case SEGGER.</div>
 
@@ -860,10 +880,10 @@ please refer to the SEGGER
 <a href="http://www.segger.com/jlink_supported_devices.html">Supported devices</a> page.</p>
 
 <p>Here is an example how to test a
-SWD connection to a STM32F407 evaluation board (<code class="highlighter-rouge">-device STM32F407VG</code>)
+SWD connection to a STM32F407 evaluation board (<code class="language-plaintext highlighter-rouge">-device STM32F407VG</code>)
 on macOS.</p>
 
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> /Applications/SEGGER/JLink/JLinkGDBServer <span class="nt">-if</span> SWD <span class="nt">-device</span> STM32F407VG
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>/Applications/SEGGER/JLink/JLinkGDBServer <span class="nt">-if</span> SWD <span class="nt">-device</span> STM32F407VG
 <span class="go">SEGGER J-Link GDB Server V6.84 Command Line Version
 
 JLinkARM.dll V6.84 (DLL compiled Sep  4 2020 16:12:40)
@@ -909,7 +929,7 @@ Waiting for GDB connection...
 <p>On Windows, to start the GDB server, use back-slashes in the path and the
 CL (command line) version:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\&gt;C:\Program Files (x86)\SEGGER\JLinkARM_V684\JLinkGDBServerCL
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\&gt;C:\Program Files (x86)\SEGGER\JLinkARM_V684\JLinkGDBServerCL
 </code></pre></div></div>
 
 <p>On Ubuntu the command is simple:</p>
@@ -944,7 +964,7 @@ page documenting how to use the Eclipse Embedded CDT
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 8, 2020<br/> Site last generated: Sep 8, 2020 <br />
+<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 9, 2020 <br />
                 </div>
             </div>
 </footer>

@@ -9,8 +9,28 @@
 <title>GNU MCU Eclipse plug-ins v4.1.1-201707111115 released | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
 
+
+<link type="application/atom+xml" rel="alternate" href="https://eclipse-embed-cdt.github.io/feed.xml"/>
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>GNU MCU Eclipse plug-ins v4.1.1-201707111115 released</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="GNU MCU Eclipse plug-ins v4.1.1-201707111115 released" />
+<meta name="author" content="Liviu Ionescu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Version 4.1.1-201707111115 is a major release; thanks to a contribution from SiFive, the project was enhanced with support for RISC-V devices and, to better reflect the multi-platform nature, was rebranded GNU MCU Eclipse." />
+<meta property="og:description" content="Version 4.1.1-201707111115 is a major release; thanks to a contribution from SiFive, the project was enhanced with support for RISC-V devices and, to better reflect the multi-platform nature, was rebranded GNU MCU Eclipse." />
+<link rel="canonical" href="https://eclipse-embed-cdt.github.io/blog/2017/07/11/plugins-v4.1.1-201707111115-released/" />
+<meta property="og:url" content="https://eclipse-embed-cdt.github.io/blog/2017/07/11/plugins-v4.1.1-201707111115-released/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-07-11T11:29:00+00:00" />
+<script type="application/ld+json">
+{"description":"Version 4.1.1-201707111115 is a major release; thanks to a contribution from SiFive, the project was enhanced with support for RISC-V devices and, to better reflect the multi-platform nature, was rebranded GNU MCU Eclipse.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/blog/2017/07/11/plugins-v4.1.1-201707111115-released/","headline":"GNU MCU Eclipse plug-ins v4.1.1-201707111115 released","datePublished":"2017-07-11T11:29:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/blog/2017/07/11/plugins-v4.1.1-201707111115-released/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202008050934">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -59,7 +79,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="" href="https://eclipse-embed-cdt.github.io/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -686,7 +706,7 @@
 
         <p>Version 4.1.1-201707111115 is a major release; thanks to a contribution from <a href="https://www.sifive.com">SiFive</a>, the project was enhanced with support for <a href="https://riscv.org">RISC-V</a> devices and, to better reflect the multi-platform nature, was rebranded <strong>GNU MCU Eclipse</strong>.</p>
 
-<p><strong>Important</strong>: the public URL for the new v4.x Eclipse update site is (<code class="highlighter-rouge">http://gnu-mcu-eclipse.netlify.com/v4-neon-updates/</code>).</p>
+<p><strong>Important</strong>: the public URL for the new v4.x Eclipse update site is (<code class="language-plaintext highlighter-rouge">http://gnu-mcu-eclipse.netlify.com/v4-neon-updates/</code>).</p>
 
 <p><a href="https://github.com/gnu-mcu-eclipse/eclipse-plugins/releases/tag/v4.1.1-201707111115">Binary files »</a></p>
 
@@ -700,8 +720,8 @@
 <p><img src="/assets/images/2017/riscv-tool-settings.png" alt="RISC-V plug-in tool settings" /></p>
 
 <ul>
-  <li>explicit support for <code class="highlighter-rouge">--specs=nosys.specs</code>  added to both ARM and RISC-V plug-ins</li>
-  <li>a new RISC-V only repository was added at <code class="highlighter-rouge">http://gnu-mcu-eclipse.netlify.com/riscv-v4-neon-updates/</code></li>
+  <li>explicit support for <code class="language-plaintext highlighter-rouge">--specs=nosys.specs</code>  added to both ARM and RISC-V plug-ins</li>
+  <li>a new RISC-V only repository was added at <code class="language-plaintext highlighter-rouge">http://gnu-mcu-eclipse.netlify.com/riscv-v4-neon-updates/</code></li>
 </ul>
 
 <h2 id="addressed-bugs">Addressed bugs</h2>
@@ -723,15 +743,15 @@
   <li>with the addition of the RISC-V build plug-in, common ARM &amp; RISC-V code was re-structured</li>
   <li>the preferences and properties pages to configure paths were moved from <strong>C/C++</strong> and <strong>Run/Debug</strong> under a common <strong>MCU</strong> page; separate pages for the ARM toolchain, RISC-V toolchain, Windows Build Tools, SEGGER J-Link, OpenOCD, pyOCD are available;
 <img src="/assets/images/2017/preferences-mcu.png" alt="MCU" /></li>
-  <li>the mechanism used to configure the debug plug-ins was migrated from Eclipse strings to dynamic variables; macros like <code class="highlighter-rouge">${cross_prefix}</code> are all internal and are no longer present in the Run/Debug -&gt; String Substitution preference page for inadvertent changes;</li>
-  <li>the update sites were migrated from SourceForge to <a href="https://bintray.com/gnu-mcu-eclipse/v4-neon-updates">Bintray</a>; the new public URL for v4.x is (<code class="highlighter-rouge">http://gnu-mcu-eclipse.netlify.com/v4-neon-updates/</code>) and will be automatically redirected to the new server; currently there are no more functional dependencies on SourceForge;</li>
+  <li>the mechanism used to configure the debug plug-ins was migrated from Eclipse strings to dynamic variables; macros like <code class="language-plaintext highlighter-rouge">${cross_prefix}</code> are all internal and are no longer present in the Run/Debug -&gt; String Substitution preference page for inadvertent changes;</li>
+  <li>the update sites were migrated from SourceForge to <a href="https://bintray.com/gnu-mcu-eclipse/v4-neon-updates">Bintray</a>; the new public URL for v4.x is (<code class="language-plaintext highlighter-rouge">http://gnu-mcu-eclipse.netlify.com/v4-neon-updates/</code>) and will be automatically redirected to the new server; currently there are no more functional dependencies on SourceForge;</li>
 </ul>
 
 <h2 id="known-problems">Known problems</h2>
 
 <ul>
-  <li>the new plug-ins cannot be installed on older Eclipses; for this, use the latest 3.x version, available from the deprecated update site (<code class="highlighter-rouge">http://gnuarmeclipse.sourceforge.net/updates</code>);</li>
-  <li>the new plug-ins have IDs prefixed with <code class="highlighter-rouge">ilg.gnumcueclipse.</code>, while the old IDs were prefixed with <code class="highlighter-rouge">ilg.gnuarmeclipse.</code>; being completely different, this allows to install the new plug-ins alongside the old ones, but this should be avoided, and the old plug-ins should be manually uninstalled; preferably a new Eclipse instance should be used.</li>
+  <li>the new plug-ins cannot be installed on older Eclipses; for this, use the latest 3.x version, available from the deprecated update site (<code class="language-plaintext highlighter-rouge">http://gnuarmeclipse.sourceforge.net/updates</code>);</li>
+  <li>the new plug-ins have IDs prefixed with <code class="language-plaintext highlighter-rouge">ilg.gnumcueclipse.</code>, while the old IDs were prefixed with <code class="language-plaintext highlighter-rouge">ilg.gnuarmeclipse.</code>; being completely different, this allows to install the new plug-ins alongside the old ones, but this should be avoided, and the old plug-ins should be manually uninstalled; preferably a new Eclipse instance should be used.</li>
 </ul>
 
     </div>
@@ -779,7 +799,7 @@
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Aug 29, 2020<br/> Site last generated: Sep 8, 2020 <br />
+<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 9, 2020 <br />
                 </div>
             </div>
 </footer>
