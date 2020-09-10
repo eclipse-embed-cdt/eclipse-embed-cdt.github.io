@@ -5,8 +5,8 @@
         <description>Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.</description>
         <link>https://eclipse-embed-cdt.github.io/</link>
         <atom:link href="https://eclipse-embed-cdt.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 09 Sep 2020 08:59:03 +0000</pubDate>
-        <lastBuildDate>Wed, 09 Sep 2020 08:59:03 +0000</lastBuildDate>
+        <pubDate>Thu, 10 Sep 2020 15:16:49 +0000</pubDate>
+        <lastBuildDate>Thu, 10 Sep 2020 15:16:49 +0000</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
         
         <item>
@@ -122,7 +122,7 @@
         <item>
             <title>GNU MCU Eclipse plug-ins v4.5.1-201901011632 released</title>
             <description>&lt;p&gt;Version 4.5.1-201901011632 is a new release; it providesseveral bug fixes and enhancements. The main change is the removal ofsome RISC-V options from the Setting page.&lt;/p&gt;</description>
-            <pubDate>Tue, 01 Jan 2019 16:09:00 +0000</pubDate>
+            <pubDate>Tue, 01 Jan 2019 17:09:00 +0000</pubDate>
             <link>https://eclipse-embed-cdt.github.io/blog/2019/01/01/plugins-v4.5.1-201901011632-released/</link>
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2019/01/01/plugins-v4.5.1-201901011632-released/</guid>
             
