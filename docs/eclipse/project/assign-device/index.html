@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+<meta name="description" content="Automate debug sessions by assigning a CMSIS Packs device/board to the project.">
 <meta name="keywords" content=" ">
 <title>Associate a device to the project | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-09-11T16:00:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/eclipse/project/assign-device/","headline":"Associate a device to the project","datePublished":"2015-09-11T16:00:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/eclipse/project/assign-device/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/eclipse/project/assign-device/","headline":"Associate a device to the project","datePublished":"2015-09-11T16:00:00+00:00","dateModified":"2020-09-18T11:15:16+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/eclipse/project/assign-device/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -413,7 +413,7 @@
           
           
           
-          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv/">OpenOCD RISC-V</a></li>
           
           
           
@@ -466,7 +466,7 @@
           
           
           
-          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          <li><a title="The Managed Build System" href="/eclipse/cdt/managed-build/">The Managed Build System</a></li>
           
           
           
@@ -577,6 +577,20 @@
           
           
           
+          <li><a title="FAQ" href="/support/faq/">FAQ</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Known issues" href="/support/known-issues/">Known issues</a></li>
+          
+          
+          
+          
+          
+          
           <li><a class="extern" title="The Project Forums" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
           
           
@@ -667,6 +681,9 @@
 <div class="post-content">
 
    
+    <div class="summary">Automate debug sessions by assigning a CMSIS Packs device/board to the project.
+</div>
+   
 
     
     
@@ -733,7 +750,7 @@ window to make the desired device available for selection.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> For an even higher flexibility,
 different devices
-can be assigned to different <strong>build configuration</strong>, so it is
+can be assigned to different <strong>build configurations</strong>, so it is
 possible to have different devices for different configurations.</div>
 
 <p>One direct consequence is that you need to be careful to associate
@@ -781,10 +798,10 @@ Outline view) will be populated with the files available for the device</li>
 <p>An even better packs integration (planned for the future release), will
 make this setting even more convenient, by starting the projects templates
 with this selection; it is also planned to use this extra data to
-automatically set the build ARM family.</p>
+automatically set the build Arm family.</p>
 
-<p>Accompanying the device there is also a set of definition for the
-memory map, which will be used in a future release to automatically
+<p>For each device there is also a set of memory map definitions, which
+might be used in a future release to automatically
 generate the linker scripts.</p>
 
 
@@ -797,6 +814,31 @@ generate the linker scripts.</p>
 
     
 
+    <hr/>
+    <p>Comments on the content of this page that might be useful
+    for other readers are welcomed here. For question and general
+    support, please use the
+    <a href="https://www.tapatalk.com/groups/xpack/">project forums</a>.
+    </p>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = '';  // Your page's canonical URL variable
+            this.page.identifier = '/eclipse/project/assign-device/'; // Your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://embed-cdt.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
 
 </div>
 
@@ -806,7 +848,7 @@ generate the linker scripts.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 10, 2020 <br />
+<span>Page last updated:</span> Sep 18, 2020<br/> Site last generated: Sep 21, 2020 <br />
                 </div>
             </div>
 </footer>

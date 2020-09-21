@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+<meta name="description" content="A complete example, from build to debug.">
 <meta name="keywords" content=" ">
 <title>Tutorial: Create a Blinky Arm test project | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-09-11T16:25:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/tutorials/blinky-arm/","headline":"Tutorial: Create a Blinky Arm test project","datePublished":"2015-09-11T16:25:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/tutorials/blinky-arm/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/tutorials/blinky-arm/","headline":"Tutorial: Create a Blinky Arm test project","datePublished":"2015-09-11T16:25:00+00:00","dateModified":"2020-09-18T11:15:16+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/tutorials/blinky-arm/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -413,7 +413,7 @@
           
           
           
-          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv/">OpenOCD RISC-V</a></li>
           
           
           
@@ -466,7 +466,7 @@
           
           
           
-          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          <li><a title="The Managed Build System" href="/eclipse/cdt/managed-build/">The Managed Build System</a></li>
           
           
           
@@ -577,6 +577,20 @@
           
           
           
+          <li><a title="FAQ" href="/support/faq/">FAQ</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Known issues" href="/support/known-issues/">Known issues</a></li>
+          
+          
+          
+          
+          
+          
           <li><a class="extern" title="The Project Forums" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
           
           
@@ -667,6 +681,9 @@
 <div class="post-content">
 
    
+    <div class="summary">A complete example, from build to debug.
+</div>
+   
 
     
     
@@ -746,7 +763,7 @@ click the <strong>Next &gt;</strong> button.</p>
 <ul>
   <li>in the <em>Project name:</em> field enter the name of the new project, for example <strong>blinky</strong></li>
   <li>in the <em>Project type:</em> section expand the <strong>Executable</strong> type and select <strong>STM32F4xx C/C++ Project</strong></li>
-  <li>in the <em>Toolchains:</em> section select <strong>ARM Cross GCC</strong></li>
+  <li>in the <em>Toolchains:</em> section select <strong>Arm Cross GCC</strong></li>
   <li>click the <strong>Next &gt;</strong> button</li>
 </ul>
 
@@ -775,7 +792,7 @@ configurations checked and click the <strong>Next &gt;</strong> button.</p>
 
 <p><img src="/assets/images/2015/08/BlinkyConfigurations.png" alt="Blinky project configurations" /></p>
 
-<p>In the <strong>Cross GNU ARM Toolchain</strong> window:</p>
+<p>In the <strong>Cross GNU Arm Toolchain</strong> window:</p>
 
 <ul>
   <li>select the <em>Toolchain name:</em> <strong>xPack GNU Arm Embedded GCC</strong> (mandatory)</li>
@@ -787,7 +804,7 @@ to use the absolute path, it is not stored in the project</li>
 
 <p><img src="/assets/images/2015/08/BlinkyToolchain.png" alt="Blinky toolchain and path selection" /></p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When selecting the path, be sure you select
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When selecting the path, be sure to select
 the top <code class="language-plaintext highlighter-rouge">/bin</code> folder
 where the programs with long, prefixed names are stored, and not the inner
 <code class="language-plaintext highlighter-rouge">/bin</code> folder where the short name programs may be available.</div>
@@ -798,7 +815,7 @@ correctly.</div>
 
 <p><img src="/assets/images/2013/10/HelloToolchainPath.png" alt="Toolchain path" /></p>
 
-<p>The result of the wizard is a simple project, with a <strong>main()</strong> function printing a greeting on the standard output.</p>
+<p>The result of the wizard is a simple project, with a <code class="language-plaintext highlighter-rouge">main()</code> function printing a greeting on the standard output.</p>
 
 <p><img src="/assets/images/2015/08/BlinkyProject.png" alt="The new C++ project" /></p>
 
@@ -843,7 +860,7 @@ install the <strong>STM32F4xx_DFP</strong> package, as explained in the
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Be sure you really install the <strong>STM32F4xx_DFP</strong>
 package. Simply updating the list of packages is not enough, you need to
 navigate the <strong>Keil</strong> group, select the STM32F4xx_DFP package and install it,
-otherwise the boad will not show in the next step.</div>
+otherwise the board will not show in the next step.</div>
 
 <p>To assign the board and device:</p>
 
@@ -910,7 +927,8 @@ can either step over several instructions, or click Resume
 
 <p>Contrary to usual POSIX environments, like GNU/Linux, embedded systems
 usually do not provide standard input/output devices. In the code generated
-by the template, the output of the printf() calls, including trace_printf(),
+by the template, the output of the <code class="language-plaintext highlighter-rouge">printf()</code> calls, including
+<code class="language-plaintext highlighter-rouge">trace_printf()</code>,
 is redirected to a special debugging channel implemented by most debuggers,
 using the semihosting protocol.</p>
 
@@ -948,7 +966,7 @@ and define the correct path;</li>
 
 <h2 id="support">Support</h2>
 
-<p>If you encountered any problems when installing the plug-ins, pleas refer to
+<p>If you encountered any problems when installing the plug-ins, please refer to
 the <a href="/support/">Support</a> page and <strong>do not</strong> send private
 emails.</p>
 
@@ -962,6 +980,31 @@ emails.</p>
 
     
 
+    <hr/>
+    <p>Comments on the content of this page that might be useful
+    for other readers are welcomed here. For question and general
+    support, please use the
+    <a href="https://www.tapatalk.com/groups/xpack/">project forums</a>.
+    </p>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = '';  // Your page's canonical URL variable
+            this.page.identifier = '/tutorials/blinky-arm/'; // Your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://embed-cdt.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
 
 </div>
 
@@ -971,7 +1014,7 @@ emails.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 10, 2020 <br />
+<span>Page last updated:</span> Sep 18, 2020<br/> Site last generated: Sep 21, 2020 <br />
                 </div>
             </div>
 </footer>

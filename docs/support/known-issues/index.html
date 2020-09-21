@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+<meta name="description" content="Issues already known, but without immediate solutions.">
 <meta name="keywords" content=" ">
 <title>Known issues | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-15T15:18:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/support/known-issues/","headline":"Known issues","datePublished":"2020-08-15T15:18:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/support/known-issues/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/support/known-issues/","headline":"Known issues","datePublished":"2020-08-15T15:18:00+00:00","dateModified":"2020-09-18T16:40:01+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/support/known-issues/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -413,7 +413,7 @@
           
           
           
-          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv/">OpenOCD RISC-V</a></li>
           
           
           
@@ -466,7 +466,7 @@
           
           
           
-          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          <li><a title="The Managed Build System" href="/eclipse/cdt/managed-build/">The Managed Build System</a></li>
           
           
           
@@ -577,6 +577,20 @@
           
           
           
+          <li><a title="FAQ" href="/support/faq/">FAQ</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="Known issues" href="/support/known-issues/">Known issues</a></li>
+          
+          
+          
+          
+          
+          
           <li><a class="extern" title="The Project Forums" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
           
           
@@ -667,6 +681,9 @@
 <div class="post-content">
 
    
+    <div class="summary">Issues already known, but without immediate solutions.
+</div>
+   
 
     
     
@@ -694,7 +711,149 @@ $('#toc').on('click', 'a', function() {
     
 
 
-   <p>TODO</p>
+   <h2 id="major-bugs">Major bugs</h2>
+
+<h3 id="editing-the-toolchain-may-damage-the-project">Editing the toolchain may damage the project</h3>
+
+<p>In certain conditions, <strong>changing the toolchain</strong> for a project in the
+<strong>C/C++ Build</strong> → <strong>Tool Chain Editor</strong> page from another plug-in to
+Eclipse Embedded CDT plug-in might not work; even worse, there are cases
+when the project is permanently damaged. There is not known way to repair
+such a broken project; you have to create a new project and copy the
+content (this is a CDT bug, not a plug-in bug).</p>
+
+<h2 id="annoying-bugs">Annoying bugs</h2>
+
+<h3 id="the-qt-plug-ins-fail-to-start-with-java-15">The Qt plug-ins fail to start with Java 15</h3>
+
+<p>Java 15 removed support for JavaScript, and the Qt plug-ins no longer start,
+throwing a message box:</p>
+
+<blockquote>
+  <p>An internal error occurred during: “Load QML Analyzer”.
+Cannot invoke “javax.script.ScriptEngine.getContext()” because “this.engine” is null</p>
+</blockquote>
+
+<p>If you need the Qt plug-ins, the workaround is to downgrade to Java 14.</p>
+
+<p>Otherwise, to get rid of the message box, it is possible to uninstall the
+Qt plugins:</p>
+
+<ul>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) About Eclipse IDE</strong></li>
+  <li>click the <strong>Installation Details</strong> button</li>
+  <li>click the <strong>Installed Software</strong> tab</li>
+  <li>select the <strong>C/C++ Qt Support</strong> feature</li>
+  <li>click the <strong>Uninstall</strong> button</li>
+  <li>click <strong>Finish</strong></li>
+</ul>
+
+<h3 id="build-fails-after-rename">Build fails after rename</h3>
+
+<p>Due to a problem buried deep into Eclipse, in certain conditions,
+immediately after renaming a project, right clicking on a project and
+choosing <strong>Build Configurations</strong> → <strong>Build All</strong>, will display an
+error window, claiming that the project that the renamed project no
+longer exist:</p>
+
+<p><img src="/assets/images/2013/10/renameError.jpg" alt="Rename error" /></p>
+
+<p>The problem is related to a caching mechanism, and is easily cured by
+exiting Eclipse and opening it again. Another solution is to close only
+the renamed project and to reopen it.</p>
+
+<h3 id="add-global-variables-is-disabled">Add Global Variables… is disabled</h3>
+
+<p>In the J-Link or OpenOCD sessions, the Variables view does not allow
+to add global variables. This is a known CDT DSF bug
+<a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=219040">219040</a>, not a
+plug-in bug. As a workaround, you can use watch expressions.</p>
+
+<p><img src="/assets/images/2013/10/DSFAddGlobalVariables.png" alt="Add Global Variables is disabled" /></p>
+
+<h3 id="the-internal-builder-fails-whilegenerating-the-listing">The internal builder fails while generating the listing</h3>
+
+<p>Due to a CDT bug, when using the Internal builder it is not possible
+to generate the additional program listing. If you need it, it is
+recommended to enable the <strong>External builder</strong> in the project
+<strong>Properties</strong> → <strong>C/C++ Build</strong> → <strong>Builder Settings</strong> tab → <strong>Builder type</strong>.</p>
+
+<p>The <strong>Internal builder</strong> is long deprecated, it was no longer
+maintained by the CDT team for many years, and it is strongly
+recommended <strong>not</strong> to use it at all.</p>
+
+<h3 id="conflict-while-editing-tools">Conflict while editing tools</h3>
+
+<p>Due to a CDT bug, selecting tools in the toolchain editor (the
+project <strong>Properties</strong> → <strong>C/C++ Build</strong> → <strong>Tool Chain Editor</strong> →
+<strong>Select Tools…</strong> button)</p>
+
+<p><img src="/assets/images/2013/10/SelectTools.png" alt="Select Tools" /></p>
+
+<p>complains about a tool conflict:</p>
+
+<p><img src="/assets/images/2013/10/ToolConflict.png" alt="Benign tool conflict message" /></p>
+
+<p>The message is benign, being triggered by an improper test in CDT (all
+these extra steps have as input the .elf generated by the linker, and
+this condition is flagged as error by CDT). You can safely ignore it.</p>
+
+<h3 id="binaries-not-visible-after-build">Binaries not visible after build</h3>
+
+<p>Due to an Eclipse bug, in certain conditions, after project <strong>Build All</strong>,
+the generated binaries, do not show in the Project Explorer. A manual
+<strong>Refresh</strong> makes them visible.</p>
+
+<h3 id="references-to-old-project-name-after-renaming">References to old project name after renaming</h3>
+
+<p>Due to a CDT bug, after renaming a project, the Problems window will
+complain <em>Invalid project path: Missing project folder or file</em> referring
+to the old name. The problem can be cured by closing and reopening the project.</p>
+
+<h2 id="other-problems">Other problems</h2>
+
+<h3 id="the-restart-button">The Restart button</h3>
+
+<p>Due to some bugs in Eclipse, the implementation of his simple button
+has encountered several problems. Depending on the version you are
+using, the first time you click this button you might get a message
+box informing that the button was not enabled. Ignore this message,
+close the message box and click the button again, this time it’ll
+be effective.</p>
+
+<h3 id="tool-settings-window-update">Tool Settings window update</h3>
+
+<p>Not really a bug, but sometimes perceived like an unusual behaviour,
+enabling/disabling the secondary tools in the <strong>C/C++ Build</strong> →
+<strong>Settings → Toolchains</strong> page and immediately switching to the
+<strong>Tool Settings</strong> tab does not show/hide the new tools. It is
+necessary to press the <strong>Apply</strong> button for this change to be effective.</p>
+
+<p><img src="/assets/images/2013/10/ToolsSelection.png" alt="Press Apply after enabling/disabling tools" /></p>
+
+<h3 id="map-and-listing-not-removed-by-clean">Map and listing not removed by Clean</h3>
+
+<p>The linker <code class="language-plaintext highlighter-rouge">.map</code> and the assembler <code class="language-plaintext highlighter-rouge">.lst</code> files are not removed when
+running the project <strong>Clean</strong> process. Since these are specific tool
+options and not makefile targets, the build process does not know about
+them and is not able to remove them when executing the clean target.
+Usually these files are generated during each build, so after successful
+builds they should always be up to date. If the build does not complete,
+it is possible to still have some of these files around, from the previous
+build, and this may be confusing. In such cases it is recommended to
+manually remove them, or, even better, to completely remove the
+Debug/Release build folder and start a clean build.</p>
+
+<h2 id="advices-to-avoid-problems">Advices (to avoid problems)</h2>
+
+<h3 id="toolchain-path">Toolchain path</h3>
+
+<p><strong>DO NOT add the toolchain path</strong> to the system path, especially if
+you are using multiple toolchains (and if you do not do it yet, it
+is very likely that you will, as soon as new versions of the toolchains
+will be available). The toolchain path should be configured for each
+toolchain in the <strong>Toolchains</strong> tab, in the <strong>C/C++ Build</strong> →
+<strong>Settings</strong> page.</p>
 
 
         
@@ -707,10 +866,11 @@ $('#toc').on('click', 'a', function() {
     
 
     <hr/>
-    If you have comments on the content of the page that you consider useful
-    for other readers, please enter them here.
-    For question and general support, please use the
-    <a href="https://www.tapatalk.com/groups/xpack/">Project Forums</a>.
+    <p>Comments on the content of this page that might be useful
+    for other readers are welcomed here. For question and general
+    support, please use the
+    <a href="https://www.tapatalk.com/groups/xpack/">project forums</a>.
+    </p>
 
     <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -739,7 +899,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 10, 2020 <br />
+<span>Page last updated:</span> Sep 18, 2020<br/> Site last generated: Sep 21, 2020 <br />
                 </div>
             </div>
 </footer>

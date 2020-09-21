@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+<meta name="description" content="A list of common questions that other people have already asked.">
 <meta name="keywords" content=" ">
-<title>FAQ | Eclipse Embedded CDT</title>
+<title>Frequently Asked Questions | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
 
 
@@ -14,9 +14,9 @@
 <link type="application/rss+xml" rel="alternate" title="" href="https://eclipse-embed-cdt.github.io/feed.xml">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>FAQ</title>
+<title>Frequently Asked Questions</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="FAQ" />
+<meta property="og:title" content="Frequently Asked Questions" />
 <meta name="author" content="Liviu Ionescu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-15T15:18:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/support/faq/","headline":"FAQ","datePublished":"2020-08-15T15:18:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/support/faq/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/support/faq/","headline":"Frequently Asked Questions","datePublished":"2020-08-15T15:18:00+00:00","dateModified":"2020-09-18T16:40:01+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/support/faq/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -256,7 +256,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="FAQ">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Frequently Asked Questions">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -413,7 +413,7 @@
           
           
           
-          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv/">OpenOCD RISC-V</a></li>
           
           
           
@@ -466,7 +466,7 @@
           
           
           
-          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          <li><a title="The Managed Build System" href="/eclipse/cdt/managed-build/">The Managed Build System</a></li>
           
           
           
@@ -577,6 +577,20 @@
           
           
           
+          <li class="active"><a title="FAQ" href="/support/faq/">FAQ</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Known issues" href="/support/known-issues/">Known issues</a></li>
+          
+          
+          
+          
+          
+          
           <li><a class="extern" title="The Project Forums" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
           
           
@@ -659,7 +673,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">FAQ</h1>
+   <h1 class="post-title-main">Frequently Asked Questions</h1>
 </div>
 
 
@@ -667,34 +681,635 @@
 <div class="post-content">
 
    
-
-    
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-
-});
-</script>
-
-<div id="toc"></div>
+    <div class="summary">A list of common questions that other people have already asked.
+</div>
+   
 
     
 
 
-   <p>TODO</p>
+   
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-25">An internal error occurred during: “Load QML Analyzer”</a>
+          </h4>
+      </div>
+      <div id="collapse-25" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>This error during startup is caused by the Qt plug-ins not running
+with Java 15; for more details please see the
+<a href="/support/known-issues/">Known Issues</a>
+page.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-1">Why the <strong>xPack…</strong> button is not enabled?</a>
+          </h4>
+      </div>
+      <div id="collapse-1" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<blockquote>
+  <p>I correctly installed the <code class="language-plaintext highlighter-rouge">@xpack-dev-tools/arm-none-eabi-gcc</code> xPack,
+  but the <strong>xPack…</strong> button is still disabled and I cannot select the
+  desired version.</p>
+</blockquote>
+
+<p>This button is enabled only for the <strong>xPack GNU Arm Embedded GCC</strong>
+toolchain; check the toolchain name, you might have
+selected a toolchain which has no xPacks available,
+like the old <strong>GNU Tools for ARM Embedded Processors</strong>.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-2">xpm: integrity checksum failed (Cannot read property ‘path’ of null)</a>
+          </h4>
+      </div>
+      <div id="collapse-2" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>On Windows, binary packages are .zip archives containing .exe files; 
+some aggressive antivirus programs may quarantine those files, or even 
+modify the content of the archives, affecting the checksum and thus 
+preventing the packages to be installed.</p>
+
+<p>Errors may look like:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Downloading https://github.com/gnu-mcu-eclipse/qemu/releases/download/v2.8.0-4-20190211/gnu-mcu-eclipse-qemu-2.8.0-4-20190211-0633-win64.zip...
+{ Error: sha256-p3CgzXJt4zi5g0kxQXlOpss3Xu5Yy+Zv8HXWXkUdg6g= integrity checksum failed when using sha256: wanted sha256-p3CgzXJt4zi5g0kxQXlOpss3Xu5Yy+Zv8HXWXkUdg6g= but got sha512-k1s9UW6Zb20llIuopUwbf3D38OP1F+Nkgf3wGWwsXPwoQfhuiR89+VF3Rrf7YF20fN3tG4/3jZSC3apiHbQ6NA== sha256-ABnfxLMtY8E5KqJkrtIlPB4ML7CSFvjizCabv7i7SbU=. (9 bytes)
+...
+Extracting 'gnu-mcu-eclipse-qemu-2.8.0-4-20190211-0633-win64.zip'...
+error: Cannot read property 'path' of null
+</code></pre></div></div>
+
+<p>The solution is to configure the antivirus to be less aggressive, at
+least for files in the <code class="language-plaintext highlighter-rouge">AppData\Roaming\xPacks</code> and
+<code class="language-plaintext highlighter-rouge">AppData\Local\Caches\xPacks</code> folders.</p>
+
+<p>If this is not possible, temporarily disable the antivirus; if this
+is also not possible, install the packs manually (if you can!).</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-3">Cannot find the <code class="language-plaintext highlighter-rouge">bin</code> folder</a>
+          </h4>
+      </div>
+      <div id="collapse-3" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>When installing binary packages as xPacks, the install location is
+a folder that ends in <code class="language-plaintext highlighter-rouge">.content/bin</code>, like:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin
+</code></pre></div></div>
+
+<p>Unfortunately, the Eclipse file system browser does not show file/folders
+starting with a dot; thus, the <code class="language-plaintext highlighter-rouge">.content/bin</code> final part of the path must
+be entered manually.</p>
+
+<p>This is one more reason to use the <strong>xPack…</strong> button, and select the
+xPack version in the drop down box.</p>
+
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-4">Undefined reference to <code class="language-plaintext highlighter-rouge">_exit()</code></a>
+          </h4>
+      </div>
+      <div id="collapse-4" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>Newlib, by design, requires the user to implement several low level functions,
+like <code class="language-plaintext highlighter-rouge">_exit()</code>, <code class="language-plaintext highlighter-rouge">_sbrk()</code>, <code class="language-plaintext highlighter-rouge">_write()</code>, <code class="language-plaintext highlighter-rouge">_close()</code>, etc.</p>
+
+<p>Without them, the project will fail during link:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Building target: hello-arm.elf
+Invoking: GNU ARM Cross C Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -Xlinker --gc-sections -Wl,-Map,"hello-arm.map" -o "hello-arm.elf"  ./src/main.o   
+/Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: /Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg.a(lib_a-exit.o): in function `exit':
+exit.c:(.text.exit+0x16): undefined reference to `_exit'
+/Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: /Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg.a(lib_a-sbrkr.o): in function `_sbrk_r':
+sbrkr.c:(.text._sbrk_r+0xc): undefined reference to `_sbrk'
+/Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: /Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg.a(lib_a-writer.o): in function `_write_r':
+writer.c:(.text._write_r+0x12): undefined reference to `_write'
+/Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: /Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg.a(lib_a-closer.o): in function `_close_r':
+closer.c:(.text._close_r+0xc): undefined reference to `_close'
+/Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: /Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg.a(lib_a-lseekr.o): in function `_lseek_r':
+lseekr.c:(.text._lseek_r+0x12): undefined reference to `_lseek'
+/Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: /Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg.a(lib_a-readr.o): in function `_read_r':
+readr.c:(.text._read_r+0x12): undefined reference to `_read'
+/Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: /Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg.a(lib_a-fstatr.o): in function `_fstat_r':
+fstatr.c:(.text._fstat_r+0x12): undefined reference to `_fstat'
+/Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: /Users/ilg/Library/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/9.3.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libg.a(lib_a-isattyr.o): in function `_isatty_r':
+isattyr.c:(.text._isatty_r+0xc): undefined reference to `_isatty'
+collect2: error: ld returned 1 exit status
+make: *** [hello-arm.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+</code></pre></div></div>
+
+<p>For an example how to implement these functions, check the code generated
+by the Blink Arm template.</p>
+
+<p>For a quick workaround, pass <code class="language-plaintext highlighter-rouge">--specs=nosys.specs</code> to the linker, and
+it’ll include dummy definitions for all those functions, but be
+warned that the resulting project will not be functional, and
+will definitelly not display any <code class="language-plaintext highlighter-rouge">printf()</code> messages.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-5">I cannot connect via J-Link to my ST DISCOVERY or NUCLEO board</a>
+          </h4>
+      </div>
+      <div id="collapse-5" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>If you try to connect via the SEGGER J-Link debug plug-in to a stock
+ST DISCOVERY or NUCLEO board and the JLinkGDBServer keeps refuses to
+connect (<em>‘Connecting to J-Link failed. Connected correctly?’</em>), please
+note that the on-board programmer firmware on the ST boards is compatible
+with ST-LINK, not J-Link. However, SEGGER provides an upgrade path,
+and most of the ST bemo boards can be converted to J-Link; please follow
+the SEGGER
+<a href="https://www.segger.com/products/debug-probes/j-link/models/other-j-links/st-link-on-board/">Converting ST-LINK on-board into a J-Link</a> page.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-6">I installed Eclipse with Synaptics and I have problems to install the plug-ins</a>
+          </h4>
+      </div>
+      <div id="collapse-6" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>On GNU/Linux, <strong>DO NOT</strong> install Eclipse with the system package
+manager, because usually it installs an older version, and CDT is not
+included.</p>
+
+<p>Instead, go to the
+<a href="https://projects.eclipse.org/projects/iot.embed-cdt/downloads/">Eclipse download site</a> and get the
+proper <strong>Eclipse IDE for Embedded C/C++ Developers</strong>.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-7">Cannot find the tools path preferences page</a>
+          </h4>
+      </div>
+      <div id="collapse-7" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<blockquote>
+  <p>The JLink/QEMU/OpenOCD plug-in doesn’t appear to be installing correctly,
+or at all, there is no JLink/QEMU/OpenOCD page in the Run/Debug group.</p>
+</blockquote>
+
+<p>Starting with version 4.x, the Preferences were moved under the new <strong>MCU</strong> group:</p>
+
+<p><img src="/assets/images/2017/preferences-mcu.png" alt="MCU" /></p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-8">Java was started but returned exit code=13</a>
+          </h4>
+      </div>
+      <div id="collapse-8" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>This obscure message is issued by Eclipse when you are trying to use a
+64-bit Eclipse on a 32-bit Java.</p>
+
+<p>If you install Java for the first time, be sure you use the 64-bit
+Java on 64-bit systems, and then the 64-bit version of Eclipse.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-9">OpenOCD fails to start with <code class="language-plaintext highlighter-rouge">-c echo "Started by GNU ARM Eclipse"</code></a>
+          </h4>
+      </div>
+      <div id="collapse-9" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<blockquote>
+  <p>I’m trying to start OpenOCD in a terminal and it fails to execute
+the <code class="language-plaintext highlighter-rouge">echo</code> command…</p>
+</blockquote>
+
+<p>The syntax required by the OpenOCD <code class="language-plaintext highlighter-rouge">echo</code> command is a single string,
+in other words both echo and the message must be in the same string.
+To achieve this in a shell, the string must be quoted:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-c 'echo "Started by GNU ARM Eclipse"'
+</code></pre></div></div>
+
+<p>Please note that this command is used by the plug-in to detect when
+the GDB server is initialised and ready to receive commands; it is
+not necessary when starting OpenCOD manually.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-10">How to compile files excluded from build?</a>
+          </h4>
+      </div>
+      <div id="collapse-10" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<blockquote>
+  <p>Why the default state for <code class="language-plaintext highlighter-rouge">system/src/.../xxx.c</code> is not enabled?</p>
+</blockquote>
+
+<p>Because during project creation the wizard was configured with <strong>Exclude unused</strong>.</p>
+
+<blockquote>
+  <p>How to enable them?</p>
+</blockquote>
+
+<p>Right click → <strong>Resource Configurations</strong> → <strong>Exclude from build</strong> → uncheck</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-11">How do I create a C-only (not C++) Cortex-M projects?</a>
+          </h4>
+      </div>
+      <div id="collapse-11" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>Well, easily, with <strong>New C Project</strong>. However if the question is related to the projects generated by the templates, they always use G++ as linker.</p>
+
+<blockquote>
+  <p>I want to make sure the G++ compiler is not putting any object code in that I do not want.</p>
+</blockquote>
+
+<p>No need to worry, if you have no C++ source files in your project, the g++ compiler is never used.</p>
+
+<p>The advantage of using g++ as linker is that, even for C projects, you can link a library that has a C interface but internally uses C++ (this is perfectly possible).</p>
+
+<p>If you have no C++ object files in the project, there is no difference.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-12">Why my breakpoints are not effective and execution stops somewhere else?</a>
+          </h4>
+      </div>
+      <div id="collapse-12" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<blockquote>
+  <p>My breakpoints behave erratic, the program does not stop in the desired
+function but in the function immediately following.</p>
+</blockquote>
+
+<p>This is usually the effect of optimisations, if your function was not
+referred in your program, the linker removed it completely. Eclipse does
+not know this, and any breakpoint placed in the removed function is in
+fact placed at the beginning of the next function.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-13">How to single-step empty loops?</a>
+          </h4>
+      </div>
+      <div id="collapse-13" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<blockquote>
+  <p>I’m trying to single-step a simple loop, but execution does not stop
+after a single iteration, the target runs continuously, with permanent
+interactions with the debugger.</p>
+</blockquote>
+
+<p>The current GDB has a problem with placing breakpoints <strong>in simple loops</strong>,
+and <strong>single-stepping fails</strong>. The problem was already reported
+(<a href="https://bugs.launchpad.net/gcc-arm-embedded/+bug/1401565">bug 1401565</a>).
+If you really need this, switch to assembly view and single-stepping is
+again functional.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-14">Why the debugging flow with -Og is sometimes jumpy?</a>
+          </h4>
+      </div>
+      <div id="collapse-14" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<blockquote>
+  <p>The manual suggests to use <code class="language-plaintext highlighter-rouge">-Og</code> for optimising programs for Debug, but
+when stepping loops the execution flow is sometimes quite jumpy, moving
+outside the loop and back.</p>
+</blockquote>
+
+<p>In GCC prior 4.9, the definition of <code class="language-plaintext highlighter-rouge">-Og</code> needs a small adjustment,
+also add the <code class="language-plaintext highlighter-rouge">-fno-move-loop-invariants</code> option to the Debug
+configuration; this will prevent the compiler to move some constant
+parts of the loop outside it and the execution flow will be more easy
+to follow. The problem was already reported
+(<a href="https://bugs.launchpad.net/gcc-arm-embedded/+bug/1395077">bug 1395077</a>).
+Starting with 4.9, the <code class="language-plaintext highlighter-rouge">-fno-move-loop-invariants</code> is added automatically
+to <code class="language-plaintext highlighter-rouge">-Og</code>.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-15">Semihosting enabled application hangs</a>
+          </h4>
+      </div>
+      <div id="collapse-15" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<blockquote>
+  <p>After usb disconected and reconected program do not run (the example
+flashing led is not blinking).</p>
+</blockquote>
+
+<p>This is absolutely normal for any application build with semihosting
+support. The semihosting channel is using resources from the debugger.
+Without the debugger active, the instructions used for the communication
+channel generate run-time faults.</p>
+
+<p>Update: M3/M4 projects generated with version 2.2.1-201404120702 or
+later check when not running under debugger and skip the trace call,
+so it is possible to run the application standalone.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-16">Program <code class="language-plaintext highlighter-rouge">echo</code> not found in PATH</a>
+          </h4>
+      </div>
+      <div id="collapse-16" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>You are running on Windows, and did not install the full content of
+the archive described in the
+<a href="https://xpack.github.io/windows-build-tools/">Windows Build Tools</a> page.
+The <code class="language-plaintext highlighter-rouge">echo</code> program
+is not used per se, it is only a workaround for a known CDT bug.
+On macOS and GNU/Linux the <code class="language-plaintext highlighter-rouge">echo</code> program is always present, being part
+of the standard configuration. On Windows it should be installed
+separately and, for convenience, it is provided in the Windows Build Tools
+package.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-17">The plug-in seems to ignore assembly .s files. How can I add them to the project?</a>
+          </h4>
+      </div>
+      <div id="collapse-17" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>Due to a very complicated portability reason, Eclipse is not able
+to distinguish, and thus separately process, <code class="language-plaintext highlighter-rouge">.s</code> and <code class="language-plaintext highlighter-rouge">.S</code> files.
+The current CDT configuration associates assembly files only with
+<code class="language-plaintext highlighter-rouge">.asm</code> and <code class="language-plaintext highlighter-rouge">.S</code> files, and ignores <code class="language-plaintext highlighter-rouge">.s</code> files. Although it might be
+possible to change the Eclipse file associations, I would not recommend
+this. Better change the assembly file extensions to <code class="language-plaintext highlighter-rouge">.S</code> and use the
+default settings.</p>
+
+<p>Please note that <code class="language-plaintext highlighter-rouge">.S</code> assembly files will be processed by <strong>gcc</strong>, not
+by <strong>as</strong>; this also means that the file will be first preprocessed like
+all C/C++ files, allowing conditional compilation and macro expansion.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-18">The generated Makefile seems to be broken. How can I fix it?</a>
+          </h4>
+      </div>
+      <div id="collapse-18" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>If you notice something wrong in the Makefiles, like macro names not
+substituted, missing sections, labels, etc, the project file might be
+broken. To fix it, create a new project. Do not copy/paste the damaged
+one, be sure you create it from scratch. However, you can copy/paste
+the source files.</p>
+
+<p>As mentioned in the
+<a href="/support/known-issues/">Known issues</a>,
+avoid changing settings for
+individual files/folders or changing the toolchain for a project,
+since these are known problems in some CDT version and might damage
+your project.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-19">The build generates a long console listing instead of creating the
+secondary targets</a>
+          </h4>
+      </div>
+      <div id="collapse-19" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>You enabled the Internal builder, which does not work properly. Switch
+back to the External builder and the build will succeed.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-20">Cannot run program “make”: Launching failed</a>
+          </h4>
+      </div>
+      <div id="collapse-20" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>Most probably you are running on Windows, and forgot to add the builder
+tools or to add the path to them. See the
+<a href="https://xpack.github.io/windows-build-tools/">Windows Build Tools</a> page.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-21">Program “arm-none-eabi-gcc” not found in PATH</a>
+          </h4>
+      </div>
+      <div id="collapse-21" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>You most probably did not configure properly the toolchain path, and
+CDT cannot start the discovery process. Check the path in the project
+<strong>Properties</strong> → <strong>C/C++ Build</strong> → <strong>Settings</strong> → <strong>Toolchains</strong> → <strong>Path</strong>.</p>
+
+<p><img src="/assets/images/2013/10/SettingsPathPrefix.png" alt="Setting the toolchain path and preffx" /></p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-22">Program “gcc” not found in PATH</a>
+          </h4>
+      </div>
+      <div id="collapse-22" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<p>Although it looks like the above, it is worse, since it shows that the
+prefix is not prepended to the compiler command. Check the prefix in
+the project <strong>Properties</strong> → <strong>C/C++ Build</strong> → <strong>Settings</strong> →
+<strong>Toolchains</strong> → <strong>Prefix</strong>.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-23">I tried to use Float ABI: hard on Cortex-M4, but the linker fails</a>
+          </h4>
+      </div>
+      <div id="collapse-23" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">Building target: test1.elf
+Invoking: Cross ARM C++ Linker
+/usr/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/bin/ld: error: test1.elf uses VFP register arguments
+/usr/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o) does not
+/usr/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/bin/ld: failed to merge target specific data of file
+/usr/bin/../lib/gcc/arm-none-eabi/4.7.4/../../../../arm-none-eabi/lib/libg.a(lib_a-impure.o)
+</span><span class="c">...
+</span></code></pre></div></div>
+
+<p>Although on Cortex-M4 the only available FPU hardware is fpv4-sp-d16,
+the compiler does not have a default defined for this, and it is necessary
+to explicitly select <strong>FPU Type: fpv4-sp-d16</strong> in the C/C++ Settings page.</p>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+              <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse-24">What do the template configurations (standalone, retargetting or semihosting) mean?</a>
+          </h4>
+      </div>
+      <div id="collapse-24" class="panel-collapse collapse noCrossRef">
+          <div class="panel-body">
+              
+<ul>
+  <li><strong>Standalone</strong> means a typical embedded configuration, that does not
+use the POSIX system calls (open, close, read, write, etc).</li>
+  <li><strong>Retargetting</strong> is a more elaborate embedded configuration where the
+application makes use of these calls, but redirects the file descriptors
+to local devices or files, by providing custom implementations for the
+system calls (like _open, _close, _read, _write, etc). This
+configuration allows to port POSIX programs easier.</li>
+  <li><strong>Semihosting</strong> is a special testing configuration, that bridges
+<strong>all</strong> system calls to the host operating system where the GDB server
+runs. This configurations is particularly interesting for running test
+programs that can leave the test results in a file stored on the host,
+for automated integration in a test suite.</li>
+</ul>
+
+          </div>
+      </div>
+  </div>
+
+</div>
+
 
 
         
@@ -707,10 +1322,11 @@ $('#toc').on('click', 'a', function() {
     
 
     <hr/>
-    If you have comments on the content of the page that you consider useful
-    for other readers, please enter them here.
-    For question and general support, please use the
-    <a href="https://www.tapatalk.com/groups/xpack/">Project Forums</a>.
+    <p>Comments on the content of this page that might be useful
+    for other readers are welcomed here. For question and general
+    support, please use the
+    <a href="https://www.tapatalk.com/groups/xpack/">project forums</a>.
+    </p>
 
     <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -739,7 +1355,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 10, 2020 <br />
+<span>Page last updated:</span> Sep 18, 2020<br/> Site last generated: Sep 21, 2020 <br />
                 </div>
             </div>
 </footer>

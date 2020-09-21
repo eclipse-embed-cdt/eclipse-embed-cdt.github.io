@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+<meta name="description" content="The Eclipse Embedded CDT debugging plug-ins.">
 <meta name="keywords" content=" ">
 <title>Debugging | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-09-11T16:59:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/debug/","headline":"Debugging","datePublished":"2015-09-11T16:59:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/debug/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/debug/","headline":"Debugging","datePublished":"2015-09-11T16:59:00+00:00","dateModified":"2020-09-18T11:15:16+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/debug/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -413,7 +413,7 @@
           
           
           
-          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv/">OpenOCD RISC-V</a></li>
           
           
           
@@ -466,7 +466,7 @@
           
           
           
-          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          <li><a title="The Managed Build System" href="/eclipse/cdt/managed-build/">The Managed Build System</a></li>
           
           
           
@@ -577,6 +577,20 @@
           
           
           
+          <li><a title="FAQ" href="/support/faq/">FAQ</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Known issues" href="/support/known-issues/">Known issues</a></li>
+          
+          
+          
+          
+          
+          
           <li><a class="extern" title="The Project Forums" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
           
           
@@ -667,6 +681,9 @@
 <div class="post-content">
 
    
+    <div class="summary">The Eclipse Embedded CDT debugging plug-ins.
+</div>
+   
 
     
     
@@ -721,9 +738,8 @@ the <a href="https://www.segger.com/products/debug-probes/j-link/">J-Link Debug 
 from <a href="http://www.segger.com/">SEGGER</a>.</p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> For educational purposes and hobbyists,
-SEGGER offers the same functionality as the J-Link BASE, but at a
-promotional price as
-<a href="http://www.segger.com/j-link-edu.html">J-Link EDU</a>.</div>
+SEGGER offers <a href="http://www.segger.com/j-link-edu.html">J-Link EDU</a> at a
+promotional price providing the same functionality as the J-Link BASE.</div>
 
 <h2 id="debugging-overview">Debugging overview</h2>
 
@@ -737,7 +753,7 @@ development, and any solutions intended to address it are welcome.</p>
   <li>manually stepping through the code to check the program flow and
 inspect various status variables</li>
   <li>letting the program run and automatically collect various tracing
-messages (like the traditional printf() calls) and/or execution events
+messages (like the traditional <code class="language-plaintext highlighter-rouge">printf()</code> calls) and/or execution events
 (enter/exit interrupt handlers, memory location change, etc)</li>
 </ul>
 
@@ -787,7 +803,7 @@ valuable source of information regarding the flow of a complex
 application, with multiple interacting threads, being especially useful
 when the debug sessions are restarted often. Once the trace messages are
 added, the dynamic life of various threads/handlers can be seen with a
-simple view of the trace log. In addition to classical printf() messages
+simple view of the trace log. In addition to classical <code class="language-plaintext highlighter-rouge">printf()</code> messages
 that need to be manually inserted in the code, for embedded applications,
 modern Arm cores, including those in the Cortex-M families, provide special
 support for collecting hardware events, like accurate timestamps when an
@@ -796,7 +812,7 @@ and more.</p>
 
 <p>Recognising the importance of these methods, the designers of the Arm
 families added special support, like the <strong>SWO</strong> (Serial Wire Output)
-pin in Cortex-M processors, or even more elaborate interfaces for larger
+pin in Cortex-M microcontrollers, or even more elaborate interfaces for larger
 Arm processors.</p>
 
 <h2 id="gdb">GDB</h2>
@@ -831,6 +847,31 @@ client to the GDB server.</p>
 
     
 
+    <hr/>
+    <p>Comments on the content of this page that might be useful
+    for other readers are welcomed here. For question and general
+    support, please use the
+    <a href="https://www.tapatalk.com/groups/xpack/">project forums</a>.
+    </p>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = '';  // Your page's canonical URL variable
+            this.page.identifier = '/debug/'; // Your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://embed-cdt.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
 
 </div>
 
@@ -840,7 +881,7 @@ client to the GDB server.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 10, 2020 <br />
+<span>Page last updated:</span> Sep 18, 2020<br/> Site last generated: Sep 21, 2020 <br />
                 </div>
             </div>
 </footer>

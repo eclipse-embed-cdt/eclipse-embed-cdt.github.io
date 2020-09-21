@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+<meta name="description" content="The C/C++ project templates.">
 <meta name="keywords" content=" ">
 <title>Templates | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-09-11T19:35:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/templates/","headline":"Templates","datePublished":"2015-09-11T19:35:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/templates/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/templates/","headline":"Templates","datePublished":"2015-09-11T19:35:00+00:00","dateModified":"2020-09-18T11:15:16+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/templates/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -413,7 +413,7 @@
           
           
           
-          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv/">OpenOCD RISC-V</a></li>
           
           
           
@@ -466,7 +466,7 @@
           
           
           
-          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          <li><a title="The Managed Build System" href="/eclipse/cdt/managed-build/">The Managed Build System</a></li>
           
           
           
@@ -577,6 +577,20 @@
           
           
           
+          <li><a title="FAQ" href="/support/faq/">FAQ</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Known issues" href="/support/known-issues/">Known issues</a></li>
+          
+          
+          
+          
+          
+          
           <li><a class="extern" title="The Project Forums" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
           
           
@@ -667,6 +681,9 @@
 <div class="post-content">
 
    
+    <div class="summary">The C/C++ project templates.
+</div>
+   
 
     
     
@@ -696,7 +713,8 @@ $('#toc').on('click', 'a', function() {
 
    <h2 id="quicklinks">Quicklinks</h2>
 
-<p>If you know what this is all about and you only need to go to specific templates:</p>
+<p>If you know what this is all about and you only need to go to specific
+templates:</p>
 
 <ul>
   <li><a href="/templates/stm32f/">STM32Fxx templates</a></li>
@@ -706,11 +724,15 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="overview">Overview</h2>
 
-<p>In addition to cross build and debugging support, the Eclipse Embedded CDT plug-ins also provide several C/C++ project templates, that generate ready to run projects.</p>
+<p>In addition to cross build and debugging support, the Eclipse Embedded
+CDT plug-ins also provide several C/C++ project templates, that generate
+ready to run projects.</p>
 
-<p>These projects obviously are not full fledged applications, but provide a good starting point for writing such applications.</p>
+<p>These projects obviously are not full fledged applications, but provide a
+good starting point for writing such applications.</p>
 
-<p>One of the main requirements is to build correctly, even if functionality is only sketchy.</p>
+<p>One of the main requirements is to build correctly, even if functionality
+is only sketchy.</p>
 
 <h2 id="install">Install</h2>
 
@@ -719,37 +741,57 @@ $('#toc').on('click', 'a', function() {
 <ul>
   <li>in the <em>Eclipse</em> menu, go to <strong>Help</strong> → <strong>Install New Software</strong></li>
   <li>select <em>Work with:</em> <strong>Eclipse Embedded CDT</strong></li>
-  <li>extend the <strong>GNU ARM C/C++ Cross Development Tools</strong></li>
-  <li>be sure the desired <strong>… Project Template</strong> are selected</li>
+  <li>extend the <strong>Embedded C/C++ Cross Development Tools</strong></li>
+  <li>be sure the desired <strong>Embedded C/C++ … Project Template</strong> are selected</li>
 </ul>
 
 <p><img src="/assets/images/2014/02/InstallTemplatePlugins.png" alt="Install the template plug-ins" /></p>
 
 <h2 id="c-vs-c">C vs C++</h2>
 
-<p>Most of the Eclipse Embedded CDT templates are available for both C and C++ projects. The first difference between the two is the extension of the main source file: it is <strong>main.c</strong> for C projects and <strong>main.cpp</strong> for C++ projects. The content is usually the same, but more elaborate versions are planned to better exemplify the use of C++.</p>
+<p>Most of the Eclipse Embedded CDT templates are available for both C and
+C++ projects. The first difference between the two is the extension of
+the main source file: it is <code class="language-plaintext highlighter-rouge">main.c</code> for C projects and <code class="language-plaintext highlighter-rouge">main.cpp</code> for
+C++ projects. The content is usually the same, but more elaborate versions
+are planned to better exemplify the use of C++.</p>
 
 <h2 id="cmsis">CMSIS</h2>
 
-<p>After defining a minimum common hardware implementation in the Cortex-M core, to be implemented by all vendors, ARM also defined CMSIS (pronounced sim-sys) as a common software interface, to be used with all Cortex-M implementations. CMSIS stands for <a href="http://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php">Cortex Microcontroller Software Interface Standard</a> and consists of several components (CORE, DSP, RTOS, SVD).</p>
+<p>After defining a minimum common hardware implementation in the Cortex-M core,
+to be implemented by all vendors, Arm also defined CMSIS (pronounced sim-sys)
+as a common software interface, to be used with all Cortex-M implementations.
+CMSIS stands for
+<a href="http://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php">Cortex Microcontroller Software Interface Standard</a>
+and consists of several components (CORE, DSP, RTOS, SVD).</p>
 
-<p>The Eclipse Embedded CDT plug-ins uses the CMSIS-CORE code in all templates, as jointly provided by ARM and each vendor.</p>
+<p>The Eclipse Embedded CDT plug-ins uses the CMSIS-CORE code in all templates,
+as jointly provided by Arm and each vendor.</p>
 
 <h2 id="blinky-vs-empty">Blinky vs Empty</h2>
 
-<p>Based on a long tradition among the embedded application developers, the first challenge when encountering a new board is to make it blink a LED. It doesn’t seem much, but in fact there are many details that must fit together for this to work:</p>
+<p>Based on a long tradition among the embedded application developers, the
+first challenge when encountering a new board is to make it blink a LED.
+It doesn’t seem much, but in fact there are many details that must fit
+together for this to work:</p>
 
 <ul>
   <li>the startup code must be functional</li>
   <li>the manufacturer CMSIS initialisations must set the desired clock</li>
   <li>the GPIO definitions/drivers must be available</li>
   <li>the memory map and the linker scripts must match the actual hardware</li>
-  <li>eventualy the newlib printf() must be directed to an available device for viewing the trace messages</li>
+  <li>possibly the newlib <code class="language-plaintext highlighter-rouge">printf()</code> must be directed to an available device for
+viewing the trace messages</li>
 </ul>
 
-<p>The <strong>Blinky</strong> templates do exactly this, take care of all these details. The observed functionality is relatively simple, the board blinks a LED with 1Hz. To exercise the interrupts, the time base is obtained with the SysTick configured at 1000Hz, with the delay() function counting ticks.</p>
+<p>The <strong>Blinky</strong> template does exactly this, takes care of all these details.
+The observed functionality is relatively simple, the board blinks a LED with
+1Hz. To exercise the interrupts, the time base is obtained with the SysTick
+configured at 1000Hz, with the <code class="language-plaintext highlighter-rouge">delay()</code> function counting ticks.</p>
 
-<p>Once all details are understood, a real life application does not really need the code to blink the LED, but rather start with an empty slate. This is the purpose of the <strong>Empty</strong> templates, that provide the entire environment of the <strong>Blinky</strong> templates, but without any code in main().</p>
+<p>Once all details are understood, a real life application does not really need
+the code to blink the LED, but rather start with an empty slate. This is
+the purpose of the <strong>Empty</strong> template, that provides the entire environment
+of the <strong>Blinky</strong> template, but without any code in <code class="language-plaintext highlighter-rouge">main()</code>.</p>
 
 <h2 id="project-structure">Project structure</h2>
 
@@ -759,15 +801,21 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="application-code">Application code</h3>
 
-<p>The application code is located in the top level <strong>src</strong> and <strong>include</strong> folders. Add more files as required by your application.</p>
+<p>The application code is located in the top level <code class="language-plaintext highlighter-rouge">src</code> and <code class="language-plaintext highlighter-rouge">include</code> folders.
+Add more files as required by your application.</p>
 
 <h3 id="linker-scripts">Linker scripts</h3>
 
-<p>The linker scripts are grouped in a <strong>ldscripts</strong> folder. For convenience, the definitions were split in separate files to define the memory map and the content of the sections, but any other structure is acceptable, only update the link configuration.</p>
+<p>The linker scripts are grouped in a <code class="language-plaintext highlighter-rouge">ldscripts</code> folder. For convenience,
+the definitions were split in separate files to define the memory map and
+the content of the sections, but any other structure is acceptable, only
+update the link configuration.</p>
 
 <h3 id="local-libraries">Local libraries</h3>
 
-<p>Various libraries are grouped in the <strong>system</strong> folder. According to ARM specifications, the Cortex Microcontroller Software Interface Standard (CMSIS) is used, and all related definitions are grouped in the CMSIS folder.</p>
+<p>Various libraries are grouped in the <code class="language-plaintext highlighter-rouge">system</code> folder. According to Arm
+specifications, the Cortex Microcontroller Software Interface Standard
+(CMSIS) is used, and all related definitions are grouped in the CMSIS folder.</p>
 
 <h2 id="available-templates">Available templates</h2>
 
@@ -797,11 +845,19 @@ $('#toc').on('click', 'a', function() {
 
 <p>Adding new templates</p>
 
-<p>Considering the large number of existing Cortex-M implementations, it is not realistic to expect templates for all of them.</p>
+<p>Considering the large number of existing Cortex-M implementations, it is
+not realistic to expect templates for all of them.</p>
 
-<p>If you use a processor that has no template yet, and want to contribute to this project, the first step is to create a project that mimics the Blinky variant of an existing template. This means you need to have the CMSIS specific files publicly available (yes, this seems strange, but some manufacturers do not provide these files) and eventually the standard peripheral library.</p>
+<p>If you use a microcontroller that has no template yet, and want to
+contribute to this project, the first step is to create a project that
+mimics the Blinky variant of an existing template. This means you need
+to have the CMSIS specific files publicly available (yes, this seems
+strange, but some manufacturers do not provide these files) and possibly
+the standard peripheral library.</p>
 
-<p>If you have such a project, you can register a new feature request and attach your project to the request, for us to review and eventually use as a base for a new template.</p>
+<p>If you have such a project, you can register a new feature request and
+attach your project to the request, for us to review and possibly use
+as a base for a new template.</p>
 
 
         
@@ -813,6 +869,31 @@ $('#toc').on('click', 'a', function() {
 
     
 
+    <hr/>
+    <p>Comments on the content of this page that might be useful
+    for other readers are welcomed here. For question and general
+    support, please use the
+    <a href="https://www.tapatalk.com/groups/xpack/">project forums</a>.
+    </p>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = '';  // Your page's canonical URL variable
+            this.page.identifier = '/templates/'; // Your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://embed-cdt.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
 
 </div>
 
@@ -822,7 +903,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 10, 2020 <br />
+<span>Page last updated:</span> Sep 18, 2020<br/> Site last generated: Sep 21, 2020 <br />
                 </div>
             </div>
 </footer>

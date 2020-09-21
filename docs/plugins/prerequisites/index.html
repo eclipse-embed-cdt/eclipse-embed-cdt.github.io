@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-10-09T11:14:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/","headline":"How to install the Eclipse prerequisites","datePublished":"2017-10-09T11:14:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/","headline":"How to install the Eclipse prerequisites","datePublished":"2017-10-09T11:14:00+00:00","dateModified":"2020-09-18T16:40:01+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -413,7 +413,7 @@
           
           
           
-          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv/">OpenOCD RISC-V</a></li>
           
           
           
@@ -466,7 +466,7 @@
           
           
           
-          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          <li><a title="The Managed Build System" href="/eclipse/cdt/managed-build/">The Managed Build System</a></li>
           
           
           
@@ -571,6 +571,20 @@
           
           
           <li><a title="Overview" href="/support/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="FAQ" href="/support/faq/">FAQ</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Known issues" href="/support/known-issues/">Known issues</a></li>
           
           
           
@@ -752,21 +766,21 @@ for a wider range of platforms, see the <strong>Alternate solutions</strong> bel
 <a href="https://openjdk.java.net">Oracle <strong>OpenJDK</strong> page</a>.</p>
 
 <p>Follow the <strong>Download</strong> link in the Oracle page, which currently points to
-<a href="https://jdk.java.net/14">jdk.java.net/14</a>.</p>
+<a href="https://jdk.java.net/15">jdk.java.net/15</a>.</p>
 
-<p>In the <strong>Builds</strong> section, download the <strong>Windows/x64</strong> .zip file.</p>
+<p>In the <strong>Builds</strong> section, download the <strong>Windows/x64</strong> <code class="language-plaintext highlighter-rouge">.zip</code> file.</p>
 
 <p>Create a new folder</p>
 
 <pre><code class="language-plain">mkdir %APPDATA%\Oracle
 </code></pre>
 
-<p>And extract the archive content into <code class="language-plaintext highlighter-rouge">...\AppData\Roaming\Oracle\jdk-14.0.1</code>.</p>
+<p>And extract the archive content into <code class="language-plaintext highlighter-rouge">...\AppData\Roaming\Oracle\jdk-15</code>.</p>
 
 <p>To set the path, in a cmd.exe terminal, issue the following:</p>
 
-<pre><code class="language-plain">set Path=%APPDATA%\Oracle\jdk-14.0.1\bin;%Path%
-setx Path "%APPDATA%\Oracle\jdk-14.0.1\bin;%Path%"
+<pre><code class="language-plain">set Path=%APPDATA%\Oracle\jdk-15\bin;%Path%
+setx Path "%APPDATA%\Oracle\jdk-15\bin;%Path%"
 </code></pre>
 
 <p>Check version:</p>
@@ -787,14 +801,14 @@ which one to use by controlling the Path.</p>
 <a href="https://openjdk.java.net">Oracle <strong>OpenJDK</strong> page</a>.</p>
 
 <p>Follow the <strong>Download</strong> link in the Oracle page, which currently points to
-<a href="https://jdk.java.net/14">jdk.java.net/14</a>.</p>
+<a href="https://jdk.java.net/15">jdk.java.net/15</a>.</p>
 
 <p>In the <strong>Builds</strong> section, download the <strong>macOS/x64</strong> .tar.gz file.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/Downloads
-xattr <span class="nt">-d</span> com.apple.quarantine openjdk-14.<span class="k">*</span>_osx-x64_bin.tar.gz
-<span class="nb">tar </span>xf openjdk-14.<span class="k">*</span>_osx-x64_bin.tar.gz
-<span class="nb">sudo mv </span>jdk-14.<span class="k">*</span>.jdk/ /Library/Java/JavaVirtualMachines/
+xattr <span class="nt">-d</span> com.apple.quarantine openjdk-15_osx-x64_bin.tar.gz
+<span class="nb">tar </span>xf openjdk-15_osx-x64_bin.tar.gz
+<span class="nb">sudo mv </span>jdk-15.jdk/ /Library/Java/JavaVirtualMachines/
 </code></pre></div></div>
 
 <p>Check version:</p>
@@ -825,11 +839,11 @@ start on macOS 10.10.</div>
 if you want to override this mechanism and use a different version, try
 to configure the user path via <code class="language-plaintext highlighter-rouge">launchctl</code>:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>launchctl config user path /Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>launchctl config user path /Library/Java/JavaVirtualMachines/jdk-15.jdk/Contents/Home/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 <span class="nb">sudo </span>reboot
 </code></pre></div></div>
 
-<p>As shown before, for this configuration to become effective, it is
+<p>As shown above, for this configuration to become effective, it is
 necessary to reboot.</p>
 
 <p>To check if the new path was configured properly:</p>
@@ -841,7 +855,7 @@ necessary to reboot.</p>
 applications. For shell usage, it is necessary to also set the PATH
 environment variable in the shell startup files (like <code class="language-plaintext highlighter-rouge">.zprofile</code>):</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/bin/:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/Library/Java/JavaVirtualMachines/jdk-15.jdk/Contents/Home/bin/:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
 </code></pre></div></div>
 
 
@@ -860,12 +874,12 @@ install it via the package manager.</p>
 
 <p>For example on Ubuntu:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">--yes</span> openjdk-14-jdk
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">--yes</span> openjdk-15-jdk
 </code></pre></div></div>
 
 <p>Or on CentOS:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nt">-y</span> <span class="nb">install </span>java-14-openjdk
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nt">-y</span> <span class="nb">install </span>java-15-openjdk
 </code></pre></div></div>
 
 <p>Check your system for the available package names and versions.</p>
@@ -876,19 +890,18 @@ install it via the package manager.</p>
 <a href="https://openjdk.java.net">Oracle <strong>OpenJDK</strong> page</a>.</p>
 
 <p>Follow the <strong>Download</strong> link in the Oracle page, which currently points to
-<a href="https://jdk.java.net/14">jdk.java.net/14</a>.</p>
+<a href="https://jdk.java.net/15">jdk.java.net/15</a>.</p>
 
 <p>In the <strong>Builds</strong> section, download the <strong>Linux/x64</strong> .tar.gz file.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/Downloads
-<span class="nb">tar </span>xf openjdk-14.0.1_linux-x64_bin.tar.gz
-<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt
-<span class="nb">sudo mv </span>jdk-14.0.1/ <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt/
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt
+<span class="nb">cd</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt
+<span class="nb">tar </span>xf ~/Downloads/openjdk-15_linux-x64_bin.tar.gz
 </code></pre></div></div>
 
 <p>Then add the location to the user PATH:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt/jdk-14.0.1/bin/:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt/jdk-15/bin/:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
 </code></pre></div></div>
 
 <p>Check version:</p>
@@ -906,9 +919,27 @@ sourced from one of the files in <code class="language-plaintext highlighter-rou
 <p>It is possible to install multiple versions on the same system, and chose
 which one to use by controlling the PATH.</p>
 
+<p>It is also possible to edit <a href="https://wiki.eclipse.org/Eclipse.ini">eclipse.ini</a>
+and add a <code class="language-plaintext highlighter-rouge">-vm</code> option pointing to the Java bin path; be sure this
+option is placed before <code class="language-plaintext highlighter-rouge">-vmargs</code>, which should be the last one:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--launcher.defaultAction
+openFile
+-vm
+/home/ilg/opt/jdk-15/bin/
+-vmargs
+-Dosgi.requiredJavaVersion=11
+-XX:MaxPermSize=256m
+-Xms256m
+-Xmx2048m
+</code></pre></div></div>
+
 
 	</div>
 </div>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> The Qt plug-ins do not start
+with Java 15; for more details please see the Known Issues page.</div>
 
 <h2 id="alternate-java-distributions">Alternate Java distributions</h2>
 
@@ -1014,10 +1045,11 @@ for running on a 32-bit system), be sure it includes at least CDT 9.2.1.</p>
     
 
     <hr/>
-    If you have comments on the content of the page that you consider useful
-    for other readers, please enter them here.
-    For question and general support, please use the
-    <a href="https://www.tapatalk.com/groups/xpack/">Project Forums</a>.
+    <p>Comments on the content of this page that might be useful
+    for other readers are welcomed here. For question and general
+    support, please use the
+    <a href="https://www.tapatalk.com/groups/xpack/">project forums</a>.
+    </p>
 
     <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -1046,7 +1078,7 @@ for running on a 32-bit system), be sure it includes at least CDT 9.2.1.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 10, 2020 <br />
+<span>Page last updated:</span> Sep 18, 2020<br/> Site last generated: Sep 21, 2020 <br />
                 </div>
             </div>
 </footer>

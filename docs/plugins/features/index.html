@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+<meta name="description" content="The list of main project features and benefits.">
 <meta name="keywords" content=" ">
 <title>Eclipse Embedded CDT Features | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-09-10T16:59:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/plugins/features/","headline":"Eclipse Embedded CDT Features","datePublished":"2015-09-10T16:59:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/features/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/plugins/features/","headline":"Eclipse Embedded CDT Features","datePublished":"2015-09-10T16:59:00+00:00","dateModified":"2020-09-18T11:15:16+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/features/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -413,7 +413,7 @@
           
           
           
-          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv/">OpenOCD RISC-V</a></li>
           
           
           
@@ -466,7 +466,7 @@
           
           
           
-          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          <li><a title="The Managed Build System" href="/eclipse/cdt/managed-build/">The Managed Build System</a></li>
           
           
           
@@ -577,6 +577,20 @@
           
           
           
+          <li><a title="FAQ" href="/support/faq/">FAQ</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Known issues" href="/support/known-issues/">Known issues</a></li>
+          
+          
+          
+          
+          
+          
           <li><a class="extern" title="The Project Forums" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
           
           
@@ -667,6 +681,9 @@
 <div class="post-content">
 
    
+    <div class="summary">The list of main project features and benefits.
+</div>
+   
 
     
     
@@ -699,18 +716,23 @@ $('#toc').on('click', 'a', function() {
 <p>The main features of the Eclipse Embedded CDT family of plug-ins are:</p>
 
 <ul>
-  <li>create/build/manage embedded Arm/AArch64/RISC-V applications, using the managed project features of Eclipse CDT, i.e. without having to manually create and maintain makefiles</li>
-  <li>provide ready to run templates for some Arm Cortex-M processors</li>
+  <li>create/build/manage embedded Arm/AArch64/RISC-V applications, using the
+managed project features of Eclipse CDT, i.e. without having to manually
+create and maintain makefiles</li>
+  <li>provide ready to run templates for some Arm Cortex-M microcontrollers</li>
   <li>provide debugging support via JTAG/SWD</li>
-  <li>provide a special view to examine and modify peripheral registers during debug sessions</li>
+  <li>provide a special view to examine and modify peripheral registers during
+debug sessions</li>
 </ul>
 
 <p>Other features of the cross build plug-in are:</p>
 
 <ul>
   <li>supports a wide range of 32 and 64-bit toolchains</li>
-  <li>provides extra build steps to generate the binary files required to write the controller flash memory</li>
-  <li>supports the automatic discovery of system paths and macro definitions for accurate indexing and auto-completion</li>
+  <li>provides extra build steps to generate the binary files required to
+write the controller flash memory</li>
+  <li>supports the automatic discovery of system paths and macro definitions
+for accurate indexing and auto-completion</li>
   <li>provides common options for all toolchains</li>
   <li>provides fully configurable toolchain definitions</li>
   <li>provides advanced toolchain path management</li>
@@ -720,7 +742,8 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="supported-toolchains">Supported toolchains</h2>
 
-<p>The build plug-in supports most existing toolchains currently available for both 32 and 64-bit Arm and RISC-V processors.</p>
+<p>The build plug-in supports most existing toolchains currently available
+for both 32 and 64-bit Arm and RISC-V processors.</p>
 
 <h3 id="arm-toolchains">Arm toolchains</h3>
 
@@ -750,66 +773,125 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="extra-build-steps">Extra build steps</h2>
 
-<p>In addition to building the ELF file, the build plug-in can also create a binary file (<strong>ihex</strong>, <strong>srec</strong>, <strong>binary</strong>) to be programmed in the processor flash memory.</p>
+<p>In addition to building the ELF file, the build plug-in can also create
+a binary file (<strong>ihex</strong>, <strong>srec</strong>, <strong>binary</strong>) to be programmed in the
+microcontroller flash memory.</p>
 
-<p>Since resources are usually limited, the plug-in can also display the program size, and create a listing.</p>
+<p>Since resources are usually limited, the plug-in can also display the
+program size, and create a listing.</p>
 
 <p><img src="/assets/images/2015/console-build-secondary.png" alt="An example of how secondary targets are generated" /></p>
 
 <h2 id="discovery-options--indexing">Discovery Options &amp; Indexing</h2>
 
-<p>Frankly, this is mainly a CDT feature, but in order for it to work, the build plug-in must provide the CDT with various toolchain details, like compiler command (for example arm-none-eabi-gcc), compiler options and the right path to the toolchain binary.</p>
+<p>Frankly, this is mainly a CDT feature, but in order for it to work,
+the build plug-in must provide the CDT with various toolchain details,
+like compiler command (for example arm-none-eabi-gcc), compiler options
+and the right path to the toolchain binary.</p>
 
-<p>To understand <strong>Discovery Options</strong>, you need to understand what <strong>Indexing</strong> is. In order to allow Eclipse user to navigate to definitions, to declarations, to allow smart completion, refactoring and all these nice features, the CDT needs to have <strong>exactly</strong> the same knowledge of the source files as the compiler. For this, it also needs to know the system headers used at compile time and the default preprocessor definitions issued by the compiler. GCC provides a magic combination of command options to do this (<code class="language-plaintext highlighter-rouge">-E -P -v -dD ${plugin_state_location}/specs.c</code>), so the CDT needs to issue the proper compiler commands (one for each language, C &amp; C++). The build plug-in provides these details, for each toolchain.</p>
+<p>To understand <strong>Discovery Options</strong>, you need to understand what
+<strong>Indexing</strong> is. In order to allow Eclipse user to navigate to
+definitions, to declarations, to allow smart completion, refactoring
+and all these nice features, the CDT needs to have <strong>exactly</strong> the
+same knowledge of the source files as the compiler. For this, it also
+needs to know the system headers used at compile time and the default
+preprocessor definitions issued by the compiler. GCC provides a magic
+combination of command options to do this
+(<code class="language-plaintext highlighter-rouge">-E -P -v -dD ${plugin_state_location}/specs.c</code>), so the CDT needs
+to issue the proper compiler commands (one for each language,
+C &amp; C++). The build plug-in provides these details, for each toolchain.</p>
 
-<p>This feature also provides a quick check if you configured properly your environment: after creating a new project, you should see the special folder <strong>Includes</strong> in the root of your project, containing the paths of the system include files used by your compiler. If you don’t see this, you probably misconfigured the toolchain path.</p>
+<p>This feature also provides a quick check if you configured properly
+your environment: after creating a new project, you should see the
+special folder <strong>Includes</strong> in the root of your project, containing
+the paths of the system include files used by your compiler. If you
+don’t see this, you probably misconfigured the toolchain path.</p>
 
 <p><img src="/assets/images/2015/project-explorer-includes.png" alt="Example of automatically detected include paths" /></p>
 
 <h2 id="simplified-multiple-tools-configurations">Simplified multiple tools configurations</h2>
 
-<p>In addition to being tedious, setting options for each tool (C compiler, C++ compiler, linker) might also be a source of subtle errors when incompatible options are used for different tools.</p>
+<p>In addition to being tedious, setting options for each tool (C compiler,
+C++ compiler, linker) might also be a source of subtle errors when
+incompatible options are used for different tools.</p>
 
-<p>To minimise the risk of such errors, and to make the plug-in easier to use, unlike in most other CDT compiler settings plug-ins, special configuration entries were defined at toolchain level instead of specific tools. Options enabled at this level are used for all tools, without exception.</p>
+<p>To minimise the risk of such errors, and to make the plug-in easier
+to use, unlike in most other CDT compiler settings plug-ins, special
+configuration entries were defined at toolchain level instead of
+specific tools. Options enabled at this level are used for all tools,
+without exception.</p>
 
 <p><img src="/assets/images/2015/properties-c-settings-tool-optimization.png" alt="Example of common options used for all tools" /></p>
 
 <h2 id="fully-configurable-toolchains">Fully configurable toolchains</h2>
 
-<p>Toolchain definitions include most of the configurable details, not only the prefix and the path, allowing the use of almost any GNU compatible toolchain.</p>
+<p>Toolchain definitions include most of the configurable details, not
+only the prefix and the path, allowing the use of almost any GNU
+compatible toolchain.</p>
 
 <p><img src="/assets/images/2015/properties-c-settings-toolchains.png" alt="All toolchain details can be configured" /></p>
 
 <h2 id="advanced-toolchain-path-management">Advanced toolchain path management</h2>
 
-<p>The traditional way of accessing the toolchain components was to add the toolchain path to the system PATH and later do nothing special inside Eclipse. Unfortunately this model does not scale; serious development often requires multiple toolchains (either different versions of the same toolchain, or even toolchains from different sources) on the same machine, and polluting the system PATH is a source of major headaches.</p>
+<p>The traditional way of accessing the toolchain components was to add
+the toolchain path to the system PATH and later do nothing special
+inside Eclipse. Unfortunately this model does not scale; serious
+development often requires multiple toolchains (either different
+versions of the same toolchain, or even toolchains from different
+sources) on the same machine, and polluting the system PATH is a
+source of major headaches.</p>
 
-<p>The Eclipse Embedded CDT cross build plug-in provides advanced toolchain path management; for more details, please read the separate <a href="/toolchain/path/" title="Toolchain path management">Toolchain path management</a> page.</p>
+<p>The Eclipse Embedded CDT cross build plug-in provides advanced
+toolchain path management; for more details, please read the
+separate <a href="/toolchain/path/">Toolchain path management</a> page.</p>
 
 <h2 id="improved-project-portability">Improved project portability</h2>
 
-<p>Even more, for improved project portability, the toolchain path is stored in the workspace, in preference to the path stored in the project.</p>
+<p>Even more, for improved project portability, the toolchain path
+is stored in the workspace, in preference to the path stored in the project.</p>
 
-<p>Project portability is essential for team collaboration, when multiple developers use different platform to develop a single project. Without project portability, after a Windows machine would commit the project to a central repository, macOS or GNU/Linux users would have to manually adjust the path in their projects after each update, and the other way around; for more details, please read the separate <a href="/eclipse/project/portability/" title="Project portability">Project portability</a> page.</p>
+<p>Project portability is essential for team collaboration, when
+multiple developers use different platform to develop a single
+project. Without project portability, after a Windows machine
+would commit the project to a central repository, macOS or GNU/Linux
+users would have to manually adjust the path in their projects
+after each update, and the other way around; for more details,
+please read the separate
+<a href="/eclipse/project/portability/">Project portability</a> page.</p>
 
 <h2 id="functional-ready-to-run-templates">Functional ready to run templates</h2>
 
-<p>For beginners, who need initial help to put all details together for their first project, a complete sample, with startup code, linker scripts, semi-hosting enabled and all necessary options already set, can be a major time saver.</p>
+<p>For beginners, who need initial help to put all details together
+for their first project, a complete sample, with startup code,
+linker scripts, semi-hosting enabled and all necessary options
+already set, can be a major time saver.</p>
 
-<p>The <strong>Hello World ARM Cortex-M3 C Project</strong> template was destined exactly for such cases; please see the <a href="/tutorials/blinky-arm/">Tutorial: Create a Blinky Arm test project</a> for more details.</p>
+<p>The <strong>Hello World Arm Cortex-M3 C Project</strong> template was destined
+exactly for such cases; please see the
+<a href="/tutorials/blinky-arm/">Tutorial: Create a Blinky Arm test project</a>
+for more details.</p>
 
 <p><img src="/assets/images/2015/NewCM3ProjectResult.png" alt="The Cortex-M3 template project" /></p>
 
-<p>Even more, specific templates are available for the STM families of processors <strong>STM32F[01234]x</strong>, and for some Freescale <strong>KLxx</strong> processors. They create the classical application that blinks a LED, and, specific for the Debug configuration, prints a string on the tracing (SWV or semi-hosting) output.</p>
+<p>Even more, specific templates are available for the STM families of
+microcontrollers <strong>STM32F[01234]x</strong>, and for some Freescale <strong>KLxx</strong>
+microcontrollers. They create the classical application that blinks
+a LED, and, specific for the Debug configuration, prints a string on
+the tracing (SWV or semi-hosting) output.</p>
 
 <h2 id="debugging-support">Debugging support</h2>
 
-<p>During the lifetime of a project, creating/editing source files and building binaries are certainly important activities, but in many cases the most time is spent during debugging sessions, and a reliable debugging environment is an absolute must.</p>
+<p>During the lifetime of a project, creating/editing source files and
+building binaries are certainly important activities, but in many
+cases the most time is spent during debugging sessions, and a reliable
+debugging environment is an absolute must.</p>
 
 <p>There are many debugging techniques and tools, but we recommend two solutions:</p>
 
 <ul>
-  <li>the <a href="http://www.segger.com/jlink_base.html">SEGGER J-Link</a> probe with its integrated GDB server, via <a href="/debug/jlink/" title="The J-Link hardware debugging Eclipse plug-in">the J-Link plug-in</a></li>
+  <li>the <a href="http://www.segger.com/jlink_base.html">SEGGER J-Link</a> probe
+with its integrated GDB server, via
+<a href="/debug/jlink/">the J-Link plug-in</a></li>
   <li>
     <p>the <a href="http://openocd.org">OpenOCD</a> GDB server for many other JTAG probes.</p>
 
@@ -817,37 +899,57 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ul>
 
-<p>We also recommend the use of specific Arm debugging support, like tracing via the SWO output, with a second choice for semihosting output (both are supported by the J-Link plug-in).</p>
+<p>We also recommend the use of specific Arm debugging support, like
+tracing via the SWO output, with a second choice for semihosting
+output (both are supported by the J-Link plug-in).</p>
 
 <h2 id="the-packages-manager-perspective">The packages manager perspective</h2>
 
-<p>The Eclipse Embedded CDT plug-ins were the first open source tools to benefit from the new CMSIS Packs technology promoted by Arm.</p>
+<p>The Eclipse Embedded CDT plug-ins were the first open source tools
+to benefit from the new CMSIS Packs technology promoted by Arm.</p>
 
-<p>Packages are a convenient way to distribute software components, hardware descriptions and documentation, in a structured way.</p>
+<p>Packages are a convenient way to distribute software components,
+hardware descriptions and documentation, in a structured way.</p>
 
-<p>There are many packages available, mostly maintained by Keil, and in order to conveniently manage them a dedicated perspective was created, with filtering and outline capabilities.</p>
+<p>There are many packages available, mostly maintained by Keil,
+and in order to conveniently manage them a dedicated perspective
+was created, with filtering and outline capabilities.</p>
 
 <p><img src="/assets/images/2015/perspective-packs.png" alt="The Packs perspective" /></p>
 
-<p>Among other things, the packages metadata include a complete list of devices, grouped by vendor, family, sub-family, and a list of development boards. These extra data allow to easily associate additional properties (like device name) to projects, and later use these definition to automate other configurations, like debugging sessions.</p>
+<p>Among other things, the packages metadata include a complete
+list of devices, grouped by vendor, family, sub-family, and a
+list of development boards. These extra data allow to easily
+associate additional properties (like device name) to projects,
+and later use these definition to automate other configurations,
+like debugging sessions.</p>
 
 <p><img src="/assets/images/2015/properties-c-settings-device-tab.png" alt="Assigning a device and board to the project" /></p>
 
 <h2 id="peripherals-registers-view-in-debug">Peripherals registers view in debug</h2>
 
-<p>One of the great features of CMSIS Packs is the availability of hardware descriptions for all Cortex-M devices, with details down to the register field level.</p>
+<p>One of the great features of CMSIS Packs is the availability of
+hardware descriptions for all Cortex-M devices, with details down
+to the register field level.</p>
 
-<p>These descriptions can be used to assist the debugger in examining and modifying memory mapped peripheral registers.</p>
+<p>These descriptions can be used to assist the debugger in examining
+and modifying memory mapped peripheral registers.</p>
 
 <p><img src="/assets/images/2015/debug-view-peripheral-registers.png" alt="The peripheral registers view" /></p>
 
 <h2 id="device-and-board-documentation-files">Device and board documentation files</h2>
 
-<p>The CMSIS packs also provide lots of documentation files, like device data sheets, user manuals, references manuals, and also board related files, including schematics and other manuals.</p>
+<p>The CMSIS packs also provide lots of documentation files, like device
+data sheets, user manuals, references manuals, and also board related
+files, including schematics and other manuals.</p>
 
-<p>The list of documentation files is shown in a separate view, located on the right of the <strong>Outline</strong> view. In case the <strong>Documents</strong> view is not visible, a <strong>Reset</strong> is needed for the <strong>C/C++</strong> perspective (right click the perspective button and select Reset).</p>
+<p>The list of documentation files is shown in a separate view, located
+on the right of the <strong>Outline</strong> view. In case the <strong>Documents</strong> view
+is not visible, a <strong>Reset</strong> is needed for the <strong>C/C++</strong> perspective
+(right click the perspective button and select Reset).</p>
 
-<p>To open the individual documents, double click their names and specific viewers will open, generally outside Eclipse.</p>
+<p>To open the individual documents, double click their names and
+specific viewers will open, generally outside Eclipse.</p>
 
 <p><img src="/assets/images/2015/view-documents.png" alt="The documentation view" /></p>
 
@@ -863,10 +965,11 @@ $('#toc').on('click', 'a', function() {
     
 
     <hr/>
-    If you have comments on the content of the page that you consider useful
-    for other readers, please enter them here.
-    For question and general support, please use the
-    <a href="https://www.tapatalk.com/groups/xpack/">Project Forums</a>.
+    <p>Comments on the content of this page that might be useful
+    for other readers are welcomed here. For question and general
+    support, please use the
+    <a href="https://www.tapatalk.com/groups/xpack/">project forums</a>.
+    </p>
 
     <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -895,7 +998,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 10, 2020 <br />
+<span>Page last updated:</span> Sep 18, 2020<br/> Site last generated: Sep 21, 2020 <br />
                 </div>
             </div>
 </footer>

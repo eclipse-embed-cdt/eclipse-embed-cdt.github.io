@@ -1,6 +1,17 @@
 [
 
 
+{
+"title": "Announcement - Eclipse is coming to Raspberry Pi",
+"tags": "eclipseembeddedj-linkraspberryaarch64",
+"keywords": "",
+"url": "/articles/2020-09-08-raspberrypi-org-eclipse/",
+"summary": ""
+}
+,
+
+
+
 
 
 {
@@ -93,7 +104,7 @@
 "tags": "",
 "keywords": "",
 "url": "/eclipse/project/assign-device/",
-"summary": ""
+"summary": "<p>Automate debug sessions by assigning a CMSIS Packs device/board to the project.</p>"
 }
 ,
 
@@ -106,7 +117,7 @@
 "tags": "",
 "keywords": "",
 "url": "/tutorials/blinky-arm/",
-"summary": ""
+"summary": "<p>A complete example, from build to debug.</p>"
 }
 ,
 
@@ -131,7 +142,7 @@
 "tags": "",
 "keywords": "",
 "url": "/templates/cortexm/",
-"summary": ""
+"summary": "<p>The C/C++ project templates for generic Cortex-M microcontrollers.</p>"
 }
 ,
 
@@ -145,12 +156,14 @@
 
 
 
+
+
 {
-"title": "FAQ",
+"title": "Frequently Asked Questions",
 "tags": "",
 "keywords": "",
 "url": "/support/faq/",
-"summary": ""
+"summary": "<p>A list of common questions that other people have already asked.</p>"
 }
 ,
 
@@ -163,7 +176,7 @@
 "tags": "",
 "keywords": "",
 "url": "/plugins/features/",
-"summary": ""
+"summary": "<p>The list of main project features and benefits.</p>"
 }
 ,
 
@@ -194,7 +207,7 @@
 "tags": "",
 "keywords": "",
 "url": "/eclipse/cdt/hardware-debug/",
-"summary": ""
+"summary": "<p>How the Eclipse Embedded CDT hardware debug plug-ins work.</p>"
 }
 ,
 
@@ -209,7 +222,7 @@
 "tags": "",
 "keywords": "",
 "url": "/templates/",
-"summary": ""
+"summary": "<p>The C/C++ project templates.</p>"
 }
 ,
 
@@ -222,7 +235,7 @@
 "tags": "",
 "keywords": "",
 "url": "/debug/",
-"summary": ""
+"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
 }
 ,
 
@@ -233,7 +246,7 @@
 "tags": "",
 "keywords": "",
 "url": "/support/",
-"summary": ""
+"summary": "<p>Where to search for help when something goes wrong.</p>"
 }
 ,
 
@@ -279,7 +292,7 @@
 "tags": "",
 "keywords": "",
 "url": "/eclipse/cdt/indexer/",
-"summary": ""
+"summary": "<p>How the Eclipse CDT indexer works.</p>"
 }
 ,
 
@@ -301,7 +314,7 @@
 "tags": "",
 "keywords": "",
 "url": "/debug/install/",
-"summary": ""
+"summary": "<p>Links to specific J-Link, OpenOCD and QEMU install pages.</p>"
 }
 ,
 
@@ -329,18 +342,18 @@
 "tags": "",
 "keywords": "",
 "url": "/debug/jlink/install/",
-"summary": ""
+"summary": "<p>Why to choose J-Link and how to install it.</p>"
 }
 ,
 
 
 
 {
-"title": "The J-Link debugging Eclipse plug-in",
+"title": "The SEGGER J-Link debugging plug-in",
 "tags": "",
 "keywords": "",
 "url": "/debug/jlink/",
-"summary": ""
+"summary": "<p>How to run Eclipse debug sessions using the SEGGER J-Link.</p>"
 }
 ,
 
@@ -353,7 +366,7 @@
 "tags": "",
 "keywords": "",
 "url": "/templates/klxx/",
-"summary": ""
+"summary": "<p>The C/C++ project templates for NXP microcontrollers.</p>"
 }
 ,
 
@@ -364,7 +377,7 @@
 "tags": "",
 "keywords": "",
 "url": "/support/known-issues/",
-"summary": ""
+"summary": "<p>Issues already known, but without immediate solutions.</p>"
 }
 ,
 
@@ -389,8 +402,8 @@
 "title": "The managed build",
 "tags": "",
 "keywords": "",
-"url": "/plugins/managed-build/",
-"summary": ""
+"url": "/eclipse/cdt/managed-build/",
+"summary": "<p>How the Eclipse CDT managed build works.</p>"
 }
 ,
 
@@ -426,7 +439,7 @@
 "tags": "",
 "keywords": "",
 "url": "/debug/openocd/riscv/",
-"summary": ""
+"summary": "<p>How to run Eclipse debug sessions using OpenOCD with RISC-V devices.</p>"
 }
 ,
 
@@ -435,11 +448,11 @@
 
 
 {
-"title": "The OpenOCD debugging Eclipse plug-in",
+"title": "The OpenOCD debugging plug-in",
 "tags": "",
 "keywords": "",
 "url": "/debug/openocd/",
-"summary": ""
+"summary": "<p>How to run Eclipse debug sessions using OpenOCD.</p>"
 }
 ,
 
@@ -452,7 +465,7 @@
 "tags": "",
 "keywords": "",
 "url": "/plugins/packs-manager/",
-"summary": ""
+"summary": "<p>A plug-in to manage the Arm/Keil CMSIS Packs.</p>"
 }
 ,
 
@@ -476,7 +489,7 @@
 "tags": "",
 "keywords": "",
 "url": "/debug/peripheral-registers/",
-"summary": ""
+"summary": "<p>How to use the CMSIS Packs SVD files to view the peripheral registers during debug sessions.</p>"
 }
 ,
 
@@ -504,7 +517,7 @@
 "tags": "",
 "keywords": "",
 "url": "/eclipse/workspace/preferences/",
-"summary": "<p>Settings to consider for your workspace</p>"
+"summary": "<p>Settings to consider for your workspace.</p>"
 }
 ,
 
@@ -530,13 +543,15 @@
 
 
 {
-"title": "The QEMU debugging Eclipse plug-in",
+"title": "The QEMU debugging plug-in",
 "tags": "",
 "keywords": "",
 "url": "/debug/qemu/",
-"summary": ""
+"summary": "<p>How to run Eclipse debug sessions using QEMU Arm.</p>"
 }
 ,
+
+
 
 
 
@@ -559,7 +574,7 @@
 "tags": "",
 "keywords": "",
 "url": "/templates/stm32f/",
-"summary": ""
+"summary": "<p>The C/C++ project templates for STM microcontrollers.</p>"
 }
 ,
 
@@ -611,7 +626,7 @@
 "tags": "",
 "keywords": "install",
 "url": "/plugins/troubleshoot/",
-"summary": ""
+"summary": "<p>Some common mistakes made during install and how to avoid them.</p>"
 }
 ,
 

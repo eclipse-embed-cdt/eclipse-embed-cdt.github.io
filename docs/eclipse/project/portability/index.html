@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-09-11T19:12:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/eclipse/project/portability/","headline":"Project portability","datePublished":"2015-09-11T19:12:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/eclipse/project/portability/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/eclipse/project/portability/","headline":"Project portability","datePublished":"2015-09-11T19:12:00+00:00","dateModified":"2020-09-15T05:00:15+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/eclipse/project/portability/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -413,7 +413,7 @@
           
           
           
-          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv/">OpenOCD RISC-V</a></li>
           
           
           
@@ -466,7 +466,7 @@
           
           
           
-          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          <li><a title="The Managed Build System" href="/eclipse/cdt/managed-build/">The Managed Build System</a></li>
           
           
           
@@ -571,6 +571,20 @@
           
           
           <li><a title="Overview" href="/support/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="FAQ" href="/support/faq/">FAQ</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Known issues" href="/support/known-issues/">Known issues</a></li>
           
           
           
@@ -696,66 +710,109 @@ $('#toc').on('click', 'a', function() {
 
    <h2 id="goal">Goal</h2>
 
-<p>In short, a portable project is a project that can be used without changes on any workspace on any platform.</p>
+<p>In short, a portable project is a project that can be used without
+changes on any workspace on any platform.</p>
 
 <h2 id="what-this-means">What this means?</h2>
 
-<p>In practical terms, for a project to be portable, this means that all Eclipse configuration files (mainly .cproject, but possibly other files, like debug launch configurations), should not contain references to resource described via absolute paths, or assume fixed locations for resources that can be installed on different locations on different platforms, or use programs that have different names on different platform, etc.</p>
+<p>In practical terms, for a project to be portable, this means that all
+Eclipse configuration files (mainly .cproject, but possibly other files,
+like debug launch configurations), should not contain references to
+resource described via absolute paths, or assume fixed locations for
+resources that can be installed on different locations on different
+platforms, or use programs that have different names on different platform,
+etc.</p>
 
 <h2 id="collaborative-scenario">Collaborative scenario</h2>
 
-<p>To fully understand the importance of this issue, imagine a team of programmers collaboratively working on a project and sharing the sources via a common repository. Except extremely strict organisations, developers tend to have their own preferences which also affect their choices for different development platforms (Windows, macOS, GNU/Linux). If everything else can be configured to be more or less identical on all platforms, it happens quite often the path to the toolchain to be different on each platform. Storing the actual toolchain path in the project configuration (shared via the repository), leads to non-portable projects, since always the last commit to the repository will update the path to the one used by the most recent contributor. This will certainly make all other developers unhappy, since after synchronising with the repository, they must manually update the path back to their own location.</p>
+<p>To fully understand the importance of this issue, imagine a team of
+programmers collaboratively working on a project and sharing the
+sources via a common repository. Except extremely strict organisations,
+developers tend to have their own preferences which also affect their
+choices for different development platforms (Windows, macOS, GNU/Linux).
+If everything else can be configured to be more or less identical on all
+platforms, it happens quite often the path to the toolchain to be
+different on each platform. Storing the actual toolchain path in the
+project configuration (shared via the repository), leads to non-portable
+projects, since always the last commit to the repository will update the
+path to the one used by the most recent contributor. This will certainly
+make all other developers unhappy, since after synchronising with the
+repository, they must manually update the path back to their own location.</p>
 
 <h2 id="things-to-observe-for-project-portability">Things to observe for project portability</h2>
 
 <h3 id="toolchain-path">Toolchain path</h3>
 
-<p>The toolchain path is the classical example of detail that can ruin project portability. Starting with version 2.x, the Eclipse Embedded CDT cross build plug-in does not store any toolchain path in .cproject, and does not use such a path; all details related to the toolchain path are stored in the Eclipse workspace, to each toolchain is associated one path, and eventually, for special configurations, for each project can be associated one path. For more details see the separate <a href="/toolchain/path/" title="Toolchain path management">Toolchain path management</a> page.</p>
+<p>The toolchain path is the classical example of detail that can ruin
+project portability. Starting with version 2.x, the Eclipse Embedded
+CDT cross build plug-in does not store any toolchain path in
+<code class="language-plaintext highlighter-rouge">.cproject</code>, and does not use such a path; all details related to the
+toolchain path are stored in the Eclipse workspace, to each toolchain
+is associated one path, and possibly, for special configurations, for
+each project can be associated one path. For more details see the separate
+<a href="/toolchain/path/">Toolchain path management</a> page.</p>
 
 <h3 id="include-paths">Include paths</h3>
 
-<p>The second common mistake that can compromise project portability is to add absolute references to folders where to search for the include files.</p>
+<p>The second common mistake that can compromise project portability is
+to add absolute references to folders where to search for the include files.</p>
 
-<p>The recommended method to enter include path referring to local project folders is to use relative paths.</p>
+<p>The recommended method to enter include path referring to local project
+folders is to use relative paths.</p>
 
 <p><img src="/assets/images/2014/02/IncludePath.png" alt="Define relative include paths" /></p>
 
-<p>In most usual cases CDT is smart enough to know the environment where the build process is executed, to properly process these paths. For example when the build is started in the default Debug or Release folders, the actual paths to the include folders is one step up, so it is automatically prefixed with <code class="language-plaintext highlighter-rouge">../</code>.</p>
+<p>In most usual cases CDT is smart enough to know the environment where the
+build process is executed, to properly process these paths. For example
+when the build is started in the default Debug or Release folders, the
+actual paths to the include folders is one step up, so it is automatically
+prefixed with <code class="language-plaintext highlighter-rouge">../</code>.</p>
 
 <p><img src="/assets/images/2014/02/UseRelativePaths.png" alt="Use of relative include paths" /></p>
 
-<p>An alternative solution is to use the CDT predefined macros, to create paths relative either to the current project folder, with ${ProjDirPath},</p>
+<p>An alternative solution is to use the CDT predefined macros, to create
+paths relative either to the current project folder, with ${ProjDirPath},</p>
 
 <p><img src="/assets/images/2014/02/UseProjDirPath.png" alt="Use ProjDirPath for include paths" /></p>
 
-<p>or something like <code class="language-plaintext highlighter-rouge">${workspace_loc:/other_proj/libs/misc/include}</code> relative to any project in the workspace.</p>
+<p>or something like <code class="language-plaintext highlighter-rouge">${workspace_loc:/other_proj/libs/misc/include}</code> relative
+to any project in the workspace.</p>
 
 <h3 id="linker-script-files">Linker script files</h3>
 
-<p>Similar solutions can be considered for entering linker scripts. The recommended method is to enter the script names without any path</p>
+<p>Similar solutions can be considered for entering linker scripts. The
+recommended method is to enter the script names without any path</p>
 
 <p><img src="/assets/images/2014/02/ScriptFiles.png" alt="Add script files by simple names" /></p>
 
-<p>and to define the path to the folder where they are located (usually named <strong>ldscripts</strong>).</p>
+<p>and to define the path to the folder where they are located (usually
+named <strong>ldscripts</strong>).</p>
 
 <p><img src="/assets/images/2014/02/ldscriptsFolder.png" alt="Enter location for linker scripts" /></p>
 
-<p>As for the include paths, CDT is smart enough to make this definition relative to the build folder:</p>
+<p>As for the include paths, CDT is smart enough to make this definition
+relative to the build folder:</p>
 
 <p><img src="/assets/images/2014/02/ldscriptsUsage.png" alt="Relative linker scripts folder" /></p>
 
-<p>Alternate solutions are to use paths relative to ${ProjDirPath} or ${workspace_loc}.</p>
+<p>Alternate solutions are to use paths relative to <code class="language-plaintext highlighter-rouge">${ProjDirPath}</code> or
+<code class="language-plaintext highlighter-rouge">${workspace_loc}</code>.</p>
 
 <h3 id="library-paths">Library paths</h3>
 
-<p>Another equally important mistake can be to use absolute paths in the linker configuration, used to search for libraries.</p>
+<p>Another equally important mistake can be to use absolute paths in the
+linker configuration, used to search for libraries.</p>
 
-<p>Definitions are similar to the ones explained above for the location of the linker scripts.</p>
+<p>Definitions are similar to the ones explained above for the location
+of the linker scripts.</p>
 
 <h3 id="debug-launch-configuration">Debug launch configuration</h3>
 
-<p>The Eclipse debugging system can be configured to store the debug launch configurations either in a common place in workspace, or in each project. In the later case, special care must be considered to avoid using non-portable definitions, like GDB Server name, command line options, etc.</p>
-
+<p>The Eclipse debugging system can be configured to store the debug
+launch configurations either in a common place in workspace, or in
+each project. In the later case, special care must be considered
+to avoid using non-portable definitions, like GDB Server name, command
+line options, etc.</p>
 
 
         
@@ -767,6 +824,31 @@ $('#toc').on('click', 'a', function() {
 
     
 
+    <hr/>
+    <p>Comments on the content of this page that might be useful
+    for other readers are welcomed here. For question and general
+    support, please use the
+    <a href="https://www.tapatalk.com/groups/xpack/">project forums</a>.
+    </p>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = '';  // Your page's canonical URL variable
+            this.page.identifier = '/eclipse/project/portability/'; // Your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://embed-cdt.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
 
 </div>
 
@@ -776,7 +858,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 10, 2020 <br />
+<span>Page last updated:</span> Sep 15, 2020<br/> Site last generated: Sep 21, 2020 <br />
                 </div>
             </div>
 </footer>

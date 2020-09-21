@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Settings to consider for your workspace">
+<meta name="description" content="Settings to consider for your workspace.">
 <meta name="keywords" content=" ">
 <title>Workspace preferences | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-09-11T20:16:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/eclipse/workspace/preferences/","headline":"Workspace preferences","datePublished":"2015-09-11T20:16:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/eclipse/workspace/preferences/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/eclipse/workspace/preferences/","headline":"Workspace preferences","datePublished":"2015-09-11T20:16:00+00:00","dateModified":"2020-09-18T11:15:16+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/eclipse/workspace/preferences/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -413,7 +413,7 @@
           
           
           
-          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv">OpenOCD RISC-V</a></li>
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv/">OpenOCD RISC-V</a></li>
           
           
           
@@ -466,7 +466,7 @@
           
           
           
-          <li><a title="The Managed Build System" href="/plugins/managed-build/">The Managed Build System</a></li>
+          <li><a title="The Managed Build System" href="/eclipse/cdt/managed-build/">The Managed Build System</a></li>
           
           
           
@@ -577,6 +577,20 @@
           
           
           
+          <li><a title="FAQ" href="/support/faq/">FAQ</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Known issues" href="/support/known-issues/">Known issues</a></li>
+          
+          
+          
+          
+          
+          
           <li><a class="extern" title="The Project Forums" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
           
           
@@ -667,7 +681,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Settings to consider for your workspace
+    <div class="summary">Settings to consider for your workspace.
 </div>
    
 
@@ -717,7 +731,7 @@ locations on Windows/Linux (search for the last entry below the
 <h2 id="use-active-build-configuration-for-indexing">Use active build configuration for indexing</h2>
 
 <p>Eclipse CDT has a very powerful indexer, which parses the source code on
-the fly and provides hints, auto-completion help, error reporting, etc
+the fly and provides hints, auto-completion help, error reporting, etc.
 while editing, without having to start the build process. For this
 indexer to be accurate, it must be in sync with the compiler, in terms
 of options and environment. For the indexer to automatically sync when
@@ -736,7 +750,8 @@ to use the active configuration:</p>
 
 <h2 id="editor-folding">Editor folding</h2>
 
-<p>To better view the entire content of the source files, it is recommended to disable editor folding:</p>
+<p>To better view the entire content of the source files, it is recommended
+to disable editor folding:</p>
 
 <ul>
   <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/++</strong> →
@@ -753,7 +768,11 @@ the <strong>Header Comments</strong></li>
 
 <h2 id="code-formatter">Code formatter</h2>
 
-<p>Eclipse CDT has a very useful feature allowing to automatically reformat a piece of code to comply to a given style. The recommended style is GNU. To set it:</p>
+<p>Eclipse CDT has a very useful feature allowing to automatically reformat a
+piece of code to comply to a given style. The recommended style is GNU,
+but you are free to choose or even design your own style.</p>
+
+<p>To set it:</p>
 
 <ul>
   <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> → <strong>Code Style</strong> → <strong>Formatter</strong></li>
@@ -762,17 +781,24 @@ the <strong>Header Comments</strong></li>
 
 <p><img src="/assets/images/2014/06/PreferencesFormatter1.png" alt="Preferences Formatter" /></p>
 
-<p>Except very special company policies, it is generally recommended to NOT change the individual formatter style, and to apply the GNU format to all source files in a project before committing to the repository.</p>
+<p>Except very special company policies, it is generally recommended to
+NOT change the individual formatter style, and to apply the GNU format
+to all source files in a project before committing to the repository.</p>
 
-<p>However, there is one detail that need to be changed, and this is the tab processing policy.</p>
+<p>However, there is one detail that need to be changed, and this is the
+tab processing policy.</p>
 
 <p>For this, click the <strong>Edit…</strong> button.</p>
 
 <p><img src="/assets/images/2014/06/Style_GNU_with_spacs.png" alt="Change the tab policy to use spaces only" /></p>
 
-<p>Change the tab policy to <strong>Spaces only</strong>, and the <strong>indentation</strong> and <strong>tab size</strong> to 2.</p>
+<p>Change the tab policy to <strong>Spaces only</strong>, and the <strong>indentation</strong>
+and <strong>tab size</strong> to 2.</p>
 
-<p>Since these changes were applied to a built in style, it is not possible to save the settings directly, but it is very easy to create a new profile name (for example <strong>GNU with spaces</strong>), and possibly export it for archiving.</p>
+<p>Since these changes were applied to a built in style, it is not
+possible to save the settings directly, but it is very easy to
+create a new profile name (for example <strong>GNU with spaces</strong>), and
+possibly export it for archiving.</p>
 
 <p>When done, click the <strong>OK</strong> button twice.</p>
 
@@ -783,9 +809,12 @@ the <strong>Header Comments</strong></li>
   <li>go to the <em>Eclipse</em> menu → <strong>Source</strong> → <strong>Format</strong></li>
 </ul>
 
-<p>The same action can be triggered with a right click and a <strong>Source</strong> → <strong>Format</strong> or even easier, with a keyboard shortcut (<strong>cmd+shift+F</strong> on macOS).</p>
+<p>The same action can be triggered with a right click and a
+<strong>Source</strong> → <strong>Format</strong> or even easier, with a keyboard shortcut
+(<strong>cmd+shift+F</strong> on macOS).</p>
 
-<p>To check if the text indeed has spaces and not tabs, enable the <strong>Show Whitespace Characters</strong>:</p>
+<p>To check if the text indeed has spaces and not tabs, enable the
+<strong>Show Whitespace Characters</strong>:</p>
 
 <p><img src="/assets/images/2014/06/Show_white_spaces.png" alt="Show whitespace characters" /></p>
 
@@ -813,10 +842,15 @@ so when installing it the settings should be already applied.</div>
 
 <h2 id="save-automatically">Save automatically</h2>
 
-<p>Sometimes users are very confused to see that after the edit/compile/run cycle nothing changed in the program behaviour, although the editor clearly shows the changes. Usually the main reason is that the file was not actually saved and the build process used the previous version of the file. To automatically save edited files before build,</p>
+<p>Sometimes users are very confused to see that after the edit/compile/run
+cycle nothing changed in the program behaviour, although the editor clearly
+shows the changes. Usually the main reason is that the file was not actually
+saved and the build process used the previous version of the file. To
+automatically save edited files before build,</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Windows →) Preferences</strong> → <strong>General</strong> → <strong>Workspace</strong> → <strong>Build</strong></li>
+  <li>go to the <em>Eclipse</em> menu → <strong>(Windows →) Preferences</strong> → <strong>General</strong> →
+<strong>Workspace</strong> → <strong>Build</strong></li>
   <li>enable <strong>Save automatically before manual build</strong></li>
 </ul>
 
@@ -946,7 +980,9 @@ GDB. For this, it is necessary to enable the GDB Trace console.</p>
 <strong>General Behaviour</strong> section.</li>
 </ul>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The GDB entry is displayd belod Debug only after the debug plug-ins are initialised, i.e. after starting a debug session.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The GDB entry is displayed below Debug only
+after the debug plug-ins are initialised, i.e. after starting a debug
+session.</div>
 
 <p><img src="/assets/images/2020/preferences-ccpp-debug-gdb.png" alt="Enable Doxygen support" /></p>
 
@@ -960,6 +996,31 @@ GDB. For this, it is necessary to enable the GDB Trace console.</p>
 
     
 
+    <hr/>
+    <p>Comments on the content of this page that might be useful
+    for other readers are welcomed here. For question and general
+    support, please use the
+    <a href="https://www.tapatalk.com/groups/xpack/">project forums</a>.
+    </p>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = '';  // Your page's canonical URL variable
+            this.page.identifier = '/eclipse/workspace/preferences/'; // Your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://embed-cdt.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
 
 </div>
 
@@ -969,7 +1030,7 @@ GDB. For this, it is necessary to enable the GDB Trace console.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Sep 10, 2020 <br />
+<span>Page last updated:</span> Sep 18, 2020<br/> Site last generated: Sep 21, 2020 <br />
                 </div>
             </div>
 </footer>
