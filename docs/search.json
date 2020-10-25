@@ -569,6 +569,8 @@
 
 
 
+
+
 {
 "title": "STM32Fxx templates",
 "tags": "",
@@ -660,10 +662,10 @@
 
 
 {
-"title": "Eclipse Embedded CDT plug-ins v5.1.1-202007271621 released",
+"title": "Plug-ins releases migrated to Eclipse Foundation",
 "tags": "gnuarmmcueclipserisc-v",
 "keywords": "",
-"url": "/blog/2020/07/28/plugins-v5.1.1-202007271621-released/",
+"url": "/blog/2020/07/28/plugins-migrated-to-eclipse-foundation/",
 "summary": ""
 }
 ,

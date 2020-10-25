@@ -5,8 +5,8 @@
         <description>Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.</description>
         <link>https://eclipse-embed-cdt.github.io/</link>
         <atom:link href="https://eclipse-embed-cdt.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 24 Oct 2020 21:26:00 +0000</pubDate>
-        <lastBuildDate>Sat, 24 Oct 2020 21:26:00 +0000</lastBuildDate>
+        <pubDate>Sun, 25 Oct 2020 13:02:05 +0000</pubDate>
+        <lastBuildDate>Sun, 25 Oct 2020 13:02:05 +0000</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
         
         <item>
@@ -24,11 +24,11 @@
         </item>
         
         <item>
-            <title>Eclipse Embedded CDT plug-ins v5.1.1-202007271621 released</title>
-            <description>&lt;p&gt;Version &lt;a href=&quot;https://projects.eclipse.org/projects/iot.embed-cdt/releases/5.1.1&quot;&gt;5.1.1&lt;/a&gt;is the first release after the project migration to the Eclipse Foundation.&lt;/p&gt;</description>
+            <title>Plug-ins releases migrated to Eclipse Foundation</title>
+            <description>&lt;p&gt;Starting with v5.1.1, all future&lt;a href=&quot;https://projects.eclipse.org/projects/iot.embed-cdt/governance&quot;&gt;releases&lt;/a&gt;will be available from the&lt;a href=&quot;https://projects.eclipse.org/projects/iot.embed-cdt/&quot;&gt;Eclipse Foundation&lt;/a&gt;servers; there will be no more releases published here.&lt;/p&gt;</description>
             <pubDate>Tue, 28 Jul 2020 13:52:00 +0000</pubDate>
-            <link>https://eclipse-embed-cdt.github.io/blog/2020/07/28/plugins-v5.1.1-202007271621-released/</link>
-            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2020/07/28/plugins-v5.1.1-202007271621-released/</guid>
+            <link>https://eclipse-embed-cdt.github.io/blog/2020/07/28/plugins-migrated-to-eclipse-foundation/</link>
+            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2020/07/28/plugins-migrated-to-eclipse-foundation/</guid>
             
             <category>gnu</category>
             

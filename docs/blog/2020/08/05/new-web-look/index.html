@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-05T09:47:00+00:00" />
 <script type="application/ld+json">
-{"description":"After several re-branding iterations, the Eclipse Embedded CDT project, available from GitHub, has a new web site.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/blog/2020/08/05/new-web-look/","headline":"The Eclipse Embedded CDT project web has a new look!","datePublished":"2020-08-05T09:47:00+00:00","dateModified":"2020-09-09T08:37:28+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/blog/2020/08/05/new-web-look/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"After several re-branding iterations, the Eclipse Embedded CDT project, available from GitHub, has a new web site.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/blog/2020/08/05/new-web-look/","headline":"The Eclipse Embedded CDT project web has a new look!","datePublished":"2020-08-05T09:47:00+00:00","dateModified":"2020-10-25T12:51:10+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/blog/2020/08/05/new-web-look/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -584,7 +584,7 @@
           
           
           
-          <li><a title="Known issues" href="/support/known-issues/">Known issues</a></li>
+          <li><a title="Known Issues" href="/support/known-issues/">Known Issues</a></li>
           
           
           
@@ -631,6 +631,13 @@
           
           
           <li><a title="Overview" href="/maintain/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Old Releases" href="/plugins/releases/">Old Releases</a></li>
           
           
           
@@ -706,7 +713,8 @@ available from
 
 <p>The site continues to use <a href="https://pages.github.com">GitHub Pages</a>,
 which is the GitHub solution for providing documentation sites to hosted
-projects</p>
+projects, but, for more flexibility, the conversion from markdown to html
+is performed by a CI job.</p>
 
 <h2 id="jekyll--markdown">Jekyll &amp; markdown</h2>
 
@@ -717,20 +725,21 @@ sites, and the most convenient input format for Jekyll is
 <p>The new site uses the standard GitHub setup, which automatically runs
 the Jekyll generator; thus an external build step is no longer needed.</p>
 
-<h2 id="content-migration">Content migration</h2>
+<h2 id="old-gnu-mcu-eclipse-web">Old GNU MCU Eclipse web</h2>
 
-<p>The initial location of the new site was the <code class="language-plaintext highlighter-rouge">web-preview.git</code> project.</p>
+<p>The old <a href="https://gnu-mcu-eclipse.github.io/">gnu-mcu-eclipse.github.io</a>
+site now automatically redirects most of its pages to the new site.</p>
 
-<p>Content from the old site was migrated to the new site, with updates.</p>
+<h2 id="preview-web">Preview web</h2>
 
-<p>Switching fom the external builder to GitHub required some changes:</p>
+<p>The new setup also includes a preview site, where new content can be
+tested without disturbing the main site.</p>
 
-<ul>
-  <li>there is no automatic detection of last modified date, so
-the <code class="language-plaintext highlighter-rouge">last_updated:</code> was added to posts</li>
-  <li>the <code class="language-plaintext highlighter-rouge">kramdown</code> markdown parser does not have the <code class="language-plaintext highlighter-rouge">autolink</code> option, so
-links must be explicit</li>
-</ul>
+<p>The preview site URL is
+<a href="https://eclipse-embed-cdt.github.io/web-preview/">https://eclipse-embed-cdt.github.io/web-preview/</a>.</p>
+
+<p>The CI job automatically publishes all pushes to the <code class="language-plaintext highlighter-rouge">develop</code> branch onto
+the preview site; pushes to <code class="language-plaintext highlighter-rouge">master</code> are published onto the main site.</p>
 
     </div>
 
@@ -778,7 +787,7 @@ links must be explicit</li>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 9, 2020<br/> Site last generated: Oct 24, 2020 <br />
+<span>Page last updated:</span> Oct 25, 2020<br/> Site last generated: Oct 25, 2020 <br />
                 </div>
             </div>
 </footer>
