@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="How to use the CMSIS Packs SVD files to view the peripheral registers during debug sessions.">
+<meta name="description" content="Tools required to build the plug-ins locally and run debug sessions.">
 <meta name="keywords" content=" ">
-<title>The Peripherals Registers view | Eclipse Embedded CDT</title>
+<title>Build prerequisites | Eclipse Embedded CDT</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
 
 
@@ -14,19 +14,19 @@
 <link type="application/rss+xml" rel="alternate" title="" href="https://eclipse-embed-cdt.github.io/feed.xml">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>The Peripherals Registers view</title>
+<title>Build prerequisites</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="The Peripherals Registers view" />
+<meta property="og:title" content="Build prerequisites" />
 <meta name="author" content="Liviu Ionescu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
 <meta property="og:description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
-<link rel="canonical" href="https://eclipse-embed-cdt.github.io/debug/peripheral-registers/" />
-<meta property="og:url" content="https://eclipse-embed-cdt.github.io/debug/peripheral-registers/" />
+<link rel="canonical" href="https://eclipse-embed-cdt.github.io/develop/build-prerequisites/" />
+<meta property="og:url" content="https://eclipse-embed-cdt.github.io/develop/build-prerequisites/" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2015-09-11T19:00:00+00:00" />
+<meta property="article:published_time" content="2015-09-10T17:20:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/debug/peripheral-registers/","headline":"The Peripherals Registers view","datePublished":"2015-09-11T19:00:00+00:00","dateModified":"2020-09-18T11:15:16+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/debug/peripheral-registers/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/develop/build-prerequisites/","headline":"Build prerequisites","datePublished":"2015-09-10T17:20:00+00:00","dateModified":"2020-11-15T11:01:34+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/develop/build-prerequisites/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -256,7 +256,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="The Peripherals Registers view">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Build prerequisites">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -434,7 +434,7 @@
           
           
           
-          <li class="active"><a title="Peripheral Registers" href="/debug/peripheral-registers/">Peripheral Registers</a></li>
+          <li><a title="Peripheral Registers" href="/debug/peripheral-registers/">Peripheral Registers</a></li>
           
           
           
@@ -680,7 +680,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">The Peripherals Registers view</h1>
+   <h1 class="post-title-main">Build prerequisites</h1>
 </div>
 
 
@@ -688,7 +688,7 @@
 <div class="post-content">
 
    
-    <div class="summary">How to use the CMSIS Packs SVD files to view the peripheral registers during debug sessions.
+    <div class="summary">Tools required to build the plug-ins locally and run debug sessions.
 </div>
    
 
@@ -718,203 +718,467 @@ $('#toc').on('click', 'a', function() {
     
 
 
-   <p>After the success of the <a href="/debug/jlink/">J-Link plug-in</a>,
-which significantly reduced the configuration effort to start a debug
-session, the most requested feature was a way of examining/modifying
-the peripheral registers.</p>
+   <h2 id="install--configure-eclipse">Install &amp; Configure Eclipse</h2>
 
-<p>There were other solutions already available for this, but all
-required the availability of various hardware definitions files,
-plus the manual selection of the appropriate file for the current
-debug configuration.</p>
+<h3 id="install-git-for-windows">Install Git for Windows</h3>
 
-<p>The Eclipse Embedded CDT approach is a more integrated one, based on
-<a href="http://www.keil.com/pack/doc/CMSIS/Pack/html/index.html">CMSIS Packs</a>.
-In fact the main reason for introducing the peripheral registers view
-only now was the need for the CMSIS Packs technology to mature and
-of course a CMSIS Packs Manager implementation.</p>
+<p>On Windows, the <code class="language-plaintext highlighter-rouge">git</code> command is available in the
+<a href="https://git-scm.com/download/win">Git for Windows</a> package.</p>
 
-<h2 id="prerequisites">Prerequisites</h2>
+<p>It also comes with a minimal POSIX environment. To access it, start
+the <code class="language-plaintext highlighter-rouge">bash.exe</code> program.</p>
 
-<h3 id="the-packs-plug-ins">The Packs plug-ins</h3>
+<h3 id="install-sourcetree">Install Sourcetree</h3>
 
-<p>The first thing required is the presence of the Packs plug-ins.
-To check if they are installed, use the <strong>About Eclipse</strong> menu and
-click the <strong>Installation Details</strong> button.</p>
+<p>For a convenient access to Git, it is recommended to install
+<a href="https://www.sourcetreeapp.com/">Sourcetree</a>, available for macOS and Windows.</p>
 
-<p><img src="/assets/images/2014/10/PacksFeature.png" alt="Check the presence of the Packs plug-ins" /></p>
+<p>For GNU/Linux, either use GitKraken, or directly the command line Git.</p>
 
-<p>If not present, it is recommended to first read the
-<a href="/plugins/packs-manager/">Packs manager</a> documentation
-page where installation details are also provided.</p>
+<h3 id="install-java">Install Java</h3>
 
-<h3 id="install-required-packs">Install required packs</h3>
+<p>Starting with Eclipse 2020-09, the minimum requirement is Java 11.
+The builds running on the Eclipse infrastructure currently use
+<a href="https://adoptopenjdk.net">AdoptOpenJDK</a> version <strong>11</strong> (LTS).
+For consistency reasons, it is recommended to install the same version.</p>
 
-<p>Once the Packs plug-ins are available, and the list of available
-packages was retrieved, it is necessary to install the packages
-related to the devices used by the projects under development.</p>
+<p>Starting with 2020-09, Eclipse itself includes a JRE instance,
+and for normal use it no longer needs a separate Java.
+However, active development requires JDK; JRE is not enough,
+without JDK it is not possible to compile the plug-ins and
+run debug sessions.</p>
 
-<p>Please note that failure to do so will prevent the device selection
-window to make the desired device available for selection.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> If you already have a more recent version of
+Java installed, or from a different distribution, you might be able to use
+it, but, for consistency reasons, it is still recommended to install
+AdoptOpenJDK 11.</div>
 
-<h3 id="associate-a-device-to-the-project">Associate a device to the project</h3>
+<ul id="profileTabs_1" class="nav nav-tabs">
+    <li class="active"><a href="#windows_1" data-toggle="tab">Windows</a></li>
+    <li><a href="#macos_1" data-toggle="tab">macOS</a></li>
+    <li><a href="#linux_1" data-toggle="tab">GNU/Linux</a></li>
+</ul>
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane active" id="windows_1">
+		
+<p>Windows</p>
 
-<p>Even if a future release will automatically make this association
-via a wizard during project creation, it is still recommended to
-check it, and adjust if needed.</p>
 
-<p>For more details, please visit the
-<a href="/eclipse/project/assign-device/">separate page</a>.</p>
-
-<p><img src="/assets/images/2013/10/Devices.png" alt="Assigning a device to the project" /></p>
-
-<h2 id="the-debug-configuration">The debug configuration</h2>
-
-<p>With the device associated to the build configuration, the debug
-configuration is created and started the usual way:</p>
+	</div>
+	<div role="tabpanel" class="tab-pane" id="macos_1">
+		
+<p>Go to the AdoptOpenJDK <a href="https://adoptopenjdk.net/releases.html">download</a> page:</p>
 
 <ul>
-  <li>select the .elf file</li>
-  <li>right click, <strong>Debug As</strong> → <strong>Debug Configurations…</strong></li>
-  <li>double click the <strong>GDB SEGGER J-Link Debugging</strong> (or OpenOCD, or QEMU)</li>
+  <li>download the jdk-11* macOS .pkg file (surprisingly, the .tar.gz is
+not an usual archive; it includes the macOS package, and requires
+even more efforts to use)</li>
+  <li>double click it to start the install; it’ll go into
+<code class="language-plaintext highlighter-rouge">/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk</code>.</li>
 </ul>
 
-<h2 id="device-name-automatic-configuration">Device name automatic configuration</h2>
 
-<p>Since the device name is (should be) known, the J-Link <strong>Device name</strong>
-field is automatically configured with the CMSIS device name.</p>
+	</div>
+	<div role="tabpanel" class="tab-pane" id="linux_1">
+		
+<p>linux</p>
 
-<h2 id="the-peripherals-view">The Peripherals view</h2>
 
-<p>After starting the debug session, the typical <strong>Debug</strong> perspective is shown.</p>
+	</div>
+</div>
 
-<p>New to this perspective is the <strong>Peripherals</strong> view, added to the
-right of the <strong>Registers</strong> view, in the same window with <strong>Variables</strong>
-and <strong>Breakpoints</strong>. If, for any reasons, this view is not shown,
-although the Packs plug-ins were installed, try to perform a <strong>Reset</strong>
-on the Debug perspective.</p>
-
-<p><img src="/assets/images/2013/10/PeripheralRegisters.png" alt="The peripheral registers view" /></p>
-
-<p>The <strong>Peripherals</strong> view lists all peripherals available in the
-device hardware description .SVD file provided by the silicon vendor.</p>
-
-<p>The list includes the peripheral name, the peripheral memory address,
-a short description and a check box that can be used to select the
-peripherals to be monitored in the debug session.</p>
-
-<h2 id="maximal-peripherals-list">Maximal peripherals list</h2>
-
-<p>Some silicon vendors, like ST, provide a single .SVD file for an
-entire family of devices. Although this avoids a lot of redundancy,
-with the current .SVD specifications it is not possible to filter
-out the devices not used by some family members, so in such cases
-expect to encounter peripherals that actually are not available in
-some devices.</p>
-
-<h2 id="systemregisters">System registers</h2>
-
-<p>The current SVD specifications do not cover very well if/how the vendor
-should define the system registers, like <strong>SysTick</strong>, <strong>NVIC</strong>, <strong>Debug</strong>,
-etc, so it is up to the silicon vendors how to do it; some define the
-system registers grouped in one single custom peripheral, some in
-multiple peripherals, and <strong>some do not even define all system registers</strong>.</p>
-
-<h2 id="the-memory-monitors">The Memory monitors</h2>
-
-<p>Since for most modern devices the peripherals are memory mapped devices,
-in the Eclipse Embedded CDT implementation, selecting a peripheral in the
-Peripherals view does not open a separate window, but a standard
-<strong>Memory monitor</strong>, mapped to the corresponding peripheral memory area.</p>
-
-<p>The peripheral monitors are listed in the same view with usual memory
-monitors, and preserve all common behaviour, like individual <strong>Remove</strong>
-or <strong>Remove All</strong>.</p>
-
-<p>The difference comes in the custom rendering, represented as a tree
-in the right side of the window.</p>
-
-<p>According to the SVD specifications, this tree can have the following
-nodes:</p>
+<h3 id="prepare-folders">Prepare folders</h3>
 
 <ul>
-  <li>clusters of registers,</li>
-  <li>arrays of clusters,</li>
-  <li>registers</li>
-  <li>arrays of registers</li>
-  <li>bit fields.</li>
+  <li>in a place of you choice (like <code class="language-plaintext highlighter-rouge">${HOME}/Work</code>), create a folder <code class="language-plaintext highlighter-rouge">eclipse-embed-cdt.github</code></li>
+  <li>inside it create a folder <code class="language-plaintext highlighter-rouge">develop</code></li>
 </ul>
 
-<p>All of them are currently supported and depicted in a hierarchical way.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> <span class="s2">"</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span><span class="s2">/Work/eclipse-embed-cdt.github/develop"</span>
+</code></pre></div></div>
 
-<h2 id="special-access-registers">Special access registers</h2>
+<h3 id="install-eclipse-ide-for-eclipse-committers">Install Eclipse IDE for Eclipse Committers</h3>
 
-<p>According to SVD, registers or fields can have special access rights,
-like <strong>read-only</strong> (highlighted in light yellow) or <strong>write-only</strong>
-(highlighted in light blue).</p>
+<p>This instance of Eclipse is specialised for Eclipse plug-ins development.
+The recommened version is 2020-09.</p>
 
-<h2 id="tool-tips">Tool tips</h2>
+<ul id="profileTabs_2" class="nav nav-tabs">
+    <li class="active"><a href="#windows_2" data-toggle="tab">Windows</a></li>
+    <li><a href="#macos_2" data-toggle="tab">macOS</a></li>
+    <li><a href="#linux_2" data-toggle="tab">GNU/Linux</a></li>
+</ul>
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane active" id="windows_2">
+		
+<p>Windows</p>
 
-<p>By hovering the mouse over the peripheral monitor window, additional
-details are shown as tool tips. Different content is shown for different
-columns, for example the <strong>Register</strong> column will show detailed
-descriptions, the <strong>Address</strong> column will show offset and size,
-and the <strong>Value</strong> column will show reset value and mask.</p>
 
-<h2 id="editing">Editing</h2>
+	</div>
+	<div role="tabpanel" class="tab-pane" id="macos_2">
+		
+<p>Go to the 2020-09
+<a href="https://www.eclipse.org/downloads/packages/release/2020-09/r/">download</a> page:</p>
 
-<p>The values of the non read-only registers can be changed using
-<strong>in-place-editing</strong>, in the corresponding cell of the <strong>Value</strong>
-column.</p>
+<ul>
+  <li>identify the <strong>Eclipse IDE for Eclipse Committers</strong> section</li>
+  <li>download the macOS binary
+(for example <code class="language-plaintext highlighter-rouge">eclipse-cpp-2020-09-R-macosx-cocoa-x86_64.dmg</code>)</li>
+  <li>double click on the .dmg image file</li>
+  <li>drag and drop the <code class="language-plaintext highlighter-rouge">Eclipse.app</code> into the <code class="language-plaintext highlighter-rouge">eclipse-embed-cdt.github/develop</code>
+folder</li>
+  <li>remove the <code class="language-plaintext highlighter-rouge">com.apple.quarantine</code> attribute:</li>
+</ul>
 
-<p>Registers and fields are synchronised, editing the value of a field
-will also change the value of the parent register, and editing the
-value of a register will also change the affected fields.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xattr <span class="nt">-dr</span> com.apple.quarantine Eclipse.app
+</code></pre></div></div>
 
-<h2 id="filtering">Filtering</h2>
+<ul>
+  <li>rename <code class="language-plaintext highlighter-rouge">Eclipse.app</code> to <code class="language-plaintext highlighter-rouge">Eclipse-committers-2020-09.app</code></li>
+</ul>
 
-<p>It is possible to filter the content of the peripheral monitor by
-register name. To enter the filtering conditions, right click
-anywhere in the monitor rendering window and select the
-<strong>Add Filter…</strong> action.</p>
 
-<p><img src="/assets/images/2014/10/PeripheralMenu.png" alt="Peripheral monitor menu" /></p>
+	</div>
+	<div role="tabpanel" class="tab-pane" id="linux_2">
+		
+<p>linux</p>
 
-<p>Note: In the initial release the functionality behind this menu
-needs more polishing…</p>
 
-<h2 id="troubleshooting">Troubleshooting</h2>
+	</div>
+</div>
 
-<h3 id="zero-values">Zero values</h3>
+<h3 id="start-the-new-eclipse">Start the new Eclipse</h3>
 
-<p>The first question some people might raise is <em>“why so many peripherals
-have zero values?”</em>. Well, most probably because they are not enabled,
-so reading them leads usually to zeroes. Or because they do not exist
-for the actual device, and are present there because the silicon vendor
-provides a single file for the entire family.</p>
+<ul>
+  <li>in the <code class="language-plaintext highlighter-rouge">.../eclipse-embed-cdt.github/develop</code> folder create a new workspace
+named <code class="language-plaintext highlighter-rouge">eclipse-committers-2020-09-workspace</code>
+(note: be sure you create the workspace where you need it to be, since
+moving later is generally not supported by Eclipse; if you need this,
+preferably create a new workspace)</li>
+  <li>check <strong>Use this as default…</strong></li>
+  <li>check if you installed the right Eclipse; go to the <em>Eclipse</em> menu →
+<strong>Help</strong> (<strong>Eclipse</strong> on macOS) → <strong>About Eclipse</strong> and the first line
+should read <strong>Eclipse IDE for Eclipse Committers</strong></li>
+</ul>
 
-<h3 id="no-devices-available-install-packs-first">“No devices available, install packs first”</h3>
+<h3 id="set-java-11-as-default">Set Java 11 as default</h3>
 
-<p>If your devices window is empty, you did not read carefully the above
-steps. You need to update the list of available packages, then install
-the ones you need.</p>
+<ul>
+  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Java</strong> → <strong>Installed JREs</strong>
+    <ul>
+      <li>Add → Standard VM
+        <ul>
+          <li>JRE Home: select the <code class="language-plaintext highlighter-rouge">/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home</code> folder</li>
+          <li>JRE name: <strong>AdoptOpenJDK 11</strong></li>
+        </ul>
+      </li>
+      <li>click the <strong>Apply</strong> button</li>
+    </ul>
+  </li>
+  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Java</strong> → <strong>Installed JREs</strong> → <strong>Execution Environments</strong>
+    <ul>
+      <li>in the left pane select <strong>JavaSE-11</strong></li>
+      <li>in the right pane select <strong>AdoptOpenJDK 11</strong></li>
+      <li>click the <strong>Apply and Close</strong> button</li>
+    </ul>
+  </li>
+  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Java</strong> → <strong>Compiler</strong>
+    <ul>
+      <li>Compiler compliance level: select 11</li>
+      <li>click the <strong>Apply and Close</strong> button</li>
+    </ul>
+  </li>
+</ul>
 
-<h2 id="support">Support</h2>
+<h3 id="install-several-eclipse-plug-ins">Install several Eclipse plug-ins</h3>
 
-<p>In case you encounter bugs or problems, the usual SourceForge support
-trackers are available.</p>
+<ul>
+  <li><strong>Help</strong> → <strong>Install New Software</strong>
+    <ul>
+      <li>Work with: <code class="language-plaintext highlighter-rouge">2020-09 - http://download.eclipse.org/releases/2020-09</code>
+        <ul>
+          <li>In <strong>Application Development Framework</strong>
+            <ul>
+              <li>optional <strong>Eclipse Project SDK</strong></li>
+            </ul>
+          </li>
+          <li>In <strong>Mobile and Device Development</strong>
+            <ul>
+              <li>select <strong>C/C++ GCC Cross Compile Support</strong></li>
+              <li>select <strong>C/C++ GDB Hardware Debugging</strong></li>
+              <li>select <strong>C/C++ Memory View Enhancements</strong></li>
+            </ul>
+          </li>
+          <li>In <strong>Programming Languages</strong>
+            <ul>
+              <li>optional <strong>C/C++ Autotools</strong></li>
+              <li>select <strong>C/C++ Development Tools</strong></li>
+              <li>select <strong>C/C++ Development Tools SDK</strong></li>
+              <li>optional <strong>C/C++ Docker Container Launch Support</strong></li>
+              <li>optional <strong>C/C++ LLVM-Family</strong></li>
+              <li>optional <strong>C/C++ Unit Testing Support</strong></li>
+            </ul>
+          </li>
+          <li>In <strong>Web, XML, Java and OSGi Enterprise Development</strong>
+            <ul>
+              <li>select <strong>Eclipse XML Editors and Tools</strong></li>
+              <li>select <strong>Eclipse XSL Development Tools</strong></li>
+              <li>select <strong>JavaScript Development Tools</strong></li>
+            </ul>
+          </li>
+          <li>click the <strong>Next</strong> button</li>
+          <li>accept the terms of the license agreement</li>
+          <li>click the <strong>Finish</strong> button</li>
+        </ul>
+      </li>
+      <li>wait for the new plug-ins to be installed (in background, see status line)</li>
+    </ul>
+  </li>
+  <li>restart</li>
+  <li>click the Workspace button in the top right corner</li>
+</ul>
 
-<p>If you have problems with the actual registers/fields definitions,
-well, there isn’t much that we can do to fix them, but we still
-can forward your complains to Arm/Keil, to further forward them
-to the silicon vendors.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Without the <strong>C/C++ Development Tools SDK</strong>
+which includes the CDT sources, the extension point
+schemas will not be available so attempts to add new elements to the
+extensions will not be possible, and only ‘Generic’ elements will be
+offered.</div>
 
-<h2 id="credits">Credits</h2>
+<h3 id="install-base-api-cdt-1000">Install base API CDT 10.0.0</h3>
 
-<p>The use of a memory monitor to view peripheral registers, and
-the look and feel of the interface was inspired by the (now defunct)
-<strong>Red Suite 5</strong> by <strong>Code Red</strong> (acquired by NXP). Many thanks for
-providing the inspiration!</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Since 6.0.0; previous releases were based on
+CDT 9.2.1.</div>
+
+<ul>
+  <li>go to <a href="http://www.eclipse.org/cdt/downloads.php">CDT download</a> page,
+and download <code class="language-plaintext highlighter-rouge">cdt-10.0.0.zip</code>
+(for compatibility with Eclipse 2020-09)</li>
+  <li>unpack the archive</li>
+  <li>move the new <code class="language-plaintext highlighter-rouge">cdt-10.0.0</code> folder into the <code class="language-plaintext highlighter-rouge">develop</code> folder</li>
+  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Plug-in Development</strong>
+→ <strong>Target Platform</strong>
+    <ul>
+      <li>click the <strong>Add…</strong> button</li>
+      <li>select <strong>Nothing: Start with an empty target</strong></li>
+      <li>Next
+        <ul>
+          <li>Enter name: <code class="language-plaintext highlighter-rouge">cdt-10.0.0</code></li>
+          <li>click <strong>Add…</strong> → <strong>Directory</strong> → <strong>Next &gt;</strong></li>
+          <li>click <strong>Browse…</strong> → <code class="language-plaintext highlighter-rouge">cdt-10.0.0</code></li>
+          <li>click the <strong>Finish</strong> button</li>
+        </ul>
+      </li>
+      <li>click the <strong>Reload</strong> button</li>
+      <li>click the <strong>Finish</strong></li>
+    </ul>
+  </li>
+  <li>enable only the <strong>Running Platform as Active</strong> (mandatory!)</li>
+  <li>click <strong>Apply and Close</strong></li>
+</ul>
+
+<p>Selecting the running platform is required when starting Eclipse to Run or
+Debug, without it the core plug-ins will not be available.</p>
+
+<ul>
+  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Plug-in Development</strong>
+→ <strong>API Baselines</strong>
+    <ul>
+      <li>click the <strong>Add Baseline…</strong> button</li>
+      <li>select <strong>A target platform</strong>
+        <ul>
+          <li>Enter name: <code class="language-plaintext highlighter-rouge">cdt-10.0.0</code></li>
+          <li>enable <code class="language-plaintext highlighter-rouge">cdt-10.0.0</code></li>
+          <li>click the <strong>Refresh</strong> button</li>
+          <li>click the <strong>Finish</strong> button</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>click <strong>Apply and Close</strong></li>
+</ul>
+
+<h3 id="create-and-configure-the-workspace">Create and configure the workspace</h3>
+
+<ul>
+  <li>change the workspace preferences
+    <ul>
+      <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences…</strong></li>
+      <li><strong>General</strong> → <strong>Workspace</strong>
+        <ul>
+          <li>enable <strong>Refresh on access</strong></li>
+          <li>set <strong>Text file encoding: UTF-8</strong></li>
+          <li>click the <strong>Apply</strong> button</li>
+        </ul>
+      </li>
+      <li><strong>General</strong> → <strong>Editors</strong> → <strong>Text Editors</strong>
+        <ul>
+          <li>enable <strong>Show Print Margin</strong> (80)</li>
+          <li>enable <strong>Show Line Numbers</strong></li>
+          <li>click the <strong>Apply</strong> button</li>
+        </ul>
+      </li>
+      <li><strong>General</strong> → <strong>Editors</strong> → <strong>File Associations</strong>
+        <ul>
+          <li>click <strong>Add</strong> and add <code class="language-plaintext highlighter-rouge">*.sh</code>, <code class="language-plaintext highlighter-rouge">*.command</code>, <code class="language-plaintext highlighter-rouge">*.ini</code>, <code class="language-plaintext highlighter-rouge">*.liquid</code>, <code class="language-plaintext highlighter-rouge">*.launch</code></li>
+          <li>for each, click the <strong>Add</strong> button in the Associate editors area</li>
+          <li>associate with the <strong>Text Editor</strong></li>
+          <li>click the <strong>Apply and Close</strong> button</li>
+        </ul>
+      </li>
+      <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences…</strong></li>
+      <li><strong>Run/Debug</strong> → <strong>Console</strong>
+        <ul>
+          <li>disable Limit console output</li>
+          <li>click the <strong>Apply</strong> button</li>
+        </ul>
+      </li>
+      <li><strong>Java</strong> → <strong>Editor</strong> → <strong>Folding</strong>
+        <ul>
+          <li>disable <strong>Header Comments</strong></li>
+          <li>disable <strong>Imports</strong></li>
+          <li>click the <strong>Apply</strong> button</li>
+        </ul>
+      </li>
+      <li><strong>XML</strong> → <strong>XML Files</strong> → <strong>Editor</strong>
+        <ul>
+          <li>Line width 72</li>
+          <li>enable <strong>Split multiple attributes…</strong></li>
+          <li>disable <strong>Align final bracket…</strong></li>
+          <li>enable <strong>Preserve whitespace in tags with PCDATA content</strong></li>
+          <li>enable <strong>Clear all blank lines</strong></li>
+          <li>disable <strong>Format comments</strong></li>
+          <li>enable <strong>Insert whitespace before closing…</strong></li>
+          <li>enable <strong>Indent using tabs</strong></li>
+          <li>click the <strong>Apply</strong> button</li>
+        </ul>
+      </li>
+      <li>click the <strong>Apply and Close</strong> button</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="install-a-eclipse-cdt-for-tests">Install a Eclipse CDT for tests</h3>
+
+<p>This separate instance of Eclipse will be used to test the plug-in.</p>
+
+<p>Go to <a href="http://www.eclipse.org/downloads/">Eclipse download site</a> and follow
+the <a href="https://www.eclipse.org/downloads/eclipse-packages/">download packages</a>
+link.</p>
+
+<h4 id="eclipse-cdt-2020-09">Eclipse CDT 2020-09</h4>
+
+<p>From
+<a href="https://www.eclipse.org/downloads/eclipse-packages/">Eclipse download packages</a>
+install <strong>Eclipse IDE for C/C++ Developers</strong>.</p>
+
+<ul>
+  <li>download <strong>Eclipse IDE for C/C++ Developers</strong>
+(<code class="language-plaintext highlighter-rouge">eclipse-cpp-2020-09-R-macosx-cocoa-x86_64.dmg</code>)</li>
+  <li>unpack the archive into the <code class="language-plaintext highlighter-rouge">develop</code> folder</li>
+  <li>on macOS, remove the <code class="language-plaintext highlighter-rouge">com.apple.quarantine</code> attribute:</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xattr <span class="nt">-dr</span> com.apple.quarantine Eclipse.app
+</code></pre></div></div>
+
+<ul>
+  <li>rename <code class="language-plaintext highlighter-rouge">Eclipse.app</code> to <code class="language-plaintext highlighter-rouge">Eclipse-cpp-2020-09.app</code></li>
+  <li>start Eclipse, use an workspace named <code class="language-plaintext highlighter-rouge">eclipse-cpp-2020-09-workspace</code></li>
+  <li>enable <strong>Use this as the default</strong></li>
+  <li>click the <strong>Hide</strong> button in the top right corner</li>
+  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> →
+<strong>Appearance</strong>
+    <ul>
+      <li>disable <strong>Show source roots at top of project</strong></li>
+      <li>click the <strong>Apply and Close</strong></li>
+    </ul>
+  </li>
+  <li>in Project Explorer, click the three vertical dots icon →
+<strong>Filters and Customizations…</strong>
+    <ul>
+      <li>disable the <strong>.* resources</strong> line</li>
+      <li>click the <strong>OK</strong> button</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Enable the <strong>Plug-in development</strong> prspective ans switch to it.</p>
+
+<h2 id="clone-the-repositories">Clone the repositories</h2>
+
+<p>On Unix systems, the recommended method is using a command line:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/Work/eclipse-embed-cdt.github
+git clone <span class="nt">--recurse-submodules</span> <span class="se">\</span>
+  https://github.com/eclipse-embed-cdt/eclipse-plugins.git <span class="se">\</span>
+  eclipse-plugins.git
+</code></pre></div></div>
+
+<p>On Windows, the <code class="language-plaintext highlighter-rouge">git</code> command is available in the
+<a href="https://git-scm.com/download/win">Git for Windows</a> package, it should
+have been installed from the first step.</p>
+
+<h2 id="import-the-projects">Import the projects</h2>
+
+<p>In the commiters Eclipse, import projects using the generic importer:</p>
+
+<ul>
+  <li><em>Eclipse</em> menu → <strong>Project</strong>
+    <ul>
+      <li>enable <strong>Build Automatically</strong></li>
+    </ul>
+  </li>
+  <li><em>Eclipse</em> menu → <strong>File</strong> → <strong>Import</strong></li>
+  <li>Select
+    <ul>
+      <li>General → <strong>Existing Projects into Workspace</strong></li>
+      <li>click <strong>Next</strong></li>
+    </ul>
+  </li>
+  <li>Import Projects
+    <ul>
+      <li>Root Directory: <code class="language-plaintext highlighter-rouge">${Work}/eclipse-embed-cdt.github/eclipse-plugins.git</code></li>
+      <li>enable <strong>Search for nested projects</strong></li>
+      <li>disable <strong>Copy projects into workspace</strong></li>
+      <li>disable <strong>Add project(s) to working set</strong></li>
+      <li>click <strong>Finish</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="create-the-maven-run-configurations">Create the Maven run configurations</h2>
+
+<p>To start the plug-ins Maven build from Eclipse:</p>
+
+<ul>
+  <li>in the <code class="language-plaintext highlighter-rouge">Embed CDT plugins root</code> set, select the <code class="language-plaintext highlighter-rouge">embed-cdt-plugins</code>
+project</li>
+  <li><em>Eclipse</em> menu → <strong>Run</strong> → <strong>Run Configurations…</strong></li>
+  <li>double click the <strong>Maven Build</strong> entry</li>
+  <li><strong>Name:</strong> <code class="language-plaintext highlighter-rouge">Embed CDT clean verify</code></li>
+  <li>in the Main tab
+    <ul>
+      <li>Base directory: click the Workspace… button and select the
+<code class="language-plaintext highlighter-rouge">embed-cdt-plugins</code></li>
+      <li>Goals: <code class="language-plaintext highlighter-rouge">-V clean verify</code></li>
+    </ul>
+  </li>
+  <li>click the <strong>Apply</strong> button</li>
+  <li>in the JRE tab
+    <ul>
+      <li>select the Execution environment <strong>JavaSE-11</strong> (to ensure compatibility
+with older environments)</li>
+    </ul>
+  </li>
+  <li>click the <strong>Apply</strong> button</li>
+</ul>
+
+<p>Duplicate the configuration as <code class="language-plaintext highlighter-rouge">Embed CDT clean</code> and update the goal to <code class="language-plaintext highlighter-rouge">clean</code>.</p>
+
+<h2 id="cdt-wiki">CDT Wiki</h2>
+
+<p>For more details, see <a href="https://wiki.eclipse.org/CDT">CDT Wiki</a>,
+especially the <a href="https://wiki.eclipse.org/Getting_started_with_CDT_development">Getting started with CDT development</a> page.</p>
+
 
 
         
@@ -937,7 +1201,7 @@ providing the inspiration!</p>
     <script type="text/javascript">
         var disqus_config = function () {
             this.page.url = '';  // Your page's canonical URL variable
-            this.page.identifier = '/debug/peripheral-registers/'; // Your page's unique identifier variable
+            this.page.identifier = '/develop/build-prerequisites/'; // Your page's unique identifier variable
         };
 
         (function() { // DON'T EDIT BELOW THIS LINE
@@ -960,7 +1224,7 @@ providing the inspiration!</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 18, 2020<br/> Site last generated: Nov 15, 2020 <br />
+<span>Page last updated:</span> Nov 15, 2020<br/> Site last generated: Nov 15, 2020 <br />
                 </div>
             </div>
 </footer>
