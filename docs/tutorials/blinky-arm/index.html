@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-09-11T16:25:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/tutorials/blinky-arm/","headline":"Tutorial: Create a Blinky Arm test project","datePublished":"2015-09-11T16:25:00+00:00","dateModified":"2020-09-18T11:15:16+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/tutorials/blinky-arm/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/tutorials/blinky-arm/","headline":"Tutorial: Create a Blinky Arm test project","datePublished":"2015-09-11T16:25:00+00:00","dateModified":"2020-12-01T09:28:15+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/tutorials/blinky-arm/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -809,7 +809,7 @@ to use the absolute path, it is not stored in the project</li>
   <li>click the <strong>Finish</strong> button</li>
 </ul>
 
-<p><img src="/assets/images/2015/08/BlinkyToolchain.png" alt="Blinky toolchain and path selection" /></p>
+<p><img src="/assets/images/2020/blinky-toolchain.png" alt="Blinky toolchain and path selection" /></p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When selecting the path, be sure to select
 the top <code class="language-plaintext highlighter-rouge">/bin</code> folder
@@ -862,6 +862,12 @@ to the project, using the packs definitions. If you did not do it before,
 install the <strong>STM32F4xx_DFP</strong> package, as explained in the
 <a href="/plugins/packs-manager/">Packs Manager</a> page.</p>
 
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Do <strong>not</strong> use STM32F4xx_DFP version
+2.15.0 or higher,
+since it uses a new definition of the STM32F4-Discovery board, with
+STM32F407VGTx, which is not yes supported.
+For now stick to 2.14.0.</div>
+
 <p><img src="/assets/images/2020/packs_filter_stm32f4.png" alt="BlinkyInstallPack" /></p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Be sure you really install the <strong>STM32F4xx_DFP</strong>
@@ -882,6 +888,12 @@ otherwise the board will not show in the next step.</div>
   <li>select <strong>STM32F407VG</strong></li>
   <li>click <strong>OK</strong></li>
 </ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> If you do not see STM32F407VG but
+STM32F407VGTx, you are using a newer, yet unsupported version of the
+STM32F4xx_DFP package. If you insist, you can still use this version,
+but you have to select STM32F407VG below devices, and later enter
+board name manually in the debugger configuration.</div>
 
 <p><img src="/assets/images/2015/08/BlinkyAssignDevice.png" alt="BlinkyAssignDevice" /></p>
 
@@ -904,6 +916,10 @@ without assigning the board and device to the project, these fields must
 be filled in manually;</li>
   <li>enable <strong>Extra verbose</strong></li>
 </ul>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> If the board was not selected when
+assigning the device to the project, enter <strong>STM32F4-Discovery</strong>
+in the <strong>Board name:</strong> field.</div>
 
 <p><img src="/assets/images/2015/08/BlinkyQEMUDebuggerTab.png" alt="The QEMU Debugger tab" /></p>
 
@@ -1021,7 +1037,7 @@ emails.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Liviu Ionescu. All rights reserved. <br />
-<span>Page last updated:</span> Sep 18, 2020<br/> Site last generated: Nov 15, 2020 <br />
+<span>Page last updated:</span> Dec 1, 2020<br/> Site last generated: Dec 1, 2020 <br />
                 </div>
             </div>
 </footer>
