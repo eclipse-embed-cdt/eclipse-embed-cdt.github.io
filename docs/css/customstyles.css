@@ -437,6 +437,10 @@ span.projectTitle {
     text-align: right;
 }
 
+.footer-center {
+    text-align: center;
+}
+
 .footerMeta {
     background-color: whitesmoke;
     padding: 10px;
