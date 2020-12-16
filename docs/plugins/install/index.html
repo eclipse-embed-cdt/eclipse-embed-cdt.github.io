@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-09-11T19:06:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/plugins/install/","headline":"How to install Eclipse IDE for Embedded C/C++ Developers","datePublished":"2015-09-11T19:06:00+00:00","dateModified":"2020-09-15T04:56:51+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/install/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"headline":"How to install Eclipse IDE for Embedded C/C++ Developers","dateModified":"2020-12-16T20:25:52+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","datePublished":"2015-09-11T19:06:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/install/"},"url":"https://eclipse-embed-cdt.github.io/plugins/install/","author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -723,11 +723,15 @@ $('#toc').on('click', 'a', function() {
 <p>If you know what this is all about:</p>
 
 <ul>
-  <li>satisfy the <a href="/plugins/prerequisites/">Prerequisites</a></li>
+  <li>satisfy the <a href="/plugins/prerequisites/">prerequisites</a></li>
   <li>go to the
-<a href="https://projects.eclipse.org/projects/iot.embed-cdt/downloads/">Downloads</a>
+<a href="https://projects.eclipse.org/projects/iot.embed-cdt/downloads/">downloads</a>
 page on the Eclipse server and download the latest package for your platform</li>
 </ul>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Starting with 2020-12, the package is also
+listed in the main Eclipse
+<a href="https://www.eclipse.org/downloads/packages/">download packages</a> page.</div>
 
 <h2 id="overview">Overview</h2>
 
@@ -764,9 +768,9 @@ the risk of incompatible plug-ins.</p>
 <h2 id="download-the-eclipse-ide-for-embedded-cc-developers-package">Download the Eclipse IDE for Embedded C/C++ Developers package</h2>
 
 <p>To get the <strong>Eclipse IDE for Embedded C/C++ Developers</strong> package, go to the
-Eclipse <a href="https://projects.eclipse.org/projects/iot.embed-cdt/downloads/">Downloads</a>
+pproject <a href="https://projects.eclipse.org/projects/iot.embed-cdt/downloads/">downloads</a>
 page and select the correct binary for your platform (Windows, macOS or
-Intel GNU/Linux).</p>
+GNU/Linux).</p>
 
 <p><img src="/assets/images/2020/embed-cdt-downloads.png" alt="Eclipse EPP" /></p>
 
@@ -790,10 +794,11 @@ case different project types.</div>
 security checks on recent macOS will prevent it to run. The fix is
 simple, you need to remove the <code class="language-plaintext highlighter-rouge">com.apple.quarantine</code> extended attribute.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xattr -d com.apple.quarantine eclipse-embedcdt-*-macosx.cocoa.x86_64.tar.gz
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xattr -d com.apple.quarantine eclipse-embedcdt-*-macosx-cocoa-x86_64.tar.gz
 </code></pre></div></div>
 
-<p>After un-archiving, if the Eclipse.app still does not run, check/remove the attribute from the Eclipse.app folder too:</p>
+<p>After un-archiving, if the Eclipse.app still does not run, check/remove
+the attribute from the Eclipse.app folder too:</p>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">xattr -dr com.apple.quarantine Eclipse.app
 </span></code></pre></div></div>
@@ -941,7 +946,7 @@ emails.</p>
                 <div class="col-lg-4 footer">
                   &copy; 2009, 2020 Liviu Ionescu and others. <br />
                   All rights reserved. <br />
-                  <span>Page last updated:</span> Sep 15, 2020<br/> Site last generated: Dec 4, 2020 <br />
+                  <span>Page last updated:</span> Dec 16, 2020<br/> Site last generated: Dec 16, 2020 <br />
                 </div>
             </div>
 </footer>

@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-18T18:04:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/plugins/install-alternate/","headline":"Alternate ways to install the Eclipse Embedded CDT plug-ins","datePublished":"2020-08-18T18:04:00+00:00","dateModified":"2020-09-15T04:56:51+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/install-alternate/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"headline":"Alternate ways to install the Eclipse Embedded CDT plug-ins","dateModified":"2020-12-16T20:25:52+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","datePublished":"2020-08-18T18:04:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/install-alternate/"},"url":"https://eclipse-embed-cdt.github.io/plugins/install-alternate/","author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -746,14 +746,14 @@ download and follow the link to the Eclipse packages.</p>
 
 <p><img src="/assets/images/2016/eclipse-downloads.png" alt="Eclipse downloads" /></p>
 
-<h2 id="prerequisites-cdt-921">Prerequisites: CDT 9.2.1</h2>
+<h2 id="prerequisites-cdt-1000">Prerequisites: CDT 10.0.0</h2>
 
-<p>For the <strong>Eclipse Embedded CDT plug-ins</strong> to run, the minimum CDT version is
-<strong>9.2.1</strong>, that came with <strong>Eclipse</strong> 4.6 Neon.3**.</p>
+<p>Starting with <strong>Eclipse Embedded CDT plug-ins v6.0.0</strong>, the minimum
+CDT version is 10.0.0,  that came with <strong>Eclipse 4.17 2020-09</strong>.</p>
 
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Do not
 try to use earlier versions, since either the install will fail (with
-something like <em>… requires ‘bundle org.eclipse.cdt 9.2.1’ but it could
+something like <em>… requires ‘bundle org.eclipse.cdt 10.0.0’ but it could
 not be found</em>), or it will not run properly.</div>
 
 <p>As mentioned before, the recommended way is to use a fresh <strong>Eclipse IDE
@@ -778,6 +778,11 @@ Languages</strong> group</li>
 later, otherwise the plug-ins will refuse to install, claiming <strong>Missing
 requirements</strong> and <strong>Cannot satisfy dependency</strong>.</div>
 
+<h2 id="use-of-older-eclipses">Use of older Eclipses</h2>
+
+<p>For Eclipse before 2020-09, the latest available version is 5.2.1, which
+requires CDT version is 9.2.1, that came with <strong>Eclipse 4.6 Neon.3</strong>.</p>
+
 <h2 id="the-eclipse-marketplace-way">The Eclipse Marketplace way</h2>
 
 <p>The easiest way to install/update the plug-ins is to use the Eclipse Marketplace:</p>
@@ -795,10 +800,13 @@ assets:</p>
 
 <h2 id="the-eclipse-update-site-way">The Eclipse update site way</h2>
 
-<p>The classical way to install the Eclipse Embedded CDT plug-ins is to use the Eclipse standard install/update mechanism in the <em>Eclipse</em> menu → <strong>Help</strong> → <strong>Install New Software…</strong></p>
+<p>The classical way to install the Eclipse Embedded CDT plug-ins is to
+use the Eclipse standard install/update mechanism in the
+<em>Eclipse</em> menu → <strong>Help</strong> → <strong>Install New Software…</strong></p>
 
 <ul>
-  <li>in the <em>Install</em> window, click the <strong>Add…</strong> button (on future updates, select the URL in the <strong>Work with:</strong> combo)</li>
+  <li>in the <em>Install</em> window, click the <strong>Add…</strong> button (on future
+updates, select the URL in the <strong>Work with:</strong> combo)</li>
   <li>fill in <em>Name:</em> with <strong>Eclipse Embedded CDT</strong></li>
   <li>fill in <em>Location:</em> with <strong>https://download.eclipse.org/embed-cdt/updates/neon/</strong></li>
   <li>click the <strong>OK</strong> button</li>
@@ -807,19 +815,35 @@ assets:</p>
 <p><img src="/assets/images/2017/add-repository.png" alt="AddRepository" /></p>
 
 <ul>
-  <li>normally the main window should list a group named <strong>GNU Arm &amp; RISC-V Cross Development Tools</strong>; expand it</li>
-  <li>(in case the main window will list <em>There are no categorized items</em>, you are probably using a very old version; disable the Group items by category option)</li>
-  <li>select all the plug-ins (the one marked <em>End of life</em> is needed only for compatibility with previous version, normally can be safely skipped)</li>
+  <li>normally the main window should list a group named
+<strong>GNU Arm &amp; RISC-V Cross Development Tools</strong>; expand it</li>
+  <li>(in case the main window will list <em>There are no categorized items</em>,
+you are probably using a very old version; disable the Group items
+by category option)</li>
+  <li>select all the plug-ins (the one marked <em>End of life</em> is needed only
+for compatibility with previous version, normally can be safely skipped)</li>
   <li>click the <strong>Next</strong> button and follow the usual installation procedure</li>
 </ul>
 
 <p><img src="/assets/images/2017/plugins-install.png" alt="Plug-ins install" /></p>
 
-<p>Once you define the update site URL, further updates are greatly simplified (<strong>Help</strong> → <strong>Check For Updates</strong>).</p>
+<p>Once you define the update site URL, further updates are greatly
+simplified (<strong>Help</strong> → <strong>Check For Updates</strong>).</p>
 
 <h2 id="the-local-archive-way">The local archive way</h2>
 
-<p>If, for any reason, you need to install a specific version of the plug-in, the solution is to download the <code class="language-plaintext highlighter-rouge">ilg.gnumcueclipse.repository-&lt;version&gt;.zip</code> archive from <a href="https://projects.eclipse.org/projects/iot.embed-cdt/governance/">Eclipse servers</a>; for releases pre v5.1.1 use <a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/releases">GitHub Releases</a>, or, for even older releases, from <a href="http://sourceforge.net/projects/gnuarmeclipse/files/Current%20Releases/">SourceForge Files</a> and to point the Eclipse update mechanism to the local archive: In the <em>Eclipse</em> menu → <strong>Help</strong> → <strong>Install New Software…</strong></p>
+<p>If, for any reason, you need to install a specific version of the plug-in,
+the solution is to download the
+<code class="language-plaintext highlighter-rouge">org.eclipse.embedcdt.repository-&lt;version&gt;.zip</code> archive from
+<a href="https://projects.eclipse.org/projects/iot.embed-cdt/governance/">Eclipse servers</a>;</p>
+
+<p>For releases before v6.0.0, download the
+<code class="language-plaintext highlighter-rouge">ilg.gnumcueclipse.repository-&lt;version&gt;.zip</code> archives from
+<a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/releases">GitHub Releases</a>,
+or, for even older releases, from
+<a href="http://sourceforge.net/projects/gnuarmeclipse/files/Current%20Releases/">SourceForge Files</a>
+and to point the Eclipse update mechanism to the local archive:
+In the <em>Eclipse</em> menu → <strong>Help</strong> → <strong>Install New Software…</strong></p>
 
 <ul>
   <li>in the <em>Install</em> window, click the <strong>Add…</strong> button</li>
@@ -837,13 +861,29 @@ assets:</p>
 
 <h2 id="off-line-install">Off-line install</h2>
 
-<p>If, for any reasons, you need to install the Eclipse Embedded CDT plug-ins on a system without permanent Internet connection, and decide for the alternate way presented above, please be aware that the debug plug-ins require the presence of the <strong>C/C++ GDB Hardware Debugging</strong> plug-in. Usually this plug-in is not included in the standard package, but is present in the <strong>CDT Optional Features</strong> category, packed with the CDT archives available from the <a href="https://www.eclipse.org/cdt/downloads.php">CDT download site</a>. Download the desired archive, add it to your update sites, select the <strong>C/C++ GDB Hardware Debugging</strong> plug-in, restart as usual, and then install the Eclipse Embedded CDT plug-ins from the local archive, as above.</p>
+<p>If, for any reasons, you need to install the Eclipse Embedded CDT plug-ins
+on a system without permanent Internet connection, and decide for the
+alternate way presented above, please be aware that the debug plug-ins
+require the presence of the <strong>C/C++ GDB Hardware Debugging</strong> plug-in.
+Usually this plug-in is not included in the standard package, but is
+present in the <strong>CDT Optional Features</strong> category, packed with the
+CDT archives available from the
+<a href="https://www.eclipse.org/cdt/downloads.php">CDT download site</a>.
+Download the desired archive, add it to your update sites, select the
+<strong>C/C++ GDB Hardware Debugging</strong> plug-in, restart as usual, and then
+install the Eclipse Embedded CDT plug-ins from the local archive, as above.</p>
 
 <p><img src="/assets/images/2013/10/GDB_Hardware_Install.png" alt="Install the GDB Hardware" /></p>
 
-<p>Note: Attempts to install the Eclipse Embedded CDT plug-ins off-line without having the <strong>C/C++ GDB Hardware Debugging</strong> installed fails with an error related to installing the <code class="language-plaintext highlighter-rouge">ilg.gnumcueclipse.debug.gdbjtag.jlink.feature.group</code> and other debugging features.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Attempts to install the Eclipse Embedded CDT
+plug-ins off-line
+without having the <strong>C/C++ GDB Hardware Debugging</strong> installed fails
+with an error related to installing the
+<code class="language-plaintext highlighter-rouge">ilg.gnumcueclipse.debug.gdbjtag.jlink.feature.group</code> and other
+debugging features.</div>
 
-<p>On-line install do not have this problem since the Eclipse automatically downloads the C/C++ GDB Hardware Debugging plug-in from the CDT update site.</p>
+<p>On-line install do not have this problem since the Eclipse automatically
+downloads the C/C++ GDB Hardware Debugging plug-in from the CDT update site.</p>
 
 
         
@@ -901,7 +941,7 @@ assets:</p>
                 <div class="col-lg-4 footer">
                   &copy; 2009, 2020 Liviu Ionescu and others. <br />
                   All rights reserved. <br />
-                  <span>Page last updated:</span> Sep 15, 2020<br/> Site last generated: Dec 4, 2020 <br />
+                  <span>Page last updated:</span> Dec 16, 2020<br/> Site last generated: Dec 16, 2020 <br />
                 </div>
             </div>
 </footer>

@@ -26,7 +26,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-10-09T11:14:00+00:00" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/","headline":"How to install the Eclipse prerequisites","datePublished":"2017-10-09T11:14:00+00:00","dateModified":"2020-09-18T16:40:01+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"headline":"How to install the Eclipse prerequisites","dateModified":"2020-12-16T20:25:52+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","datePublished":"2017-10-09T11:14:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"},"url":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/","author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -726,6 +726,10 @@ $('#toc').on('click', 'a', function() {
 Generally Java is not available by default on most platforms, and requires
 a separate installation.</p>
 
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Some recent Eclipse packages may
+be standalone and already include a Java JRE; in this case
+is is no longer necessary to install a separate Java.</div>
+
 <h3 id="other-tools">Other tools</h3>
 
 <p>Here is a list of other tools/packages that need to be installed <strong>before</strong>
@@ -735,7 +739,7 @@ starting Eclipse.</p>
 install these tools, and reopen Eclipse.</div>
 
 <ul>
-  <li><strong>node/npmxpm</strong> - although not mandatory, but highly recommended, the
+  <li><strong>node/npm/xpm</strong> - although not mandatory, but highly recommended, the
 second prerequisite is <strong>xpm</strong> (the xPack Package Manager), which is
 a <strong>Node.js</strong> portable application;</li>
   <li><strong>Windows Build Tools</strong> - to build projects, on Windows it is necessary
@@ -1032,9 +1036,12 @@ and can be easily installed via <strong>xpm</strong>.</p>
 32-bit systems is still possible with older Eclipse versions, but is
 discouraged.</p>
 
-<h3 id="eclipse-neon-and-later">Eclipse Neon and later</h3>
+<h3 id="eclipse-neon-and-up-to-eclipse-2020-09">Eclipse Neon and up to Eclipse 2020-09</h3>
 
-<p>The Embedded CDT plug-ins are based on the API defined in CDT 9.2.1, which
+<p>Starting with version 6.0.0, the Embedded CDT plug-ins are based on
+the API defined in CDT 10.0.0 and require at least Eclipse 2020-09.</p>
+
+<p>The previous releases, up to 5.2.1, were based on CDT 9.2.1, which
 was published with <a href="https://www.eclipse.org/neon/">Eclipse 4.6 Neon</a>, released
 in 2016.</p>
 
@@ -1097,7 +1104,7 @@ for running on a 32-bit system), be sure it includes at least CDT 9.2.1.</p>
                 <div class="col-lg-4 footer">
                   &copy; 2009, 2020 Liviu Ionescu and others. <br />
                   All rights reserved. <br />
-                  <span>Page last updated:</span> Sep 18, 2020<br/> Site last generated: Dec 4, 2020 <br />
+                  <span>Page last updated:</span> Dec 16, 2020<br/> Site last generated: Dec 16, 2020 <br />
                 </div>
             </div>
 </footer>
