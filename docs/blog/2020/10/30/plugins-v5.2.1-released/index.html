@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="gnuarmmcueclipserisc-v,  ">
+<title>Eclipse Embedded CDT plug-ins v5.2.1 released and marked 'Deprecated' | Eclipse Embedded CDT  (C/C++ Development Tools)™</title>
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
+
+
+<link type="application/atom+xml" rel="alternate" href="https://eclipse-embed-cdt.github.io/feed.xml"/>
+<link type="application/rss+xml" rel="alternate" title="" href="https://eclipse-embed-cdt.github.io/feed.xml">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Eclipse Embedded CDT plug-ins v5.2.1 released and marked ‘Deprecated’</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Eclipse Embedded CDT plug-ins v5.2.1 released and marked ‘Deprecated’" />
+<meta name="author" content="Liviu Ionescu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Version 5.2.1 is is a maintenance release; it fixes a bug with the RISC-V toolchain extension scan." />
+<meta property="og:description" content="Version 5.2.1 is is a maintenance release; it fixes a bug with the RISC-V toolchain extension scan." />
+<link rel="canonical" href="https://eclipse-embed-cdt.github.io/blog/2020/10/30/plugins-v5.2.1-released/" />
+<meta property="og:url" content="https://eclipse-embed-cdt.github.io/blog/2020/10/30/plugins-v5.2.1-released/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-10-30T09:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Eclipse Embedded CDT plug-ins v5.2.1 released and marked ‘Deprecated’" />
+<script type="application/ld+json">
+{"description":"Version 5.2.1 is is a maintenance release; it fixes a bug with the RISC-V toolchain extension scan.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/blog/2020/10/30/plugins-v5.2.1-released/","headline":"Eclipse Embedded CDT plug-ins v5.2.1 released and marked ‘Deprecated’","dateModified":"2020-12-17T18:53:55+00:00","datePublished":"2020-10-30T09:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/blog/2020/10/30/plugins-v5.2.1-released/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202008050934">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/customstyles.css?202008050934">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/boxshadowproperties.css?202008050934">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/theme-blue.css?202008050934">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/toc.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/customscripts.js"></script>
+
+<!-- Use absolute URLs, to cover preview cases too -->
+<link rel="shortcut icon" href="https://eclipse-embed-cdt.github.io/images/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="https://eclipse-embed-cdt.github.io/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://eclipse-embed-cdt.github.io/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://eclipse-embed-cdt.github.io/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://eclipse-embed-cdt.github.io/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://eclipse-embed-cdt.github.io/images/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://eclipse-embed-cdt.github.io/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks" style="">
+        <div style="display: inline-block; float: left; margin-top: 8px; margin-left: auto; margin-right: 10px;"><img src="/images/company_logo.png" alt="logo" width="32px" height="32px"/></div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="/">&nbsp;<span class="projectTitle"> Eclipse Embedded CDT (C/C++ Development Tools)™</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">News<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="/news/">Latest News</a></li>
+                        
+                        
+                        
+                        <li><a href="/news/archive/">Archive</a></li>
+                        
+                        
+                        
+                        <li><a href="/plugins/releases/">Plug-ins Releases</a></li>
+                        
+                        
+                        
+                        <li><a href="/packages/releases/">Packages Releases</a></li>
+                        
+                        
+                        
+                        <li><a href="/tags/">Tags</a></li>
+                        
+                        
+                        
+                        <li><a href="/articles/">Articles</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://gitter.im/xpack/" target="_blank" rel="noopener">The Project Chat Room</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://projects.eclipse.org/projects/iot.embed-cdt/" target="_blank" rel="noopener">Eclipse Project</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://marketplace.eclipse.org/content/eclipse-embedded-cdt/" target="_blank" rel="noopener">Eclipse Marketplace</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://xpack.github.io" target="_blank" rel="noopener">The xPack Project</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="http://micro-os-plus.github.io" target="_blank" rel="noopener">µOS++ IIIe</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://gnu-mcu-eclipse.github.io" target="_blank" rel="noopener">GNU MCU Eclipse (deprecated)</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">GitHub<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://github.com/eclipse-embed-cdt/" target="_blank" rel="noopener">Eclipse Embedded CDT</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpack/" target="_blank" rel="noopener">xPack Core Tools</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpack-dev-tools/" target="_blank" rel="noopener">3rd Party xPack Tools</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpacks/" target="_blank" rel="noopener">3rd Party xPacks</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/micro-os-plus/" target="_blank" rel="noopener">µOS++ IIIe</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Eclipse Embedded CDT plug-ins v5.2.1 released and marked &#39;Deprecated&#39;">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3 sticky" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Getting Started" href="#">Getting Started</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Features" href="/plugins/features/">Features</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Prerequisites" href="/plugins/prerequisites/">Prerequisites</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install a New Eclipse" href="/plugins/install/">Install a New Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Update an Existing Eclipse" href="/plugins/update/">Update an Existing Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install Optional Features" href="/plugins/install-new-software/">Install Optional Features</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Alternate Install Methods" href="/plugins/install-alternate/">Alternate Install Methods</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Workspace Preferences" href="/eclipse/workspace/preferences/">Workspace Preferences</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="CMSIS Packs" href="/plugins/packs-manager/">CMSIS Packs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SEGGER J-Link" href="/debug/jlink/install/">SEGGER J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Troubleshoot" href="/plugins/troubleshoot/">Troubleshoot</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Debug" href="#">Debug</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/debug/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install" href="/debug/install/">Install</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="J-Link" href="/debug/jlink/">J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD" href="/debug/openocd/">OpenOCD</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv/">OpenOCD RISC-V</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="QEMU Arm" href="/debug/qemu/">QEMU Arm</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Assign CMSIS Device" href="/eclipse/project/assign-device/">Assign CMSIS Device</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Peripheral Registers" href="/debug/peripheral-registers/">Peripheral Registers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Blinky Arm Tutorial" href="/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="How It Works" href="#">How It Works</a>
+      <ul>
+          
+          
+          
+          <li><a title="The Managed Build System" href="/eclipse/cdt/managed-build/">The Managed Build System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The CDT Indexer" href="/eclipse/cdt/indexer/">The CDT Indexer</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The Hardware Debug Plug-ins" href="/eclipse/cdt/hardware-debug/">The Hardware Debug Plug-ins</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Project Templates" href="#">Project Templates</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/templates/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="STM32Fxx Templates" href="/templates/stm32f/">STM32Fxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="KLxx Templates" href="/templates/klxx/">KLxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Generic Cortex-M Template" href="/templates/cortexm/">Generic Cortex-M Template</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Support" href="#">Support</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/support/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="FAQ" href="/support/faq/">FAQ</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Known Issues" href="/support/known-issues/">Known Issues</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="The Project Forums" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Contributor Info" href="#">Contributor Info</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/develop/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Links" href="/develop/links/">Links</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Maintainer Info" href="#">Maintainer Info</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/maintain/">Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Project" href="#">Project</a>
+      <ul>
+          
+          
+          
+          <li><a title="Plug-ins Releases" href="/plugins/releases/">Plug-ins Releases</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Packages Releases" href="/packages/releases/">Packages Releases</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="License (EPL-2)" href="https://www.eclipse.org/legal/epl-2.0/" target="_blank" rel="noopener">License (EPL-2)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="About" href="/about/">About</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Eclipse Embedded CDT plug-ins v5.2.1 released and marked 'Deprecated'</h1>
+        <p class="post-meta"><time datetime="2020-10-30T09:00:00+00:00" itemprop="datePublished">Oct 30, 2020</time> <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">/ Liviu Ionescu</span></span> /
+            
+            
+            
+            <a href="/tags/gnu/">gnu</a>, 
+            
+            
+            
+            <a href="/tags/arm/">arm</a>, 
+            
+            
+            
+            <a href="/tags/mcu/">mcu</a>, 
+            
+            
+            
+            <a href="/tags/eclipse/">eclipse</a>, 
+            
+            
+            
+            <a href="/tags/risc-v/">risc-v</a>
+            
+            
+            
+
+        </p>
+
+
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+
+        
+
+        <p>Version <strong>5.2.1</strong> is is a maintenance release; it fixes a bug with the
+RISC-V toolchain extension scan.</p>
+
+<p><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/releases/tag/v5.2.1/">Binary files »</a></p>
+
+<h2 id="deprecation-notice">Deprecation notice</h2>
+
+<p>This is the final v5 release, fully compatible with the original
+GNU MCU/ARM Eclipse plug-ins.</p>
+
+<h2 id="install">Install</h2>
+
+<h3 id="eclipse-marketplace">Eclipse Marketplace</h3>
+
+<p>The recommended way to update to the latest plug-ins is via the
+<strong>Eclipse Marketplace</strong>; search for <em>Embedded CDT</em>.</p>
+
+<h3 id="eclipse-update-sites">Eclipse Update Sites</h3>
+
+<p>For those who prefer to install manually, the latest version is available
+via <strong>Install New Software</strong> from:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">https://download.eclipse.org/embed-cdt/updates/neon/</code></li>
+</ul>
+
+<p>To get exactly this version, <strong>Install New Software</strong> from:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">https://download.eclipse.org/embed-cdt/releases/5.2.1/p2/</code></li>
+</ul>
+
+<h3 id="local-install">Local install</h3>
+
+<p>For manual installs, the plug-ins are also available as regular archives,
+that can be downloaded locally and installed.</p>
+
+<ul>
+  <li><a href="https://www.eclipse.org/downloads/download.php?file=/embed-cdt/releases/5.2.1/ilg.gnumcueclipse.repository-5.2.1-202010292017.zip">ilg.gnumcueclipse.repository-5.2.1-202010292017.zip</a>
+(<a href="https://www.eclipse.org/downloads/download.php?file=/embed-cdt/releases/5.2.1/ilg.gnumcueclipse.repository-5.2.1-202010292017.zip.sha">sha</a>)</li>
+</ul>
+
+<h2 id="changes">Changes</h2>
+
+<p>Bug fixes:</p>
+
+<ul>
+  <li>none</li>
+</ul>
+
+<p>Enhancements:</p>
+
+<ul>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/419">#419</a>:
+Following valuable feedback from users, the default location for installing
+xPacks on GNU/Linux was changed from <code class="language-plaintext highlighter-rouge">$HOME/opt/</code> to <code class="language-plaintext highlighter-rouge">$HOME/.local/</code>. The
+search path logic was extended to support both locations. For consistency
+reasons, this new path was added to all search paths, on all platforms,
+and is now part of the recommeded path for manually installed packages.</li>
+</ul>
+
+<p>Developer changes:</p>
+
+<ul>
+  <li>none</li>
+</ul>
+
+<p>More details are available at GitHub <a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/milestone/21?closed=1">milestone v5.2.1</a>.</p>
+
+<h2 id="known-problems">Known problems</h2>
+
+<ul>
+  <li>Full support for the new <code class="language-plaintext highlighter-rouge">$HOME/.local</code> location on GNU/Linux proved
+to require a more elaborate logic, which will be implemented in v5.2.1.</li>
+</ul>
+
+<h2 id="release-content">Release content</h2>
+
+<p>The following features and plugins are included in this release:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>features:
+ilg.gnumcueclipse.codered.feature_1.1.2.202010292017.jar
+ilg.gnumcueclipse.codered.feature.source_1.1.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.jlink.feature_4.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.jlink.feature.source_4.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.jumper.feature_1.2.1.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.jumper.feature.source_1.2.1.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.openocd.feature_4.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.openocd.feature.source_4.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.pyocd.feature_1.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.pyocd.feature.source_1.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.qemu.feature_3.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.qemu.feature.source_3.4.2.202010292017.jar
+ilg.gnumcueclipse.doc.user.feature_1.1.2.202010292017.jar
+ilg.gnumcueclipse.doc.user.feature.source_1.1.2.202010292017.jar
+ilg.gnumcueclipse.managedbuild.cross.arm.feature_2.7.3.202010292017.jar
+ilg.gnumcueclipse.managedbuild.cross.arm.feature.source_2.7.3.202010292017.jar
+ilg.gnumcueclipse.managedbuild.cross.riscv.feature_2.9.4.202010292017.jar
+ilg.gnumcueclipse.managedbuild.cross.riscv.feature.source_2.9.4.202010292017.jar
+ilg.gnumcueclipse.packs.feature_2.4.3.202010292017.jar
+ilg.gnumcueclipse.packs.feature.source_2.4.3.202010292017.jar
+ilg.gnumcueclipse.templates.ad.feature_1.3.1.202010292017.jar
+ilg.gnumcueclipse.templates.ad.feature.source_1.3.1.202010292017.jar
+ilg.gnumcueclipse.templates.cortexm.feature_1.5.2.202010292017.jar
+ilg.gnumcueclipse.templates.cortexm.feature.source_1.5.2.202010292017.jar
+ilg.gnumcueclipse.templates.freescale.feature_2.3.1.202010292017.jar
+ilg.gnumcueclipse.templates.freescale.feature.source_2.3.1.202010292017.jar
+ilg.gnumcueclipse.templates.sifive.feature_1.4.1.202010292017.jar
+ilg.gnumcueclipse.templates.sifive.feature.source_1.4.1.202010292017.jar
+ilg.gnumcueclipse.templates.stm.feature_2.7.2.202010292017.jar
+ilg.gnumcueclipse.templates.stm.feature.source_2.7.2.202010292017.jar
+
+plugins:
+ilg.gnumcueclipse.codered_1.1.2.202010292017.jar
+ilg.gnumcueclipse.codered.source_1.1.2.202010292017.jar
+ilg.gnumcueclipse.core_5.2.1.202010292017.jar
+ilg.gnumcueclipse.core.source_5.2.1.202010292017.jar
+ilg.gnumcueclipse.debug.core_1.2.2.202010292017.jar
+ilg.gnumcueclipse.debug.core.source_1.2.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag_4.2.1.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.jlink_4.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.jlink.source_4.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.jumper_1.2.1.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.jumper.source_1.2.1.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.openocd_4.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.openocd.source_4.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.pyocd_1.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.pyocd.source_1.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.qemu_3.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.qemu.source_3.4.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.restart_1.3.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.restart.source_1.3.2.202010292017.jar
+ilg.gnumcueclipse.debug.gdbjtag.source_4.2.1.202010292017.jar
+ilg.gnumcueclipse.debug.packs_1.1.2.202010292017.jar
+ilg.gnumcueclipse.debug.packs.source_1.1.2.202010292017.jar
+ilg.gnumcueclipse.doc.user_1.1.2.202010292017.jar
+ilg.gnumcueclipse.managedbuild.cross_1.3.3.202010292017.jar
+ilg.gnumcueclipse.managedbuild.cross.arm_2.7.3.202010292017.jar
+ilg.gnumcueclipse.managedbuild.cross.arm.source_2.7.3.202010292017.jar
+ilg.gnumcueclipse.managedbuild.cross.riscv_2.9.4.202010292017.jar
+ilg.gnumcueclipse.managedbuild.cross.riscv.source_2.9.4.202010292017.jar
+ilg.gnumcueclipse.managedbuild.cross.source_1.3.3.202010292017.jar
+ilg.gnumcueclipse.managedbuild.packs_1.3.4.202010292017.jar
+ilg.gnumcueclipse.managedbuild.packs.source_1.3.4.202010292017.jar
+ilg.gnumcueclipse.packs_1.4.2.202010292017.jar
+ilg.gnumcueclipse.packs.core_2.4.3.202010292017.jar
+ilg.gnumcueclipse.packs.core.source_2.4.3.202010292017.jar
+ilg.gnumcueclipse.packs.data_2.4.2.202010292017.jar
+ilg.gnumcueclipse.packs.data.source_2.4.2.202010292017.jar
+ilg.gnumcueclipse.packs.source_1.4.2.202010292017.jar
+ilg.gnumcueclipse.packs.ui_1.4.2.202010292017.jar
+ilg.gnumcueclipse.packs.ui.source_1.4.2.202010292017.jar
+ilg.gnumcueclipse.templates.ad_1.3.1.202010292017.jar
+ilg.gnumcueclipse.templates.ad.source_1.3.1.202010292017.jar
+ilg.gnumcueclipse.templates.core_2.6.4.202010292017.jar
+ilg.gnumcueclipse.templates.core.source_2.6.4.202010292017.jar
+ilg.gnumcueclipse.templates.cortexm_1.5.2.202010292017.jar
+ilg.gnumcueclipse.templates.cortexm.source_1.5.2.202010292017.jar
+ilg.gnumcueclipse.templates.freescale_2.3.1.202010292017.jar
+ilg.gnumcueclipse.templates.freescale.pe_1.3.1.202010292017.jar
+ilg.gnumcueclipse.templates.freescale.pe.source_1.3.1.202010292017.jar
+ilg.gnumcueclipse.templates.freescale.source_2.3.1.202010292017.jar
+ilg.gnumcueclipse.templates.sifive_1.4.1.202010292017.jar
+ilg.gnumcueclipse.templates.sifive.source_1.4.1.202010292017.jar
+ilg.gnumcueclipse.templates.stm_2.7.2.202010292017.jar
+ilg.gnumcueclipse.templates.stm.source_2.7.2.202010292017.jar
+</code></pre></div></div>
+
+    </div>
+
+
+
+</article>
+
+    
+    <a target="_blank" rel="noopener" href="https://github.com/eclipse-embed-cdt/web-jekyll/blob/master/_posts/plugins/releases/2020-10-30-plugins-v5.2.1-released.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit</a>
+
+    
+
+
+
+
+    <hr/>
+    <p>Comments on the content of this page that might be useful
+    for other readers are welcomed here. For question and general
+    support, please use the
+    <a href="https://www.tapatalk.com/groups/xpack/">project forums</a>.
+    </p>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = '';  // Your page's canonical URL variable
+            this.page.identifier = '/blog/2020/10/30/plugins-v5.2.1-released/'; // Your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://embed-cdt.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-4">
+                  <a href="http://www.eclipse.org/">Eclipse Foundation</a><br/>
+                  <a href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</a><br/>
+                  <a href="http://www.eclipse.org/legal/termsofuse.php">Website terms of use</a><br/>
+                  <a href="http://www.eclipse.org/legal/copyright.php">Copyright Agent</a><br/>
+                  <a href="https://www.eclipse.org/security/">Report a Vulnerability</a><br/>
+                  <a href="http://www.eclipse.org/legal">Legal</a><br/>
+                </div>
+                <div class="col-lg-4 footer-center">
+                  <a href="https://projects.eclipse.org/projects/iot.embed-cdt/"><img src="/assets/images/2020/ef-small.png" alt="EF logo" ></a>
+                </div>
+                <div class="col-lg-4 footer">
+                  &copy; 2009, 2020 Liviu Ionescu and others. <br />
+                  All rights reserved. <br />
+                  <span>Page last updated:</span> Dec 17, 2020<br/> Site last generated: Dec 17, 2020 <br />
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-16767008-19"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-16767008-19');
+</script>
+
+
+</html>

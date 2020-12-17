@@ -6,27 +6,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content="gnuarmmcueclipserisc-v,  ">
-<title>Plug-ins releases migrated to Eclipse Foundation | Eclipse Embedded CDT  (C/C++ Development Tools)™</title>
+<title>Eclipse Embedded CDT plug-ins v5.1.4 released | Eclipse Embedded CDT  (C/C++ Development Tools)™</title>
 <link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
 
 
 <link type="application/atom+xml" rel="alternate" href="https://eclipse-embed-cdt.github.io/feed.xml"/>
 <link type="application/rss+xml" rel="alternate" title="" href="https://eclipse-embed-cdt.github.io/feed.xml">
 
-<!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Plug-ins releases migrated to Eclipse Foundation</title>
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Eclipse Embedded CDT plug-ins v5.1.4 released</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Plug-ins releases migrated to Eclipse Foundation" />
+<meta property="og:title" content="Eclipse Embedded CDT plug-ins v5.1.4 released" />
 <meta name="author" content="Liviu Ionescu" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Starting with v5.1.1, all future releases will be available from the Eclipse Foundation servers; there will be no more releases published here." />
-<meta property="og:description" content="Starting with v5.1.1, all future releases will be available from the Eclipse Foundation servers; there will be no more releases published here." />
-<link rel="canonical" href="https://eclipse-embed-cdt.github.io/blog/2020/07/28/plugins-migrated-to-eclipse-foundation/" />
-<meta property="og:url" content="https://eclipse-embed-cdt.github.io/blog/2020/07/28/plugins-migrated-to-eclipse-foundation/" />
+<meta name="description" content="Version 5.1.4 is is a maintenance release; it fixes a bug with the RISC-V toolchain extension scan." />
+<meta property="og:description" content="Version 5.1.4 is is a maintenance release; it fixes a bug with the RISC-V toolchain extension scan." />
+<link rel="canonical" href="https://eclipse-embed-cdt.github.io/blog/2020/10/29/plugins-v5.1.4-released/" />
+<meta property="og:url" content="https://eclipse-embed-cdt.github.io/blog/2020/10/29/plugins-v5.1.4-released/" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-07-28T13:52:00+00:00" />
+<meta property="article:published_time" content="2020-10-29T09:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Eclipse Embedded CDT plug-ins v5.1.4 released" />
 <script type="application/ld+json">
-{"headline":"Plug-ins releases migrated to Eclipse Foundation","dateModified":"2020-10-25T12:35:36+00:00","description":"Starting with v5.1.1, all future releases will be available from the Eclipse Foundation servers; there will be no more releases published here.","datePublished":"2020-07-28T13:52:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/blog/2020/07/28/plugins-migrated-to-eclipse-foundation/"},"url":"https://eclipse-embed-cdt.github.io/blog/2020/07/28/plugins-migrated-to-eclipse-foundation/","author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Version 5.1.4 is is a maintenance release; it fixes a bug with the RISC-V toolchain extension scan.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/blog/2020/10/29/plugins-v5.1.4-released/","headline":"Eclipse Embedded CDT plug-ins v5.1.4 released","dateModified":"2020-12-17T18:53:55+00:00","datePublished":"2020-10-29T09:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/blog/2020/10/29/plugins-v5.1.4-released/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -157,17 +159,52 @@
                 
                 
                 
-                <li class="active"><a href="/news">News</a></li>
-                
-                
-                
                 <!-- entries with drop-downs appear here -->
                 <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
                 
                 
                 <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">News<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="/news/">Latest News</a></li>
+                        
+                        
+                        
+                        <li><a href="/news/archive/">Archive</a></li>
+                        
+                        
+                        
+                        <li><a href="/plugins/releases/">Plug-ins Releases</a></li>
+                        
+                        
+                        
+                        <li><a href="/packages/releases/">Packages Releases</a></li>
+                        
+                        
+                        
+                        <li><a href="/tags/">Tags</a></li>
+                        
+                        
+                        
+                        <li><a href="/articles/">Articles</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links<b class="caret"></b></a>
                     <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://gitter.im/xpack/" target="_blank" rel="noopener">The Project Chat Room</a></li>
+                        
                         
                         
                         <li><a class="extern" href="https://projects.eclipse.org/projects/iot.embed-cdt/" target="_blank" rel="noopener">Eclipse Project</a></li>
@@ -176,13 +213,6 @@
                         
                         <li><a class="extern" href="https://marketplace.eclipse.org/content/eclipse-embedded-cdt/" target="_blank" rel="noopener">Eclipse Marketplace</a></li>
                         
-                        
-                    </ul>
-                </li>
-                
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
                         
                         
                         <li><a class="extern" href="https://xpack.github.io" target="_blank" rel="noopener">The xPack Project</a></li>
@@ -226,21 +256,6 @@
                     </ul>
                 </li>
                 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forums<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        
-                        
-                        <li><a class="extern" href="https://www.tapatalk.com/groups/xpack/" target="_blank" rel="noopener">The Project Forums</a></li>
-                        
-                        
-                        
-                        <li><a class="extern" href="https://gitter.im/xpack/" target="_blank" rel="noopener">The Project Chat Room</a></li>
-                        
-                        
-                    </ul>
-                </li>
-                
                 
                 
                 <!--comment out this block if you want to hide search-->
@@ -256,7 +271,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: '/search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Plug-ins releases migrated to Eclipse Foundation">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Eclipse Embedded CDT plug-ins v5.1.4 released">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -363,13 +378,6 @@
           
           
           <li><a title="Troubleshoot" href="/plugins/troubleshoot/">Troubleshoot</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="About" href="/about/">About</a></li>
           
           
           
@@ -528,43 +536,6 @@
       
   
   <li>
-      <a title="News" href="#">News</a>
-      <ul>
-          
-          
-          
-          <li><a title="Latest News" href="/news/">Latest News</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Archive" href="/news/archive/">Archive</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Tags" href="/tags/">Tags</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Articles" href="/articles/">Articles</a></li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  <li>
       <a title="Support" href="#">Support</a>
       <ul>
           
@@ -635,25 +606,39 @@
           
           
           
-          
-          
-          <li><a title="Old Releases" href="/plugins/releases/">Old Releases</a></li>
-          
-          
-          
-          
       </ul>
    </li>
      
       
   
   <li>
-      <a title="License" href="#">License</a>
+      <a title="Project" href="#">Project</a>
       <ul>
           
           
           
-          <li><a class="extern" title="Eclipse Public License 2.0" href="https://www.eclipse.org/legal/epl-2.0/" target="_blank" rel="noopener">Eclipse Public License 2.0</a></li>
+          <li><a title="Plug-ins Releases" href="/plugins/releases/">Plug-ins Releases</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Packages Releases" href="/packages/releases/">Packages Releases</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="License (EPL-2)" href="https://www.eclipse.org/legal/epl-2.0/" target="_blank" rel="noopener">License (EPL-2)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="About" href="/about/">About</a></li>
           
           
           
@@ -682,8 +667,8 @@
             <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
 
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Plug-ins releases migrated to Eclipse Foundation</h1>
-        <p class="post-meta"><time datetime="2020-07-28T13:52:00+00:00" itemprop="datePublished">Jul 28, 2020</time> <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">/ Liviu Ionescu</span></span> /
+        <h1 class="post-title" itemprop="name headline">Eclipse Embedded CDT plug-ins v5.1.4 released</h1>
+        <p class="post-meta"><time datetime="2020-10-29T09:00:00+00:00" itemprop="datePublished">Oct 29, 2020</time> <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">/ Liviu Ionescu</span></span> /
             
             
             
@@ -717,11 +702,167 @@
 
         
 
-        <p>Starting with v5.1.1, all future
-<a href="https://projects.eclipse.org/projects/iot.embed-cdt/governance">releases</a>
-will be available from the
-<a href="https://projects.eclipse.org/projects/iot.embed-cdt/">Eclipse Foundation</a>
-servers; there will be no more releases published here.</p>
+        <p>Version <strong>5.1.4</strong> is is a maintenance release; it fixes a bug with the
+RISC-V toolchain extension scan.</p>
+
+<p><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/releases/tag/v5.1.4/">Binary files »</a></p>
+
+<h2 id="install">Install</h2>
+
+<h3 id="eclipse-marketplace">Eclipse Marketplace</h3>
+
+<p>The recommended way to update to the latest plug-ins is via the
+<strong>Eclipse Marketplace</strong>; search for <em>Embedded CDT</em>.</p>
+
+<h3 id="eclipse-update-sites">Eclipse Update Sites</h3>
+
+<p>For those who prefer to install manually, the latest version is available
+via <strong>Install New Software</strong> from:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">https://download.eclipse.org/embed-cdt/updates/neon/</code></li>
+</ul>
+
+<p>To get exactly this version, <strong>Install New Software</strong> from:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">https://download.eclipse.org/embed-cdt/releases/5.1.4/p2/</code></li>
+</ul>
+
+<h3 id="local-install">Local install</h3>
+
+<p>For manual installs, the plug-ins are also available as regular archives,
+that can be downloaded locally and installed.</p>
+
+<ul>
+  <li><a href="https://www.eclipse.org/downloads/download.php?file=/embed-cdt/releases/5.1.4/ilg.gnumcueclipse.repository-5.1.4-202007271621.zip">ilg.gnumcueclipse.repository-5.1.4-202010290820.zip</a>
+(<a href="https://www.eclipse.org/downloads/download.php?file=/embed-cdt/releases/5.1.4/ilg.gnumcueclipse.repository-5.1.4-202007271621.zip.sha">sha</a>)</li>
+</ul>
+
+<h2 id="changes">Changes</h2>
+
+<p>Bug fixes:</p>
+
+<ul>
+  <li>none</li>
+</ul>
+
+<p>Enhancements:</p>
+
+<ul>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/419">#419</a>:
+Following valuable feedback from users, the default location for installing
+xPacks on Linux was moved from <code class="language-plaintext highlighter-rouge">$HOME/opt/</code> to <code class="language-plaintext highlighter-rouge">$HOME/.local/</code>. For
+consistency reasons, this new path was added to all search paths, on
+all platforms.</li>
+</ul>
+
+<p>Developer changes:</p>
+
+<ul>
+  <li>none</li>
+</ul>
+
+<p>More details are available at GitHub <a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/milestone/21?closed=1">milestone v5.1.4</a>.</p>
+
+<h2 id="known-problems">Known problems</h2>
+
+<ul>
+  <li>Full support for the new <code class="language-plaintext highlighter-rouge">$HOME/.local</code> location on GNU/Linux proved
+to require a more elaborate logic, which will be implemented in v5.2.1.</li>
+</ul>
+
+<h2 id="release-content">Release content</h2>
+
+<p>The following features and plugins are included in this release:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>features:
+ilg.gnumcueclipse.codered.feature_1.1.2.202010290820.jar
+ilg.gnumcueclipse.codered.feature.source_1.1.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.jlink.feature_4.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.jlink.feature.source_4.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.jumper.feature_1.2.1.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.jumper.feature.source_1.2.1.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.openocd.feature_4.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.openocd.feature.source_4.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.pyocd.feature_1.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.pyocd.feature.source_1.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.qemu.feature_3.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.qemu.feature.source_3.4.2.202010290820.jar
+ilg.gnumcueclipse.doc.user.feature_1.1.2.202010290820.jar
+ilg.gnumcueclipse.doc.user.feature.source_1.1.2.202010290820.jar
+ilg.gnumcueclipse.managedbuild.cross.arm.feature_2.7.3.202010290820.jar
+ilg.gnumcueclipse.managedbuild.cross.arm.feature.source_2.7.3.202010290820.jar
+ilg.gnumcueclipse.managedbuild.cross.riscv.feature_2.9.4.202010290820.jar
+ilg.gnumcueclipse.managedbuild.cross.riscv.feature.source_2.9.4.202010290820.jar
+ilg.gnumcueclipse.packs.feature_2.4.2.202010290820.jar
+ilg.gnumcueclipse.packs.feature.source_2.4.2.202010290820.jar
+ilg.gnumcueclipse.templates.ad.feature_1.3.1.202010290820.jar
+ilg.gnumcueclipse.templates.ad.feature.source_1.3.1.202010290820.jar
+ilg.gnumcueclipse.templates.cortexm.feature_1.5.2.202010290820.jar
+ilg.gnumcueclipse.templates.cortexm.feature.source_1.5.2.202010290820.jar
+ilg.gnumcueclipse.templates.freescale.feature_2.3.1.202010290820.jar
+ilg.gnumcueclipse.templates.freescale.feature.source_2.3.1.202010290820.jar
+ilg.gnumcueclipse.templates.sifive.feature_1.4.1.202010290820.jar
+ilg.gnumcueclipse.templates.sifive.feature.source_1.4.1.202010290820.jar
+ilg.gnumcueclipse.templates.stm.feature_2.7.2.202010290820.jar
+ilg.gnumcueclipse.templates.stm.feature.source_2.7.2.202010290820.jar
+
+plugins:
+ilg.gnumcueclipse.codered_1.1.2.202010290820.jar
+ilg.gnumcueclipse.codered.source_1.1.2.202010290820.jar
+ilg.gnumcueclipse.core_5.1.4.202010290820.jar
+ilg.gnumcueclipse.core.source_5.1.4.202010290820.jar
+ilg.gnumcueclipse.debug.core_1.2.2.202010290820.jar
+ilg.gnumcueclipse.debug.core.source_1.2.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag_4.2.1.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.jlink_4.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.jlink.source_4.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.jumper_1.2.1.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.jumper.source_1.2.1.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.openocd_4.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.openocd.source_4.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.pyocd_1.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.pyocd.source_1.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.qemu_3.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.qemu.source_3.4.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.restart_1.3.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.restart.source_1.3.2.202010290820.jar
+ilg.gnumcueclipse.debug.gdbjtag.source_4.2.1.202010290820.jar
+ilg.gnumcueclipse.debug.packs_1.1.2.202010290820.jar
+ilg.gnumcueclipse.debug.packs.source_1.1.2.202010290820.jar
+ilg.gnumcueclipse.doc.user_1.1.2.202010290820.jar
+ilg.gnumcueclipse.managedbuild.cross_1.3.3.202010290820.jar
+ilg.gnumcueclipse.managedbuild.cross.arm_2.7.3.202010290820.jar
+ilg.gnumcueclipse.managedbuild.cross.arm.source_2.7.3.202010290820.jar
+ilg.gnumcueclipse.managedbuild.cross.riscv_2.9.4.202010290820.jar
+ilg.gnumcueclipse.managedbuild.cross.riscv.source_2.9.4.202010290820.jar
+ilg.gnumcueclipse.managedbuild.cross.source_1.3.3.202010290820.jar
+ilg.gnumcueclipse.managedbuild.packs_1.3.4.202010290820.jar
+ilg.gnumcueclipse.managedbuild.packs.source_1.3.4.202010290820.jar
+ilg.gnumcueclipse.packs_1.4.2.202010290820.jar
+ilg.gnumcueclipse.packs.core_2.4.2.202010290820.jar
+ilg.gnumcueclipse.packs.core.source_2.4.2.202010290820.jar
+ilg.gnumcueclipse.packs.data_2.4.2.202010290820.jar
+ilg.gnumcueclipse.packs.data.source_2.4.2.202010290820.jar
+ilg.gnumcueclipse.packs.source_1.4.2.202010290820.jar
+ilg.gnumcueclipse.packs.ui_1.4.2.202010290820.jar
+ilg.gnumcueclipse.packs.ui.source_1.4.2.202010290820.jar
+ilg.gnumcueclipse.templates.ad_1.3.1.202010290820.jar
+ilg.gnumcueclipse.templates.ad.source_1.3.1.202010290820.jar
+ilg.gnumcueclipse.templates.core_2.6.4.202010290820.jar
+ilg.gnumcueclipse.templates.core.source_2.6.4.202010290820.jar
+ilg.gnumcueclipse.templates.cortexm_1.5.2.202010290820.jar
+ilg.gnumcueclipse.templates.cortexm.source_1.5.2.202010290820.jar
+ilg.gnumcueclipse.templates.freescale_2.3.1.202010290820.jar
+ilg.gnumcueclipse.templates.freescale.pe_1.3.1.202010290820.jar
+ilg.gnumcueclipse.templates.freescale.pe.source_1.3.1.202010290820.jar
+ilg.gnumcueclipse.templates.freescale.source_2.3.1.202010290820.jar
+ilg.gnumcueclipse.templates.sifive_1.4.1.202010290820.jar
+ilg.gnumcueclipse.templates.sifive.source_1.4.1.202010290820.jar
+ilg.gnumcueclipse.templates.stm_2.7.2.202010290820.jar
+ilg.gnumcueclipse.templates.stm.source_2.7.2.202010290820.jar
+</code></pre></div></div>
 
     </div>
 
@@ -730,7 +871,7 @@ servers; there will be no more releases published here.</p>
 </article>
 
     
-    <a target="_blank" rel="noopener" href="https://github.com/eclipse-embed-cdt/web-jekyll/blob/master/_posts/plugins/releases/2020-07-28-plugins-migrated-to-eclipse-foundation.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit</a>
+    <a target="_blank" rel="noopener" href="https://github.com/eclipse-embed-cdt/web-jekyll/blob/master/_posts/plugins/releases/2020-10-29-plugins-v5.1.4-released.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit</a>
 
     
 
@@ -748,7 +889,7 @@ servers; there will be no more releases published here.</p>
     <script type="text/javascript">
         var disqus_config = function () {
             this.page.url = '';  // Your page's canonical URL variable
-            this.page.identifier = '/blog/2020/07/28/plugins-migrated-to-eclipse-foundation/'; // Your page's unique identifier variable
+            this.page.identifier = '/blog/2020/10/29/plugins-v5.1.4-released/'; // Your page's unique identifier variable
         };
 
         (function() { // DON'T EDIT BELOW THIS LINE
@@ -781,7 +922,7 @@ servers; there will be no more releases published here.</p>
                 <div class="col-lg-4 footer">
                   &copy; 2009, 2020 Liviu Ionescu and others. <br />
                   All rights reserved. <br />
-                  <span>Page last updated:</span> Oct 25, 2020<br/> Site last generated: Dec 16, 2020 <br />
+                  <span>Page last updated:</span> Dec 17, 2020<br/> Site last generated: Dec 17, 2020 <br />
                 </div>
             </div>
 </footer>
