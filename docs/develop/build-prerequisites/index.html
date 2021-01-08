@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Build prerequisites" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/develop/build-prerequisites/","headline":"Build prerequisites","dateModified":"2020-12-17T19:35:41+00:00","datePublished":"2015-09-10T17:20:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/develop/build-prerequisites/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/develop/build-prerequisites/","headline":"Build prerequisites","dateModified":"2021-01-08T08:11:50+00:00","datePublished":"2015-09-10T17:20:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/develop/build-prerequisites/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -207,7 +207,11 @@
                         
                         
                         
-                        <li><a class="extern" href="https://projects.eclipse.org/projects/iot.embed-cdt/" target="_blank" rel="noopener">Eclipse Project</a></li>
+                        <li><a class="extern" href="https://www.eclipse.org" target="_blank" rel="noopener">Eclipse</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://projects.eclipse.org/projects/iot.embed-cdt/" target="_blank" rel="noopener">Eclipse Embedded CDT Project</a></li>
                         
                         
                         
@@ -219,7 +223,7 @@
                         
                         
                         
-                        <li><a class="extern" href="http://micro-os-plus.github.io" target="_blank" rel="noopener">µOS++ IIIe</a></li>
+                        <li><a class="extern" href="http://micro-os-plus.github.io" target="_blank" rel="noopener">µOS++</a></li>
                         
                         
                         
@@ -250,7 +254,7 @@
                         
                         
                         
-                        <li><a class="extern" href="https://github.com/micro-os-plus/" target="_blank" rel="noopener">µOS++ IIIe</a></li>
+                        <li><a class="extern" href="https://github.com/micro-os-plus/" target="_blank" rel="noopener">µOS++</a></li>
                         
                         
                     </ul>
@@ -928,50 +932,24 @@ schemas will not be available so attempts to add new elements to the
 extensions will not be possible, and only ‘Generic’ elements will be
 offered.</div>
 
-<h3 id="install-base-api-cdt-1000">Install base API CDT 10.0.0</h3>
+<h3 id="install-baseline-api">Install baseline API</h3>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Since 6.0.0; previous releases were based on
-CDT 9.2.1.</div>
-
-<ul>
-  <li>go to <a href="http://www.eclipse.org/cdt/downloads.php">CDT download</a> page,
-and download <code class="language-plaintext highlighter-rouge">cdt-10.0.0.zip</code>
-(for compatibility with Eclipse 2020-09)</li>
-  <li>unpack the archive</li>
-  <li>move the new <code class="language-plaintext highlighter-rouge">cdt-10.0.0</code> folder into the <code class="language-plaintext highlighter-rouge">develop</code> folder</li>
-  <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Plug-in Development</strong>
-→ <strong>Target Platform</strong>
-    <ul>
-      <li>click the <strong>Add…</strong> button</li>
-      <li>select <strong>Nothing: Start with an empty target</strong></li>
-      <li>Next
-        <ul>
-          <li>Enter name: <code class="language-plaintext highlighter-rouge">cdt-10.0.0</code></li>
-          <li>click <strong>Add…</strong> → <strong>Directory</strong> → <strong>Next &gt;</strong></li>
-          <li>click <strong>Browse…</strong> → <code class="language-plaintext highlighter-rouge">cdt-10.0.0</code></li>
-          <li>click the <strong>Finish</strong> button</li>
-        </ul>
-      </li>
-      <li>click the <strong>Reload</strong> button</li>
-      <li>click the <strong>Finish</strong></li>
-    </ul>
-  </li>
-  <li>enable only the <strong>Running Platform as Active</strong> (mandatory!)</li>
-  <li>click <strong>Apply and Close</strong></li>
-</ul>
-
-<p>Selecting the running platform is required when starting Eclipse to Run or
-Debug, without it the core plug-ins will not be available.</p>
+<p>The API baseline checks that modifications made to the code maintain API compatibility
+with previous versions of Embedded CDT according to the rules and guidelines set out in
+<a href="https://wiki.eclipse.org/Version_Numbering">Semantic Versioning Rules</a> and
+<a href="https://wiki.eclipse.org/Eclipse/API_Central">Eclipse API Central</a>.</p>
 
 <ul>
+  <li>Ensure that <code class="language-plaintext highlighter-rouge">target-platform/org.eclipse.embedcdt.baseline.target</code> is a file in
+your workspace (in the <code class="language-plaintext highlighter-rouge">embed-cdt-plugins</code> project)</li>
   <li>in the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Plug-in Development</strong>
 → <strong>API Baselines</strong>
     <ul>
       <li>click the <strong>Add Baseline…</strong> button</li>
       <li>select <strong>A target platform</strong>
         <ul>
-          <li>Enter name: <code class="language-plaintext highlighter-rouge">cdt-10.0.0</code></li>
-          <li>enable <code class="language-plaintext highlighter-rouge">cdt-10.0.0</code></li>
+          <li>Enter name: <code class="language-plaintext highlighter-rouge">baseline</code> (The name is a convenience label only)</li>
+          <li>enable <code class="language-plaintext highlighter-rouge">embedcdt-baseline</code></li>
           <li>click the <strong>Refresh</strong> button</li>
           <li>click the <strong>Finish</strong> button</li>
         </ul>
@@ -1219,9 +1197,9 @@ especially the <a href="https://wiki.eclipse.org/Getting_started_with_CDT_develo
                   <a href="https://projects.eclipse.org/projects/iot.embed-cdt/"><img src="/assets/images/2020/ef-small.png" alt="EF logo" ></a>
                 </div>
                 <div class="col-lg-4 footer">
-                  &copy; 2009, 2020 Liviu Ionescu and others. <br />
+                  &copy; 2009, 2021 Liviu Ionescu and others. <br />
                   All rights reserved. <br />
-                  <span>Page last updated:</span> Dec 17, 2020<br/> Site last generated: Dec 17, 2020 <br />
+                  <span>Page last updated:</span> Jan 8, 2021<br/> Site last generated: Jan 8, 2021 <br />
                 </div>
             </div>
 </footer>
