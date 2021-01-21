@@ -5,9 +5,21 @@
         <description>Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.</description>
         <link>https://eclipse-embed-cdt.github.io/</link>
         <atom:link href="https://eclipse-embed-cdt.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 20 Jan 2021 09:42:08 +0000</pubDate>
-        <lastBuildDate>Wed, 20 Jan 2021 09:42:08 +0000</lastBuildDate>
+        <pubDate>Thu, 21 Jan 2021 08:02:44 +0000</pubDate>
+        <lastBuildDate>Thu, 21 Jan 2021 08:02:44 +0000</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
+        
+        <item>
+            <title>Embedded CDT plug-ins v6.0.0: CodeRed update failure</title>
+            <description>&lt;p&gt;In certain conditions, updating the Eclipse Embedded CDT plug-ins v6.0.0may fail to update the CodeRed plug-ins.&lt;/p&gt;</description>
+            <pubDate>Thu, 21 Jan 2021 07:47:00 +0000</pubDate>
+            <link>https://eclipse-embed-cdt.github.io/blog/2021/01/21/codered-update-issue/</link>
+            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2021/01/21/codered-update-issue/</guid>
+            
+            <category>eclipse</category>
+            
+            
+        </item>
         
         <item>
             <title>Eclipse Embedded CDT plug-ins v6.1.1 released</title>
@@ -189,20 +201,6 @@
             <category>eclipse</category>
             
             <category>risc-v</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>The Eclipse Embedded CDT project web has a new look!</title>
-            <description>&lt;p&gt;After several re-branding iterations, the &lt;strong&gt;Eclipse Embedded CDT&lt;/strong&gt; project,available from&lt;a href=&quot;https://github.com/eclipse-embed-cdt&quot;&gt;GitHub&lt;/a&gt;, has a &lt;strong&gt;new web site&lt;/strong&gt;.&lt;/p&gt;</description>
-            <pubDate>Wed, 05 Aug 2020 09:47:00 +0000</pubDate>
-            <link>https://eclipse-embed-cdt.github.io/blog/2020/08/05/new-web-look/</link>
-            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2020/08/05/new-web-look/</guid>
-            
-            <category>jekyll</category>
-            
-            <category>update</category>
             
             
         </item>
