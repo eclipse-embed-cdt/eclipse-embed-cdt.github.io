@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="How to install the Eclipse prerequisites" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/","headline":"How to install the Eclipse prerequisites","dateModified":"2021-01-21T09:26:35+00:00","datePublished":"2017-10-09T11:14:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/","headline":"How to install the Eclipse prerequisites","dateModified":"2021-03-05T22:05:03+00:00","datePublished":"2017-10-09T11:14:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -995,10 +995,13 @@ npm <span class="nt">--version</span>
 by the blinky tutorial; openocd may also be useful to run debug sessions;
 the riscv toolchain is necessary only for RISC-V projects.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/arm-none-eabi-gcc@latest
-xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/qemu-arm@latest
-xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/openocd@latest
-xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/riscv-none-embed-gcc@latest
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/arm-none-eabi-gcc@latest <span class="nt">--verbose</span>
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/qemu-arm@latest <span class="nt">--verbose</span>
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/openocd@latest <span class="nt">--verbose</span>
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/riscv-none-embed-gcc@latest <span class="nt">--verbose</span>
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/cmake@latest <span class="nt">--verbose</span>
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/ninja-build@latest <span class="nt">--verbose</span>
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/meson-build@latest <span class="nt">--verbose</span>
 </code></pre></div></div>
 
 <p>All xPacks are installed in a central folder in the user home; check
@@ -1093,7 +1096,7 @@ for running on a 32-bit system), be sure it includes at least CDT 9.2.1.</p>
                 <div class="col-lg-4 footer">
                   &copy; 2009, 2021 Liviu Ionescu and others. <br />
                   All rights reserved. <br />
-                  <span>Page last updated:</span> Jan 21, 2021<br/> Site last generated: Jan 21, 2021 <br />
+                  <span>Page last updated:</span> Mar 5, 2021<br/> Site last generated: Mar 5, 2021 <br />
                 </div>
             </div>
 </footer>
