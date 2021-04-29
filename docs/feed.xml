@@ -5,9 +5,31 @@
         <description>Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.</description>
         <link>https://eclipse-embed-cdt.github.io/</link>
         <atom:link href="https://eclipse-embed-cdt.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 05 Mar 2021 22:07:51 +0000</pubDate>
-        <lastBuildDate>Fri, 05 Mar 2021 22:07:51 +0000</lastBuildDate>
+        <pubDate>Thu, 29 Apr 2021 12:27:45 +0000</pubDate>
+        <lastBuildDate>Thu, 29 Apr 2021 12:27:45 +0000</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
+        
+        <item>
+            <title>Eclipse IDE for Embedded C/C++ Developers 2021-03 released</title>
+            <description>&lt;p&gt;For convenience, version &lt;strong&gt;6.1.2&lt;/strong&gt; of the plug-ins is also available asEclipse packages, which pack together the&lt;strong&gt;Eclipse IDE for C/C++ Developers&lt;/strong&gt; standard distribution(Eclipse 4.18) with the &lt;strong&gt;Eclipse Embedded CDT plug-ins&lt;/strong&gt;.&lt;/p&gt;</description>
+            <pubDate>Tue, 16 Mar 2021 11:00:00 +0000</pubDate>
+            <link>https://eclipse-embed-cdt.github.io/blog/2021/03/16/package-2021-03-released/</link>
+            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2021/03/16/package-2021-03-released/</guid>
+            
+            <category>gnu</category>
+            
+            <category>arm</category>
+            
+            <category>mcu</category>
+            
+            <category>eclipse</category>
+            
+            <category>risc-v</category>
+            
+            <category>packages</category>
+            
+            
+        </item>
         
         <item>
             <title>Eclipse Embedded CDT plug-ins v6.1.2 released</title>
@@ -179,28 +201,6 @@
             <category>eclipse</category>
             
             <category>risc-v</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Eclipse IDE for Embedded C/C++ Developers 2020-09 released</title>
-            <description>&lt;p&gt;For convenience, version &lt;strong&gt;5.1.2&lt;/strong&gt; of the plug-ins is also available asEclipse packages, which pack together the&lt;strong&gt;Eclipse IDE for C/C++ Developers&lt;/strong&gt; standard distribution(Eclipse 4.17) with the &lt;strong&gt;Eclipse Embedded CDT plug-ins&lt;/strong&gt;.&lt;/p&gt;</description>
-            <pubDate>Mon, 21 Sep 2020 10:00:00 +0000</pubDate>
-            <link>https://eclipse-embed-cdt.github.io/blog/2020/09/21/package-2020-09-released/</link>
-            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2020/09/21/package-2020-09-released/</guid>
-            
-            <category>gnu</category>
-            
-            <category>arm</category>
-            
-            <category>mcu</category>
-            
-            <category>eclipse</category>
-            
-            <category>risc-v</category>
-            
-            <category>packages</category>
             
             
         </item>
