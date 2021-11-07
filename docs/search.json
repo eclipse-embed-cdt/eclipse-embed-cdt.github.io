@@ -250,19 +250,6 @@
 
 
 
-
-
-{
-"title": "How to get support",
-"tags": "",
-"keywords": "",
-"url": "/support/",
-"summary": "<p>Where to search for help when something goes wrong.</p>"
-}
-,
-
-
-
 {
 "title": "Contributor Info",
 "tags": "",
@@ -286,6 +273,19 @@
 
 
 {
+"title": "How to get support",
+"tags": "",
+"keywords": "",
+"url": "/support/",
+"summary": "<p>Where to search for help when something goes wrong.</p>"
+}
+,
+
+
+
+
+
+{
 "title": "Eclipse Embedded CDT",
 "tags": "",
 "keywords": "eclipsedevelopmentc/c++embeddedarmrisc-vopenocdqemu",
@@ -293,8 +293,6 @@
 "summary": "<p>Eclipse Embedded C/C++ Development Tools (formerly <strong>GNU MCU/ARM Eclipse</strong>).</p>"
 }
 ,
-
-
 
 
 
@@ -306,6 +304,8 @@
 "summary": "<p>How the Eclipse CDT indexer works.</p>"
 }
 ,
+
+
 
 
 
@@ -321,22 +321,22 @@
 
 
 {
-"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
+"title": "How to install the debugging components",
 "tags": "",
 "keywords": "",
-"url": "/plugins/install/",
-"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
+"url": "/debug/install/",
+"summary": "<p>Links to specific J-Link, OpenOCD and QEMU install pages.</p>"
 }
 ,
 
 
 
 {
-"title": "How to install the debugging components",
+"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
 "tags": "",
 "keywords": "",
-"url": "/debug/install/",
-"summary": "<p>Links to specific J-Link, OpenOCD and QEMU install pages.</p>"
+"url": "/plugins/install/",
+"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
 }
 ,
 
@@ -456,8 +456,6 @@
 
 
 
-
-
 {
 "title": "The OpenOCD debugging plug-in",
 "tags": "",
@@ -466,6 +464,8 @@
 "summary": "<p>How to run Eclipse debug sessions using OpenOCD.</p>"
 }
 ,
+
+
 
 
 
@@ -553,8 +553,6 @@
 
 
 
-
-
 {
 "title": "The QEMU debugging plug-in",
 "tags": "",
@@ -563,6 +561,8 @@
 "summary": "<p>How to run Eclipse debug sessions using QEMU Arm.</p>"
 }
 ,
+
+
 
 
 
@@ -649,8 +649,6 @@
 
 
 
-
-
 {
 "title": "How to update the Eclipse Embedded CDT plug-ins",
 "tags": "",
@@ -664,6 +662,18 @@
 
 
 
+
+
+
+
+{
+"title": "The Eclipse Embedded CDT project uses GitHub Discussions",
+"tags": "forumsupport",
+"keywords": "",
+"url": "/blog/2021/11/07/github-discussions/",
+"summary": ""
+}
+,
 
 
 {
