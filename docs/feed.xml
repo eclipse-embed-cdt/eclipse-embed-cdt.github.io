@@ -5,9 +5,29 @@
         <description>Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.</description>
         <link>https://eclipse-embed-cdt.github.io/</link>
         <atom:link href="https://eclipse-embed-cdt.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 07 Nov 2021 12:43:04 +0000</pubDate>
-        <lastBuildDate>Sun, 07 Nov 2021 12:43:04 +0000</lastBuildDate>
+        <pubDate>Tue, 05 Apr 2022 05:59:31 +0000</pubDate>
+        <lastBuildDate>Tue, 05 Apr 2022 05:59:31 +0000</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
+        
+        <item>
+            <title>Eclipse Embedded CDT plug-ins v6.2.1 released</title>
+            <description>&lt;p&gt;Version &lt;strong&gt;6.2.1&lt;/strong&gt; is a new release; it fixes several bugs and adds support for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-std=c++23&lt;/code&gt;.&lt;/p&gt;</description>
+            <pubDate>Tue, 05 Apr 2022 05:47:00 +0000</pubDate>
+            <link>https://eclipse-embed-cdt.github.io/blog/2022/04/05/plugins-v6.2.1-released/</link>
+            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2022/04/05/plugins-v6.2.1-released/</guid>
+            
+            <category>gnu</category>
+            
+            <category>arm</category>
+            
+            <category>mcu</category>
+            
+            <category>eclipse</category>
+            
+            <category>risc-v</category>
+            
+            
+        </item>
         
         <item>
             <title>The Eclipse Embedded CDT project uses GitHub Discussions</title>
@@ -165,26 +185,6 @@
             <pubDate>Fri, 30 Oct 2020 09:00:00 +0000</pubDate>
             <link>https://eclipse-embed-cdt.github.io/blog/2020/10/30/plugins-v5.2.1-released/</link>
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2020/10/30/plugins-v5.2.1-released/</guid>
-            
-            <category>gnu</category>
-            
-            <category>arm</category>
-            
-            <category>mcu</category>
-            
-            <category>eclipse</category>
-            
-            <category>risc-v</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Eclipse Embedded CDT plug-ins v5.1.4 released</title>
-            <description>&lt;p&gt;Version &lt;strong&gt;5.1.4&lt;/strong&gt; is is a maintenance release; it fixes a bug with theRISC-V toolchain extension scan.&lt;/p&gt;</description>
-            <pubDate>Thu, 29 Oct 2020 09:00:00 +0000</pubDate>
-            <link>https://eclipse-embed-cdt.github.io/blog/2020/10/29/plugins-v5.1.4-released/</link>
-            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2020/10/29/plugins-v5.1.4-released/</guid>
             
             <category>gnu</category>
             
