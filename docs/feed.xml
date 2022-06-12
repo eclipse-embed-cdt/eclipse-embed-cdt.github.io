@@ -5,13 +5,13 @@
         <description>Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.</description>
         <link>https://eclipse-embed-cdt.github.io/</link>
         <atom:link href="https://eclipse-embed-cdt.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 12 Jun 2022 11:49:04 +0000</pubDate>
-        <lastBuildDate>Sun, 12 Jun 2022 11:49:04 +0000</lastBuildDate>
+        <pubDate>Sun, 12 Jun 2022 11:51:41 +0000</pubDate>
+        <lastBuildDate>Sun, 12 Jun 2022 11:51:41 +0000</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
         
         <item>
             <title>Eclipse Embedded CDT plug-ins v6.2.2 released</title>
-            <description>&lt;p&gt;Version &lt;strong&gt;6.2.2&lt;/strong&gt; is a maintenance release; it fixes a bug related to CMSIS Packs downloads.&lt;/p&gt;</description>
+            <description>&lt;p&gt;Version &lt;strong&gt;6.2.2&lt;/strong&gt; is a service release; it fixes a bug related to CMSIS Packs downloads.&lt;/p&gt;</description>
             <pubDate>Sun, 12 Jun 2022 11:29:00 +0000</pubDate>
             <link>https://eclipse-embed-cdt.github.io/blog/2022/06/12/plugins-v6.2.2-released/</link>
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2022/06/12/plugins-v6.2.2-released/</guid>
