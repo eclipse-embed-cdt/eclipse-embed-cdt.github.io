@@ -229,6 +229,39 @@
 
 
 {
+"title": "Project Templates",
+"tags": "",
+"keywords": "",
+"url": "/templates/",
+"summary": "<p>The C/C++ project templates.</p>"
+}
+,
+
+
+
+{
+"title": "Maintainer info",
+"tags": "",
+"keywords": "",
+"url": "/maintain/",
+"summary": "<p>Resources for the projects maintainers.</p>"
+}
+,
+
+
+
+{
+"title": "Debugging",
+"tags": "",
+"keywords": "",
+"url": "/debug/",
+"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
+}
+,
+
+
+
+{
 "title": "Contributor Info",
 "tags": "",
 "keywords": "",
@@ -249,39 +282,6 @@
 ,
 
 
-
-{
-"title": "Project Templates",
-"tags": "",
-"keywords": "",
-"url": "/templates/",
-"summary": "<p>The C/C++ project templates.</p>"
-}
-,
-
-
-
-
-
-{
-"title": "Debugging",
-"tags": "",
-"keywords": "",
-"url": "/debug/",
-"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
-}
-,
-
-
-
-{
-"title": "Maintainer info",
-"tags": "",
-"keywords": "",
-"url": "/maintain/",
-"summary": "<p>Resources for the projects maintainers.</p>"
-}
-,
 
 
 
@@ -321,22 +321,22 @@
 
 
 {
-"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
+"title": "How to install the debugging components",
 "tags": "",
 "keywords": "",
-"url": "/plugins/install/",
-"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
+"url": "/debug/install/",
+"summary": "<p>Links to specific J-Link, OpenOCD and QEMU install pages.</p>"
 }
 ,
 
 
 
 {
-"title": "How to install the debugging components",
+"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
 "tags": "",
 "keywords": "",
-"url": "/debug/install/",
-"summary": "<p>Links to specific J-Link, OpenOCD and QEMU install pages.</p>"
+"url": "/plugins/install/",
+"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
 }
 ,
 
@@ -456,8 +456,6 @@
 
 
 
-
-
 {
 "title": "The OpenOCD debugging plug-in",
 "tags": "",
@@ -466,6 +464,8 @@
 "summary": "<p>How to run Eclipse debug sessions using OpenOCD.</p>"
 }
 ,
+
+
 
 
 
@@ -553,8 +553,6 @@
 
 
 
-
-
 {
 "title": "The QEMU debugging plug-in",
 "tags": "",
@@ -563,6 +561,8 @@
 "summary": "<p>How to run Eclipse debug sessions using QEMU Arm.</p>"
 }
 ,
+
+
 
 
 
@@ -664,6 +664,16 @@
 
 
 
+
+
+{
+"title": "Eclipse Embedded CDT plug-ins v6.2.2 released",
+"tags": "gnuarmmcueclipserisc-v",
+"keywords": "",
+"url": "/blog/2022/06/12/plugins-v6.2.2-released/",
+"summary": ""
+}
+,
 
 
 {
