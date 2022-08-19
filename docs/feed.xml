@@ -5,9 +5,29 @@
         <description>Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.</description>
         <link>https://eclipse-embed-cdt.github.io/</link>
         <atom:link href="https://eclipse-embed-cdt.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 12 Jun 2022 11:51:41 +0000</pubDate>
-        <lastBuildDate>Sun, 12 Jun 2022 11:51:41 +0000</lastBuildDate>
+        <pubDate>Fri, 19 Aug 2022 02:39:18 +0000</pubDate>
+        <lastBuildDate>Fri, 19 Aug 2022 02:39:18 +0000</lastBuildDate>
         <generator>Jekyll v3.9.0</generator>
+        
+        <item>
+            <title>Eclipse Embedded CDT plug-ins v6.3.0 released</title>
+            <description>&lt;p&gt;Version &lt;strong&gt;6.3.0&lt;/strong&gt; is a new release; it adds two new Arm &amp;amp; RISC-V templates and updates the QEMU debugging plug-ins.&lt;/p&gt;</description>
+            <pubDate>Fri, 19 Aug 2022 02:31:00 +0000</pubDate>
+            <link>https://eclipse-embed-cdt.github.io/blog/2022/08/19/plugins-v6.3.0-released/</link>
+            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2022/08/19/plugins-v6.3.0-released/</guid>
+            
+            <category>gnu</category>
+            
+            <category>arm</category>
+            
+            <category>mcu</category>
+            
+            <category>eclipse</category>
+            
+            <category>risc-v</category>
+            
+            
+        </item>
         
         <item>
             <title>Eclipse Embedded CDT plug-ins v6.2.2 released</title>
@@ -175,26 +195,6 @@
             <category>risc-v</category>
             
             <category>packages</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Eclipse Embedded CDT plug-ins v6.0.0 released</title>
-            <description>&lt;p&gt;Version &lt;strong&gt;6.0.0&lt;/strong&gt; is a new major release; it updates the features names,the bundles names, the Java Packages and the large majority of IDs to&lt;strong&gt;org.eclipse.embedcdt&lt;/strong&gt;; it also updates the content used by the Armtemplates plug-ins, including the STM template to the latest STM packages.&lt;/p&gt;</description>
-            <pubDate>Wed, 16 Dec 2020 10:00:00 +0000</pubDate>
-            <link>https://eclipse-embed-cdt.github.io/blog/2020/12/16/plugins-v6.0.0-released/</link>
-            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2020/12/16/plugins-v6.0.0-released/</guid>
-            
-            <category>gnu</category>
-            
-            <category>arm</category>
-            
-            <category>mcu</category>
-            
-            <category>eclipse</category>
-            
-            <category>risc-v</category>
             
             
         </item>
