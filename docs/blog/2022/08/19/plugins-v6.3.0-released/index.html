@@ -28,7 +28,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Eclipse Embedded CDT plug-ins v6.3.0 released" />
 <script type="application/ld+json">
-{"description":"Version 6.3.0 is a new release; it adds two new Arm &amp; RISC-V templates and updates the QEMU debugging plug-ins.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/blog/2022/08/19/plugins-v6.3.0-released/","headline":"Eclipse Embedded CDT plug-ins v6.3.0 released","dateModified":"2022-08-19T02:35:38+00:00","datePublished":"2022-08-19T02:31:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/blog/2022/08/19/plugins-v6.3.0-released/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"description":"Version 6.3.0 is a new release; it adds two new Arm &amp; RISC-V templates and updates the QEMU debugging plug-ins.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/blog/2022/08/19/plugins-v6.3.0-released/","headline":"Eclipse Embedded CDT plug-ins v6.3.0 released","dateModified":"2022-08-19T09:03:28+00:00","datePublished":"2022-08-19T02:31:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/blog/2022/08/19/plugins-v6.3.0-released/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -774,25 +774,50 @@ that can be downloaded locally and installed.</p>
 <p>Bug fixes:</p>
 
 <ul>
-  <li>TBD</li>
+  <li>none</li>
 </ul>
 
-<h2 id="enhancements">Enhancements:</h2>
+<h2 id="enhancements">Enhancements</h2>
 
 <ul>
-  <li>none</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/521">#521</a>:
+add an ‘xPack…’ button to the wizard to select the path</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/523">#523</a>:
+add the xPack AArch64 Embedded GCC toolchain</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/524">#524</a>:
+add the new xPack RISC-V GCC toolchain</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/525">#525</a>:
+add a notice to enable hidden folders</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/527">#527</a>:
+mark deprecated toolchains</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/528">#528</a>:
+add support for more RISC-V ISA extensions</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/532">#532</a>:
+add QEMU Arm, AArch64, RISC-V 32/64 debug</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/534">#534</a>:
+add an option to prefer the xpacks/.bin path for toolchains</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/535">#535</a>:
+add an option to prefer the xpacks/.bin path for QEMU</li>
 </ul>
 
 <p>Project template changes:</p>
 
 <ul>
-  <li>TBD</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/531">#531</a>:
+add a new project template to create Hello World projects that run on QEMU Arm</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/537">#537</a>:
+add a new project template to create Hello World projects that run on QEMU RISC-V</li>
 </ul>
 
 <p>Developer changes:</p>
 
 <ul>
-  <li>none</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/516">#516</a>:
+update for xpm XPACKS_STORE_FOLDER</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/522">#522</a>:
+update logic to identify toolchains by ID, not by name</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/526">#526</a>:
+add validations for custom toolchains</li>
 </ul>
 
 <p>More details are available at GitHub <a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/milestone/30?closed=1">milestone v6.3.0</a>.</p>
@@ -800,7 +825,11 @@ that can be downloaded locally and installed.</p>
 <h2 id="known-problems">Known problems</h2>
 
 <ul>
-  <li>none.</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/533">#533</a>:
+the QEMU GDB server delay is not yet implemented</li>
+  <li><a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/issues/530">#530</a>:
+the SVD write-only registers in peripheral register view are not processed
+as write-only</li>
 </ul>
 
 <h2 id="release-content">Release content</h2>
