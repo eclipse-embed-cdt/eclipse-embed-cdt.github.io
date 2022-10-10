@@ -228,36 +228,12 @@
 
 
 
-
-
-{
-"title": "Maintainer info",
-"tags": "",
-"keywords": "",
-"url": "/maintain/",
-"summary": "<p>Resources for the projects maintainers.</p>"
-}
-,
-
-
-
 {
 "title": "Contributor Info",
 "tags": "",
 "keywords": "",
 "url": "/develop/",
 "summary": "<p>Resources for Eclipse plug-ins developers contributing to the project.</p>"
-}
-,
-
-
-
-{
-"title": "Debugging",
-"tags": "",
-"keywords": "",
-"url": "/debug/",
-"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
 }
 ,
 
@@ -275,11 +251,35 @@
 
 
 {
+"title": "Maintainer info",
+"tags": "",
+"keywords": "",
+"url": "/maintain/",
+"summary": "<p>Resources for the projects maintainers.</p>"
+}
+,
+
+
+
+{
 "title": "Project Templates",
 "tags": "",
 "keywords": "",
 "url": "/templates/",
 "summary": "<p>The C/C++ project templates.</p>"
+}
+,
+
+
+
+
+
+{
+"title": "Debugging",
+"tags": "",
+"keywords": "",
+"url": "/debug/",
+"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
 }
 ,
 
@@ -649,8 +649,6 @@
 
 
 
-
-
 {
 "title": "How to update the Eclipse Embedded CDT plug-ins",
 "tags": "",
@@ -664,6 +662,18 @@
 
 
 
+
+
+
+
+{
+"title": "Eclipse Embedded CDT plug-ins v6.3.1 released",
+"tags": "gnuarmmcueclipserisc-v",
+"keywords": "",
+"url": "/blog/2022/10/10/plugins-v6.3.1-released/",
+"summary": ""
+}
+,
 
 
 {
