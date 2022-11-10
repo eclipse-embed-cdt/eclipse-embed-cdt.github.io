@@ -229,11 +229,11 @@
 
 
 {
-"title": "Contributor Info",
+"title": "Debugging",
 "tags": "",
 "keywords": "",
-"url": "/develop/",
-"summary": "<p>Resources for Eclipse plug-ins developers contributing to the project.</p>"
+"url": "/debug/",
+"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
 }
 ,
 
@@ -275,11 +275,11 @@
 
 
 {
-"title": "Debugging",
+"title": "Contributor Info",
 "tags": "",
 "keywords": "",
-"url": "/debug/",
-"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
+"url": "/develop/",
+"summary": "<p>Resources for Eclipse plug-ins developers contributing to the project.</p>"
 }
 ,
 
@@ -321,22 +321,22 @@
 
 
 {
-"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
+"title": "How to install the debugging components",
 "tags": "",
 "keywords": "",
-"url": "/plugins/install/",
-"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
+"url": "/debug/install/",
+"summary": "<p>Links to specific J-Link, OpenOCD and QEMU install pages.</p>"
 }
 ,
 
 
 
 {
-"title": "How to install the debugging components",
+"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
 "tags": "",
 "keywords": "",
-"url": "/debug/install/",
-"summary": "<p>Links to specific J-Link, OpenOCD and QEMU install pages.</p>"
+"url": "/plugins/install/",
+"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
 }
 ,
 
@@ -456,8 +456,6 @@
 
 
 
-
-
 {
 "title": "The OpenOCD debugging plug-in",
 "tags": "",
@@ -466,6 +464,8 @@
 "summary": "<p>How to run Eclipse debug sessions using OpenOCD.</p>"
 }
 ,
+
+
 
 
 
@@ -553,8 +553,6 @@
 
 
 
-
-
 {
 "title": "The QEMU debugging plug-in",
 "tags": "",
@@ -563,6 +561,8 @@
 "summary": "<p>How to run Eclipse debug sessions using QEMU Arm.</p>"
 }
 ,
+
+
 
 
 
