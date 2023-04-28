@@ -1,0 +1,26 @@
+{
+  "name": "ecdt-web-jekyll",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "link-local-bundle": "mkdir -pv node_modules/.bin && rm -f node_modules/.bin/bundle && ln -sv  ${HOME}/.local/homebrew/jekyll/bin/bundle node_modules/.bin/bundle",
+    "bundle-install": "bundle install && bundle info jekyll && bundle exec jekyll --version",
+    "bundle-update": "bundle update && bundle show && bundle info jekyll && bundle exec jekyll --version",
+    "which-bundle": "which bundle && bundle --version",
+    "serve-preview": "bundle exec jekyll serve --trace --safe --baseurl \"/web-preview\" --port 4001",
+    "serve-preview-draft": "bundle exec jekyll serve --trace --safe --baseurl \"/web-preview\" --draft --port 4001",
+    "build-site": "bundle exec jekyll build",
+    "htmlproofer-site": "bundle exec htmlproofer --allow-hash-href --http_status_ignore=429 ./_site"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xpack/web-jekyll.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xpack/web-jekyll/issues/"
+  },
+  "homepage": "https://github.com/xpack/web-jekyll#readme"
+}

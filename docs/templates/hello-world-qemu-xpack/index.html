@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The C/C++ project templates for Hello World semihosted projects.">
+<meta name="keywords" content=" ">
+<title>Hello World Arm & RISC-V QEMU xPack templates | Eclipse Embedded CDT  (C/C++ Development Tools)™</title>
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/syntax.css">
+
+
+<link type="application/atom+xml" rel="alternate" href="https://eclipse-embed-cdt.github.io/feed.xml"/>
+<link type="application/rss+xml" rel="alternate" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/feed.xml">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Hello World Arm &amp; RISC-V QEMU xPack templates | web-jekyll</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Hello World Arm &amp; RISC-V QEMU xPack templates" />
+<meta name="author" content="Liviu Ionescu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
+<meta property="og:description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
+<link rel="canonical" href="https://eclipse-embed-cdt.github.io/templates/hello-world-qemu-xpack/" />
+<meta property="og:url" content="https://eclipse-embed-cdt.github.io/templates/hello-world-qemu-xpack/" />
+<meta property="og:site_name" content="web-jekyll" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-15T17:59:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Hello World Arm &amp; RISC-V QEMU xPack templates" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2023-04-28T12:40:05+00:00","datePublished":"2023-04-15T17:59:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"Hello World Arm &amp; RISC-V QEMU xPack templates","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/templates/hello-world-qemu-xpack/"},"url":"https://eclipse-embed-cdt.github.io/templates/hello-world-qemu-xpack/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202304191327">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/customstyles.css?202304191327">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/boxshadowproperties.css?202304191327">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/theme-blue.css?202304191327">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/toc.js"></script>
+<script src="https://eclipse-embed-cdt.github.io/js/customscripts.js"></script>
+
+<!-- Use absolute URLs, to cover preview cases too -->
+<link rel="shortcut icon" href="https://eclipse-embed-cdt.github.io/images/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://eclipse-embed-cdt.github.io/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="https://eclipse-embed-cdt.github.io/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://eclipse-embed-cdt.github.io/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://eclipse-embed-cdt.github.io/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://eclipse-embed-cdt.github.io/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://eclipse-embed-cdt.github.io/images/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://eclipse-embed-cdt.github.io/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks" style="">
+        <div style="display: inline-block; float: left; margin-top: 8px; margin-left: auto; margin-right: 10px;"><img src="/images/company_logo.png" alt="logo" width="32px" height="32px"/></div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="/">&nbsp;<span class="projectTitle"> Eclipse Embedded CDT (C/C++ Development Tools)™</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">News<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="/news/">Latest News</a></li>
+                        
+                        
+                        
+                        <li><a href="/news/archive/">Archive</a></li>
+                        
+                        
+                        
+                        <li><a href="/plugins/releases/">Plug-ins Releases</a></li>
+                        
+                        
+                        
+                        <li><a href="/packages/releases/">Packages Releases</a></li>
+                        
+                        
+                        
+                        <li><a href="/tags/">Tags</a></li>
+                        
+                        
+                        
+                        <li><a href="/articles/">Articles</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Links<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://github.com/eclipse-embed-cdt/eclipse-plugins/discussions/" target="_blank" rel="noopener">The GitHub Discussions</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://gitter.im/eclipse-embed-cdt/community" target="_blank" rel="noopener">The Gitter Chat Room</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://www.eclipse.org" target="_blank" rel="noopener">Eclipse</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://projects.eclipse.org/projects/iot.embed-cdt/" target="_blank" rel="noopener">Eclipse Embedded CDT Project</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://marketplace.eclipse.org/content/eclipse-embedded-cdt/" target="_blank" rel="noopener">Eclipse Marketplace</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://xpack.github.io" target="_blank" rel="noopener">The xPack Project</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://micro-os-plus.github.io" target="_blank" rel="noopener">µOS++</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://gnu-mcu-eclipse.github.io" target="_blank" rel="noopener">GNU MCU Eclipse (deprecated)</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">GitHub<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a class="extern" href="https://github.com/eclipse-embed-cdt/" target="_blank" rel="noopener">Eclipse Embedded CDT</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpack/" target="_blank" rel="noopener">xPack Core Tools</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpack-dev-tools/" target="_blank" rel="noopener">3rd Party xPack Tools</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/xpacks/" target="_blank" rel="noopener">3rd Party xPacks</a></li>
+                        
+                        
+                        
+                        <li><a class="extern" href="https://github.com/micro-os-plus/" target="_blank" rel="noopener">µOS++</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Hello World Arm &amp; RISC-V QEMU xPack templates">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3 sticky" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Getting Started" href="#">Getting Started</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Features" href="/plugins/features/">Features</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Prerequisites" href="/plugins/prerequisites/">Prerequisites</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install a New Eclipse" href="/plugins/install/">Install a New Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Update an Existing Eclipse" href="/plugins/update/">Update an Existing Eclipse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install Optional Features" href="/plugins/install-new-software/">Install Optional Features</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Alternate Install Methods" href="/plugins/install-alternate/">Alternate Install Methods</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Workspace Preferences" href="/eclipse/workspace/preferences/">Workspace Preferences</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="CMSIS Packs" href="/plugins/packs-manager/">CMSIS Packs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="SEGGER J-Link" href="/debug/jlink/install/">SEGGER J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Troubleshoot" href="/plugins/troubleshoot/">Troubleshoot</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Debug" href="#">Debug</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/debug/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Install" href="/debug/install/">Install</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="J-Link" href="/debug/jlink/">J-Link</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD" href="/debug/openocd/">OpenOCD</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="OpenOCD RISC-V" href="/debug/openocd/riscv/">OpenOCD RISC-V</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="QEMU Arm" href="/debug/qemu/">QEMU Arm</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Assign CMSIS Device" href="/eclipse/project/assign-device/">Assign CMSIS Device</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Peripheral Registers" href="/debug/peripheral-registers/">Peripheral Registers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Blinky Arm Tutorial" href="/tutorials/blinky-arm/">Blinky Arm Tutorial</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="How It Works" href="#">How It Works</a>
+      <ul>
+          
+          
+          
+          <li><a title="The Managed Build System" href="/eclipse/cdt/managed-build/">The Managed Build System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The CDT Indexer" href="/eclipse/cdt/indexer/">The CDT Indexer</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="The Hardware Debug Plug-ins" href="/eclipse/cdt/hardware-debug/">The Hardware Debug Plug-ins</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Project Templates" href="#">Project Templates</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/templates/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="Hello World QEMU" href="/templates/hello-world-qemu-xpack/">Hello World QEMU</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="STM32Fxx Templates" href="/templates/stm32f/">STM32Fxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="KLxx Templates" href="/templates/klxx/">KLxx Templates</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Generic Cortex-M Template" href="/templates/cortexm/">Generic Cortex-M Template</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Releases" href="#">Releases</a>
+      <ul>
+          
+          
+          
+          <li><a title="Plug-ins Releases" href="/plugins/releases/">Plug-ins Releases</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Packages Releases" href="/packages/releases/">Packages Releases</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Support" href="#">Support</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/support/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="FAQ" href="/support/faq/">FAQ</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Known Issues" href="/support/known-issues/">Known Issues</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a class="extern" title="GitHub Discussions" href="https://github.com/eclipse-embed-cdt/eclipse-plugins/discussions/" target="_blank" rel="noopener">GitHub Discussions</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Contributor Info" href="#">Contributor Info</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/develop/">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Links" href="/develop/links/">Links</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Maintainer Info" href="#">Maintainer Info</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="/maintain/">Overview</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Project" href="#">Project</a>
+      <ul>
+          
+          
+          
+          <li><a class="extern" title="License (EPL-2)" href="https://www.eclipse.org/legal/epl-2.0/" target="_blank" rel="noopener">License (EPL-2)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="About" href="/about/">About</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Hello World Arm & RISC-V QEMU xPack templates</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">The C/C++ project templates for Hello World semihosted projects.
+</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+   <h2 id="overview">Overview</h2>
+
+<p>The first challenge when encountering a new board is to make it
+say <em>Hello</em>. This is even simpler that blinking a LED, since it does
+not require any peripheral drivers, like GPIO or timers.</p>
+
+<p>The preferred way to output <em>Hello</em> message is via the standard output,
+routed to the semihosting trace channel,
+which is supported by most debuggers.</p>
+
+<p>Such a project is a good starting point for writing unit tests, which
+generally are standard applications displaying various messages and
+returning an exit code.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before creating a new project, please be sure you checked all prerequisites
+described in the
+<a href="/plugins/prerequisites/">Prerequisites</a>
+page,</p>
+
+<h3 id="xpm">xpm</h3>
+
+<p>Special consideration should be given to install <code class="language-plaintext highlighter-rouge">node</code>/<code class="language-plaintext highlighter-rouge">npm</code>/<code class="language-plaintext highlighter-rouge">xpm</code>,
+which are mandatory for
+instantiating xPack templates.</p>
+
+<h3 id="pre-download-binary-tools">Pre-download binary tools</h3>
+
+<p>This is an optional step, but highly recommended.
+Without it the Eclipse plug-in will install all
+dependencies anyway, including the toolchains and all other binary tools,
+but, especially for the RISC-V toolchain which is very large,
+this will take quite a long time, without any feedback.</p>
+
+<p>Thus it is recommended to manually download the dependencies
+before attempting to create a new project.</p>
+
+<p>For Cortex-M and Arm 32-bit projects, the following commands can be used:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/arm-none-eabi-gcc@11.2.1-1.2.2 <span class="nt">--verbose</span>
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/qemu-arm@7.0.0-1.1 <span class="nt">--verbose</span>
+
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/cmake@3.21.6-1.1 <span class="nt">--verbose</span>
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/ninja-build@1.11.0-1.1 <span class="nt">--verbose</span>
+</code></pre></div></div>
+
+<p>For RISC-V projects, replace the first lines with:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/riscv-none-embed-gcc@12.1.0-2.1 <span class="nt">--verbose</span>
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/qemu-riscv@7.0.0-1.1 <span class="nt">--verbose</span>
+</code></pre></div></div>
+
+<h2 id="create-a-new-c-project">Create a new C++ project</h2>
+
+<p>To create a new project, go to <em>Eclipse</em> menu, <strong>File</strong> → <strong>New</strong> (or
+the button in the upper left corner), and select the <strong>C++ Project</strong>:</p>
+
+<p><img src="/assets/images/2023/new-c-cpp-project.png" alt="Create a new C++ project" /></p>
+
+<p>In the <em>New C/C++ Project</em> window, select <strong>C/C++ Managed Build</strong> and
+click the <strong>Next &gt;</strong> button.</p>
+
+<p><img src="/assets/images/2023/new-cpp-managed-build.png" alt="Create a new C++ project" /></p>
+
+<p>In the <strong>C++ Project</strong> window:</p>
+
+<ul>
+  <li>in the <em>Project name:</em> field enter the name of the new project, for example <strong>hello-m7f</strong></li>
+  <li>in the <em>Project type:</em> section expand the <strong>Executable</strong> type and select <strong>Hello World Arm QEMU xPack C/C++ Project</strong></li>
+  <li>in the <em>Toolchains:</em> section select <strong>Arm Cross GCC</strong></li>
+  <li>click the <strong>Next &gt;</strong> button</li>
+</ul>
+
+<p><img src="/assets/images/2023/create-new-m7f-project.png" alt="New C++ hello project" /></p>
+
+<p>In the <strong>Project settings</strong> window:</p>
+
+<ul>
+  <li>select the <em>MCU:</em> as <strong>Cortex-M7F</strong></li>
+  <li>enable <strong>Check some warnings</strong></li>
+  <li>disable all other</li>
+  <li>click the <strong>Next &gt;</strong> button.</li>
+</ul>
+
+<p><img src="/assets/images/2023/hello-project-settings.png" alt="Hello processor settings" /></p>
+
+<p>In the <strong>Select Configurations</strong> page leave the suggested Debug/Release
+configurations checked and click the <strong>Next &gt;</strong> button.</p>
+
+<p><img src="/assets/images/2023/hello-select-configurations.png" alt="Hello project configurations" /></p>
+
+<p>In the <strong>Cross GNU Arm Toolchain</strong> window:</p>
+
+<ul>
+  <li>select the <em>Toolchain name:</em> <strong>xPack GNU Arm Embedded GCC</strong> (mandatory)</li>
+  <li>if the xPack was installed via xpm, click <strong>xPack…</strong> and select the version; otherwise
+browse for the <code class="language-plaintext highlighter-rouge">bin</code> folder within the toolchain folder; don’t be afraid
+to use the absolute path, it is not stored in the project</li>
+  <li>click the <strong>Finish</strong> button</li>
+</ul>
+
+<p><img src="/assets/images/2023/hello-arm-cross-toolchain.png" alt="Hello toolchain and path selection" /></p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When selecting the path, be sure to select
+the top <code class="language-plaintext highlighter-rouge">/.content/bin</code> folder
+where programs like <code class="language-plaintext highlighter-rouge">arm-none-eabi-gcc</code> are located.</div>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> DO NOT SKIP this step, it is mandatory
+to have a correct toolchain path defined in order for the build to complete
+correctly.</div>
+
+<p><img src="/assets/images/2023/hello-toolchain-path.png" alt="Toolchain path" /></p>
+
+<p>With all setting ready, the plug-in runs the external command <code class="language-plaintext highlighter-rouge">xpm init --template ...</code> to actually populate the project with files:</p>
+
+<p><img src="/assets/images/2023/hello-xpm-init.png" alt="Toolchain path" /></p>
+
+<p>This takes a few moments, and then the plug-in runs <code class="language-plaintext highlighter-rouge">xpm install</code>, which
+downloads all dependencies.</p>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> If the binaries were not downloaded
+previously, this step may take a few good minutes, especially on
+slow internet links, to download the toolchain and the other tools;
+unfortunately Eclipse provides no feedback on the progress;
+be patient and wait for it to complete.</div>
+
+<p>The result of the wizard is a simple project, with a <code class="language-plaintext highlighter-rouge">main()</code> function printing a greeting on the standard output.</p>
+
+<p><img src="/assets/images/2023/hello-arm-qemu-xpack.png" alt="The new C++ project" /></p>
+
+<h2 id="build-the-project">Build the project</h2>
+
+<p>To start the build:</p>
+
+<ul>
+  <li>select the new project in the <em>Project Explorer</em> section</li>
+  <li>click the <strong>hammer</strong> icon</li>
+</ul>
+
+<p><img src="/assets/images/2023/hello-hammer-build.png" alt="Hammer Build" /></p>
+
+<p>The build process should leave in the <em>Console</em> window a listing like this:</p>
+
+<p><img src="/assets/images/2023/hello-build-console.png" alt="The build console" /></p>
+
+<p>The files created by the build process are left in a folder named by the name of the configuration, for example <em>Debug</em> or <em>Release</em>.</p>
+
+<p><img src="/assets/images/2023/hello-debug-folder.png" alt="Blinky Build Result" /></p>
+
+<p>As seen above, the <em>Debug</em> folder is populated with:</p>
+
+<ul>
+  <li>all make files required for the build (<strong>makefile</strong> and various <strong>*.mk</strong> files, generated by CDT),</li>
+  <li>the object files and dependency files generated during the build (<strong>main.o</strong> and <strong>main.d</strong>)  and</li>
+  <li>the final executable file, with all debug symbols, useful for a debug session (<strong>hello-m7f.elf</strong>)</li>
+  <li>the binary executable file, ready to be programmed in flash (<strong>hello-m7f.hex</strong>)</li>
+  <li>a program map, with all symbols and their associated addresses (<strong>hello-m7f.map</strong>)</li>
+</ul>
+
+<h2 id="rundebug-the-test-using-qemu-arm">Run/Debug the test using QEMU Arm</h2>
+
+<p>The most convenient way to run a debug session with this test is to use the
+<a href="/debug/qemu/">QEMU Debugging plug-in</a>; no physical hardware is required.</p>
+
+<p>Eclipse menu → <strong>Run</strong> → <strong>Debug Configurations…</strong></p>
+
+<p><img src="/assets/images/2023/debug-configurations.png" alt="The build console" /></p>
+
+<ul>
+  <li>expand the <em>GDB QEMU arm Debugging</em> category</li>
+  <li>select the <strong>hello-m7f-debug-qemu</strong> configuration</li>
+  <li>click the <strong>Debug</strong> button</li>
+</ul>
+
+<p><img src="/assets/images/2023/hello-debug-qemu.png" alt="The QEMU Debugger tab" /></p>
+
+<p>Confirm the switch to the debugger perspective, and allow the plug-in
+to remember this setting.</p>
+
+<p>The Eclipse debugger is started, with a breakpoint in <code class="language-plaintext highlighter-rouge">main()</code>.</p>
+
+<p><img src="/assets/images/2023/hello-debug-halt.png" alt="The QEMU Debugger tab" /></p>
+
+<p>From here you
+can either step over several instructions, or click <strong>Resume</strong>
+(the green right pointing triangle).</p>
+
+<p>QEMU will run the program and display some information,
+including several trace lines, in the console:</p>
+
+<p><img src="/assets/images/2023/hello-debug-done-console.png" alt="blinky debug" /></p>
+
+<h2 id="full-semihosting">Full semihosting</h2>
+
+<p>Contrary to usual POSIX environments, like GNU/Linux, embedded systems
+usually do not provide standard input/output devices. In the code generated
+by the template, the output of the <code class="language-plaintext highlighter-rouge">printf()</code> calls, including
+<code class="language-plaintext highlighter-rouge">trace_printf()</code>,
+is redirected to a special debugging channel implemented by most debuggers,
+using the semihosting protocol.</p>
+
+<p>Even more, the
+<a href="https://github.com/ARM-software/abi-aa/blob/main/semihosting/semihosting.rst">Arm semihosting specs</a>
+also define read/write file operations, which can be used
+during tests to read input stimulus data and to output test results.</p>
+
+<h2 id="project-structure">Project structure</h2>
+
+<p>The resulting project has a quite regular structure, with separate
+folders for the portable content, for the platform specific content,
+and for the dependencies.</p>
+
+<h3 id="the-portable-content">The portable content</h3>
+
+<p>The portable content is located in the top <code class="language-plaintext highlighter-rouge">src</code> and <code class="language-plaintext highlighter-rouge">include</code> folders.</p>
+
+<p>In this project, there is only a <code class="language-plaintext highlighter-rouge">main.cpp</code> file with its header:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">% tree src include
+src
+└── main.cpp
+include
+└── main.h
+
+0 directories, 2 files
+</span></code></pre></div></div>
+
+<h3 id="the-platform-specific-code">The platform specific code</h3>
+
+<p>As configured when the template was instantiated, the project
+is expected to run on a Cortex-M7F, emulated by QEMU.</p>
+
+<p>The project specific code for Cortex-M7F is in the <code class="language-plaintext highlighter-rouge">platform-qemu-cortex-m7f</code> folder:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">% tree platform-qemu-cortex-m7f
+platform-qemu-cortex-m7f
+├── CMakeLists.txt
+├── README.md
+├── cmake
+│   ├── dependencies.cmake
+│   └── globals.cmake
+├── include-config
+│   └── micro-os-plus
+│       └── config.h
+├── include-platform
+│   └── micro-os-plus
+│       ├── platform-qemu-cortex-m7f
+│       │   └── defines.h
+│       └── platform.h
+├── linker-scripts
+└── src
+
+8 directories, 7 files
+</span></code></pre></div></div>
+
+<p>Most of the files are placeholders, the only file with some content is
+<code class="language-plaintext highlighter-rouge">include-config/micro-os-plus/config.h</code>, which defines some startup
+and semihosting variables.</p>
+
+<p>The actual code is in the dependent libraries installed in the <code class="language-plaintext highlighter-rouge">xpacks</code>
+folder.</p>
+
+<h3 id="the-dependencies-folders">The dependencies folders</h3>
+
+<p>As per the xPack design, the source libraries are downloaded and linked in
+the <code class="language-plaintext highlighter-rouge">xpacks</code> folder:</p>
+
+<p><img src="/assets/images/2023/hello-xpacks.png" alt="the xPacks folders" /></p>
+
+<p>Each library has the usual structure, with a <code class="language-plaintext highlighter-rouge">src</code> folder for the C/C++ source
+files, an <code class="language-plaintext highlighter-rouge">include</code> folder with the headers, and some metadata for assisting
+the build.</p>
+
+<p>For example, the <code class="language-plaintext highlighter-rouge">@micro-os-plus/semihosting</code> package has the
+following content:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">% tree xpacks/micro-os-plus-semihosting
+xpacks/micro-os-plus-semihosting
+├── CHANGELOG.md
+├── CMakeLists.txt
+├── LICENSE
+├── README.md
+├── include
+│   └── micro-os-plus
+│       ├── semihosting-inlines.h
+│       └── semihosting.h
+├── meson.build
+├── package.json
+├── src
+│   ├── semihosting-startup.cpp
+│   ├── semihosting-syscalls.cpp
+│   └── semihosting-trace.cpp
+└── xpack.json
+
+3 directories, 12 files
+</span></code></pre></div></div>
+
+<p>The dependent libraries are actually not located in the project, but in
+a central store, and the sub-folders below <code class="language-plaintext highlighter-rouge">xpacks</code> are symbolic links
+(junctions for Windows).</p>
+
+<p>The xPack dependencies <strong>should not</strong> be saved in the project repository,
+since the <code class="language-plaintext highlighter-rouge">xpacks</code> folder can be easily recreated in a freshly cloned
+project with <code class="language-plaintext highlighter-rouge">xpm install</code>.</p>
+
+<p>The content of the central store is read-only, such that the source files
+(which can be used by multiple projects) cannot be inadvertently changed.</p>
+
+<p>For development purposes, it is possible to replace the links to the
+central store with links to a local repository, where the files can be
+edited, using a pair of the <code class="language-plaintext highlighter-rouge">xpm link</code> commands (see the
+<a href="https://xpack.github.io/xpm/cli/link/">xpm link</a> page).</p>
+
+<h2 id="headless-builds">Headless builds</h2>
+
+<p>The template is a separate project that can be fully used in a
+terminal:</p>
+
+<ul>
+  <li><a href="https://github.com/micro-os-plus/hello-world-qemu-template-xpack/">https://github.com/micro-os-plus/hello-world-qemu-template-xpack/</a></li>
+</ul>
+
+<p>To run the builds, a series of actions are pre-configured, for example
+to build the Debug configuration for Cortex-M7, a <code class="language-plaintext highlighter-rouge">prepare</code> should
+be performed only once, and later the <code class="language-plaintext highlighter-rouge">build</code> step can be performed:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm run prepare <span class="nt">--config</span> qemu-cortex-m7f-cmake-debug
+xpm run build <span class="nt">--config</span> qemu-cortex-m7f-cmake-debug
+</code></pre></div></div>
+
+<h2 id="support">Support</h2>
+
+<p>If you encounter any problems when using this template, please refer to
+the <a href="/support/">Support</a> page and <strong>do not</strong> send private
+emails.</p>
+
+
+        
+
+
+    <div class="tags">
+        
+    </div>
+
+    
+
+    <hr/>
+    <p>Comments <strong>on the content</strong> of this page that might be
+    useful for other readers are welcomed here. For
+    <strong>questions and general support</strong>, please use
+    <a href="https://github.com/eclipse-embed-cdt/eclipse-plugins/discussions/"> GitHub Discussions</a>.
+    </p>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_config = function () {
+            this.page.url = '';  // Your page's canonical URL variable
+            this.page.identifier = '/templates/hello-world-qemu-xpack/'; // Your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://embed-cdt.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-4">
+                  <a href="https://www.eclipse.org/">Eclipse Foundation</a><br/>
+                  <a href="https://www.eclipse.org/legal/privacy.php">Privacy Policy</a><br/>
+                  <a href="https://www.eclipse.org/legal/termsofuse.php">Website terms of use</a><br/>
+                  <a href="https://www.eclipse.org/legal/copyright.php">Copyright Agent</a><br/>
+                  <a href="https://www.eclipse.org/security/">Report a Vulnerability</a><br/>
+                  <a href="https://www.eclipse.org/legal">Legal</a><br/>
+                </div>
+                <div class="col-lg-4 footer-center">
+                  <a href="https://projects.eclipse.org/projects/iot.embed-cdt/"><img src="/assets/images/2020/ef-small.png" alt="EF logo" ></a>
+                </div>
+                <div class="col-lg-4 footer">
+                  &copy; 2009, 2023 Liviu Ionescu and others. <br />
+                  All rights reserved. <br />
+                  <span>Page last updated:</span> Apr 28, 2023<br/> Site last generated: Apr 28, 2023 <br />
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3LM1RVGDZY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3LM1RVGDZY');
+</script>
+
+
+</html>

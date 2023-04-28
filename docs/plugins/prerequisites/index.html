@@ -11,11 +11,11 @@
 
 
 <link type="application/atom+xml" rel="alternate" href="https://eclipse-embed-cdt.github.io/feed.xml"/>
-<link type="application/rss+xml" rel="alternate" title="" href="https://eclipse-embed-cdt.github.io/feed.xml">
+<link type="application/rss+xml" rel="alternate" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/feed.xml">
 
-<!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>How to install the Eclipse prerequisites</title>
-<meta name="generator" content="Jekyll v3.9.0" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to install the Eclipse prerequisites | web-jekyll</title>
+<meta name="generator" content="Jekyll v3.9.3" />
 <meta property="og:title" content="How to install the Eclipse prerequisites" />
 <meta name="author" content="Liviu Ionescu" />
 <meta property="og:locale" content="en_US" />
@@ -23,24 +23,25 @@
 <meta property="og:description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
 <link rel="canonical" href="https://eclipse-embed-cdt.github.io/plugins/prerequisites/" />
 <meta property="og:url" content="https://eclipse-embed-cdt.github.io/plugins/prerequisites/" />
+<meta property="og:site_name" content="web-jekyll" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-10-09T11:14:00+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="How to install the Eclipse prerequisites" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/","headline":"How to install the Eclipse prerequisites","dateModified":"2023-03-22T08:44:25+00:00","datePublished":"2017-10-09T11:14:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2023-04-28T12:40:05+00:00","datePublished":"2017-10-09T11:14:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"How to install the Eclipse prerequisites","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"},"url":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202211100908">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202304191327">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/customstyles.css?202211100908">
-<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/boxshadowproperties.css?202211100908">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/customstyles.css?202304191327">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/boxshadowproperties.css?202304191327">
 <!-- most color styles are extracted out to here -->
-<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/theme-blue.css?202211100908">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/theme-blue.css?202304191327">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -203,7 +204,7 @@
                         
                         
                         
-                        <li><a class="extern" href="https://gitter.im/xpack/" target="_blank" rel="noopener">The Project Chat Room</a></li>
+                        <li><a class="extern" href="https://gitter.im/eclipse-embed-cdt/community" target="_blank" rel="noopener">The Gitter Chat Room</a></li>
                         
                         
                         
@@ -223,7 +224,7 @@
                         
                         
                         
-                        <li><a class="extern" href="http://micro-os-plus.github.io" target="_blank" rel="noopener">µOS++</a></li>
+                        <li><a class="extern" href="https://micro-os-plus.github.io" target="_blank" rel="noopener">µOS++</a></li>
                         
                         
                         
@@ -515,6 +516,13 @@
           
           
           
+          <li><a title="Hello World QEMU" href="/templates/hello-world-qemu-xpack/">Hello World QEMU</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="STM32Fxx Templates" href="/templates/stm32f/">STM32Fxx Templates</a></li>
           
           
@@ -724,8 +732,8 @@ $('#toc').on('click', 'a', function() {
 Generally Java is not available by default on most platforms, and requires
 a separate installation.</p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Some recent Eclipse packages may
-be standalone and already include a Java JRE; in this case
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Recent Eclipse packages are standalone and
+come bundled with the Java JRE; in this case
 is is no longer necessary to install a separate Java.</div>
 
 <h3 id="other-tools">Other tools</h3>
@@ -737,20 +745,26 @@ starting Eclipse.</p>
 install these tools, and reopen Eclipse.</div>
 
 <ul>
-  <li><strong>node/npm/xpm</strong> - although not mandatory, but highly recommended, the
-second prerequisite is <strong>xpm</strong> (the xPack Package Manager), which is
-a <strong>Node.js</strong> portable application;</li>
+  <li><strong>node/npm/xpm</strong> - although not mandatory by Eclipse itself, it is
+highly recommended to use <strong>xpm</strong> (the xPack Project Manager, which
+is a <strong>Node.js</strong> portable CLI application) to install
+various build tools (the <em>Hello World Arm/RISC-V QEMU xPack</em> project
+template mandates it)</li>
   <li><strong>Windows Build Tools</strong> - to build projects, on Windows it is necessary
 to install <code class="language-plaintext highlighter-rouge">make</code>, available from the xPack Windows Build Tools;</li>
-  <li><strong>Arm toolchain</strong> - to build Arm projects, an Arm toolchain like
+  <li><strong>Arm Embedded GCC toolchain</strong> - to build Arm projects, an Arm toolchain like
 the xPack GNU Arm Embedded GCC is required;</li>
-  <li><strong>RISC-V toolchain</strong> - similarly, for RISC-V projects, a RISC-V toolchain
+  <li><strong>RISC-V Embedded GCC toolchain</strong> - similarly, for RISC-V projects, a RISC-V toolchain
 like the xPack GNU RISC-V Embedded GCC is required;</li>
   <li><strong>SEGGER J-Link</strong> - to debug projects, a JTAG probe is necessary together
 with the software to access it, for example the SEGGER J-Link software;</li>
   <li><strong>OpenOCD</strong> - for some boards, xPack OpenOCD might also be useful;</li>
   <li><strong>QEMU Arm</strong> - to run debug sessions without actual hardware, the
 xPack QEMU Arm emulator is necessary (the blinky tutorial mandates it).</li>
+  <li><strong>QEMU RISC-V</strong> - similarly, the
+xPack QEMU RISC-V emulator is useful to run RISC-V application
+(the Hello World RISC-V
+tutorial mandates it).</li>
 </ul>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Many of the additional tools can be
@@ -760,6 +774,9 @@ installed as xPacks, which makes <strong>xpm</strong> a very convenient tool.</d
 
 <p>The following section covers the common Windows/macOS/Linux platforms;
 for a wider range of platforms, see the <strong>Alternate solutions</strong> below.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Recent Eclipse releases include Java,
+so this step is no longer necessary.</div>
 
 <ul id="profileTabs_1" class="nav nav-tabs">
     <li class="active"><a href="#windows_1" data-toggle="tab">Windows</a></li>
@@ -775,7 +792,7 @@ for a wider range of platforms, see the <strong>Alternate solutions</strong> bel
 <a href="https://openjdk.java.net">Oracle <strong>OpenJDK</strong> page</a>.</p>
 
 <p>Follow the <strong>Download</strong> link in the Oracle page, which currently points to
-<a href="https://jdk.java.net/15">jdk.java.net/15</a>.</p>
+<a href="https://jdk.java.net/20">jdk.java.net/20</a>.</p>
 
 <p>In the <strong>Builds</strong> section, download the <strong>Windows/x64</strong> <code class="language-plaintext highlighter-rouge">.zip</code> file.</p>
 
@@ -784,12 +801,12 @@ for a wider range of platforms, see the <strong>Alternate solutions</strong> bel
 <pre><code class="language-plain">mkdir %APPDATA%\Oracle
 </code></pre>
 
-<p>And extract the archive content into <code class="language-plaintext highlighter-rouge">...\AppData\Roaming\Oracle\jdk-15</code>.</p>
+<p>And extract the archive content into <code class="language-plaintext highlighter-rouge">...\AppData\Roaming\Oracle\jdk-20</code>.</p>
 
 <p>To set the path, in a cmd.exe terminal, issue the following:</p>
 
-<pre><code class="language-plain">set Path=%APPDATA%\Oracle\jdk-15\bin;%Path%
-setx Path "%APPDATA%\Oracle\jdk-15\bin;%Path%"
+<pre><code class="language-plain">set Path=%APPDATA%\Oracle\jdk-20\bin;%Path%
+setx Path "%APPDATA%\Oracle\jdk-20\bin;%Path%"
 </code></pre>
 
 <p>Check version:</p>
@@ -810,14 +827,14 @@ which one to use by controlling the Path.</p>
 <a href="https://openjdk.java.net">Oracle <strong>OpenJDK</strong> page</a>.</p>
 
 <p>Follow the <strong>Download</strong> link in the Oracle page, which currently points to
-<a href="https://jdk.java.net/15">jdk.java.net/15</a>.</p>
+<a href="https://jdk.java.net/20">jdk.java.net/20</a>.</p>
 
 <p>In the <strong>Builds</strong> section, download the <strong>macOS/x64</strong> .tar.gz file.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/Downloads
-xattr <span class="nt">-d</span> com.apple.quarantine openjdk-15_osx-x64_bin.tar.gz
-<span class="nb">tar </span>xf openjdk-15_osx-x64_bin.tar.gz
-<span class="nb">sudo mv </span>jdk-15.jdk/ /Library/Java/JavaVirtualMachines/
+xattr <span class="nt">-d</span> com.apple.quarantine openjdk-20_osx-x64_bin.tar.gz
+<span class="nb">tar </span>xf openjdk-20_osx-x64_bin.tar.gz
+<span class="nb">sudo mv </span>jdk-20.jdk/ /Library/Java/JavaVirtualMachines/
 </code></pre></div></div>
 
 <p>Check version:</p>
@@ -841,14 +858,14 @@ links <code class="language-plaintext highlighter-rouge">/usr/bin/java</code> to
 <p>How exactly it gets from here to the actual location is a bit of Apple magic.</p>
 
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> Installing the latest Java may
-not be possble on older systems, for example Java 14 fails to
+not be possible on older systems, for example Java 14 fails to
 start on macOS 10.10.</div>
 
 <p>Since it is possible to install multiple version on the same system,
 if you want to override this mechanism and use a different version, try
 to configure the user path via <code class="language-plaintext highlighter-rouge">launchctl</code>:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>launchctl config user path /Library/Java/JavaVirtualMachines/jdk-15.jdk/Contents/Home/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>launchctl config user path /Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 <span class="nb">sudo </span>reboot
 </code></pre></div></div>
 
@@ -857,14 +874,14 @@ necessary to reboot.</p>
 
 <p>To check if the new path was configured properly:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>launchctl getenv PATH
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>launchctl getenv PATH
 </code></pre></div></div>
 
 <p>Please note that the above command configures only the path for the GUI
 applications. For shell usage, it is necessary to also set the PATH
 environment variable in the shell startup files (like <code class="language-plaintext highlighter-rouge">.zprofile</code>):</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/Library/Java/JavaVirtualMachines/jdk-15.jdk/Contents/Home/bin/:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home/bin/:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
 </code></pre></div></div>
 
 
@@ -875,7 +892,7 @@ environment variable in the shell startup files (like <code class="language-plai
 
 <p>To check if it is already installed, ask the version:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java -version
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-version</span>
 </code></pre></div></div>
 
 <p>If it is not installed, or it is not at least Java 11,
@@ -883,12 +900,12 @@ install it via the package manager.</p>
 
 <p>For example on Ubuntu:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">--yes</span> openjdk-15-jdk
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">--yes</span> openjdk-20-jdk
 </code></pre></div></div>
 
 <p>Or on CentOS:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nt">-y</span> <span class="nb">install </span>java-15-openjdk
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nt">-y</span> <span class="nb">install </span>java-20-openjdk
 </code></pre></div></div>
 
 <p>Check your system for the available package names and versions.</p>
@@ -899,18 +916,18 @@ install it via the package manager.</p>
 <a href="https://openjdk.java.net">Oracle <strong>OpenJDK</strong> page</a>.</p>
 
 <p>Follow the <strong>Download</strong> link in the Oracle page, which currently points to
-<a href="https://jdk.java.net/15">jdk.java.net/15</a>.</p>
+<a href="https://jdk.java.net/20">jdk.java.net/20</a>.</p>
 
 <p>In the <strong>Builds</strong> section, download the <strong>Linux/x64</strong> .tar.gz file.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt
 <span class="nb">cd</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt
-<span class="nb">tar </span>xf ~/Downloads/openjdk-15_linux-x64_bin.tar.gz
+<span class="nb">tar </span>xf ~/Downloads/openjdk-20_linux-x64_bin.tar.gz
 </code></pre></div></div>
 
 <p>Then add the location to the user PATH:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt/jdk-15/bin/:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/opt/jdk-20/bin/:<span class="k">${</span><span class="nv">PATH</span><span class="k">}</span>
 </code></pre></div></div>
 
 <p>Check version:</p>
@@ -932,15 +949,15 @@ which one to use by controlling the PATH.</p>
 and add a <code class="language-plaintext highlighter-rouge">-vm</code> option pointing to the Java bin path; be sure this
 option is placed before <code class="language-plaintext highlighter-rouge">-vmargs</code>, which should be the last one:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--launcher.defaultAction
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--launcher</span>.defaultAction
 openFile
--vm
-/home/ilg/opt/jdk-15/bin/
--vmargs
--Dosgi.requiredJavaVersion=11
--XX:MaxPermSize=256m
--Xms256m
--Xmx2048m
+<span class="nt">-vm</span>
+/home/ilg/opt/jdk-20/bin/
+<span class="nt">-vmargs</span>
+<span class="nt">-Dosgi</span>.requiredJavaVersion<span class="o">=</span>11
+<span class="nt">-XX</span>:MaxPermSize<span class="o">=</span>256m
+<span class="nt">-Xms256m</span>
+<span class="nt">-Xmx2048m</span>
 </code></pre></div></div>
 
 
@@ -971,29 +988,26 @@ you install a 64-bit Java.</div>
   <li><a href="https://xpack.github.io/xpm/install/">xpm</a></li>
 </ul>
 
-<p>For convenience for those who already know what this means, here is a brief.</p>
+<p>For convenience for those who already know what this means, below is a brief.</p>
 
 <p>For macOS and GNU/Linux, use <strong>nvm</strong> (for Windows use the .msi, as explained in
 the <a href="https://xpack.github.io/install/">node</a> install page):</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-o-</span> https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-pv</span> <span class="s2">"</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span><span class="s2">/Downloads/"</span>
+curl <span class="nt">--output</span> <span class="s2">"</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span><span class="s2">/Downloads/install-nvm-node-npm-xpm.sh"</span> https://raw.githubusercontent.com/xpack/assets/master/scripts/install-nvm-node-npm-xpm.sh
+<span class="nb">cat</span> <span class="s2">"</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span><span class="s2">/Downloads/install-nvm-node-npm-xpm.sh"</span>
+
+bash <span class="s2">"</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span><span class="s2">/Downloads/install-nvm-node-npm-xpm.sh"</span>
+
 <span class="nb">exit</span>
 </code></pre></div></div>
 
-<p>In a new terminal, to benefit from the environment variables
-added by the script:</p>
+<p>This shell script will install <code class="language-plaintext highlighter-rouge">nvm</code> (the Node Version Manager), <code class="language-plaintext highlighter-rouge">node</code>,
+<code class="language-plaintext highlighter-rouge">npm</code> and <code class="language-plaintext highlighter-rouge">xpm</code>.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm <span class="nb">install</span> <span class="nt">--lts</span> node
-nvm use node
-node <span class="nt">--version</span>
-nvm install-latest-npm
-npm <span class="nt">--version</span>
-</code></pre></div></div>
-
-<p>Install <strong>xpm</strong>:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">--global</span> xpm@latest
-</code></pre></div></div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> To activate <code class="language-plaintext highlighter-rouge">nvm</code> automatically,
+the script adds several lines
+to the shell initialisation script.</div>
 
 <p>On Windows, install <strong>make</strong> and the rest of the build tools:</p>
 
@@ -1006,11 +1020,16 @@ the riscv toolchain is necessary only for RISC-V projects.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/arm-none-eabi-gcc@latest <span class="nt">--verbose</span>
 xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/qemu-arm@latest <span class="nt">--verbose</span>
-xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/openocd@latest <span class="nt">--verbose</span>
+
 xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/riscv-none-embed-gcc@latest <span class="nt">--verbose</span>
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/qemu-riscv@latest <span class="nt">--verbose</span>
+
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/openocd@latest <span class="nt">--verbose</span>
+
 xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/cmake@latest <span class="nt">--verbose</span>
-xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/ninja-build@latest <span class="nt">--verbose</span>
 xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/meson-build@latest <span class="nt">--verbose</span>
+
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/ninja-build@latest <span class="nt">--verbose</span>
 </code></pre></div></div>
 
 <p>All xPacks are installed in a central folder in the user home; check
@@ -1028,7 +1047,7 @@ running builds on Windows requires tools that Microsoft does not include
 in the base distribution and need to be installed separately.</p>
 
 <p>For convenience, these tools were packed as the
-<a href="https://xpack.github.io/windows-build-tools/">xPack Windows Build Tools</a>
+<a href="https://xpack.github.io/dev-tools/windows-build-tools/">xPack Windows Build Tools</a>
 and can be easily installed via <strong>xpm</strong>.</p>
 
 <h3 id="discontinued-32-bit-support">Discontinued 32-bit support</h3>
@@ -1092,12 +1111,12 @@ for running on a 32-bit system), be sure it includes at least CDT 9.2.1.</p>
 <footer>
             <div class="row">
                 <div class="col-lg-4">
-                  <a href="http://www.eclipse.org/">Eclipse Foundation</a><br/>
-                  <a href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</a><br/>
-                  <a href="http://www.eclipse.org/legal/termsofuse.php">Website terms of use</a><br/>
-                  <a href="http://www.eclipse.org/legal/copyright.php">Copyright Agent</a><br/>
+                  <a href="https://www.eclipse.org/">Eclipse Foundation</a><br/>
+                  <a href="https://www.eclipse.org/legal/privacy.php">Privacy Policy</a><br/>
+                  <a href="https://www.eclipse.org/legal/termsofuse.php">Website terms of use</a><br/>
+                  <a href="https://www.eclipse.org/legal/copyright.php">Copyright Agent</a><br/>
                   <a href="https://www.eclipse.org/security/">Report a Vulnerability</a><br/>
-                  <a href="http://www.eclipse.org/legal">Legal</a><br/>
+                  <a href="https://www.eclipse.org/legal">Legal</a><br/>
                 </div>
                 <div class="col-lg-4 footer-center">
                   <a href="https://projects.eclipse.org/projects/iot.embed-cdt/"><img src="/assets/images/2020/ef-small.png" alt="EF logo" ></a>
@@ -1105,7 +1124,7 @@ for running on a 32-bit system), be sure it includes at least CDT 9.2.1.</p>
                 <div class="col-lg-4 footer">
                   &copy; 2009, 2023 Liviu Ionescu and others. <br />
                   All rights reserved. <br />
-                  <span>Page last updated:</span> Mar 22, 2023<br/> Site last generated: Mar 22, 2023 <br />
+                  <span>Page last updated:</span> Apr 28, 2023<br/> Site last generated: Apr 28, 2023 <br />
                 </div>
             </div>
 </footer>

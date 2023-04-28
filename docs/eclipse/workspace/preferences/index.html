@@ -11,11 +11,11 @@
 
 
 <link type="application/atom+xml" rel="alternate" href="https://eclipse-embed-cdt.github.io/feed.xml"/>
-<link type="application/rss+xml" rel="alternate" title="" href="https://eclipse-embed-cdt.github.io/feed.xml">
+<link type="application/rss+xml" rel="alternate" title="web-jekyll" href="https://eclipse-embed-cdt.github.io/feed.xml">
 
-<!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Workspace preferences</title>
-<meta name="generator" content="Jekyll v3.9.0" />
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Workspace preferences | web-jekyll</title>
+<meta name="generator" content="Jekyll v3.9.3" />
 <meta property="og:title" content="Workspace preferences" />
 <meta name="author" content="Liviu Ionescu" />
 <meta property="og:locale" content="en_US" />
@@ -23,24 +23,25 @@
 <meta property="og:description" content="Tools to manage, configure and build complex, package based, multi-target, C/C++ projects." />
 <link rel="canonical" href="https://eclipse-embed-cdt.github.io/eclipse/workspace/preferences/" />
 <meta property="og:url" content="https://eclipse-embed-cdt.github.io/eclipse/workspace/preferences/" />
+<meta property="og:site_name" content="web-jekyll" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-09-11T20:16:00+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Workspace preferences" />
 <script type="application/ld+json">
-{"description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","@type":"BlogPosting","url":"https://eclipse-embed-cdt.github.io/eclipse/workspace/preferences/","headline":"Workspace preferences","dateModified":"2023-03-22T08:44:25+00:00","datePublished":"2015-09-11T20:16:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/eclipse/workspace/preferences/"},"author":{"@type":"Person","name":"Liviu Ionescu"},"@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2023-04-28T12:40:05+00:00","datePublished":"2015-09-11T20:16:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"Workspace preferences","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/eclipse/workspace/preferences/"},"url":"https://eclipse-embed-cdt.github.io/eclipse/workspace/preferences/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202211100908">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/modern-business.css?202304191327">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/customstyles.css?202211100908">
-<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/boxshadowproperties.css?202211100908">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/customstyles.css?202304191327">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/boxshadowproperties.css?202304191327">
 <!-- most color styles are extracted out to here -->
-<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/theme-blue.css?202211100908">
+<link rel="stylesheet" href="https://eclipse-embed-cdt.github.io/css/theme-blue.css?202304191327">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -203,7 +204,7 @@
                         
                         
                         
-                        <li><a class="extern" href="https://gitter.im/xpack/" target="_blank" rel="noopener">The Project Chat Room</a></li>
+                        <li><a class="extern" href="https://gitter.im/eclipse-embed-cdt/community" target="_blank" rel="noopener">The Gitter Chat Room</a></li>
                         
                         
                         
@@ -223,7 +224,7 @@
                         
                         
                         
-                        <li><a class="extern" href="http://micro-os-plus.github.io" target="_blank" rel="noopener">µOS++</a></li>
+                        <li><a class="extern" href="https://micro-os-plus.github.io" target="_blank" rel="noopener">µOS++</a></li>
                         
                         
                         
@@ -515,6 +516,13 @@
           
           
           
+          <li><a title="Hello World QEMU" href="/templates/hello-world-qemu-xpack/">Hello World QEMU</a></li>
+          
+          
+          
+          
+          
+          
           <li><a title="STM32Fxx Templates" href="/templates/stm32f/">STM32Fxx Templates</a></li>
           
           
@@ -726,7 +734,7 @@ it is recommended to check and maybe change the settings below.</p>
 <p>Eclipse has lots of settings, and they are a bit confusing for beginners.
 Apart from various objects <strong>Properties</strong>, accessible with <strong>Right click</strong>
 in most situations, there are settings that apply to the entire workspace,
-and these settings are named <strong>Preferenceces</strong>, accessible in the top menu.</p>
+and these settings are named <strong>Preferences</strong>, accessible in the top menu.</p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> The Preferences menu has different
 locations on Windows/Linux (search for the last entry below the
@@ -744,14 +752,14 @@ changing from one configuration to another, check if the indexer was set
 to use the active configuration:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> → <strong>Indexer</strong></li>
+  <li>go to the <em>Eclipse</em> menu → (<strong>Window</strong> →) <strong>Preferences</strong> → <strong>C/C++</strong> → <strong>Indexer</strong></li>
   <li>disable <strong>Index source files not included in the build</strong></li>
   <li>disable <strong>Index unused headers</strong></li>
   <li>enable <strong>Use active build configuration</strong></li>
   <li>click the <strong>Apply</strong> button</li>
 </ul>
 
-<p><img src="/assets/images/2020/preferences-ccpp-indxer.png" alt="Indexer: Use active build configuration" /></p>
+<p><img src="/assets/images/2020/preferences-ccpp-indexer.png" alt="Indexer: Use active build configuration" /></p>
 
 <h2 id="editor-folding">Editor folding</h2>
 
@@ -759,7 +767,7 @@ to use the active configuration:</p>
 to disable editor folding:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/++</strong> →
+  <li>go to the <em>Eclipse</em> menu → (<strong>Window</strong> →) <strong>Preferences</strong> → <strong>C/++</strong> →
 <strong>Editor</strong> → <strong>Folding</strong></li>
   <li>enable <strong>Enable folding of preprocessor branches</strong></li>
   <li>enable <strong>Enable folding of control flow statements</strong></li>
@@ -780,7 +788,7 @@ but you are free to choose or even design your own style.</p>
 <p>To set it:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> → <strong>Code Style</strong> → <strong>Formatter</strong></li>
+  <li>go to the <em>Eclipse</em> menu → (<strong>Window</strong> →) <strong>Preferences</strong> → <strong>C/C++</strong> → <strong>Code Style</strong> → <strong>Formatter</strong></li>
   <li>in the <strong>Active profile:</strong> field, select <strong>GNU [built-in]</strong></li>
 </ul>
 
@@ -795,7 +803,7 @@ tab processing policy.</p>
 
 <p>For this, click the <strong>Edit…</strong> button.</p>
 
-<p><img src="/assets/images/2014/06/Style_GNU_with_spacs.png" alt="Change the tab policy to use spaces only" /></p>
+<p><img src="/assets/images/2014/06/Style_GNU_with_spaces.png" alt="Change the tab policy to use spaces only" /></p>
 
 <p>Change the tab policy to <strong>Spaces only</strong>, and the <strong>indentation</strong>
 and <strong>tab size</strong> to 2.</p>
@@ -833,7 +841,7 @@ Tabs, like Make files.</div>
 showing the source folders:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> →
+  <li>go to the <em>Eclipse</em> menu → (<strong>Window</strong> →) <strong>Preferences</strong> → <strong>C/C++</strong> →
 <strong>Appearance</strong></li>
   <li>disable <strong>Show source roots at top of project</strong>.</li>
 </ul>
@@ -906,7 +914,7 @@ template generated source files is shown as ??OS++ or even ��OS++).</p>
 line numbers, and also a hint that the line may be too long:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>General</strong> → <strong>Editors</strong> → <strong>Text Editors</strong></li>
+  <li>go to the <em>Eclipse</em> menu → (<strong>Window</strong> →) <strong>Preferences</strong> → <strong>General</strong> → <strong>Editors</strong> → <strong>Text Editors</strong></li>
   <li>enable <strong>Show line numbers</strong></li>
   <li>enable <strong>Show print margin</strong></li>
   <li>set the <strong>Print margin column</strong> at 80</li>
@@ -924,7 +932,7 @@ presented, and where the compile/link errors are shown.</p>
 make the lines wrap:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> →
+  <li>go to the <em>Eclipse</em> menu → (<strong>Window</strong> →) <strong>Preferences</strong> → <strong>C/C++</strong> →
 <strong>Build</strong> → <strong>Console</strong></li>
   <li>enable <strong>Bring console to top when building</strong></li>
   <li>enable <strong>Wrap lines on the console</strong></li>
@@ -942,7 +950,7 @@ make the lines wrap:</p>
 <p>To enable support for documentation tool comments:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> → <strong>Editor</strong></li>
+  <li>go to the <em>Eclipse</em> menu → (<strong>Window</strong> →) <strong>Preferences</strong> → <strong>C/C++</strong> → <strong>Editor</strong></li>
   <li>select <strong>Doxygen</strong> in the Documentation tool comments</li>
 </ul>
 
@@ -963,7 +971,7 @@ present it as the default for the main debug button.</p>
 <p>To change this setting:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>Run/Debug</strong> →
+  <li>go to the <em>Eclipse</em> menu → (<strong>Window</strong> →) <strong>Preferences</strong> → <strong>Run/Debug</strong> →
 <strong>Launching</strong></li>
   <li>select <strong>Always launch the previously launched application</strong> in the
 <strong>Launch Operation</strong> section.</li>
@@ -973,13 +981,13 @@ present it as the default for the main debug button.</p>
 
 <h2 id="enable-gdb-trace-console">Enable GDB trace console</h2>
 
-<p>While debugging, it is sometimes useful to see the dialog between Eclipse and
+<p>While debugging, it is sometimes useful to see the dialogue between Eclipse and
 GDB. For this, it is necessary to enable the GDB Trace console.</p>
 
 <p>To change this setting:</p>
 
 <ul>
-  <li>go to the <em>Eclipse</em> menu → <strong>(Window →) Preferences</strong> → <strong>C/C++</strong> →
+  <li>go to the <em>Eclipse</em> menu → (<strong>Window</strong> →) <strong>Preferences</strong> → <strong>C/C++</strong> →
 <strong>Debug</strong> → <strong>GDB</strong></li>
   <li>select <strong>Show the GDB traces console</strong> in the
 <strong>General Behaviour</strong> section.</li>
@@ -1034,12 +1042,12 @@ session.</div>
 <footer>
             <div class="row">
                 <div class="col-lg-4">
-                  <a href="http://www.eclipse.org/">Eclipse Foundation</a><br/>
-                  <a href="http://www.eclipse.org/legal/privacy.php">Privacy Policy</a><br/>
-                  <a href="http://www.eclipse.org/legal/termsofuse.php">Website terms of use</a><br/>
-                  <a href="http://www.eclipse.org/legal/copyright.php">Copyright Agent</a><br/>
+                  <a href="https://www.eclipse.org/">Eclipse Foundation</a><br/>
+                  <a href="https://www.eclipse.org/legal/privacy.php">Privacy Policy</a><br/>
+                  <a href="https://www.eclipse.org/legal/termsofuse.php">Website terms of use</a><br/>
+                  <a href="https://www.eclipse.org/legal/copyright.php">Copyright Agent</a><br/>
                   <a href="https://www.eclipse.org/security/">Report a Vulnerability</a><br/>
-                  <a href="http://www.eclipse.org/legal">Legal</a><br/>
+                  <a href="https://www.eclipse.org/legal">Legal</a><br/>
                 </div>
                 <div class="col-lg-4 footer-center">
                   <a href="https://projects.eclipse.org/projects/iot.embed-cdt/"><img src="/assets/images/2020/ef-small.png" alt="EF logo" ></a>
@@ -1047,7 +1055,7 @@ session.</div>
                 <div class="col-lg-4 footer">
                   &copy; 2009, 2023 Liviu Ionescu and others. <br />
                   All rights reserved. <br />
-                  <span>Page last updated:</span> Mar 22, 2023<br/> Site last generated: Mar 22, 2023 <br />
+                  <span>Page last updated:</span> Apr 28, 2023<br/> Site last generated: Apr 28, 2023 <br />
                 </div>
             </div>
 </footer>

@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom">
     <channel>
-        <title></title>
+        <title>web-jekyll</title>
         <description>Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.</description>
         <link>https://eclipse-embed-cdt.github.io/</link>
         <atom:link href="https://eclipse-embed-cdt.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 22 Mar 2023 08:50:34 +0000</pubDate>
-        <lastBuildDate>Wed, 22 Mar 2023 08:50:34 +0000</lastBuildDate>
-        <generator>Jekyll v3.9.0</generator>
+        <pubDate>Fri, 28 Apr 2023 12:55:06 +0000</pubDate>
+        <lastBuildDate>Fri, 28 Apr 2023 12:55:06 +0000</lastBuildDate>
+        <generator>Jekyll v3.9.3</generator>
+        
+        <item>
+            <title>Eclipse Embedded CDT plug-ins v6.3.2 released</title>
+            <description>&lt;p&gt;Version &lt;strong&gt;6.3.2&lt;/strong&gt; is a maintenance release; it updates RISC-V and STM32F7templates and fixes several bugs.&lt;/p&gt;</description>
+            <pubDate>Fri, 28 Apr 2023 12:21:00 +0000</pubDate>
+            <link>https://eclipse-embed-cdt.github.io/blog/2023/04/28/plugins-v6.3.2-released/</link>
+            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2023/04/28/plugins-v6.3.2-released/</guid>
+            
+            <category>gnu</category>
+            
+            <category>arm</category>
+            
+            <category>mcu</category>
+            
+            <category>eclipse</category>
+            
+            <category>risc-v</category>
+            
+            
+        </item>
         
         <item>
             <title>Eclipse Embedded CDT plug-ins v6.3.1 released</title>
@@ -163,26 +183,6 @@
             <pubDate>Wed, 20 Jan 2021 09:13:00 +0000</pubDate>
             <link>https://eclipse-embed-cdt.github.io/blog/2021/01/20/plugins-v6.1.1-released/</link>
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2021/01/20/plugins-v6.1.1-released/</guid>
-            
-            <category>gnu</category>
-            
-            <category>arm</category>
-            
-            <category>mcu</category>
-            
-            <category>eclipse</category>
-            
-            <category>risc-v</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Eclipse Embedded CDT plug-ins v6.1.0 released</title>
-            <description>&lt;div class=&quot;alert alert-danger&quot; role=&quot;alert&quot;&gt;&lt;i class=&quot;fa fa-exclamation-circle&quot;&gt;&lt;/i&gt; &lt;b&gt;Warning:&lt;/b&gt; Deprecated. Use v6.1.1 or later.&lt;/div&gt;</description>
-            <pubDate>Mon, 18 Jan 2021 15:13:00 +0000</pubDate>
-            <link>https://eclipse-embed-cdt.github.io/blog/2021/01/18/plugins-v6.1.0-released/</link>
-            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2021/01/18/plugins-v6.1.0-released/</guid>
             
             <category>gnu</category>
             
