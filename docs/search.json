@@ -240,39 +240,6 @@
 
 
 {
-"title": "Maintainer info",
-"tags": "",
-"keywords": "",
-"url": "/maintain/",
-"summary": "<p>Resources for the projects maintainers.</p>"
-}
-,
-
-
-
-{
-"title": "How to get support",
-"tags": "",
-"keywords": "",
-"url": "/support/",
-"summary": "<p>Where to search for help when something goes wrong.</p>"
-}
-,
-
-
-
-{
-"title": "Project Templates",
-"tags": "",
-"keywords": "",
-"url": "/templates/",
-"summary": "<p>The C/C++ project templates.</p>"
-}
-,
-
-
-
-{
 "title": "Contributor Info",
 "tags": "",
 "keywords": "",
@@ -297,6 +264,39 @@
 
 
 {
+"title": "How to get support",
+"tags": "",
+"keywords": "",
+"url": "/support/",
+"summary": "<p>Where to search for help when something goes wrong.</p>"
+}
+,
+
+
+
+{
+"title": "Maintainer info",
+"tags": "",
+"keywords": "",
+"url": "/maintain/",
+"summary": "<p>Resources for the projects maintainers.</p>"
+}
+,
+
+
+
+{
+"title": "Project Templates",
+"tags": "",
+"keywords": "",
+"url": "/templates/",
+"summary": "<p>The C/C++ project templates.</p>"
+}
+,
+
+
+
+{
 "title": "Eclipse Embedded CDT",
 "tags": "",
 "keywords": "eclipsedevelopmentc/c++embeddedarmrisc-vopenocdqemu",
@@ -304,6 +304,8 @@
 "summary": "<p>Eclipse Embedded C/C++ Development Tools (formerly <strong>GNU MCU/ARM Eclipse</strong>).</p>"
 }
 ,
+
+
 
 
 
@@ -315,8 +317,6 @@
 "summary": "<p>How the Eclipse CDT indexer works.</p>"
 }
 ,
-
-
 
 
 
@@ -332,22 +332,22 @@
 
 
 {
-"title": "How to install the debugging components",
+"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
 "tags": "",
 "keywords": "",
-"url": "/debug/install/",
-"summary": "<p>Links to specific J-Link, OpenOCD and QEMU install pages.</p>"
+"url": "/plugins/install/",
+"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
 }
 ,
 
 
 
 {
-"title": "How to install Eclipse IDE for Embedded C/C++ Developers",
+"title": "How to install the debugging components",
 "tags": "",
 "keywords": "",
-"url": "/plugins/install/",
-"summary": "<p>Install a fresh Eclipse with the Embedded CDT plug-ins.</p>"
+"url": "/debug/install/",
+"summary": "<p>Links to specific J-Link, OpenOCD and QEMU install pages.</p>"
 }
 ,
 
@@ -660,8 +660,6 @@
 
 
 
-
-
 {
 "title": "How to update the Eclipse Embedded CDT plug-ins",
 "tags": "",
@@ -670,6 +668,8 @@
 "summary": "<p>Update the plug-ins installed on an Eclipse instance.</p>"
 }
 ,
+
+
 
 
 
