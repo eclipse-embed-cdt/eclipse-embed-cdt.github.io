@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Eclipse IDE for Embedded C/C++ Developers 2021-03 released" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2023-06-02T17:03:57+00:00","datePublished":"2021-03-16T11:00:00+00:00","description":"For convenience, version 6.1.2 of the plug-ins is also available as Eclipse packages, which pack together the Eclipse IDE for C/C++ Developers standard distribution (Eclipse 4.18) with the Eclipse Embedded CDT plug-ins.","headline":"Eclipse IDE for Embedded C/C++ Developers 2021-03 released","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/blog/2021/03/16/package-2021-03-released/"},"url":"https://eclipse-embed-cdt.github.io/blog/2021/03/16/package-2021-03-released/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2023-07-03T07:02:17+00:00","datePublished":"2021-03-16T11:00:00+00:00","description":"For convenience, version 6.1.2 of the plug-ins is also available as Eclipse packages, which pack together the Eclipse IDE for C/C++ Developers standard distribution (Eclipse 4.18) with the Eclipse Embedded CDT plug-ins.","headline":"Eclipse IDE for Embedded C/C++ Developers 2021-03 released","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/blog/2021/03/16/package-2021-03-released/"},"url":"https://eclipse-embed-cdt.github.io/blog/2021/03/16/package-2021-03-released/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -773,13 +773,13 @@ that the program is damaged. That’s obviously not true, and the fix
 is simple, you need to remove the com.apple.quarantine extended
 attribute.</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xattr <span class="nt">-d</span> com.apple.quarantine ~/Downloads/eclipse-embedcdt-2021-03-R-macosx-cocoa-x86_64.tar.gz
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xattr <span class="nt">-c</span> ~/Downloads/eclipse-embedcdt-2021-03-R-macosx-cocoa-x86_64.tar.gz
 </code></pre></div></div>
 
 <p>After un-archiving, if the application still complains, check/remove
 the attribute from the <code class="language-plaintext highlighter-rouge">Eclipse.app</code> folder too:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xattr <span class="nt">-dr</span> com.apple.quarantine ~/Downloads/Eclipse.app
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xattr <span class="nt">-cr</span> ~/Downloads/Eclipse.app
 </code></pre></div></div>
 
     </div>
@@ -840,7 +840,7 @@ the attribute from the <code class="language-plaintext highlighter-rouge">Eclips
                 <div class="col-lg-4 footer">
                   &copy; 2009, 2023 Liviu Ionescu and others. <br />
                   All rights reserved. <br />
-                  <span>Page last updated:</span> Jun 2, 2023<br/> Site last generated: Jun 2, 2023 <br />
+                  <span>Page last updated:</span> Jul 3, 2023<br/> Site last generated: Jul 3, 2023 <br />
                 </div>
             </div>
 </footer>

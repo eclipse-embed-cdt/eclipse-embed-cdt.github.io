@@ -251,19 +251,6 @@
 
 
 {
-"title": "Debugging",
-"tags": "",
-"keywords": "",
-"url": "/debug/",
-"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
-}
-,
-
-
-
-
-
-{
 "title": "How to get support",
 "tags": "",
 "keywords": "",
@@ -280,6 +267,19 @@
 "keywords": "",
 "url": "/maintain/",
 "summary": "<p>Resources for the projects maintainers.</p>"
+}
+,
+
+
+
+
+
+{
+"title": "Debugging",
+"tags": "",
+"keywords": "",
+"url": "/debug/",
+"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
 }
 ,
 
@@ -307,8 +307,6 @@
 
 
 
-
-
 {
 "title": "The CDT Indexer",
 "tags": "",
@@ -317,6 +315,8 @@
 "summary": "<p>How the Eclipse CDT indexer works.</p>"
 }
 ,
+
+
 
 
 
@@ -467,6 +467,8 @@
 
 
 
+
+
 {
 "title": "The OpenOCD debugging plug-in",
 "tags": "",
@@ -475,8 +477,6 @@
 "summary": "<p>How to run Eclipse debug sessions using OpenOCD.</p>"
 }
 ,
-
-
 
 
 
@@ -564,6 +564,8 @@
 
 
 
+
+
 {
 "title": "The QEMU debugging plug-in",
 "tags": "",
@@ -572,8 +574,6 @@
 "summary": "<p>How to run Eclipse debug sessions using QEMU Arm.</p>"
 }
 ,
-
-
 
 
 
