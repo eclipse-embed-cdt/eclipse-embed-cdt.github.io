@@ -240,28 +240,6 @@
 
 
 {
-"title": "Contributor Info",
-"tags": "",
-"keywords": "",
-"url": "/develop/",
-"summary": "<p>Resources for Eclipse plug-ins developers contributing to the project.</p>"
-}
-,
-
-
-
-{
-"title": "How to get support",
-"tags": "",
-"keywords": "",
-"url": "/support/",
-"summary": "<p>Where to search for help when something goes wrong.</p>"
-}
-,
-
-
-
-{
 "title": "Maintainer info",
 "tags": "",
 "keywords": "",
@@ -291,6 +269,28 @@
 "keywords": "",
 "url": "/templates/",
 "summary": "<p>The C/C++ project templates.</p>"
+}
+,
+
+
+
+{
+"title": "How to get support",
+"tags": "",
+"keywords": "",
+"url": "/support/",
+"summary": "<p>Where to search for help when something goes wrong.</p>"
+}
+,
+
+
+
+{
+"title": "Contributor Info",
+"tags": "",
+"keywords": "",
+"url": "/develop/",
+"summary": "<p>Resources for Eclipse plug-ins developers contributing to the project.</p>"
 }
 ,
 
@@ -660,6 +660,8 @@
 
 
 
+
+
 {
 "title": "How to update the Eclipse Embedded CDT plug-ins",
 "tags": "",
@@ -668,8 +670,6 @@
 "summary": "<p>Update the plug-ins installed on an Eclipse instance.</p>"
 }
 ,
-
-
 
 
 
@@ -697,6 +697,16 @@
 
 
 
+
+
+{
+"title": "Eclipse Embedded CDT plug-ins v6.4.0 released",
+"tags": "gnuarmmcueclipserisc-v",
+"keywords": "",
+"url": "/blog/2023/07/25/plugins-v6.4.0-released/",
+"summary": ""
+}
+,
 
 
 {

@@ -5,9 +5,29 @@
         <description>Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.</description>
         <link>https://eclipse-embed-cdt.github.io/</link>
         <atom:link href="https://eclipse-embed-cdt.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 03 Jul 2023 07:04:36 +0000</pubDate>
-        <lastBuildDate>Mon, 03 Jul 2023 07:04:36 +0000</lastBuildDate>
+        <pubDate>Tue, 25 Jul 2023 20:12:32 +0000</pubDate>
+        <lastBuildDate>Tue, 25 Jul 2023 20:12:32 +0000</lastBuildDate>
         <generator>Jekyll v3.9.3</generator>
+        
+        <item>
+            <title>Eclipse Embedded CDT plug-ins v6.4.0 released</title>
+            <description>&lt;p&gt;Version &lt;strong&gt;6.4.0&lt;/strong&gt; is a new minor release; it fixes several bugs and adds several enhancements.&lt;/p&gt;</description>
+            <pubDate>Tue, 25 Jul 2023 19:45:00 +0000</pubDate>
+            <link>https://eclipse-embed-cdt.github.io/blog/2023/07/25/plugins-v6.4.0-released/</link>
+            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2023/07/25/plugins-v6.4.0-released/</guid>
+            
+            <category>gnu</category>
+            
+            <category>arm</category>
+            
+            <category>mcu</category>
+            
+            <category>eclipse</category>
+            
+            <category>risc-v</category>
+            
+            
+        </item>
         
         <item>
             <title>Eclipse Embedded CDT plug-ins v6.3.2 released</title>
@@ -173,26 +193,6 @@
             <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2021/01/21/codered-update-issue/</guid>
             
             <category>eclipse</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Eclipse Embedded CDT plug-ins v6.1.1 released</title>
-            <description>&lt;p&gt;Version &lt;strong&gt;6.1.1&lt;/strong&gt; is a service release; it fixes the update issueobserved in 6.1.0.&lt;/p&gt;</description>
-            <pubDate>Wed, 20 Jan 2021 09:13:00 +0000</pubDate>
-            <link>https://eclipse-embed-cdt.github.io/blog/2021/01/20/plugins-v6.1.1-released/</link>
-            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2021/01/20/plugins-v6.1.1-released/</guid>
-            
-            <category>gnu</category>
-            
-            <category>arm</category>
-            
-            <category>mcu</category>
-            
-            <category>eclipse</category>
-            
-            <category>risc-v</category>
             
             
         </item>
