@@ -5,9 +5,29 @@
         <description>Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.</description>
         <link>https://eclipse-embed-cdt.github.io/</link>
         <atom:link href="https://eclipse-embed-cdt.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 26 Jul 2023 07:22:16 +0000</pubDate>
-        <lastBuildDate>Wed, 26 Jul 2023 07:22:16 +0000</lastBuildDate>
+        <pubDate>Thu, 11 Jan 2024 19:09:31 +0000</pubDate>
+        <lastBuildDate>Thu, 11 Jan 2024 19:09:31 +0000</lastBuildDate>
         <generator>Jekyll v3.9.3</generator>
+        
+        <item>
+            <title>Eclipse Embedded CDT plug-ins v6.5.0 released</title>
+            <description>&lt;p&gt;Version &lt;strong&gt;6.5.0&lt;/strong&gt; is a new minor release; it fixes several bugs and adds several enhancements.&lt;/p&gt;</description>
+            <pubDate>Thu, 11 Jan 2024 19:00:00 +0000</pubDate>
+            <link>https://eclipse-embed-cdt.github.io/blog/2024/01/11/plugins-v6.5.0-released/</link>
+            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2024/01/11/plugins-v6.5.0-released/</guid>
+            
+            <category>gnu</category>
+            
+            <category>arm</category>
+            
+            <category>mcu</category>
+            
+            <category>eclipse</category>
+            
+            <category>risc-v</category>
+            
+            
+        </item>
         
         <item>
             <title>Eclipse Embedded CDT plug-ins v6.4.0 released</title>
@@ -181,18 +201,6 @@
             <category>eclipse</category>
             
             <category>risc-v</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Embedded CDT plug-ins v6.0.0: CodeRed update failure</title>
-            <description>&lt;p&gt;In certain conditions, updating the Eclipse Embedded CDT plug-ins v6.0.0may fail to update the CodeRed plug-ins.&lt;/p&gt;</description>
-            <pubDate>Thu, 21 Jan 2021 07:47:00 +0000</pubDate>
-            <link>https://eclipse-embed-cdt.github.io/blog/2021/01/21/codered-update-issue/</link>
-            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2021/01/21/codered-update-issue/</guid>
-            
-            <category>eclipse</category>
             
             
         </item>

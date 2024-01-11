@@ -239,17 +239,6 @@
 
 
 
-{
-"title": "Maintainer info",
-"tags": "",
-"keywords": "",
-"url": "/maintain/",
-"summary": "<p>Resources for the projects maintainers.</p>"
-}
-,
-
-
-
 
 
 {
@@ -258,17 +247,6 @@
 "keywords": "",
 "url": "/debug/",
 "summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
-}
-,
-
-
-
-{
-"title": "Project Templates",
-"tags": "",
-"keywords": "",
-"url": "/templates/",
-"summary": "<p>The C/C++ project templates.</p>"
 }
 ,
 
@@ -297,6 +275,28 @@
 
 
 {
+"title": "Maintainer info",
+"tags": "",
+"keywords": "",
+"url": "/maintain/",
+"summary": "<p>Resources for the projects maintainers.</p>"
+}
+,
+
+
+
+{
+"title": "Project Templates",
+"tags": "",
+"keywords": "",
+"url": "/templates/",
+"summary": "<p>The C/C++ project templates.</p>"
+}
+,
+
+
+
+{
 "title": "Eclipse Embedded CDT",
 "tags": "",
 "keywords": "eclipsedevelopmentc/c++embeddedarmrisc-vopenocdqemu",
@@ -304,6 +304,8 @@
 "summary": "<p>Eclipse Embedded C/C++ Development Tools (formerly <strong>GNU MCU/ARM Eclipse</strong>).</p>"
 }
 ,
+
+
 
 
 
@@ -315,8 +317,6 @@
 "summary": "<p>How the Eclipse CDT indexer works.</p>"
 }
 ,
-
-
 
 
 
@@ -660,8 +660,6 @@
 
 
 
-
-
 {
 "title": "How to update the Eclipse Embedded CDT plug-ins",
 "tags": "",
@@ -670,6 +668,8 @@
 "summary": "<p>Update the plug-ins installed on an Eclipse instance.</p>"
 }
 ,
+
+
 
 
 
@@ -697,6 +697,16 @@
 
 
 
+
+
+{
+"title": "Eclipse Embedded CDT plug-ins v6.5.0 released",
+"tags": "gnuarmmcueclipserisc-v",
+"keywords": "",
+"url": "/blog/2024/01/11/plugins-v6.5.0-released/",
+"summary": ""
+}
+,
 
 
 {

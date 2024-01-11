@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="How to install the Eclipse prerequisites" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2023-07-26T07:15:02+00:00","datePublished":"2017-10-09T11:14:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"How to install the Eclipse prerequisites","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"},"url":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2024-01-11T19:04:39+00:00","datePublished":"2017-10-09T11:14:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"How to install the Eclipse prerequisites","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"},"url":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -733,7 +733,8 @@ Generally Java is not available by default on most platforms, and requires
 a separate installation.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Recent Eclipse packages are standalone and
-come bundled with the Java JRE; in this case is no longer necessary to install a separate Java.</div>
+come bundled with the Java JRE; in this case
+it is no longer necessary to install a separate Java.</div>
 
 <h3 id="other-tools">Other tools</h3>
 
@@ -941,7 +942,7 @@ specific to the window manager.</p>
 <p>On some distributions (like Ubuntu) this can be achieved via <code class="language-plaintext highlighter-rouge">~/.xsessionrc</code>,
 sourced from one of the files in <code class="language-plaintext highlighter-rouge">/etc/X11/Xsession.d/</code>.</p>
 
-<p>It is possible to install multiple versions on the same system, and chose
+<p>It is possible to install multiple versions on the same system, and choose
 which one to use by controlling the PATH.</p>
 
 <p>It is also possible to edit <a href="https://wiki.eclipse.org/Eclipse.ini">eclipse.ini</a>
@@ -1020,7 +1021,7 @@ the riscv toolchain is necessary only for RISC-V projects.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/arm-none-eabi-gcc@latest <span class="nt">--verbose</span>
 xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/qemu-arm@latest <span class="nt">--verbose</span>
 
-xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/riscv-none-embed-gcc@latest <span class="nt">--verbose</span>
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/riscv-none-elf-gcc@latest <span class="nt">--verbose</span>
 xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/qemu-riscv@latest <span class="nt">--verbose</span>
 
 xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/openocd@latest <span class="nt">--verbose</span>
@@ -1096,9 +1097,9 @@ for running on a 32-bit system), be sure it includes at least CDT 9.2.1.</p>
                   <a href="https://projects.eclipse.org/projects/iot.embed-cdt/"><img src="/assets/images/2020/ef-small.png" alt="EF logo" ></a>
                 </div>
                 <div class="col-lg-4 footer">
-                  &copy; 2009, 2023 Liviu Ionescu and others. <br />
+                  &copy; 2009, 2024 Liviu Ionescu and others. <br />
                   All rights reserved. <br />
-                  <span>Page last updated:</span> Jul 26, 2023<br/> Site last generated: Jul 26, 2023 <br />
+                  <span>Page last updated:</span> Jan 11, 2024<br/> Site last generated: Jan 11, 2024 <br />
                 </div>
             </div>
 </footer>
