@@ -239,19 +239,6 @@
 
 
 
-
-
-{
-"title": "Debugging",
-"tags": "",
-"keywords": "",
-"url": "/debug/",
-"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
-}
-,
-
-
-
 {
 "title": "How to get support",
 "tags": "",
@@ -260,6 +247,8 @@
 "summary": "<p>Where to search for help when something goes wrong.</p>"
 }
 ,
+
+
 
 
 
@@ -275,22 +264,33 @@
 
 
 {
-"title": "Maintainer info",
+"title": "Project Templates",
 "tags": "",
 "keywords": "",
-"url": "/maintain/",
-"summary": "<p>Resources for the projects maintainers.</p>"
+"url": "/templates/",
+"summary": "<p>The C/C++ project templates.</p>"
 }
 ,
 
 
 
 {
-"title": "Project Templates",
+"title": "Debugging",
 "tags": "",
 "keywords": "",
-"url": "/templates/",
-"summary": "<p>The C/C++ project templates.</p>"
+"url": "/debug/",
+"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
+}
+,
+
+
+
+{
+"title": "Maintainer info",
+"tags": "",
+"keywords": "",
+"url": "/maintain/",
+"summary": "<p>Resources for the projects maintainers.</p>"
 }
 ,
 
@@ -660,6 +660,8 @@
 
 
 
+
+
 {
 "title": "How to update the Eclipse Embedded CDT plug-ins",
 "tags": "",
@@ -668,8 +670,6 @@
 "summary": "<p>Update the plug-ins installed on an Eclipse instance.</p>"
 }
 ,
-
-
 
 
 
@@ -697,6 +697,16 @@
 
 
 
+
+
+{
+"title": "Eclipse Embedded CDT plug-ins v6.6.0 released",
+"tags": "gnuarmmcueclipserisc-v",
+"keywords": "",
+"url": "/blog/2024/04/03/plugins-v6.6.0-released/",
+"summary": ""
+}
+,
 
 
 {

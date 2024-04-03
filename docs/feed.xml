@@ -5,9 +5,29 @@
         <description>Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.</description>
         <link>https://eclipse-embed-cdt.github.io/</link>
         <atom:link href="https://eclipse-embed-cdt.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 11 Jan 2024 19:09:31 +0000</pubDate>
-        <lastBuildDate>Thu, 11 Jan 2024 19:09:31 +0000</lastBuildDate>
+        <pubDate>Wed, 03 Apr 2024 17:54:47 +0000</pubDate>
+        <lastBuildDate>Wed, 03 Apr 2024 17:54:47 +0000</lastBuildDate>
         <generator>Jekyll v3.9.3</generator>
+        
+        <item>
+            <title>Eclipse Embedded CDT plug-ins v6.6.0 released</title>
+            <description>&lt;p&gt;Version &lt;strong&gt;6.6.0&lt;/strong&gt; is a new minor release; it adds several enhancements.&lt;/p&gt;</description>
+            <pubDate>Wed, 03 Apr 2024 17:23:00 +0000</pubDate>
+            <link>https://eclipse-embed-cdt.github.io/blog/2024/04/03/plugins-v6.6.0-released/</link>
+            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2024/04/03/plugins-v6.6.0-released/</guid>
+            
+            <category>gnu</category>
+            
+            <category>arm</category>
+            
+            <category>mcu</category>
+            
+            <category>eclipse</category>
+            
+            <category>risc-v</category>
+            
+            
+        </item>
         
         <item>
             <title>Eclipse Embedded CDT plug-ins v6.5.0 released</title>
@@ -181,26 +201,6 @@
             <category>risc-v</category>
             
             <category>packages</category>
-            
-            
-        </item>
-        
-        <item>
-            <title>Eclipse Embedded CDT plug-ins v6.1.2 released</title>
-            <description>&lt;p&gt;Version &lt;strong&gt;6.1.2&lt;/strong&gt; is a service release; it fixes a bug in the STM templates.&lt;/p&gt;</description>
-            <pubDate>Fri, 05 Mar 2021 21:50:00 +0000</pubDate>
-            <link>https://eclipse-embed-cdt.github.io/blog/2021/03/05/plugins-v6.1.2-released/</link>
-            <guid isPermaLink="true">https://eclipse-embed-cdt.github.io/blog/2021/03/05/plugins-v6.1.2-released/</guid>
-            
-            <category>gnu</category>
-            
-            <category>arm</category>
-            
-            <category>mcu</category>
-            
-            <category>eclipse</category>
-            
-            <category>risc-v</category>
             
             
         </item>
