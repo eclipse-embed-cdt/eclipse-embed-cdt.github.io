@@ -240,22 +240,11 @@
 
 
 {
-"title": "Debugging",
+"title": "How to get support",
 "tags": "",
 "keywords": "",
-"url": "/debug/",
-"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
-}
-,
-
-
-
-{
-"title": "Contributor Info",
-"tags": "",
-"keywords": "",
-"url": "/develop/",
-"summary": "<p>Resources for Eclipse plug-ins developers contributing to the project.</p>"
+"url": "/support/",
+"summary": "<p>Where to search for help when something goes wrong.</p>"
 }
 ,
 
@@ -272,6 +261,30 @@
 
 
 
+
+
+{
+"title": "Contributor Info",
+"tags": "",
+"keywords": "",
+"url": "/develop/",
+"summary": "<p>Resources for Eclipse plug-ins developers contributing to the project.</p>"
+}
+,
+
+
+
+{
+"title": "Debugging",
+"tags": "",
+"keywords": "",
+"url": "/debug/",
+"summary": "<p>The Eclipse Embedded CDT debugging plug-ins.</p>"
+}
+,
+
+
+
 {
 "title": "Project Templates",
 "tags": "",
@@ -280,19 +293,6 @@
 "summary": "<p>The C/C++ project templates.</p>"
 }
 ,
-
-
-
-{
-"title": "How to get support",
-"tags": "",
-"keywords": "",
-"url": "/support/",
-"summary": "<p>Where to search for help when something goes wrong.</p>"
-}
-,
-
-
 
 
 
@@ -467,6 +467,8 @@
 
 
 
+
+
 {
 "title": "The OpenOCD debugging plug-in",
 "tags": "",
@@ -475,8 +477,6 @@
 "summary": "<p>How to run Eclipse debug sessions using OpenOCD.</p>"
 }
 ,
-
-
 
 
 
@@ -564,6 +564,8 @@
 
 
 
+
+
 {
 "title": "The QEMU debugging plug-in",
 "tags": "",
@@ -572,8 +574,6 @@
 "summary": "<p>How to run Eclipse debug sessions using QEMU Arm.</p>"
 }
 ,
-
-
 
 
 
@@ -697,6 +697,16 @@
 
 
 
+
+
+{
+"title": "Eclipse Embedded CDT plug-ins v6.7.0 released",
+"tags": "gnuarmmcueclipserisc-v",
+"keywords": "",
+"url": "/blog/2026/03/04/plugins-v6.7.0-released/",
+"summary": ""
+}
+,
 
 
 {
