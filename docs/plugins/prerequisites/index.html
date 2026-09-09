@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="How to install the Eclipse prerequisites" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2026-03-04T20:37:46+00:00","datePublished":"2017-10-09T11:14:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"How to install the Eclipse prerequisites","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"},"url":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2026-08-26T16:40:54+00:00","datePublished":"2017-10-09T11:14:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"How to install the Eclipse prerequisites","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"},"url":"https://eclipse-embed-cdt.github.io/plugins/prerequisites/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1024,7 +1024,7 @@ by the blinky tutorial; openocd may also be useful to run debug sessions;
 the riscv toolchain is necessary only for RISC-V projects.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/arm-none-eabi-gcc@latest <span class="nt">--verbose</span>
-xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/qemu-arm@latest <span class="nt">--verbose</span>
+xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/qemu-arm@8.2.6-1 <span class="nt">--verbose</span>
 
 xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/riscv-none-elf-gcc@latest <span class="nt">--verbose</span>
 xpm <span class="nb">install</span> <span class="nt">--global</span> @xpack-dev-tools/qemu-riscv@latest <span class="nt">--verbose</span>
@@ -1042,6 +1042,9 @@ the xpm output for the actual location.</p>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Since xPacks are installed in <em>.dot</em> folders,
 be sure to configure the file manager to show hidden files.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Support for <code class="language-plaintext highlighter-rouge">qemu-system-gnuarmeclipse</code> 
+is provided up to version 8.2.6-1.</div>
 
 <h2 id="miscellaneous">Miscellaneous</h2>
 
@@ -1104,7 +1107,7 @@ for running on a 32-bit system), be sure it includes at least CDT 9.2.1.</p>
                 <div class="col-lg-4 footer">
                   &copy; 2009, 2026 Liviu Ionescu and others. <br />
                   All rights reserved. <br />
-                  <span>Page last updated:</span> Mar 4, 2026<br/> Site last generated: Mar 4, 2026 <br />
+                  <span>Page last updated:</span> Aug 26, 2026<br/> Site last generated: Sep 9, 2026 <br />
                 </div>
             </div>
 </footer>

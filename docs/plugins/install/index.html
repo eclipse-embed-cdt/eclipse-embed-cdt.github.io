@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="How to install Eclipse IDE for Embedded C/C++ Developers" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2026-03-04T20:37:46+00:00","datePublished":"2015-09-11T19:06:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"How to install Eclipse IDE for Embedded C/C++ Developers","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/install/"},"url":"https://eclipse-embed-cdt.github.io/plugins/install/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2026-08-26T16:40:54+00:00","datePublished":"2015-09-11T19:06:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"How to install Eclipse IDE for Embedded C/C++ Developers","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/plugins/install/"},"url":"https://eclipse-embed-cdt.github.io/plugins/install/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -770,9 +770,40 @@ the risk of incompatible plug-ins.</p>
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Recent Eclipse releases include Java,
 so this step is no longer necessary.</div>
 
-<h2 id="download-the-eclipse-ide-for-embedded-cc-developers-package">Download the Eclipse IDE for Embedded C/C++ Developers package</h2>
+<h2 id="use-the-eclipse-installer">Use the Eclipse Installer</h2>
 
-<p>To get the <strong>Eclipse IDE for Embedded C/C++ Developers</strong> package, go to the
+<p>The modern way to install Eclipse is via the dedicated <strong>Installer</strong>.</p>
+
+<p>The advantages are:</p>
+
+<ul>
+  <li>the latest Java run-time is installed automatically</li>
+  <li>multiple variants or versions of Eclipse can be installed in separate folders</li>
+  <li>on macOS there is no need to tweak security details</li>
+</ul>
+
+<p>To use the Installer, go to the
+Eclipse <a href="https://www.eclipse.org/downloads/packages/">downloads</a>
+page and get the right binary for your platform (Windows, macOS or
+GNU/Linux).</p>
+
+<p>The result is a file like <code class="language-plaintext highlighter-rouge">eclipse-inst-jre-mac64.dmg</code></p>
+
+<p>Open/unpack it, start the <code class="language-plaintext highlighter-rouge">Eclipse Installer</code> application and select the
+<strong>Eclipse IDE for Embedded C/C++ Developers</strong>.</p>
+
+<p><img src="/assets/images/2026/eclipse-installer.png" alt="Eclipse Installer" /></p>
+
+<p>Select an installation folder and start the install process.</p>
+
+<p><img src="/assets/images/2026/install-ecdt.png" alt="ECDT Install" /></p>
+
+<h2 id="manually-download-the-eclipse-ide-for-embedded-cc-developers-package">Manually download the Eclipse IDE for Embedded C/C++ Developers package</h2>
+
+<p>If, for any reason, the <strong>Installer</strong> cannot be used, it is also possible to
+get the <strong>Eclipse IDE for Embedded C/C++ Developers</strong> package manually.</p>
+
+<p>Go to the
 Eclipse <a href="https://www.eclipse.org/downloads/packages/">downloads</a>
 page and select the correct binary for your platform (Windows, macOS or
 GNU/Linux).</p>
@@ -816,6 +847,8 @@ Marketplace, or the Eclipse <strong>Install New Software</strong> mechanism.</p>
 
 <p>For details, please check the separate
 <a href="/plugins/install-alternate/">Alternate Installs</a> page.</p>
+
+<p><img src="/assets/images/2015/win-preferences-c-build-global-tools-path.png" alt="Global Tools Path" /></p>
 
 <h2 id="checkset-the-global-tools-paths">Check/set the global tools paths</h2>
 
@@ -926,7 +959,7 @@ emails.</p>
                 <div class="col-lg-4 footer">
                   &copy; 2009, 2026 Liviu Ionescu and others. <br />
                   All rights reserved. <br />
-                  <span>Page last updated:</span> Mar 4, 2026<br/> Site last generated: Mar 4, 2026 <br />
+                  <span>Page last updated:</span> Aug 26, 2026<br/> Site last generated: Sep 9, 2026 <br />
                 </div>
             </div>
 </footer>

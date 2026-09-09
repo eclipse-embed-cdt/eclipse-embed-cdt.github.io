@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="The QEMU debugging plug-in" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2026-03-04T20:37:46+00:00","datePublished":"2015-09-11T19:15:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"The QEMU debugging plug-in","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/debug/qemu/"},"url":"https://eclipse-embed-cdt.github.io/debug/qemu/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Liviu Ionescu"},"dateModified":"2026-08-26T16:40:54+00:00","datePublished":"2015-09-11T19:15:00+00:00","description":"Tools to manage, configure and build complex, package based, multi-target, C/C++ projects.","headline":"The QEMU debugging plug-in","mainEntityOfPage":{"@type":"WebPage","@id":"https://eclipse-embed-cdt.github.io/debug/qemu/"},"url":"https://eclipse-embed-cdt.github.io/debug/qemu/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -751,6 +751,10 @@ separately install:</p>
   <li>the xPack QEMU Arm.</li>
 </ul>
 
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> By default, the old <strong>STM32Fnnn C/C++ Project</strong> 
+templates use
+<code class="language-plaintext highlighter-rouge">qemu-system-gnuarmeclipse</code> which is available up to version 8.2.6-1.</div>
+
 <p>If you did not do it yet, please follow the instructions in the
 <a href="https://xpack.github.io/dev-tools/qemu-arm/install/">xPack QEMU Arm install</a>
 page and return when completed.</p>
@@ -760,6 +764,11 @@ it is recommended that the version of the GDB client matches the
 toolchain. Generally only debugging .elf applications is possible,
 and these applications must be compiled to include GNU compatible
 debugging information (like dwarf).</p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Starting with 9.2.4-1, only the
+standard <code class="language-plaintext highlighter-rouge">qemu-system-arm</code> is available. Update the executable name in the
+Preferences/Properties pages and the board name in the plug-in 
+configuration.</div>
 
 <h2 id="how-to-use-the-qemu-plug-in">How to use the QEMU plug-in</h2>
 
@@ -1027,7 +1036,7 @@ to the GDB server, in this case the QEMU server.</p>
                 <div class="col-lg-4 footer">
                   &copy; 2009, 2026 Liviu Ionescu and others. <br />
                   All rights reserved. <br />
-                  <span>Page last updated:</span> Mar 4, 2026<br/> Site last generated: Mar 4, 2026 <br />
+                  <span>Page last updated:</span> Aug 26, 2026<br/> Site last generated: Sep 9, 2026 <br />
                 </div>
             </div>
 </footer>
